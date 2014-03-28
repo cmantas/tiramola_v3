@@ -1,0 +1,13 @@
+{
+   "note": "only the nodes are acually used", 
+   "nodes": [
+      "cassandra_node_1"
+   ], 
+   "seeds": [
+      "cassandra_seednode"
+   ], 
+   "clients": [
+      "cassandra_client_1", 
+      "cassandra_client_2"
+   ]
+}

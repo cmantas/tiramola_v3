@@ -8,7 +8,7 @@ threads=40
 ycsb run cassandra-cql \
 	-P /etc/YCSB/workloads/workloada\
         -threads $threads -p maxexecutiontime=1000000000 -p hostsFile=/opt/hosts -p operationcount=1000000000 \
-        -p recordcount=10000 \
+        -p recordcount=1000 \
         -p target=$target \
         -p sinusoidal=true \
         -p period=$period \

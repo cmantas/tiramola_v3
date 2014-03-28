@@ -126,6 +126,11 @@ def inject_hosts_files():
     seeds[0].vm.run_command("service ganglia-monitor restart")
     orchestrator.run_command("service ganglia-monitor restart")
 
+def get_hosts():
+    hosts = dict()
+    for i in seeds+nodes:
+        hosts[i.name] = i.vm.get_public_addr()
+    return hosts
 
 def find_orhcestrator():
     vms = get_all_vms()
@@ -208,7 +213,8 @@ def cluster_info():
 
 #=============================== MAIN ==========================
 
-
+#### mandatory #####
+find_orhcestrator()
 
 #create_cluster(worker_count=1, client_count=2)
 
@@ -217,7 +223,8 @@ resume_cluster()
 #kill all previous processes
 # kill_all()
 # #bootstrap cluster from scratch
-# bootstrap_cluster()
+
+#bootstrap_cluster()
 # run_load_phase(100000)
 # print "waiting 20 seconds for load phase to finish"
 # sleep(20)

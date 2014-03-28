@@ -40,8 +40,10 @@
             <file leaf-file-name="RLFSMDecisionMaker.py" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/RLFSMDecisionMaker.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state line="7" column="22" selection-start="127" selection-end="135" vertical-scroll-proportion="0.13358779" vertical-offset="0" max-vertical-offset="11745">
-                    <folding />
+                  <state line="15" column="27" selection-start="438" selection-end="438" vertical-scroll-proportion="0.28625953" vertical-offset="0" max-vertical-offset="11745">
+                    <folding>
+                      <element signature="e#53#112#0" expanded="true" />
+                    </folding>
                   </state>
                 </provider>
               </entry>
@@ -60,7 +62,7 @@
       <file leaf-file-name="CassandraCluster.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CassandraCluster.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="221" column="0" selection-start="6662" selection-end="6662" vertical-scroll-proportion="0.0" vertical-offset="3008" max-vertical-offset="3705">
+            <state line="221" column="0" selection-start="6662" selection-end="6662" vertical-scroll-proportion="0.0" vertical-offset="2652" max-vertical-offset="3705">
               <folding>
                 <element signature="e#23#87#0" expanded="true" />
               </folding>
@@ -89,7 +91,7 @@
       <file leaf-file-name="new_decision_module.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/new_decision_module.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="12" selection-start="8711" selection-end="8711" vertical-scroll-proportion="0.4903846" vertical-offset="1740" max-vertical-offset="4755">
+            <state line="46" column="48" selection-start="1368" selection-end="1368" vertical-scroll-proportion="-2.9086537" vertical-offset="3715" max-vertical-offset="4755">
               <folding>
                 <element signature="e#31#54#0" expanded="true" />
               </folding>
@@ -216,30 +218,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cassandra@okeanos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiramola_v3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cassandra@okeanos" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiramola_v3" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="files" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -254,6 +232,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="full.screen.before.presentation.mode" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cluster_python_tool" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -926,15 +905,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CassandraCluster.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="221" column="0" selection-start="6662" selection-end="6662" vertical-scroll-proportion="0.0" vertical-offset="2913" max-vertical-offset="3705">
-          <folding>
-            <element signature="e#23#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cli.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="110" selection-start="1344" selection-end="1344" vertical-scroll-proportion="0.0" vertical-offset="218" max-vertical-offset="915">
@@ -965,13 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RLFSMDecisionMaker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="22" selection-start="127" selection-end="135" vertical-scroll-proportion="0.13358779" vertical-offset="0" max-vertical-offset="11745">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/files/env_vars.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="0" selection-start="1364" selection-end="1364" vertical-scroll-proportion="-20.625" vertical-offset="0" max-vertical-offset="585">
@@ -979,9 +942,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CassandraCluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="221" column="0" selection-start="6662" selection-end="6662" vertical-scroll-proportion="0.0" vertical-offset="2913" max-vertical-offset="3705">
+          <folding>
+            <element signature="e#23#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RLFSMDecisionMaker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="27" selection-start="438" selection-end="438" vertical-scroll-proportion="0.28625953" vertical-offset="0" max-vertical-offset="11745">
+          <folding>
+            <element signature="e#53#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/new_decision_module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="12" selection-start="8711" selection-end="8711" vertical-scroll-proportion="0.4903846" vertical-offset="1740" max-vertical-offset="4755">
+        <state line="46" column="48" selection-start="1368" selection-end="1368" vertical-scroll-proportion="-2.9086537" vertical-offset="3715" max-vertical-offset="4755">
           <folding>
             <element signature="e#31#54#0" expanded="true" />
           </folding>

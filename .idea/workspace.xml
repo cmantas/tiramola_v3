@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c4b9184c-fb1a-4162-a7ee-76f0dcd8dfdb" name="Default" comment="" />
+    <ignored path="cassandra@okeanos.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$aaa.coverage" NAME="aaa Coverage Results" MODIFIED="1393178264113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/PycharmProjects/untitled" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$create_cassandra_node_test.coverage" NAME="create_cassandra_node_test Coverage Results" MODIFIED="1390405099668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$listener.coverage" NAME="listener Coverage Results" MODIFIED="1390406800741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lookup_service" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$CassandraCluster.coverage" NAME="CassandraCluster Coverage Results" MODIFIED="1395934843959" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$cluster_manager.coverage" NAME="cluster_manager Coverage Results" MODIFIED="1392642828476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$VM.coverage" NAME="VM Coverage Results" MODIFIED="1390236624224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$CassandraNode.coverage" NAME="CassandraNode Coverage Results" MODIFIED="1395928202219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$sender.coverage" NAME="sender Coverage Results" MODIFIED="1390406804939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lookup_service" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$connector_okeanos.coverage" NAME="connector_okeanos Coverage Results" MODIFIED="1393587934140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$testing.coverage" NAME="testing Coverage Results" MODIFIED="1393939721400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$connector_eucalyptus.coverage" NAME="connector_eucalyptus Coverage Results" MODIFIED="1393600546691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lib" />
+    <SUITE FILE_PATH="coverage/cassandra@okeanos$test_vm_class.coverage" NAME="test_vm_class Coverage Results" MODIFIED="1395851178968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="cassandra@okeanos" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="CassandraCluster.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CassandraCluster.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="177" column="0" selection-start="5332" selection-end="5332" vertical-scroll-proportion="0.2607313" vertical-offset="2491" max-vertical-offset="3600">
+              <folding>
+                <element signature="e#23#87#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cli.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cli.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="34" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="930">
+              <folding>
+                <element signature="e#23#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="env_vars.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/files/env_vars.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="41" selection-start="1139" selection-end="1139" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="480">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_vm_class.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_vm_class.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="39" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="persistance_module.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/persistance_module.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="8" selection-start="1962" selection-end="1977" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1425">
+              <folding>
+                <element signature="e#67#89#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/connector_okeanos.py" />
+        <option value="$PROJECT_DIR$/connector_okeanos.py" />
+        <option value="$PROJECT_DIR$/persistance_module.py" />
+        <option value="$PROJECT_DIR$/cluster_manager.py" />
+        <option value="$PROJECT_DIR$/files/okeanos_credentials.json" />
+        <option value="$PROJECT_DIR$/scp_utils.py" />
+        <option value="$USER_HOME$/PycharmProjects/untitled/aaa.py" />
+        <option value="$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/CassandraCluster.py" />
+        <option value="$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/testing.py" />
+        <option value="$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/lib/connector_eucalyptus.py" />
+        <option value="$PROJECT_DIR$/files/openstack_names.json" />
+        <option value="$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/lib/persistance_module.py" />
+        <option value="$PROJECT_DIR$/testing.py" />
+        <option value="$PROJECT_DIR$/lib/connector_okeanos.py" />
+        <option value="$PROJECT_DIR$/lib/connector_eucalyptus.py" />
+        <option value="$PROJECT_DIR$/lib/persistance_module.py" />
+        <option value="$PROJECT_DIR$/test_vm_class.py" />
+        <option value="$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/CassandraNode.py" />
+        <option value="$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/VM.py" />
+        <option value="$PROJECT_DIR$/files/env_vars.json" />
+        <option value="$PROJECT_DIR$/CassandraNode.py" />
+        <option value="$PROJECT_DIR$/CassandraNode.py" />
+        <option value="$PROJECT_DIR$/scripts/kill_cassandra.sh" />
+        <option value="$PROJECT_DIR$/cli.py" />
+        <option value="$PROJECT_DIR$/VM.py" />
+        <option value="$PROJECT_DIR$/VM.py" />
+        <option value="$PROJECT_DIR$/CassandraCluster.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
+    <option name="width" value="1872" />
+    <option name="height" value="1174" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cassandra@okeanos" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="files" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
+    <property name="recentsLimit" value="5" />
+    <property name="SearchEverywhereHistory" value="+" />
+    <property name="FullScreen" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="full.screen.before.presentation.mode" value="false" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings module-name="cassandra@okeanos" is-module-sdk="true">
+        <option name="myUseModuleSdk" value="true" />
+        <option name="myModuleName" value="cassandra@okeanos" />
+      </console-settings>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/files" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+      <recent name="$PROJECT_DIR$/depricated" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.CassandraCluster">
+    <configuration default="false" name="CassandraCluster" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CassandraCluster.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="CassandraNode" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CassandraNode.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="aaa" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/PycharmProjects/untitled" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="untitled" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/PycharmProjects/untitled/aaa.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="connector_okeanos" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/connector_okeanos.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="connector_eucalyptus" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/connector_eucalyptus.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="cluster_manager" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cluster_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_vm_class" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_vm_class.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testing" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="cassandra@okeanos" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testing.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <list size="8">
+      <item index="0" class="java.lang.String" itemvalue="Python.connector_eucalyptus" />
+      <item index="1" class="java.lang.String" itemvalue="Python.cluster_manager" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_vm_class" />
+      <item index="3" class="java.lang.String" itemvalue="Python.testing" />
+      <item index="4" class="java.lang.String" itemvalue="Python.CassandraCluster" />
+      <item index="5" class="java.lang.String" itemvalue="Python.CassandraNode" />
+      <item index="6" class="java.lang.String" itemvalue="Python.aaa" />
+      <item index="7" class="java.lang.String" itemvalue="Python.connector_okeanos" />
+    </list>
+    <recent_temporary>
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.CassandraCluster" />
+        <item index="1" class="java.lang.String" itemvalue="Python.CassandraNode" />
+        <item index="2" class="java.lang.String" itemvalue="Python.connector_okeanos" />
+        <item index="3" class="java.lang.String" itemvalue="Python.aaa" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4b9184c-fb1a-4162-a7ee-76f0dcd8dfdb" name="Default" comment="" />
+      <created>1389969050351</created>
+      <updated>1389969050351</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1440" y="0" width="1872" height="1174" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20032051" sideWeight="0.56955093" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30905306" sideWeight="0.5002909" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39259258" sideWeight="0.49970913" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="false" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="20" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/CassandraCluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="112" selection-end="202" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1080" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_vm_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="44" selection-start="279" selection-end="279" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="195">
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CassandraNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="17" selection-start="1177" selection-end="1177" vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="1875" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="0" selection-start="2410" selection-end="2410" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="4260">
+          <folding>
+            <element signature="e#23#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4260">
+          <folding>
+            <element signature="e#23#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/scp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="0" selection-start="4989" selection-end="4989" vertical-scroll-proportion="0.33333334" vertical-offset="1693" max-vertical-offset="5820" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/misc_usefull.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="19" selection-start="50" selection-end="50" vertical-scroll-proportion="0.048179872" vertical-offset="0" max-vertical-offset="934" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/kamaki/clients/cyclades/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="52" selection-start="3248" selection-end="3248" vertical-scroll-proportion="0.0" vertical-offset="734" max-vertical-offset="3120" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/kamaki/clients/compute/rest_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="8" selection-start="3760" selection-end="3760" vertical-scroll-proportion="-5.698" vertical-offset="4379" max-vertical-offset="6150" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/kamaki/clients/compute/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="26" selection-start="5241" selection-end="5241" vertical-scroll-proportion="0.66283524" vertical-offset="1934" max-vertical-offset="6720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="518" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/scp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-9.974903" vertical-offset="5167" max-vertical-offset="5820" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scp_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="0" selection-start="866" selection-end="866" vertical-scroll-proportion="0.33204633" vertical-offset="338" max-vertical-offset="1140" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/thread.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="96" column="28" selection-start="3389" selection-end="3393" vertical-scroll-proportion="0.3322933" vertical-offset="1227" max-vertical-offset="4335" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="201" column="0" selection-start="6486" selection-end="6486" vertical-scroll-proportion="0.33204633" vertical-offset="2843" max-vertical-offset="4245">
+          <folding>
+            <element signature="e#23#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/CassandraCluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="112" selection-end="202" vertical-scroll-proportion="-0.09913793" vertical-offset="137" max-vertical-offset="1065" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/euca2ools-devel-py2.7.egg/euca2ools/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="10" selection-start="44" selection-end="52" vertical-scroll-proportion="0.02849003" vertical-offset="0" max-vertical-offset="1053" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/euca2ools-devel-py2.7.egg/euca2ools/bundler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-16.873833" vertical-offset="10833" max-vertical-offset="11475" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/euca2ools-devel-py2.7.egg/euca2ools/commands/euca/describeinstances.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="31" selection-start="3245" selection-end="3246" vertical-scroll-proportion="0.33221477" vertical-offset="732" max-vertical-offset="2640" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/euca2ools-devel-py2.7.egg/euca2ools/commands/euca/runinstances.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="6" selection-start="1637" selection-end="1637" vertical-scroll-proportion="-0.85346216" vertical-offset="1055" max-vertical-offset="2340" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/boto/roboto/param.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="8" selection-start="2441" selection-end="2441" vertical-scroll-proportion="0.33333334" vertical-offset="858" max-vertical-offset="2295" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="659" column="6" selection-start="21722" selection-end="21722" vertical-scroll-proportion="0.33333334" vertical-offset="9678" max-vertical-offset="76485" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/getopt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3240" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/boto/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="0" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.31918818" vertical-offset="307" max-vertical-offset="12615" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/boto/pyami/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="143" column="8" selection-start="5467" selection-end="5467" vertical-scroll-proportion="0.31918818" vertical-offset="1927" max-vertical-offset="3480" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="0" selection-start="126" selection-end="126" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/euca2ools-devel-py2.7.egg/euca2ools/commands/eucacommand.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="144" column="0" selection-start="5755" selection-end="5755" vertical-scroll-proportion="1.8376068" vertical-offset="0" max-vertical-offset="9465" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/lib/connector_eucalyptus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="0" selection-start="3443" selection-end="3443" vertical-scroll-proportion="0.6956522" vertical-offset="933" max-vertical-offset="1890" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/boto/regioninfo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="8" selection-start="1255" selection-end="1255" vertical-scroll-proportion="0.3325" vertical-offset="169" max-vertical-offset="1035" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/boto/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1058" column="8" selection-start="43364" selection-end="43364" vertical-scroll-proportion="-0.34419551" vertical-offset="15604" max-vertical-offset="16095" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/boto/ec2/instance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="6" selection-start="3675" selection-end="3675" vertical-scroll-proportion="-1.9242659" vertical-offset="2805" max-vertical-offset="9945" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/boto/ec2/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1260" column="29" selection-start="49124" selection-end="49124" vertical-scroll-proportion="-3.8485804" vertical-offset="20830" max-vertical-offset="51435" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="280" selection-end="280" vertical-scroll-proportion="0.32457495" vertical-offset="0" max-vertical-offset="647" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/openstack_names.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="1" selection-start="1" selection-end="1" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="601" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/connector_eucalyptus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="81" column="25" selection-start="3129" selection-end="3129" vertical-scroll-proportion="0.0" vertical-offset="955" max-vertical-offset="1995" />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/paramiko/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="351" column="8" selection-start="13973" selection-end="13973" vertical-scroll-proportion="-0.035519127" vertical-offset="5066" max-vertical-offset="7860" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scp_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="36" selection-start="1015" selection-end="1015" vertical-scroll-proportion="0.53825134" vertical-offset="146" max-vertical-offset="1140">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/lib/persistance_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="0" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="337" column="0" selection-start="14231" selection-end="14231" vertical-scroll-proportion="0.5253165" vertical-offset="4708" max-vertical-offset="5340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="364" column="0" selection-start="13120" selection-end="13120" vertical-scroll-proportion="0.38291138" vertical-offset="5158" max-vertical-offset="5790">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/connector_okeanos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="49" selection-start="1886" selection-end="1886" vertical-scroll-proportion="-0.66931635" vertical-offset="1201" max-vertical-offset="1830">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/CassandraNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="0" selection-start="1954" selection-end="1954" vertical-scroll-proportion="1.5023848" vertical-offset="0" max-vertical-offset="2145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dropbox/NTUA/Tiramola/cassandra@okeanos/VM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="258" column="0" selection-start="8615" selection-end="8615" vertical-scroll-proportion="0.0" vertical-offset="3571" max-vertical-offset="4455">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CassandraNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="140" column="0" selection-start="4457" selection-end="4457" vertical-scroll-proportion="3.4768212" vertical-offset="0" max-vertical-offset="2190">
+          <folding>
+            <element signature="e#24#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/env_vars.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="41" selection-start="1139" selection-end="1139" vertical-scroll-proportion="-14.375" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/persistance_module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="8" selection-start="1962" selection-end="1977" vertical-scroll-proportion="0.0" vertical-offset="747" max-vertical-offset="1395">
+          <folding>
+            <element signature="e#67#89#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/kill_cassandra.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="10" selection-start="180" selection-end="180" vertical-scroll-proportion="0.12417219" vertical-offset="0" max-vertical-offset="604">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="34" selection-start="878" selection-end="878" vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="930">
+          <folding>
+            <element signature="e#23#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/VM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="45" selection-start="3280" selection-end="3280" vertical-scroll-proportion="0.38245034" vertical-offset="1344" max-vertical-offset="4470">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_vm_class.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="39" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CassandraCluster.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="0" selection-start="5332" selection-end="5332" vertical-scroll-proportion="0.2607313" vertical-offset="2491" max-vertical-offset="3600">
+          <folding>
+            <element signature="e#23#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

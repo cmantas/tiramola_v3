@@ -1,0 +1,72 @@
+{
+  "addresses": {}, 
+  "links": [
+    {
+      "href": "https://cyclades.okeanos.grnet.gr/compute/v2.0/servers/454453", 
+      "rel": "self"
+    }, 
+    {
+      "href": "https://cyclades.okeanos.grnet.gr/compute/v2.0/servers/454453", 
+      "rel": "bookmark"
+    }
+  ], 
+  "image": {
+    "id": "23db255b-6991-40a6-8425-a650e9925948", 
+    "links": [
+      {
+        "href": "https://cyclades.okeanos.grnet.gr/compute/v2.0/images/23db255b-6991-40a6-8425-a650e9925948", 
+        "rel": "self"
+      }, 
+      {
+        "href": "https://cyclades.okeanos.grnet.gr/compute/v2.0/images/23db255b-6991-40a6-8425-a650e9925948", 
+        "rel": "bookmark"
+      }, 
+      {
+        "href": "https://cyclades.okeanos.grnet.gr/image/v1.0/images/23db255b-6991-40a6-8425-a650e9925948", 
+        "rel": "alternate"
+      }
+    ]
+  }, 
+  "suspended": false, 
+  "flavor": {
+    "id": 1, 
+    "links": [
+      {
+        "href": "https://cyclades.okeanos.grnet.gr/compute/v2.0/flavors/1", 
+        "rel": "self"
+      }, 
+      {
+        "href": "https://cyclades.okeanos.grnet.gr/compute/v2.0/flavors/1", 
+        "rel": "bookmark"
+      }
+    ]
+  }, 
+  "id": 454453, 
+  "security_groups": [
+    {
+      "name": "default"
+    }
+  ], 
+  "attachments": [], 
+  "user_id": "51819571-6e2e-429e-8ffe-0f1999acbc1c", 
+  "accessIPv4": "", 
+  "accessIPv6": "", 
+  "progress": 0, 
+  "config_drive": "", 
+  "status": "BUILD", 
+  "updated": "2014-02-14T10:05:58.313640+00:00", 
+  "hostId": "", 
+  "SNF:fqdn": "snf-454453.vm.okeanos.grnet.gr", 
+  "key_name": null, 
+  "name": "1", 
+  "adminPass": "4f7vSUbY3h", 
+  "tenant_id": "51819571-6e2e-429e-8ffe-0f1999acbc1c", 
+  "created": "2014-02-14T10:05:57.202142+00:00", 
+  "SNF:task_state": "BULDING", 
+  "diagnostics": [], 
+  "metadata": {
+    "os": "debian", 
+    "users": "root"
+  }, 
+  "SNF:port_forwarding": {}
+}

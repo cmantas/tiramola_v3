@@ -1,0 +1,47 @@
+
+
+#list the networks on kamaki
+kamaki network list
+
+#attach server to a network on creation
+kamaki server create bla_bla_ --network net_id
+
+#add to /etc/hosts
+# I.P.V.4	host_alias
+
+#remove a dead node
+nodetool removetoken 7d82e630-40cf-4953-8b82-1541f018029b
+
+#removing a live node
+nodetool repair -h -node-to-remove-IP keyspace-name
+nodetool decommission #on the node to be removed
+nodetool removenode node-host-id
+#remove cassandra data
+rm -r /var/lib/cassandra/data/
+
+#if my_ip in bin
+nodetool status | grep $(my_ip) | awk '{print $7}'
+
+#run my custom ycsb - INSERT
+ycsb load cassandra-cql  -P $WORKLOADS/workloada -p host=127.0.0.1 -p port=9042  -s -threads 1 -p recordcount=1000
+
+
+#cleanup
+ycsb run cassandra-cql     -P $WORKLOADS/workload_tiny  -p host=127.0.0.1 -p port=9042     -threads 2  -s 
+
+#sinusoidal
+ycsb run cassandra-cql  -P $WORKLOADS/workload_read  -threads 20  -s  -p sinusoidal=true    -p target=2000 -p offset=500 -p period=240
+
+#just readS
+ycsb run cassandra-cql -P $WORKLOADS/workloada -p maxexecutiontime=100000000 -p host=127.0.0.1 -p port=9042 -threads 4 -p operationcount=1000 -p recordcount=1000 -s
+
+
+#service configuration
+rcconf
+
+############################# ganglia ################################
+ 
+#export rrd (ganglia format) to xml --> incomplete
+rrdtool xport /var/lib/ganglia/rrds/unspecified/snf-254641.vm.okeanos.grnet.gr/cpu_user.rrd
+#send metric with gmetric
+gmetric --name temperature --value 7 --type int16 --units Celcius

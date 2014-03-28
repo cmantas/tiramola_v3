@@ -1,0 +1,10 @@
+kamaki config set cloud.default.url https://accounts.okeanos.grnet.gr/identity/v2.0
+kamaki config set cloud.default.token eESj-pRbtTCzh0o182b0JWhHRWlSYt6S-LpDp7WIZKA
+
+kamaki image list
+kamaki flavor list
+kamaki flavor info 1
+
+kamaki server create --name='test_kamaki_0' --flavor-id=1  --image-id=d77f6f3d-8935-4bae-86b8-48d039106f72 --network=66013
+
+

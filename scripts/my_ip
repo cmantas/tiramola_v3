@@ -1,0 +1,16 @@
+#iisl eth interfaces
+let if_count=($(ifconfig | grep eth | wc -l ))-1
+$my_priv_addr
+for i in $(seq 0 $if_count)
+	do	#look for IPv4 address
+		line=$(ifconfig eth$i | grep "inet addr:")
+		line=$(echo $line | awk '{print $2}')
+		address=$(echo $line | sed 's/addr://g')
+		if [[ "$address" == 10.0.* ]] ;
+		then
+			my_priv_addr=$address
+			break
+		fi
+
+	done
+echo $my_priv_addr

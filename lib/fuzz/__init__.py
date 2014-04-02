@@ -12,9 +12,9 @@ __version__ = (0, 4, 2)
 __all__ = ['iset', 'fset', 'fnumber', 'graph', 'fgraph', 'visualization']
 __name__ = 'fuzz'
 
-from fuzz.iset import *
-from fuzz.fset import *
-from fuzz.fnumber import *
-from fuzz.graph import *
-from fuzz.fgraph import *
-from fuzz.visualization import *
+from lib.fuzz.iset import *
+from lib.fuzz.fset import *
+from lib.fuzz.fnumber import *
+from lib.fuzz.graph import *
+from lib.fuzz.fgraph import *
+from lib.fuzz.visualization import *

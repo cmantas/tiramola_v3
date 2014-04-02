@@ -23,11 +23,11 @@
     "ycsb_run": "scripts/ycsb_run.sh",
     "ycsb_run_sin": "scripts/ycsb_run_sin.sh",
     "cassandra_kill": "scripts/kill_cassandra.sh",
-    "add_nodes": 4,
-    "rem_nodes": 2,
+    "initial_cluster_size": 4,
+    "max_cluster_size": 8,
+    "add_nodes": 1,
+    "rem_nodes": 1,
     "serv_throughput": 3500,
-    "trans_cost": 1,
+    "trans_cost": "0",
     "gain": "(throughput * 0.001) - (num_nodes * 0.3) - (latency * 0.01)"
-
-
 }

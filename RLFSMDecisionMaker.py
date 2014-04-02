@@ -131,7 +131,8 @@ class RLFSMDecisionMaker():
                                  " av. throughput: "+ str(averages['throughput']) +" av. latency: " +
                                  str(averages['latency']))
         return averages
-    
+
+    # uses hierchical clustering
     def getCentroids(self):
         centroids = {}
         for i in range(int(self.utils.initial_cluster_size), int(self.utils.max_cluster_size)+1):

@@ -12,6 +12,7 @@ from time import sleep
 
 LOG_FILENAME = 'files/logs/Coordinator.log'
 
+
 class GParser:
 
     def __init__(self):
@@ -57,15 +58,10 @@ class GParser:
 
 
 class MonitorVms:
-    def __init__(self, cluster):
-        """
-        :param cluster: a dictionary of hostname-->IP
-        :return:
-        """
-        self.cluster = cluster
+    def __init__(self, monitoring_address, monitoring_port=8649):
 
-        self.ganglia_host = cluster["cassandra_seednode"]
-        self.ganglia_port = 8649
+        self.ganglia_host = monitoring_address
+        self.ganglia_port = monitoring_port
 
         ## Install logger
 
@@ -164,7 +160,7 @@ if __name__ == "__main__":
 #
 
     #monVms = MonitorVms(cluster_manager.get_hosts())
-    monVms = MonitorVms({"cassandra_seednode": "83.212.121.246"})
+    monVms = MonitorVms( "83.212.121.246")
 
 
     sleep(5)

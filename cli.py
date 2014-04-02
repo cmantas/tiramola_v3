@@ -121,6 +121,10 @@ def remove_node():
     CassandraCluster.remove_node()
 
 
+def run_coordinator():
+    import Coordinator
+
+
 ############################   MAIN  ################################################
 
 

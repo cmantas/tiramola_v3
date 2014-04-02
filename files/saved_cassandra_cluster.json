@@ -1,0 +1,12 @@
+{
+   "nodes": [
+      "cassandra_node_1"
+   ], 
+   "seeds": [
+      "cassandra_seed_0"
+   ], 
+   "clients": [
+      "cassandra_client_1", 
+      "cassandra_client_2"
+   ]
+}

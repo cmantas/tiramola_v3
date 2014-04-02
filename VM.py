@@ -33,7 +33,7 @@ class VM (object):
             rv = "%s IPv%d: %s" % (self.type, self.version, self.ip)
             return rv
 
-    def __init__(self, name, flavor_id, image_id, create=False, wait=False, log_path=LOGS_DIR):
+    def __init__(self, name, flavor_id, image_id, create=False, wait=False, IPv4=False, log_path=LOGS_DIR):
         """
         VM class constructor
         """
@@ -47,6 +47,7 @@ class VM (object):
         self.log_path = log_path
         self.addresses = []
         self.id = -1
+        self.IPv4 = IPv4
         if create:
             self.create(wait)
 
@@ -84,7 +85,7 @@ class VM (object):
         #start the timer
         timer = Timer()
         timer.start()
-        self.id = iaas.create_vm(self.name, self.flavor_id, self.image_id, LOGS_DIR+"/%s.log" % self.name)
+        self.id = iaas.create_vm(self.name, self.flavor_id, self.image_id, self.IPv4, LOGS_DIR+"/%s.log" % self.name)
         new_status = iaas.get_vm_status(self.id)
         delta = timer.stop()
         print 'VM: IaaS status for "%s" is now %s (took %d sec)' % (self.name, new_status, delta )
@@ -116,7 +117,6 @@ class VM (object):
             text = ''
             text += '========== VM '+self.name+" ===========\n"
             text += "ID: "+str(self.id)+'\n'
-            text += 'host: %s\n' % self.get_host()
             text += "Addresses (%s):" % len(self.addresses)
             for a in self.addresses:
                 text += " [" + str(a) + "],"
@@ -165,7 +165,7 @@ class VM (object):
         """
         Puts a file or a list of files to this VM
         """
-        put_file_scp(self.get_host(), user, files, remote_path, recursive)
+        put_file_scp(self.get_public_addr(), user, files, remote_path, recursive)
 
     def run_files(self, files):
         """
@@ -223,14 +223,19 @@ class VM (object):
         print ("  (took " + str(timer.stop())+" sec)")
         return success
 
-    def get_public_addr(self):
+    def get_public_addr(self, IPv4=False):
         """ Returns a publicly accessible IP address !!! for now, only checks for IPv6+fixed !!!"""
+        rv = None
         if len(self.addresses) == 0:
             self.load_addresses()
         for i in self.addresses:
             if i.type == "fixed" and i.version == 6:
-                return i.ip
-        return None
+                rv = i.ip
+        if IPv4:
+            for i in self.addresses:
+                if i.type == "floating" and i.version == 4:
+                    rv = i.ip
+        return rv
 
     def get_private_addr(self):
         if len(self.addresses) == 0:

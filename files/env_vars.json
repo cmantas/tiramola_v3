@@ -19,6 +19,15 @@
     "cassandra_seednode_bootstrap": "scripts/seednode_bootstrap.sh",
     "cassandra_node_bootstrap": "scripts/regular_node_bootstrap.sh",
     "cassandra_client_bootstrap": "scripts/client_bootstrap.sh",
-    "ganglia_endpoint": "scripts/ganglia_endpoint.sh"
+    "ganglia_endpoint": "scripts/ganglia_endpoint.sh",
+    "initial_cluster_size": 4,
+    "clients_count": 3,
+    "max_cluster_size": 8,
+    "add_nodes": 1,
+    "rem_nodes": 1,
+    "serv_throughput": 3500,
+    "trans_cost": "0",
+    "gain": "(throughput * 0.001) - (num_nodes * 0.3) - (latency * 0.01)",
+    "metric_fetch_interval": 30
 
 }

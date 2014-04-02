@@ -10,6 +10,7 @@ from lib.persistance_module import env_vars
 from scipy.stats import linregress
 from collections import deque
 
+
 class RLDecisionMaker:
     def __init__(self, cluster):
         self.cluster = cluster

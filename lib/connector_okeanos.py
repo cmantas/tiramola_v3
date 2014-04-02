@@ -1,10 +1,7 @@
 __author__ = 'cmantas'
 from kamaki.clients import ClientError
 from kamaki.clients.astakos import AstakosClient
-from kamaki.clients.astakos import getLogger  #not working fuck yeah
-# okeanos bullshit
-#from kamaki.clients.astakos import CachedAstakosClient as AstakosClient
-
+from kamaki.clients.astakos import getLogger
 from kamaki.clients.cyclades import CycladesClient, CycladesNetworkClient
 #http://www.synnefo.org/docs/kamaki/latest/developers/code.html#the-client-api-ref
 from sys import stderr
@@ -62,14 +59,16 @@ def get_addreses(vm_id):
     return rv
 
 
-def create_vm(name, flavor_id, image_id, log_path):
+def create_vm(name, flavor_id, image_id, IPv4, log_path):
     """
     Creates this VM in the okeanos through kamaki
     """
+    networks = [{'uuid': env_vars['cassandra_network_id']}]
+    if IPv4: networks.append({'uuid': 5639})
+
     try:
-        net_id = env_vars['cassandra_network_id']
         my_dict = cyclades_client.create_server(name, flavor_id, image_id, personality=personality('root'),
-                                                networks=[{'uuid': net_id}])
+                                                networks=networks)
         vm_id = my_dict['id']
 
     except ClientError:

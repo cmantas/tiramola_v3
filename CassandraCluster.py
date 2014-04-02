@@ -30,7 +30,7 @@ def create_cluster(worker_count=0, client_count=0):
     :param worker_count: the number of the nodes to create-apart from the seednode
     """
     #create the seed node
-    seeds.append(Node(cluster_name, node_type="seed", number=0, create=True))
+    seeds.append(Node(cluster_name, node_type="seed", number=0, create=True, IPv4=True))
     #create the rest of the nodes
     for i in range(worker_count):
         name = cluster_name+str(len(nodes)+1)
@@ -38,10 +38,10 @@ def create_cluster(worker_count=0, client_count=0):
     for i in range(client_count):
         clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True))
     #wait until everybody is ready
+    save_cluster()
     wait_everybody()
     inject_hosts_files()
     print "CLUSTER: Every node is ready for SSH"
-    save_cluster()
 
 
 def wait_everybody():
@@ -156,7 +156,7 @@ def inject_hosts_files():
     orchestrator.run_command("service ganglia-monitor restart; service gmetad restart")
 
 
-def find_orhcestrator():
+def find_orchestrator():
     """
     Uses the firs VM whose name includes 'orchestrator' as an orchestrator for the cluster
     :return:
@@ -169,7 +169,7 @@ def find_orhcestrator():
             return
 
 
-def add_node():
+def add_node_sync():
     """
     Adds a node to the cassandra cluster. Refreshes the hosts in all nodes
     :return:
@@ -269,12 +269,25 @@ def get_hosts(include_clients=False, string=False, private=False):
     return hosts
 
 
+def exists():
+    if len(seeds+nodes) == 0:
+        return False
+    else:
+        return True
+
+
+def get_monitoring_endpoint():
+    """
+    returns the IP of the node that has gmetad
+    """
+    return seeds[0].get_public_addr(IPv4=True)
+
 
 #=============================== MAIN ==========================
 
 
 ################ INIT actions ###########
-find_orhcestrator()
+find_orchestrator()
 resume_cluster()
 ########################################
 

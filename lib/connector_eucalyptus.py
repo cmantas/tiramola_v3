@@ -57,7 +57,7 @@ def describe_instances(instance_ids=None, state=None):
     return instances
 
 
-def create_vm(name, flavor_id, image_id, log_path):
+def create_vm(name, flavor_id, image_id, IPv4, log_path):
         responce = euca_connection.run_instances(image_id=image_id, instance_type=flavor_id, additional_info=name,
                                                  key_name=ec2_key_name)
         print responce

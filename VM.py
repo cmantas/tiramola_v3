@@ -19,7 +19,7 @@ LOGS_DIR = "files/VM_logs"
 ATTEMPT_INTERVAL = 2
 
 
-class VM:
+class VM (object):
     class Address:
         """
         Helper class that represents an IP address
@@ -67,7 +67,7 @@ class VM:
         self.name = in_dict['name']
         self.id = in_dict['id']
 
-    def create(self, wait):
+    def create(self, wait=False):
         print ("VM: creating '"+self.name+"'"),
         if wait:
             print "(sync)"
@@ -142,7 +142,6 @@ class VM:
         """ creates a VM instance from the VM id """
         vm_dict = iaas.get_vm_details(vm_id)
         return VM.vm_from_dict(vm_dict)
-
 
     def get_cloud_status(self):
         return iaas.get_vm_status(self.id)
@@ -234,23 +233,12 @@ class VM:
         return None
 
     def get_private_addr(self):
+        if len(self.addresses) == 0:
+            self.load_addresses()
         #find fixed ip
         for i in self.addresses:
             if i.version == 4 and i.type == "fixed":
                 return i.ip
-
-    def inject_hostnames(self, hostnames):
-        #add some default hostnames
-        hostnames["localhost"] = "127.0.0.1"
-        hostnames["ip6-localhost ip6-loopback"] = "::1"
-        hostnames["ip6-localnet"] = "fe00::0"
-        hostnames["ip6-mcastprefix"] = "ff00::0"
-        hostnames["ip6-allnodes"] = "ff02::1"
-        hostnames["ip6-allrouters"] = "ff02::2"
-        text=""
-        for host in hostnames.keys():
-            text += "\n%s %s" % (hostnames[host], host)
-        self.run_command("echo '## AUTO GENERATED #### \n%s' > /etc/hosts; echo %s >/etc/hostname" % (text, self.name), silent=True)
 
 
 def get_all_vms(check_active=False):

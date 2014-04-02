@@ -9,6 +9,7 @@ from datetime import datetime
 
 ENV_VARS_FILE = 'files/env_vars.json'
 OPENSTACK_NAMES_FILE = 'files/openstack_names.json'
+SCRIPTS_FILE = 'files/scripts.json'
 
 db_file = "files/persistance.db"
 
@@ -82,8 +83,12 @@ def store_openstack_name(vm_id, name):
         json.dump(openstack_names, outfile, indent=3)
 
 
-def get_script_text(name):
-    filename = env_vars[name]
-    file = open(filename, 'r')
-    return file.read()+"\n"
+def get_script_text(node_type, script_type):
+    scripts = json.loads(open(SCRIPTS_FILE, 'r').read())
+    try:
+        filename = scripts[node_type+"_"+script_type]
+        file = open(filename, 'r')
+        return file.read()+"\n"
+    except KeyError:
+        return ""
 

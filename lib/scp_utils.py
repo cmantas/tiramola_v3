@@ -8,10 +8,10 @@ from socket import error as socketError
 sys.path.append('lib/scp.py')
 from lib.scp import SCPClient
 from datetime import datetime, timedelta
-from time import sleep, time
+from persistance_module import env_vars
 
 ssh_timeout = 10
-ssh_giveup_timeout = 600
+ssh_giveup_timeout = env_vars['ssh_giveup_timeout']
 
 priv_key_path = 'keys/just_a_key'
 

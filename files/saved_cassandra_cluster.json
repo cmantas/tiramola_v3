@@ -1,12 +1,16 @@
 {
    "nodes": [
-      "cassandra_node_1"
+      "cassandra_node_1", 
+      "cassandra_node_2", 
+      "cassandra_node_3", 
+      "cassandra_node_4"
    ], 
    "seeds": [
       "cassandra_seed_0"
    ], 
+   "stash": [], 
    "clients": [
-      "cassandra_client_1", 
-      "cassandra_client_2"
+      "cassandra_client_2", 
+      "cassandra_client_1"
    ]
 }

@@ -34,7 +34,7 @@ def create_cluster(worker_count=0, client_count=0):
     #create the rest of the nodes
     for i in range(worker_count):
         name = cluster_name+str(len(nodes)+1)
-        nodes.append(Node(cluster_name, node_type="node", number=len(clients)+1, create=True))
+        nodes.append(Node(cluster_name, node_type="node", number=len(nodes)+1, create=True))
     for i in range(client_count):
         clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True))
     #wait until everybody is ready
@@ -78,8 +78,10 @@ def resume_cluster():
     saved_nodes = saved_cluster['nodes']
     saved_clients = saved_cluster['clients']
     saved_seeds = saved_cluster['seeds']
+    saved_stash = saved_cluster['stash']
     nodes[:] = []
     seeds[:] = []
+
     in_nodes = Node.get_all_nodes(cluster_name=cluster_name, check_active=True)
     #check that all saved nodes actually exist and exit if not remove
     to_remove = []
@@ -90,6 +92,8 @@ def resume_cluster():
             exit(-1)
     for n in in_nodes:
         if n.name not in saved_nodes+saved_seeds+saved_clients:
+            if n.name in saved_stash:
+                stash.append(n)
             continue
         else:
             if n.type == "seed": seeds.append(n)
@@ -106,6 +110,7 @@ def save_cluster():
     cluster["seeds"] = [s.name for s in seeds]
     cluster["nodes"] = [n.name for n in nodes]
     cluster["clients"] = [c.name for c in clients]
+    cluster["stash"] = [c.name for c in stash]
     string = dumps(cluster, indent=3)
     f = open(save_file, 'w+')
     f.write(string)
@@ -152,8 +157,8 @@ def inject_hosts_files():
     orchestrator.inject_hostnames(hosts)
     for i in seeds+nodes+clients:
         i.inject_hostnames(hosts)
-    seeds[0].run_command("service ganglia-monitor restart; service gmetad restart")
-    orchestrator.run_command("service ganglia-monitor restart; service gmetad restart")
+    seeds[0].run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
+    orchestrator.run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
 
 
 def find_orchestrator():
@@ -169,38 +174,47 @@ def find_orchestrator():
             return
 
 
-def add_node_sync():
+def add_nodes(count=1):
     """
     Adds a node to the cassandra cluster. Refreshes the hosts in all nodes
     :return:
     """
-    print "CLUSTER: Adding node cassandra_node_%d" % str(len(nodes)+1)
-    if not len(stash) == 0:
-        new_guy = stash[0]
-        del stash[0]
-    else:
-        new_guy = Node(cluster_name, str(len(nodes)+1), create=True)
-    nodes.append(new_guy)
-    new_guy.wait_ready()
-    #inject host files to everybody
+    print "CLUSTER: Adding %d nodes" % (count)
+    new_nodes = []
+    for i in range(count):
+        if not len(stash) == 0:
+            new_guy = stash.pop(0)
+            print "CLUSTER: Using %s from my stash" % new_guy.name
+        else:
+            new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
+        nodes.append(new_guy)
+        new_nodes.append(new_guy)
+        save_cluster()
+    for n in new_nodes:
+        n.wait_ready()
+        #inject host files to everybody
+        n.inject_hostnames(get_hosts(private=True))
+        n.bootstrap()
+        print "CLUSTER: Node %s is live " % new_guy.name
+    #inform all
     inject_hosts_files()
-    new_guy.bootstrap()
-    print "CLUSTER: Node %s is live " % (new_guy.name)
-    save_cluster()
 
 
-def remove_node():
+def remove_nodes(count=1):
     """
     Removes a node from the cassandra cluster. Refreshes the hosts in all nodes
     :return:
     """
-    dead_guy = nodes[-1]
-    print "CLUSTER: Removing node %s" % dead_guy.name
-    dead_guy.decommission()
-    stash[:] = [nodes.pop()] + stash
+    action = env_vars['decommission_action']
+    for i in range(count):
+        dead_guy = nodes.pop()
+        print "CLUSTER: Removing node %s" % dead_guy.name
+        dead_guy.decommission()
+        if action == "KEEP":
+            stash[:] = [dead_guy] + stash
+        print "CLUSTER: Node %s is removed" % dead_guy.name
+        save_cluster()
     inject_hosts_files()
-    print "CLUSTER: Node %s is removed" % dead_guy.name
-    save_cluster()
 
 
 def run_load_phase(record_count):
@@ -245,7 +259,7 @@ def destroy_all():
     """
     Destroys all the VMs in the cluster (not the orchestrator)
     """
-    for n in seeds+nodes+stash+clients:
+    for n in seeds+nodes+clients+stash:
         n.destroy()
     remove(save_file)
 
@@ -266,6 +280,10 @@ def get_hosts(include_clients=False, string=False, private=False):
             hosts[i.name] = i.get_private_addr()
         else:
             hosts[i.name] = i.get_public_addr()
+    if private:
+        hosts['cassandra_seednode'] = seeds[0].get_private_addr()
+    else:
+        hosts['cassandra_seednode'] = seeds[0].get_public_addr()
     return hosts
 
 

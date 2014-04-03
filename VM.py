@@ -2,10 +2,13 @@ __author__ = 'cmantas'
 from sys import stderr
 from os.path import exists
 from os import mkdir
-from scp_utils import *
+from time import time, sleep
 import ntpath
 import thread
+
+from lib.scp_utils import *
 from lib.persistance_module import env_vars
+
 
 #choose the IaaS provider
 infrastructure = env_vars['iaas']

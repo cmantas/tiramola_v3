@@ -29,8 +29,8 @@ tiramola create_cluster nodes=2 clients=2
 tiramola bootstrap_cluster
 tiramola load_data records=100000
 tiramola run_sinusoid target=100 offset=80 period=60
-tiramola add_node
-tiramola remove_node
+tiramola add_nodes [count=2]
+tiramola remove_nodes [count=2]
 tiramola kill_workload
 tiramola kill_nodes
 tiramola destroy_all
@@ -111,14 +111,22 @@ def private_hosts():
     print rv
 
 
-def add_node():
+def add_nodes():
+    if "count" in args.keys():
+        count = int(args['count'])
+    else:
+        count = 1;
     import CassandraCluster
-    CassandraCluster.add_node()
+    CassandraCluster.add_nodes(count)
 
 
-def remove_node():
+def remove_nodes():
+    if "count" in args.keys():
+        count = int(args['count'])
+    else:
+        count = 1;
     import CassandraCluster
-    CassandraCluster.remove_node()
+    CassandraCluster.remove_nodes(count)
 
 
 def run_coordinator():

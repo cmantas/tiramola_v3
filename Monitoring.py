@@ -47,7 +47,7 @@ class GParser:
             self.currhostname = attrs["NAME"]
             #print "molis mpika sto node me dns " , self.currhostname
 
-        elif self.inhost==1 and name == "METRIC": # and attrs["NAME"]==self.metric:
+        elif self.inhost == 1 and name == "METRIC": # and attrs["NAME"]==self.metric:
             #print "attrname: " , attrs["NAME"] , " attr value: " , attrs["VAL"]
             self.allmetrics[self.currhostname][attrs["NAME"]] = attrs["VAL"]
 

@@ -4,7 +4,7 @@ import CassandraCluster as Cluster
 from lib.persistance_module import env_vars
 from time import sleep
 from Monitoring import MonitorVms
-
+from new_decision_module import RLDecisionMaker as DM
 
 ####### Variables  ###############
 initial_cluster_size = env_vars["initial_cluster_size"]
@@ -16,7 +16,7 @@ metrics_interval = env_vars["metric_fetch_interval"]
 
 #check if cluster exists and create it if not
 if Cluster.exists():
-    print "Cluster exists \n %s" % str(Cluster.get_hosts())
+    print "Cluster exists"
 else:
     # Cluster.create_cluster(initial_cluster_size-1, clients_count)
     # Cluster.bootstrap_cluster()
@@ -25,15 +25,14 @@ else:
 #get the endpoint for the monitoring system
 monitoring_endpoint = Cluster.get_monitoring_endpoint()
 #refresh metrics
-monVms = MonitorVms("snf-490086.vm.okeanos.grnet.gr")
+monVms = MonitorVms(monitoring_endpoint)
 
-
+decision_module = DM(monitoring_endpoint, Cluster.node_count())
 
 
 while True:
 # main loop that fetches metric and takes decisions
     sleep(metrics_interval)
     allmetrics = monVms.refreshMetrics()
-    # decision = dm.take_decision(allmetrics)
-    # enforce(decision)
-    print "allmetrics length ", len(allmetrics)
+    decision = decision_module.take_decision(allmetrics)
+    print decision

@@ -33,10 +33,12 @@ def create_cluster(worker_count=0, client_count=0):
     seeds.append(Node(cluster_name, node_type="seed", number=0, create=True, IPv4=True))
     #create the rest of the nodes
     for i in range(worker_count):
-        name = cluster_name+str(len(nodes)+1)
         nodes.append(Node(cluster_name, node_type="node", number=len(nodes)+1, create=True))
     for i in range(client_count):
-        clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True))
+        if i==0:
+            clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True))
+        else:
+            clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True, IPv4=True))
     #wait until everybody is ready
     save_cluster()
     wait_everybody()
@@ -287,6 +289,10 @@ def get_hosts(include_clients=False, string=False, private=False):
     return hosts
 
 
+def node_count():
+    return len(seeds+nodes)
+
+
 def exists():
     if len(seeds+nodes) == 0:
         return False
@@ -296,9 +302,12 @@ def exists():
 
 def get_monitoring_endpoint():
     """
-    returns the IP of the node that has gmetad
+    returns the IP of the node that has the monitoring data we want
     """
-    return seeds[0].get_public_addr(IPv4=True)
+    for c in clients:
+        if c.name != "cassandra_client_1":
+            continue
+        return c.get_public_addr(IPv4=True)
 
 
 #=============================== MAIN ==========================

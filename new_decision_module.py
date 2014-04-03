@@ -12,13 +12,10 @@ from collections import deque
 
 
 class RLDecisionMaker:
-    def __init__(self, cluster):
-        self.cluster = cluster
-        self.debug = True
-        if self.debug:
-            self.currentState = cluster
-        else:
-            self.currentState = len(CassandraCluster.get_hosts())
+    def __init__(self, monitoring_endpoint, cluster_size=0):
+        self.monitoring_endpoint = monitoring_endpoint
+        self.debug = False
+        self.currentState = cluster_size
         self.nextState = self.currentState
         self.waitForIt = 10
 
@@ -313,9 +310,9 @@ class RLDecisionMaker:
 
                 # Publish measurements to ganglia ?? HELP ??
                 try:
-                    os.system("gmetric -n ycsb_inlambda -v "+ str(allmetrics['inlambda'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.cluster["cassandra_seednode"]) +":cassandra_seednode")
-                    os.system("gmetric -n ycsb_throughput -v "+ str(allmetrics['throughput'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.cluster["cassandra_seednode"]) +":cassandra_seednode")
-                    os.system("gmetric -n ycsb_latency -v "+ str(allmetrics['latency']) + " -d 15 -t float -u ms -S " +  str(self.cluster["cassandra_seednode"]) +":cassandra_seednode")
+                    os.system("gmetric -n ycsb_inlambda -v "+ str(allmetrics['inlambda'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.monitoring_endpoint) + "")
+                    os.system("gmetric -n ycsb_throughput -v "+ str(allmetrics['throughput'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.monitoring_endpoint) + "")
+                    os.system("gmetric -n ycsb_latency -v "+ str(allmetrics['latency']) + " -d 15 -t float -u ms -S " +  str(self.monitoring_endpoint) + "")
                 except:
                     pass
 

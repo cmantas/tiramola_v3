@@ -76,15 +76,13 @@ class MonitorVms:
         self.parser = GParser()
         # initialize parser object. in the refreshMetrics function call the .parse of the
         # parser to update the dictionary object.
-        print str(self.refreshMetrics())
+        self.refreshMetrics()
 
     def refreshMetrics(self):
         """
         runs periodically and refreshes the metrics
         :return:
         """
-
-        print "connetcting to %s %s" % (self.ganglia_host, self.ganglia_port)
         for res in socket.getaddrinfo(self.ganglia_host, self.ganglia_port, socket.AF_UNSPEC, socket.SOCK_STREAM):
             af, socktype, proto, canonname, sa = res
             try:

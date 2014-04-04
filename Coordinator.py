@@ -12,6 +12,16 @@ clients_count = env_vars["clients_count"]
 metrics_interval = env_vars["metric_fetch_interval"]
 
 
+def implement_decision():
+    action = decision["action"]
+    count = decision['count']
+    if action == "ADD":
+        print "will add nodes"
+    elif action == "REMOVE":
+        print "will remove nodes"
+    elif action == "PASS":
+        print "doing nothing"
+
 
 
 #check if cluster exists and create it if not
@@ -36,3 +46,4 @@ while True:
     allmetrics = monVms.refreshMetrics()
     decision = decision_module.take_decision(allmetrics)
     print decision
+    implement_decision(decision)

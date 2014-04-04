@@ -18,6 +18,7 @@ class RLDecisionMaker:
         self.currentState = cluster_size
         self.nextState = self.currentState
         self.waitForIt = 10
+        self.pending_action = None
 
         # The policy for getting throughput and latency when computing the reward func.
         # average, centroid
@@ -285,20 +286,21 @@ class RLDecisionMaker:
                 ## Aggreggation of YCSB client metrics
                 clients = 0
                 # We used to collect server cpu too, do we need it?
-                for host in allmetrics.values():
-                    if isinstance(host, dict):
-                        for key in host.keys():
-                            if key.startswith('ycsb_LAMDA'):
-                                allmetrics['inlambda'] += float(host[key])
+                for host in allmetrics.keys():
+                    metric = allmetrics[host]
+                    if isinstance(metric, dict):
+                        for key in metric.keys():
+                            if key.startswith('ycsb_TARGET'):
+                                allmetrics['inlambda'] += float(metric[key])
                             if key.startswith('ycsb_THROUGHPUT'):
-                                allmetrics['throughput'] += float(host[key])
+                                allmetrics['throughput'] += float(metric[key])
                             if key.startswith('ycsb_READ') or key.startswith('ycsb_UPDATE') or key.startswith('ycsb_RMW') or key.startswith('ycsb_INSERT'):
-                                allmetrics['latency'] += float(host[key])
+                                allmetrics['latency'] += float(metric[key])
                                 #self.my_logger.debug("Latency : "+ str(host[key]) +" collected from client: "+ str(key)
                                 #                     +" latency so far: "+ str(allmetrics['latency']))
-                                if host[key] > 0:
+                                if metric[key] > 0:
                                     clients += 1
-                            self.my_logger.debug("Collecting metrics of host: " + str(host))
+                        self.my_logger.debug("Collecting metrics of  host: " + host)
                 try:
                     allmetrics['latency'] = allmetrics['latency'] / clients
                     #self.my_logger.debug("Final latency for this measurement: "+ str(allmetrics['latency']) +" by "
@@ -310,9 +312,9 @@ class RLDecisionMaker:
 
                 # Publish measurements to ganglia ?? HELP ??
                 try:
-                    os.system("gmetric -n ycsb_inlambda -v "+ str(allmetrics['inlambda'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.monitoring_endpoint) + "")
-                    os.system("gmetric -n ycsb_throughput -v "+ str(allmetrics['throughput'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.monitoring_endpoint) + "")
-                    os.system("gmetric -n ycsb_latency -v "+ str(allmetrics['latency']) + " -d 15 -t float -u ms -S " +  str(self.monitoring_endpoint) + "")
+                    os.system("gmetric -n ycsb_inlambda -v "+ str(allmetrics['inlambda'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.monitoring_endpoint) + ":[DEBUG] hostname")
+                    os.system("gmetric -n ycsb_throughput -v "+ str(allmetrics['throughput'])+" -d 15 -t float -u 'reqs/sec' -S "+ str(self.monitoring_endpoint) + ":[DEBUG] hostname")
+                    os.system("gmetric -n ycsb_latency -v "+ str(allmetrics['latency']) + " -d 15 -t float -u ms -S " +  str(self.monitoring_endpoint) + ":[DEBUG] hostname")
                 except:
                     pass
 

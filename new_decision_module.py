@@ -1,6 +1,5 @@
 __author__ = 'tiramola group'
 
-import CassandraCluster
 import os, logging, datetime, operator, thread, math, random, itertools, time
 import logging.handlers as handlers
 import numpy as np
@@ -17,7 +16,7 @@ class RLDecisionMaker:
         self.debug = False
         self.currentState = cluster_size
         self.nextState = self.currentState
-        self.waitForIt = 10
+        self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         self.pending_action = None
         self.decision = {"action": "PASS", "count": 0}
 
@@ -34,7 +33,7 @@ class RLDecisionMaker:
         # A dictionary that will remember rewards and metrics in states previously visited
         self.memory = {}
 
-        for i in range(env_vars["initial_cluster_size"], env_vars["max_cluster_size"] + 1):
+        for i in range(env_vars["min_cluster_size"], env_vars["max_cluster_size"] + 1):
             self.memory[str(i)] = {}
             #self.memory[str(i)]['V'] = None # placeholder for rewards and metrics
             self.memory[str(i)]['r'] = None
@@ -290,6 +289,7 @@ class RLDecisionMaker:
             ## Aggreggation of YCSB client metrics
             clients = 0
             # We used to collect server cpu too, do we need it?
+            self.my_logger.debug("Collecting metrics")
             for host in allmetrics.keys():
                 metric = allmetrics[host]
                 if isinstance(metric, dict):
@@ -305,7 +305,6 @@ class RLDecisionMaker:
                             #                     +" latency so far: "+ str(allmetrics['latency']))
                             if metric[key] > 0:
                                 clients += 1
-                    self.my_logger.debug("Collecting metrics of  host: " + host)
             try:
                 allmetrics['latency'] = allmetrics['latency'] / clients
                 #self.my_logger.debug("Final latency for this measurement: "+ str(allmetrics['latency']) +" by "
@@ -383,12 +382,13 @@ class RLDecisionMaker:
                               datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")], True)
 
         if self.waitForIt == 0:
-            self.waitForIt = 10
+            self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         else:
-            self.my_logger.debug("New decision in " + str(float(self.waitForIt / 2)) + " mins, see you later!")
-            self.waitForIt = self.waitForIt - 1
-
-            return True
+            self.my_logger.debug("New decision in " + str(float(self.waitForIt)/ 2) + " mins, see you later!")
+            self.waitForIt -= 1
+            self.decision["action"] = "PASS"
+            self.decision["count"] = 0
+            return self.decision
 
         # Select values close to the current throughtput, define tha lambda range we're interested in -+ 5%
         #from_inlambda = 0.95 * allmetrics['inlambda']
@@ -415,7 +415,7 @@ class RLDecisionMaker:
 
 
         # The subgraph we are interested in. It contains only the allowed transitions from the current state.
-        from_node = max(int(env_vars["initial_cluster_size"]), (self.currentState - env_vars["rem_nodes"]))
+        from_node = max(int(env_vars["min_cluster_size"]), (self.currentState - env_vars["rem_nodes"]))
         to_node = min(self.currentState + int(env_vars["add_nodes"]), int(env_vars["max_cluster_size"]))
         #self.my_logger.debug("TAKEDECISION creating graph from node: "+ str(from_node) +" to node "+ str(to_node))
 
@@ -472,7 +472,7 @@ class RLDecisionMaker:
                 self.my_logger.debug(
                     "TAKEDECISION connecting state " + str(self.currentState) + " with state " + str(j))
                 # Connect nodes with allowed transitions from node j.
-                #for k in range(max(int(env_vars["initial_cluster_size"]), j - int(env_vars["rem_nodes"])),
+                #for k in range(max(int(env_vars["min_cluster_size"]), j - int(env_vars["rem_nodes"])),
                 #               min(j + int(env_vars["add_nodes"]), int(env_vars["max_cluster_size"])+1)):
                 #    if k != j:
                 #        self.my_logger.debug("TAKEDECISION connecting state "+ str(j) +" with state "+ str(k))
@@ -559,8 +559,8 @@ class RLDecisionMaker:
         elif self.nextState < self.currentState:
             self.decision["action"] = "REMOVE"
 
-        self.decision["count"] = abs(self.currentState - self.nextState)
-        self.my_logger.debug("TAKEDECISION: action " + self.decision["action"] + " " + self.decision["count"] +
+        self.decision["count"] = abs(int(self.currentState) - int(self.nextState))
+        self.my_logger.debug("TAKEDECISION: action " + self.decision["action"] + " " + str(self.decision["count"]) +
                              " nodes.")
 
         ## Don't perform the action if we're debugging/simulating!!!

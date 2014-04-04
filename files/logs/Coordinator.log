@@ -2,3 +2,1826 @@
 2014-04-04 11:52:47,943 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
 2014-04-04 11:52:47,943 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
 2014-04-04 11:52:47,953 - DEBUG - RLDecisionMaker - New decision in 10 mins, see you later!
+2014-04-04 13:38:46,236 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:38:46,237 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:38:46,237 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:38:46,237 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:38:46,251 - DEBUG - RLDecisionMaker - New decision in 10.0 mins, see you later!
+2014-04-04 13:40:21,889 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:40:21,889 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:40:21,894 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:40:21,894 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:40:21,904 - DEBUG - RLDecisionMaker - New decision in 10.0 mins, see you later!
+2014-04-04 13:42:04,023 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:42:04,023 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:42:04,023 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:42:04,024 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:42:04,033 - DEBUG - RLDecisionMaker - New decision in 10.0 mins, see you later!
+2014-04-04 13:42:34,058 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:42:34,059 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:42:34,059 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:42:34,059 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:42:34,069 - DEBUG - RLDecisionMaker - New decision in 9.0 mins, see you later!
+2014-04-04 13:43:04,123 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:43:04,123 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:43:04,123 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:43:04,123 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:43:04,133 - DEBUG - RLDecisionMaker - New decision in 9.0 mins, see you later!
+2014-04-04 13:43:34,169 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:43:34,170 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:43:34,170 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:43:34,170 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:43:34,181 - DEBUG - RLDecisionMaker - New decision in 8.0 mins, see you later!
+2014-04-04 13:44:04,213 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:44:04,213 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:44:04,213 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:44:04,213 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:44:04,222 - DEBUG - RLDecisionMaker - New decision in 8.0 mins, see you later!
+2014-04-04 13:44:34,269 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:44:34,269 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:44:34,269 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:44:34,269 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:44:34,278 - DEBUG - RLDecisionMaker - New decision in 7.0 mins, see you later!
+2014-04-04 13:45:04,299 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:45:04,299 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:45:04,299 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:45:04,299 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:45:04,309 - DEBUG - RLDecisionMaker - New decision in 7.0 mins, see you later!
+2014-04-04 13:45:34,347 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:45:34,347 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:45:34,348 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:45:34,348 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:45:34,358 - DEBUG - RLDecisionMaker - New decision in 6.0 mins, see you later!
+2014-04-04 13:46:04,404 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:46:04,404 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:46:04,405 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:46:04,405 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:46:04,414 - DEBUG - RLDecisionMaker - New decision in 6.0 mins, see you later!
+2014-04-04 13:46:34,677 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:46:34,677 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:46:34,677 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:46:34,677 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:46:34,686 - DEBUG - RLDecisionMaker - New decision in 5.0 mins, see you later!
+2014-04-04 13:47:04,704 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:47:04,704 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:47:04,704 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:47:04,704 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:47:04,714 - DEBUG - RLDecisionMaker - New decision in 5.0 mins, see you later!
+2014-04-04 13:47:34,763 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:47:34,764 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:47:34,764 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:47:34,764 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:47:34,773 - DEBUG - RLDecisionMaker - New decision in 4.0 mins, see you later!
+2014-04-04 13:48:04,803 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:48:04,804 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:48:04,804 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:48:04,804 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:48:04,813 - DEBUG - RLDecisionMaker - New decision in 4.0 mins, see you later!
+2014-04-04 13:48:34,822 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:48:34,822 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:48:34,822 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:48:34,823 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:48:34,833 - DEBUG - RLDecisionMaker - New decision in 3.0 mins, see you later!
+2014-04-04 13:49:04,859 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:49:04,859 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:49:04,859 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:49:04,860 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:49:04,869 - DEBUG - RLDecisionMaker - New decision in 3.0 mins, see you later!
+2014-04-04 13:49:34,882 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:49:34,882 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:49:34,882 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:49:34,882 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:49:34,891 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+2014-04-04 13:50:04,912 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:50:04,912 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:50:04,912 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:50:04,913 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:50:04,923 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+2014-04-04 13:50:34,967 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:50:34,967 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:50:34,967 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:50:34,967 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:50:34,977 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+2014-04-04 13:51:05,008 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:51:05,008 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:51:05,008 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:51:05,008 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:51:05,018 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+2014-04-04 13:51:35,036 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:51:35,036 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:51:35,036 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:51:35,036 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:51:35,046 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+2014-04-04 13:52:05,079 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:52:05,079 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:52:05,079 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:52:05,079 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:52:05,089 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 2637.60370531 lambda range: -362.396294692 - 5637.60370531
+2014-04-04 13:52:05,089 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 23
+2014-04-04 13:52:05,089 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 23
+2014-04-04 13:52:05,095 - DEBUG - RLDecisionMaker - TAKEDECISION state 4 current reward : 4 training set reward: 4
+2014-04-04 13:52:05,095 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 4 with gain 4
+2014-04-04 13:52:05,095 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 1
+2014-04-04 13:52:05,095 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 13:52:05,096 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 13:52:05,096 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 4 with state 5
+2014-04-04 13:52:05,096 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4}, max V = 4 V[4] 4
+2014-04-04 13:52:05,096 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4, 5: 5}, max V = 5 V[5] 5
+2014-04-04 13:52:05,096 - DEBUG - RLDecisionMaker - Decided to change state to_next: 5 from_curr: 4
+2014-04-04 13:55:28,006 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:55:28,007 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:55:28,007 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:55:28,007 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:55:28,016 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+2014-04-04 13:55:58,055 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:55:58,055 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:55:58,055 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:55:58,055 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:55:58,064 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+2014-04-04 13:56:28,106 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 13:56:28,106 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 13:56:28,107 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 13:56:28,107 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 13:56:28,116 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3054.17564717 lambda range: 54.1756471692 - 6054.17564717
+2014-04-04 13:56:28,116 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 26
+2014-04-04 13:56:28,117 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 26
+2014-04-04 13:56:28,118 - DEBUG - RLDecisionMaker - TAKEDECISION state 4 current reward : 4 training set reward: 4
+2014-04-04 13:56:28,118 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 4 with gain 4
+2014-04-04 13:56:28,118 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 1
+2014-04-04 13:56:28,118 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 13:56:28,119 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 13:56:28,119 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 4 with state 5
+2014-04-04 13:56:28,119 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4}, max V = 4 V[4] 4
+2014-04-04 13:56:28,119 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4, 5: 5}, max V = 5 V[5] 5
+2014-04-04 13:56:28,119 - DEBUG - RLDecisionMaker - Decided to change state to_next: 5 from_curr: 4
+2014-04-04 14:02:10,756 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:02:10,756 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:02:10,756 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:02:10,756 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:02:10,766 - DEBUG - RLDecisionMaker - New decision in 4.0 mins, see you later!
+2014-04-04 14:02:40,801 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:02:40,801 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:02:40,801 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:02:40,802 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:02:40,811 - DEBUG - RLDecisionMaker - New decision in 3.0 mins, see you later!
+2014-04-04 14:03:10,845 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:03:10,846 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:03:10,846 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:03:10,846 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:03:10,856 - DEBUG - RLDecisionMaker - New decision in 3.0 mins, see you later!
+2014-04-04 14:03:40,892 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:03:40,892 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:03:40,892 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:03:40,893 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:03:40,902 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+2014-04-04 14:04:10,934 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:04:10,935 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:04:10,935 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:04:10,935 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:04:10,944 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+2014-04-04 14:04:40,953 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:04:40,954 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:04:40,954 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:04:40,954 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:04:40,965 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+2014-04-04 14:05:10,980 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:05:10,980 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:05:10,980 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:05:10,980 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:05:10,990 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+2014-04-04 14:05:41,011 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:05:41,011 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:05:41,012 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:05:41,012 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:05:41,022 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+2014-04-04 14:06:11,035 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:06:11,035 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:06:11,036 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:06:11,036 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:06:11,045 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 714.020978598 lambda range: -2285.9790214 - 3714.0209786
+2014-04-04 14:06:11,045 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 35
+2014-04-04 14:06:11,046 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 34
+2014-04-04 14:06:11,047 - DEBUG - RLDecisionMaker - TAKEDECISION state 4 current reward : 4 training set reward: 4
+2014-04-04 14:06:11,047 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 4 with gain 4
+2014-04-04 14:06:11,047 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 1
+2014-04-04 14:06:11,047 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 14:06:11,048 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 14:06:11,048 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 4 with state 5
+2014-04-04 14:06:11,048 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4}, max V = 4 V[4] 4
+2014-04-04 14:06:11,048 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4, 5: 5}, max V = 5 V[5] 5
+2014-04-04 14:06:11,048 - DEBUG - RLDecisionMaker - Decided to change state to_next: 5 from_curr: 4
+2014-04-04 14:06:11,048 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+2014-04-04 14:06:41,081 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:06:41,081 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:06:41,081 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:06:41,081 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:06:41,091 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : Cluster exists
+2014-04-04 14:14:55,849 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:14:55,850 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:14:55,850 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:14:55,850 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:14:55,859 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:15:25,871 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:15:25,871 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:15:25,872 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:15:25,872 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:15:25,881 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:15:55,900 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:15:55,900 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:15:55,900 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:15:55,900 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:15:55,910 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:16:25,936 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:16:25,936 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:16:25,936 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:16:25,936 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:16:25,946 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:16:55,970 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:16:55,971 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:16:55,971 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:16:55,971 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:16:55,980 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3769.86042893 lambda range: 769.86042893 - 6769.86042893
+2014-04-04 14:16:55,981 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 41
+2014-04-04 14:16:55,981 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 36
+2014-04-04 14:16:55,982 - DEBUG - RLDecisionMaker - TAKEDECISION state 4 current reward : 4 training set reward: 4
+2014-04-04 14:16:55,982 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 4 with gain 4
+2014-04-04 14:16:55,982 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 1
+2014-04-04 14:16:55,982 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 14:16:55,983 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 14:16:55,983 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 4 with state 5
+2014-04-04 14:16:55,983 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4}, max V = 4 V[4] 4
+2014-04-04 14:16:55,983 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4, 5: 5}, max V = 5 V[5] 5
+2014-04-04 14:16:55,983 - DEBUG - RLDecisionMaker - Decided to change state to_next: 5 from_curr: 4
+2014-04-04 14:16:55,984 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+2014-04-04 14:20:59,987 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:20:59,987 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:20:59,988 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:20:59,988 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:20:59,997 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:21:30,032 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:21:30,033 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:21:30,033 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:21:30,033 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:21:30,043 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:22:00,072 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:22:00,073 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:22:00,073 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:22:00,073 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:22:00,083 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:22:30,096 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:22:30,097 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:22:30,097 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:22:30,097 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:22:30,107 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:23:00,134 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:23:00,134 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:23:00,134 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:23:00,135 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:23:00,144 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 2749.27101963 lambda range: -250.728980367 - 5749.27101963
+2014-04-04 14:23:00,144 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 46
+2014-04-04 14:23:00,145 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 46
+2014-04-04 14:23:00,146 - DEBUG - RLDecisionMaker - TAKEDECISION state 4 current reward : 4 training set reward: 4
+2014-04-04 14:23:00,146 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 4 with gain 4
+2014-04-04 14:23:00,146 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 1
+2014-04-04 14:23:00,146 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 14:23:00,147 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 14:23:00,147 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 4 with state 5
+2014-04-04 14:23:00,147 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4}, max V = 4 V[4] 4
+2014-04-04 14:23:00,147 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4, 5: 5}, max V = 5 V[5] 5
+2014-04-04 14:23:00,147 - DEBUG - RLDecisionMaker - Decided to change state to_next: 5 from_curr: 4
+2014-04-04 14:23:00,147 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+2014-04-04 14:26:48,390 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:26:48,391 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:26:48,391 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:26:48,391 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:26:48,402 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:27:18,437 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:27:18,437 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:27:18,438 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:27:18,438 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:27:18,449 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:27:48,479 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:27:48,480 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:27:48,480 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:27:48,480 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:27:48,491 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:28:18,525 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:28:18,525 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:28:18,525 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:28:18,526 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:28:18,539 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:28:48,567 - DEBUG - RLDecisionMaker - TAKEDECISION state: 4
+2014-04-04 14:28:48,568 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:28:48,568 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:28:48,568 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:28:48,578 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 924.271621911 lambda range: -2075.72837809 - 3924.27162191
+2014-04-04 14:28:48,578 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 51
+2014-04-04 14:28:48,579 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 51
+2014-04-04 14:28:48,580 - DEBUG - RLDecisionMaker - TAKEDECISION state 4 current reward : 4 training set reward: 4
+2014-04-04 14:28:48,580 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 4 with gain 4
+2014-04-04 14:28:48,580 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 1
+2014-04-04 14:28:48,580 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 14:28:48,581 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 14:28:48,581 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 4 with state 5
+2014-04-04 14:28:48,581 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4}, max V = 4 V[4] 4
+2014-04-04 14:28:48,581 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {4: 4, 5: 5}, max V = 5 V[5] 5
+2014-04-04 14:28:48,581 - DEBUG - RLDecisionMaker - Decided to change state to_next: 5 from_curr: 4
+2014-04-04 14:28:48,581 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+INFO - Coordinator : Cluster exists
+2014-04-04 14:33:35,792 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:33:35,793 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:33:35,793 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:33:35,793 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:33:35,802 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:34:05,834 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:34:05,834 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:34:05,834 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:34:05,835 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:34:05,844 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:34:35,861 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:34:35,861 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:34:35,862 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:34:35,862 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:34:35,871 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:35:05,910 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:35:05,911 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:35:05,911 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:35:05,911 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:35:05,920 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:35:35,952 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:35:35,952 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:35:35,952 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:35:35,952 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:35:35,962 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3771.82736996 lambda range: 771.827369958 - 6771.82736996
+2014-04-04 14:35:35,962 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 14:35:35,962 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain 6
+2014-04-04 14:35:35,962 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 14:35:35,963 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 4
+2014-04-04 14:35:35,963 - DEBUG - RLDecisionMaker - TAKEDECISION state 7 current reward : 7 training set reward: 7
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 7 with gain 7
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 6
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 8
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6}, max V = 6 V[6] 6
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6, 7: 7}, max V = 7 V[7] 7
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 6: 6, 7: 7}, max V = 8 V[8] 8
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 7
+2014-04-04 14:35:35,964 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+2014-04-04 14:40:28,224 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:40:28,224 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:40:28,224 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:40:28,224 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:40:28,234 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:40:58,271 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:40:58,271 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:40:58,271 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:40:58,271 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:40:58,281 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:41:28,307 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:41:28,308 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:41:28,308 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:41:28,308 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:41:28,318 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:41:58,353 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:41:58,353 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:41:58,353 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:41:58,353 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:41:58,363 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:42:28,384 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:42:28,384 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:42:28,384 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:42:28,384 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:42:28,394 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 954.61706182 lambda range: -2045.38293818 - 3954.61706182
+2014-04-04 14:42:28,394 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 14:42:28,395 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain 6
+2014-04-04 14:42:28,395 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 10
+2014-04-04 14:42:28,395 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 10
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - TAKEDECISION state 7 current reward : 7 training set reward: 7
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 7 with gain 7
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 6
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 8
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6}, max V = 6 V[6] 6
+2014-04-04 14:42:28,396 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6, 7: 7}, max V = 7 V[7] 7
+2014-04-04 14:42:28,397 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 6: 6, 7: 7}, max V = 8 V[8] 8
+2014-04-04 14:42:28,397 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 7
+2014-04-04 14:42:28,397 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+2014-04-04 14:47:40,050 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:47:40,050 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:47:40,050 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:47:40,050 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:47:40,061 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:48:10,100 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:48:10,100 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:48:10,100 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:48:10,100 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:48:10,111 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 14:48:40,130 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 14:48:40,130 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 14:48:40,131 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 14:48:40,131 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 14:48:40,141 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+INFO - Coordinator : Cluster exists
+INFO - Coordinator : Cluster exists
+INFO - Coordinator : Cluster exists
+INFO - Coordinator : Cluster exists
+2014-04-04 15:27:45,245 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:27:45,245 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:27:45,245 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:27:45,245 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:27:45,255 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+INFO - Coordinator : Cluster exists
+2014-04-04 15:33:16,169 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:33:16,169 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:33:16,169 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:33:16,169 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:33:16,179 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:33:46,200 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:33:46,200 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:33:46,200 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:33:46,200 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:33:46,210 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:34:16,248 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:34:16,249 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:34:16,249 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:34:16,249 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:34:16,258 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:34:46,272 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:34:46,272 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:34:46,272 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:34:46,272 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:34:46,282 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:35:16,301 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:35:16,301 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:35:16,301 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:35:16,301 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:35:16,311 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3772.19715757 lambda range: 772.19715757 - 6772.19715757
+2014-04-04 15:35:16,311 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:35:16,311 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+INFO - Coordinator : Cluster exists
+2014-04-04 15:37:13,335 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:37:13,336 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:37:13,336 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:37:13,336 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:37:13,345 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:37:43,364 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:37:43,365 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:37:43,365 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:37:43,365 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:37:43,375 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:38:13,387 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:38:13,387 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:38:13,387 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:38:13,388 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:38:13,397 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:38:43,418 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:38:43,418 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:38:43,418 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:38:43,418 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:38:43,428 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:39:13,465 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:39:13,466 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:39:13,466 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:39:13,466 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:39:13,475 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3771.6874493 lambda range: 771.687449302 - 6771.6874493
+2014-04-04 15:39:13,476 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:39:13,476 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+2014-04-04 15:39:13,476 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 11
+2014-04-04 15:39:13,476 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 8
+2014-04-04 15:39:13,477 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : -9 training set reward: -9
+2014-04-04 15:39:13,477 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain -9
+2014-04-04 15:39:13,478 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 15:39:13,478 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8}, max V = 8 V[8] -8
+2014-04-04 15:39:13,478 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9}, max V = 9 V[9] -9
+2014-04-04 15:39:13,478 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 9
+2014-04-04 15:39:13,478 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+INFO - Coordinator : will remove 1 nodes
+2014-04-04 15:39:43,516 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:39:43,517 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:39:43,517 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:39:43,517 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:39:43,527 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:40:13,561 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:40:13,561 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:40:13,561 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:40:13,562 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:40:13,571 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:40:43,598 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:40:43,598 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:40:43,599 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:40:43,599 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:40:43,608 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:41:13,648 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:41:13,648 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:41:13,648 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:41:13,648 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:41:13,658 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:41:43,684 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:41:43,684 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:41:43,684 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:41:43,684 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:41:43,695 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 217.099994966 lambda range: -2782.90000503 - 3217.09999497
+2014-04-04 15:41:43,695 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:41:43,695 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+2014-04-04 15:41:43,695 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 16
+2014-04-04 15:41:43,695 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 11
+2014-04-04 15:41:43,696 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : -9 training set reward: -9
+2014-04-04 15:41:43,696 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain -9
+2014-04-04 15:41:43,696 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 15:41:43,697 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8}, max V = 8 V[8] -8
+2014-04-04 15:41:43,697 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9}, max V = 9 V[9] -9
+2014-04-04 15:41:43,697 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 9
+2014-04-04 15:41:43,697 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+INFO - Coordinator : will remove 1 nodes
+2014-04-04 15:42:13,729 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:42:13,730 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:42:13,730 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:42:13,730 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:42:13,740 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:42:43,774 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:42:43,774 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:42:43,775 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:42:43,775 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:42:43,785 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:43:13,810 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:43:13,811 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:43:13,811 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:43:13,811 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:43:13,821 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:43:43,856 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:43:43,856 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:43:43,857 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:43:43,857 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:43:43,867 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:44:13,891 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:44:13,892 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:44:13,892 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:44:13,892 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:44:13,904 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3785.83103146 lambda range: 785.831031456 - 6785.83103146
+2014-04-04 15:44:13,904 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:44:13,904 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+2014-04-04 15:44:13,904 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 21
+2014-04-04 15:44:13,905 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 15
+2014-04-04 15:44:13,906 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : -9 training set reward: -9
+2014-04-04 15:44:13,906 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain -9
+2014-04-04 15:44:13,906 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 15:44:13,906 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8}, max V = 8 V[8] -8
+2014-04-04 15:44:13,906 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9}, max V = 9 V[9] -9
+2014-04-04 15:44:13,907 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 9
+2014-04-04 15:44:13,907 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+INFO - Coordinator : will remove 1 nodes
+2014-04-04 15:44:43,944 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:44:43,944 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:44:43,944 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:44:43,944 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:44:43,955 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:45:13,991 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:45:13,991 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:45:13,991 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:45:13,991 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:45:14,002 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:45:44,034 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:45:44,034 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:45:44,034 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:45:44,034 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:45:44,045 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:46:14,065 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:46:14,065 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:46:14,065 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:46:14,065 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:46:14,077 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:46:44,115 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:46:44,115 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:46:44,115 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:46:44,115 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:46:44,126 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 223.619178257 lambda range: -2776.38082174 - 3223.61917826
+2014-04-04 15:46:44,126 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:46:44,126 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+2014-04-04 15:46:44,127 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 26
+2014-04-04 15:46:44,127 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 18
+2014-04-04 15:46:44,128 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : -9 training set reward: -9
+2014-04-04 15:46:44,128 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain -9
+2014-04-04 15:46:44,128 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 15:46:44,128 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8}, max V = 8 V[8] -8
+2014-04-04 15:46:44,128 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9}, max V = 9 V[9] -9
+2014-04-04 15:46:44,128 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 9
+2014-04-04 15:46:44,128 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+INFO - Coordinator : will remove 1 nodes
+2014-04-04 15:47:14,157 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:47:14,157 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:47:14,157 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:47:14,157 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:47:14,168 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:47:44,189 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:47:44,189 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:47:44,190 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:47:44,190 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:47:44,200 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+INFO - Coordinator : Cluster exists
+2014-04-04 15:50:08,013 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 15:50:08,013 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:50:08,013 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:50:08,014 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:50:08,023 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:50:38,034 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 15:50:38,034 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:50:38,035 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:50:38,035 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:50:38,044 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:51:08,082 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 15:51:08,083 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:51:08,083 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:51:08,083 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:51:08,092 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:51:38,112 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 15:51:38,112 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:51:38,112 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:51:38,112 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:51:38,122 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:52:08,158 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 15:52:08,158 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:52:08,158 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:52:08,158 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:52:08,168 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3771.69933127 lambda range: 771.699331271 - 6771.69933127
+2014-04-04 15:52:08,168 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:52:08,168 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 15:52:08,169 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 15:52:08,169 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 4
+2014-04-04 15:52:08,170 - DEBUG - RLDecisionMaker - TAKEDECISION state 6 current reward : 6 training set reward: 6
+2014-04-04 15:52:08,170 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 6 with gain 6
+2014-04-04 15:52:08,170 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:52:08,170 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain 7
+2014-04-04 15:52:08,170 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 6 with state 5
+2014-04-04 15:52:08,171 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 6 with state 7
+2014-04-04 15:52:08,171 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5}, max V = 5 V[5] 5
+2014-04-04 15:52:08,171 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5, 6: 6}, max V = 6 V[6] 6
+2014-04-04 15:52:08,171 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5, 6: 6, 7: 7}, max V = 7 V[7] 7
+2014-04-04 15:52:08,171 - DEBUG - RLDecisionMaker - Decided to change state to_next: 7 from_curr: 6
+2014-04-04 15:52:08,171 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+2014-04-04 15:52:38,184 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 15:52:38,184 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:52:38,184 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:52:38,185 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:52:38,194 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:53:08,218 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 15:53:08,218 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:53:08,218 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:53:08,218 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:53:08,228 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:53:38,260 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 15:53:38,261 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:53:38,261 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:53:38,261 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:53:38,271 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:54:08,306 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 15:54:08,307 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:54:08,307 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:54:08,307 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:54:08,317 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:54:38,351 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 15:54:38,351 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:54:38,351 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:54:38,351 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:54:38,361 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 217.797919835 lambda range: -2782.20208017 - 3217.79791983
+2014-04-04 15:54:38,361 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 6
+2014-04-04 15:54:38,362 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 3
+2014-04-04 15:54:38,363 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain 6
+2014-04-04 15:54:38,363 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 4
+2014-04-04 15:54:38,363 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 4
+2014-04-04 15:54:38,363 - DEBUG - RLDecisionMaker - TAKEDECISION state 7 current reward : 7 training set reward: 7
+2014-04-04 15:54:38,363 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 7 with gain 7
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 6
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 8
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6}, max V = 6 V[6] 6
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6, 7: 7}, max V = 7 V[7] 7
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 6: 6, 7: 7}, max V = 8 V[8] 8
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 7
+2014-04-04 15:54:38,364 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+2014-04-04 15:55:08,395 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 15:55:08,395 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:55:08,396 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:55:08,396 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:55:08,406 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:55:38,446 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 15:55:38,446 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:55:38,446 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:55:38,446 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:55:38,456 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:56:08,495 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 15:56:08,495 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:56:08,495 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:56:08,496 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:56:08,506 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:56:38,540 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 15:56:38,540 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:56:38,540 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:56:38,541 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:56:38,551 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:57:08,586 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 15:57:08,586 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:57:08,586 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:57:08,587 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:57:08,597 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3784.93933817 lambda range: 784.93933817 - 6784.93933817
+2014-04-04 15:57:08,597 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 15:57:08,597 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 15:57:08,598 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain 7
+2014-04-04 15:57:08,598 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 4
+2014-04-04 15:57:08,598 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 4
+2014-04-04 15:57:08,599 - DEBUG - RLDecisionMaker - TAKEDECISION state 8 current reward : 8 training set reward: 8
+2014-04-04 15:57:08,599 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 8 with gain 8
+2014-04-04 15:57:08,599 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 28
+2014-04-04 15:57:08,599 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 19
+2014-04-04 15:57:08,600 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain 9
+2014-04-04 15:57:08,600 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 7
+2014-04-04 15:57:08,600 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 9
+2014-04-04 15:57:08,600 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {7: 7}, max V = 7 V[7] 7
+2014-04-04 15:57:08,601 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 7: 7}, max V = 8 V[8] 8
+2014-04-04 15:57:08,601 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9, 7: 7}, max V = 9 V[9] 9
+2014-04-04 15:57:08,601 - DEBUG - RLDecisionMaker - Decided to change state to_next: 9 from_curr: 8
+2014-04-04 15:57:08,601 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+INFO - Coordinator : will add 1 nodes
+2014-04-04 15:57:38,636 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 15:57:38,636 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:57:38,636 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:57:38,636 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:57:38,647 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:58:08,680 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:58:08,680 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:58:08,681 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:58:08,681 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:58:08,691 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:58:38,725 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:58:38,726 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:58:38,726 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:58:38,726 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:58:38,737 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:59:08,773 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:59:08,773 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:59:08,774 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:59:08,774 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:59:08,785 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 15:59:38,820 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 15:59:38,821 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 15:59:38,821 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 15:59:38,821 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 15:59:38,832 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 224.539648231 lambda range: -2775.46035177 - 3224.53964823
+2014-04-04 15:59:38,832 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 15:59:38,833 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 15:59:38,833 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 15:59:38,833 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 32
+2014-04-04 15:59:38,834 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 24
+2014-04-04 15:59:38,834 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 9 training set reward: 9
+2014-04-04 15:59:38,834 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 9
+2014-04-04 15:59:38,835 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 15:59:38,835 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8}, max V = 8 V[8] 8
+2014-04-04 15:59:38,835 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9}, max V = 9 V[9] 9
+2014-04-04 15:59:38,835 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+INFO - Coordinator : doing nothing
+2014-04-04 16:00:08,869 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:00:08,869 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:00:08,869 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:00:08,870 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:00:08,881 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:00:38,905 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:00:38,905 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:00:38,905 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:00:38,905 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:00:38,916 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:01:08,945 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:01:08,946 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:01:08,946 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:01:08,946 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:01:08,957 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:01:38,993 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:01:38,993 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:01:38,994 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:01:38,994 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:01:39,004 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:02:09,042 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:02:09,042 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:02:09,042 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:02:09,042 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:02:09,053 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 3772.07310798 lambda range: 772.073107983 - 6772.07310798
+2014-04-04 16:02:09,054 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 16:02:09,054 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 5
+2014-04-04 16:02:09,054 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 16:02:09,055 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 37
+2014-04-04 16:02:09,055 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 25
+2014-04-04 16:02:09,056 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 9 training set reward: 9
+2014-04-04 16:02:09,056 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 9
+2014-04-04 16:02:09,056 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 16:02:09,056 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8}, max V = 8 V[8] 8
+2014-04-04 16:02:09,056 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9}, max V = 9 V[9] 9
+2014-04-04 16:02:09,056 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+INFO - Coordinator : doing nothing
+2014-04-04 16:02:39,090 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:02:39,090 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:02:39,091 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:02:39,091 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:02:39,102 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:03:09,136 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:03:09,136 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:03:09,136 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:03:09,136 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:03:09,147 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:03:39,185 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:03:39,186 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:03:39,186 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:03:39,186 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:03:39,197 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:04:09,230 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:04:09,230 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:04:09,230 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:04:09,231 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:04:09,242 - DEBUG - RLDecisionMaker - New decision in 0.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:04:39,277 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:04:39,277 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_3
+2014-04-04 16:04:39,277 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_2
+2014-04-04 16:04:39,277 - DEBUG - RLDecisionMaker - Collecting metrics of  host: cassandra_client_1
+2014-04-04 16:04:39,288 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 216.880013141 lambda range: -2783.11998686 - 3216.88001314
+2014-04-04 16:04:39,289 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 16:04:39,289 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 16:04:39,290 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 16:04:39,290 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 42
+2014-04-04 16:04:39,291 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 31
+2014-04-04 16:04:39,291 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 9 training set reward: 9
+2014-04-04 16:04:39,291 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 9
+2014-04-04 16:04:39,292 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 16:04:39,292 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8}, max V = 8 V[8] 8
+2014-04-04 16:04:39,292 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9}, max V = 9 V[9] 9
+2014-04-04 16:04:39,292 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+INFO - Coordinator : doing nothing
+INFO - Coordinator : Cluster exists
+INFO - Coordinator : Cluster exists
+INFO - Coordinator : Cluster exists
+INFO - Coordinator : Cluster exists
+2014-04-04 16:12:50,658 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:12:50,658 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:12:50,667 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:13:20,681 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:13:20,681 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:13:20,691 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:13:50,728 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:13:50,728 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:13:50,738 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:14:20,772 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:14:20,772 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:14:20,781 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:14:50,797 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:14:50,797 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:14:50,807 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8931.20447587 lambda range: 5931.20447587 - 11931.2044759
+2014-04-04 16:14:50,807 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 19
+2014-04-04 16:14:50,807 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 16:14:50,808 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 0.388307702886 training set reward: 0.388307702886
+2014-04-04 16:14:50,808 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 0.388307702886
+2014-04-04 16:14:50,808 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 0.38830770288565153}, max V = 9 V[9] 0.388307702886
+2014-04-04 16:14:50,809 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+INFO - Coordinator : doing nothing
+2014-04-04 16:15:20,818 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:15:20,818 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:15:20,828 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:15:50,863 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:15:50,863 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:15:50,873 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:16:20,910 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:16:20,910 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:16:20,920 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:16:50,949 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:16:50,949 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:16:50,959 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:17:20,969 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:17:20,970 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:17:20,979 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1052.80415071 lambda range: -1947.19584929 - 4052.80415071
+2014-04-04 16:17:20,979 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 24
+2014-04-04 16:17:20,980 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 18
+2014-04-04 16:17:20,980 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : -1.03767145352 training set reward: -1.03767145352
+2014-04-04 16:17:20,981 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain -1.03767145352
+2014-04-04 16:17:20,981 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: -1.0376714535240843}, max V = 9 V[9] -1.03767145352
+2014-04-04 16:17:20,981 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+INFO - Coordinator : doing nothing
+2014-04-04 16:17:50,997 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:17:50,997 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:17:51,007 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:18:21,033 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:18:21,034 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:18:21,043 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:18:51,074 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:18:51,074 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:18:51,084 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:19:21,120 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:19:21,120 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:19:21,130 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:19:51,146 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:19:51,146 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:19:51,156 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8953.87028018 lambda range: 5953.87028018 - 11953.8702802
+2014-04-04 16:19:51,156 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 29
+2014-04-04 16:19:51,156 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 6
+2014-04-04 16:19:51,157 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 0.406870294703 training set reward: 0.406870294703
+2014-04-04 16:19:51,157 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 0.406870294703
+2014-04-04 16:19:51,157 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 0.40687029470343494}, max V = 9 V[9] 0.406870294703
+2014-04-04 16:19:51,157 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+INFO - Coordinator : doing nothing
+INFO - Coordinator : Cluster exists
+2014-04-04 16:37:24,522 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:37:24,523 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:37:24,532 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:37:54,571 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:37:54,571 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:37:54,581 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:38:24,591 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:38:24,592 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:38:24,601 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:38:54,642 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:38:54,643 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:38:54,652 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:39:24,678 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:39:24,678 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:39:24,688 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8933.21348575 lambda range: 5933.21348575 - 11933.2134857
+2014-04-04 16:39:24,688 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 16:39:24,688 - DEBUG - RLDecisionMaker - No known lamdba values close to current lambda measurement. Returning zeros!
+2014-04-04 16:39:24,689 - DEBUG - RLDecisionMaker - DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+2014-04-04 16:39:24,689 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -2.4
+2014-04-04 16:39:24,689 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 34
+2014-04-04 16:39:24,689 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 8
+2014-04-04 16:39:24,690 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 1.69766281947 training set reward: 1.69766281947
+2014-04-04 16:39:24,690 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 1.69766281947
+2014-04-04 16:39:24,691 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 16:39:24,691 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -2.4}, max V = 8 V[8] -2.4
+2014-04-04 16:39:24,691 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -2.4, 9: 1.6976628194674572}, max V = 9 V[9] 1.69766281947
+2014-04-04 16:39:24,691 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+INFO - Coordinator : doing nothing
+2014-04-04 16:39:54,699 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:39:54,699 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:39:54,709 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:40:24,738 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:40:24,738 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:40:24,748 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:40:54,769 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:40:54,769 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:40:54,779 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+INFO - Coordinator : Cluster exists
+2014-04-04 16:42:14,029 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:42:14,030 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:42:14,039 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:42:44,049 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:42:44,049 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:42:44,059 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:43:14,096 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:43:14,096 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:43:14,107 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:43:44,130 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:43:44,130 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:43:44,139 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:44:14,151 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:44:14,151 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:44:14,161 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8932.94187282 lambda range: 5932.94187282 - 11932.9418728
+2014-04-04 16:44:14,161 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 16:44:14,161 - DEBUG - RLDecisionMaker - No known lamdba values close to current lambda measurement. Returning zeros!
+2014-04-04 16:44:14,161 - DEBUG - RLDecisionMaker - DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+2014-04-04 16:44:14,161 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+2014-04-04 16:44:14,162 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 42
+2014-04-04 16:44:14,162 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 12
+2014-04-04 16:44:14,163 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : -9 training set reward: -9
+2014-04-04 16:44:14,163 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain -9
+2014-04-04 16:44:14,163 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 16:44:14,163 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8}, max V = 8 V[8] -8
+2014-04-04 16:44:14,163 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9}, max V = 9 V[9] -9
+2014-04-04 16:44:14,163 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 9
+2014-04-04 16:44:14,163 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+INFO - Coordinator : will remove 1 nodes
+2014-04-04 16:44:44,183 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:44:44,184 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:44:44,198 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:45:14,229 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:45:14,230 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:45:14,239 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:45:44,272 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:45:44,273 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:45:44,282 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:46:14,295 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:46:14,295 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:46:14,305 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:46:44,340 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:46:44,340 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:46:44,350 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1049.84208439 lambda range: -1950.15791561 - 4049.84208439
+2014-04-04 16:46:44,350 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 5
+2014-04-04 16:46:44,350 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 5
+2014-04-04 16:46:44,351 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain -7
+2014-04-04 16:46:44,351 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 9
+2014-04-04 16:46:44,351 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 7
+2014-04-04 16:46:44,352 - DEBUG - RLDecisionMaker - TAKEDECISION state 8 current reward : -8 training set reward: -8
+2014-04-04 16:46:44,352 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 8 with gain -8
+2014-04-04 16:46:44,352 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 43
+2014-04-04 16:46:44,353 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 24
+2014-04-04 16:46:44,353 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain -9
+2014-04-04 16:46:44,354 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 7
+2014-04-04 16:46:44,354 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 9
+2014-04-04 16:46:44,354 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {7: -7}, max V = 7 V[7] -7
+2014-04-04 16:46:44,354 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 7: -7}, max V = 8 V[8] -8
+2014-04-04 16:46:44,354 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9, 7: -7}, max V = 9 V[9] -9
+2014-04-04 16:46:44,354 - DEBUG - RLDecisionMaker - Decided to change state to_next: 7 from_curr: 8
+2014-04-04 16:46:44,354 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+INFO - Coordinator : will remove 1 nodes
+2014-04-04 16:47:14,387 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:47:14,387 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:47:14,397 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:47:44,427 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:47:44,427 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:47:44,438 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:48:14,473 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:48:14,474 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:48:14,484 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+INFO - Coordinator : doing nothing
+2014-04-04 16:48:44,502 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:48:44,502 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:48:44,512 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+INFO - Coordinator : doing nothing
+Cluster exists
+Cluster exists
+2014-04-04 16:51:23,854 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:51:23,854 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:51:23,868 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 16:51:54,119 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:51:54,119 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:51:54,128 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 16:52:24,157 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:52:24,158 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:52:24,168 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 16:52:54,205 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:52:54,205 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:52:54,214 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 16:53:24,229 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:53:24,229 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:53:24,239 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8932.75351463 lambda range: 5932.75351463 - 11932.7535146
+2014-04-04 16:53:24,239 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 13
+2014-04-04 16:53:24,239 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 3
+2014-04-04 16:53:24,240 - DEBUG - RLDecisionMaker - TAKEDECISION state 7 current reward : 7 training set reward: 7
+2014-04-04 16:53:24,240 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 7 with gain 7
+2014-04-04 16:53:24,240 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 10
+2014-04-04 16:53:24,240 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 16:53:24,241 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 16:53:24,241 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 8
+2014-04-04 16:53:24,241 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {7: 7}, max V = 7 V[7] 7
+2014-04-04 16:53:24,241 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 7: 7}, max V = 8 V[8] 8
+2014-04-04 16:53:24,241 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 7
+2014-04-04 16:53:24,241 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+will add 1 nodes
+2014-04-04 16:53:54,279 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 16:53:54,279 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:53:54,289 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 16:54:24,334 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:54:24,334 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:54:24,344 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 16:54:54,385 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:54:54,385 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:54:54,396 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 16:55:24,426 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:55:24,426 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:55:24,436 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 16:55:54,469 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:55:54,469 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:55:54,479 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1050.37832057 lambda range: -1949.62167943 - 4050.37832057
+2014-04-04 16:55:54,479 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 14
+2014-04-04 16:55:54,480 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 8
+2014-04-04 16:55:54,480 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain 7
+2014-04-04 16:55:54,481 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 14
+2014-04-04 16:55:54,481 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 10
+2014-04-04 16:55:54,481 - DEBUG - RLDecisionMaker - TAKEDECISION state 8 current reward : 8 training set reward: 8
+2014-04-04 16:55:54,481 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 8 with gain 8
+2014-04-04 16:55:54,482 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 43
+2014-04-04 16:55:54,482 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 24
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain 9
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 7
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 9
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {7: 7}, max V = 7 V[7] 7
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 7: 7}, max V = 8 V[8] 8
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9, 7: 7}, max V = 9 V[9] 9
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - Decided to change state to_next: 9 from_curr: 8
+2014-04-04 16:55:54,483 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+will add 1 nodes
+2014-04-04 16:56:24,516 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 16:56:24,516 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:56:24,526 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 16:56:54,564 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:56:54,564 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:56:54,574 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 16:57:24,608 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:57:24,608 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:57:24,619 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 16:57:54,652 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:57:54,652 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:57:54,662 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 16:58:24,699 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 16:58:24,699 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 16:58:24,710 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8959.85821929 lambda range: 5959.85821929 - 11959.8582193
+2014-04-04 16:58:24,710 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 15
+2014-04-04 16:58:24,710 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 16:58:24,711 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 16:58:24,711 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 47
+2014-04-04 16:58:24,711 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 15
+2014-04-04 16:58:24,712 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 9 training set reward: 9
+2014-04-04 16:58:24,712 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 9
+2014-04-04 16:58:24,712 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 16:58:24,713 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8}, max V = 8 V[8] 8
+2014-04-04 16:58:24,713 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9}, max V = 9 V[9] 9
+2014-04-04 16:58:24,713 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+Cluster exists
+2014-04-04 17:00:36,269 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:00:36,269 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:00:36,284 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:01:06,299 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:01:06,299 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:01:06,309 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:01:36,344 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:01:36,344 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:01:36,353 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:02:06,378 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:02:06,378 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:02:06,388 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:02:36,407 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:02:36,407 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:02:36,417 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8936.38288749 lambda range: 5936.38288749 - 11936.3828875
+2014-04-04 17:02:36,417 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 15
+2014-04-04 17:02:36,418 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 17:02:36,418 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+2014-04-04 17:02:36,419 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 52
+2014-04-04 17:02:36,419 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 17
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : -9 training set reward: -9
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain -9
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 10 with gain -10
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 10
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8}, max V = 8 V[8] -8
+2014-04-04 17:02:36,420 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9}, max V = 9 V[9] -9
+2014-04-04 17:02:36,421 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9, 10: -10}, max V = 10 V[10] -10
+2014-04-04 17:02:36,421 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 9
+2014-04-04 17:02:36,421 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+will remove 1 nodes
+2014-04-04 17:03:06,436 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:03:06,436 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:03:06,445 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:03:36,488 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:03:36,489 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:03:36,498 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:04:06,533 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:04:06,533 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:04:06,542 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:04:36,571 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:04:36,571 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:04:36,581 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:05:06,611 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:05:06,612 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:05:06,622 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1042.42896202 lambda range: -1957.57103798 - 4042.42896202
+2014-04-04 17:05:06,622 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 14
+2014-04-04 17:05:06,622 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 8
+2014-04-04 17:05:06,623 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain -7
+2014-04-04 17:05:06,623 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 19
+2014-04-04 17:05:06,623 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 13
+2014-04-04 17:05:06,624 - DEBUG - RLDecisionMaker - TAKEDECISION state 8 current reward : -8 training set reward: -8
+2014-04-04 17:05:06,624 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 8 with gain -8
+2014-04-04 17:05:06,624 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 53
+2014-04-04 17:05:06,624 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 27
+2014-04-04 17:05:06,625 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain -9
+2014-04-04 17:05:06,625 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 7
+2014-04-04 17:05:06,625 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 9
+2014-04-04 17:05:06,625 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {7: -7}, max V = 7 V[7] -7
+2014-04-04 17:05:06,625 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 7: -7}, max V = 8 V[8] -8
+2014-04-04 17:05:06,625 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 9: -9, 7: -7}, max V = 9 V[9] -9
+2014-04-04 17:05:06,626 - DEBUG - RLDecisionMaker - Decided to change state to_next: 7 from_curr: 8
+2014-04-04 17:05:06,626 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+will remove 1 nodes
+2014-04-04 17:05:36,651 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:05:36,652 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:05:36,662 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:06:06,697 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:06:06,697 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:06:06,707 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:06:36,743 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:06:36,743 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:06:36,753 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:07:06,784 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:07:06,784 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:07:06,794 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:07:36,830 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:07:36,830 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:07:36,840 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8948.1032968 lambda range: 5948.1032968 - 11948.1032968
+2014-04-04 17:07:36,841 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 6
+2014-04-04 17:07:36,841 - DEBUG - RLDecisionMaker - No known lamdba values close to current lambda measurement. Returning zeros!
+2014-04-04 17:07:36,841 - DEBUG - RLDecisionMaker - DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+2014-04-04 17:07:36,841 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain -6
+2014-04-04 17:07:36,841 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 18
+2014-04-04 17:07:36,841 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 6
+2014-04-04 17:07:36,842 - DEBUG - RLDecisionMaker - TAKEDECISION state 7 current reward : -7 training set reward: -7
+2014-04-04 17:07:36,842 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 7 with gain -7
+2014-04-04 17:07:36,842 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 20
+2014-04-04 17:07:36,842 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 3
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain -8
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 6
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 8
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: -6}, max V = 6 V[6] -6
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: -6, 7: -7}, max V = 7 V[7] -7
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: -8, 6: -6, 7: -7}, max V = 8 V[8] -8
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - Decided to change state to_next: 6 from_curr: 7
+2014-04-04 17:07:36,843 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+will remove 1 nodes
+2014-04-04 17:08:06,881 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:08:06,881 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:08:06,891 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:08:36,936 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:08:36,936 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:08:36,946 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:09:06,983 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:09:06,983 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:09:06,994 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:09:37,033 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:09:37,033 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:09:37,044 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:10:07,055 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:10:07,055 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:10:07,066 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1053.57583148 lambda range: -1946.42416852 - 4053.57583148
+2014-04-04 17:10:07,066 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 17:10:07,066 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain -5
+2014-04-04 17:10:07,066 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 10
+2014-04-04 17:10:07,067 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 8
+2014-04-04 17:10:07,067 - DEBUG - RLDecisionMaker - TAKEDECISION state 6 current reward : -6 training set reward: -6
+2014-04-04 17:10:07,067 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 6 with gain -6
+2014-04-04 17:10:07,068 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 19
+2014-04-04 17:10:07,068 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 9
+2014-04-04 17:10:07,068 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain -7
+2014-04-04 17:10:07,068 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 6 with state 5
+2014-04-04 17:10:07,069 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 6 with state 7
+2014-04-04 17:10:07,069 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5}, max V = 5 V[5] -5
+2014-04-04 17:10:07,069 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5, 6: -6}, max V = 6 V[6] -6
+2014-04-04 17:10:07,069 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5, 6: -6, 7: -7}, max V = 7 V[7] -7
+2014-04-04 17:10:07,069 - DEBUG - RLDecisionMaker - Decided to change state to_next: 5 from_curr: 6
+2014-04-04 17:10:07,069 - DEBUG - RLDecisionMaker - TAKEDECISION: action REMOVE 1 nodes.
+will remove 1 nodes
+2014-04-04 17:10:37,107 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:10:37,107 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:10:37,118 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:11:07,149 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:11:07,150 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:11:07,161 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:11:37,201 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:11:37,201 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:11:37,213 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:12:07,246 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:12:07,246 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:12:07,257 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:12:37,292 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:12:37,292 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:12:37,304 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8936.190942 lambda range: 5936.190942 - 11936.190942
+2014-04-04 17:12:37,304 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 4
+2014-04-04 17:12:37,304 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 17:12:37,305 - DEBUG - RLDecisionMaker - TAKEDECISION state 5 current reward : -5 training set reward: -5
+2014-04-04 17:12:37,305 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 5 with gain -5
+2014-04-04 17:12:37,305 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 11
+2014-04-04 17:12:37,305 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 17:12:37,306 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain -6
+2014-04-04 17:12:37,306 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 5 with state 6
+2014-04-04 17:12:37,306 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5}, max V = 5 V[5] -5
+2014-04-04 17:12:37,306 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5, 6: -6}, max V = 6 V[6] -6
+2014-04-04 17:12:37,306 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+2014-04-04 17:13:07,342 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:13:07,342 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:13:07,353 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:13:37,387 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:13:37,387 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:13:37,398 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:14:07,436 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:14:07,436 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:14:07,447 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:14:37,483 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:14:37,484 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:14:37,495 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:15:07,530 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:15:07,530 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:15:07,541 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1048.24312723 lambda range: -1951.75687277 - 4048.24312723
+2014-04-04 17:15:07,542 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 9
+2014-04-04 17:15:07,542 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 3
+2014-04-04 17:15:07,543 - DEBUG - RLDecisionMaker - TAKEDECISION state 5 current reward : -5 training set reward: -5
+2014-04-04 17:15:07,543 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 5 with gain -5
+2014-04-04 17:15:07,543 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 11
+2014-04-04 17:15:07,544 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 9
+2014-04-04 17:15:07,544 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain -6
+2014-04-04 17:15:07,544 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 5 with state 6
+2014-04-04 17:15:07,545 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5}, max V = 5 V[5] -5
+2014-04-04 17:15:07,545 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5, 6: -6}, max V = 6 V[6] -6
+2014-04-04 17:15:07,545 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+2014-04-04 17:15:37,576 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:15:37,576 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:15:37,592 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:16:07,625 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:16:07,625 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:16:07,636 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:16:37,646 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:16:37,647 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:16:37,658 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:17:07,688 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:17:07,689 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:17:07,700 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:17:37,737 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:17:37,737 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:17:37,748 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8959.57448255 lambda range: 5959.57448255 - 11959.5744825
+2014-04-04 17:17:37,749 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 14
+2014-04-04 17:17:37,749 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 6
+2014-04-04 17:17:37,750 - DEBUG - RLDecisionMaker - TAKEDECISION state 5 current reward : -5 training set reward: -5
+2014-04-04 17:17:37,750 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 5 with gain -5
+2014-04-04 17:17:37,750 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 11
+2014-04-04 17:17:37,750 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 17:17:37,751 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain -6
+2014-04-04 17:17:37,751 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 5 with state 6
+2014-04-04 17:17:37,751 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5}, max V = 5 V[5] -5
+2014-04-04 17:17:37,751 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5, 6: -6}, max V = 6 V[6] -6
+2014-04-04 17:17:37,751 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+2014-04-04 17:18:07,778 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:18:07,778 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:18:07,794 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:18:37,831 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:18:37,831 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:18:37,842 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:19:07,881 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:19:07,881 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:19:07,897 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:19:37,933 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:19:37,934 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:19:37,945 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:20:07,972 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:20:07,972 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:20:07,987 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1027.94078047 lambda range: -1972.05921953 - 4027.94078047
+2014-04-04 17:20:07,988 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 19
+2014-04-04 17:20:07,988 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 7
+2014-04-04 17:20:07,989 - DEBUG - RLDecisionMaker - TAKEDECISION state 5 current reward : -5 training set reward: -5
+2014-04-04 17:20:07,989 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 5 with gain -5
+2014-04-04 17:20:07,989 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 11
+2014-04-04 17:20:07,989 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 9
+2014-04-04 17:20:07,990 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain -6
+2014-04-04 17:20:07,990 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 5 with state 6
+2014-04-04 17:20:07,990 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5}, max V = 5 V[5] -5
+2014-04-04 17:20:07,990 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: -5, 6: -6}, max V = 6 V[6] -6
+2014-04-04 17:20:07,990 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+Cluster exists
+2014-04-04 17:24:16,297 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:24:16,298 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:24:16,307 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:24:46,345 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:24:46,345 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:24:46,355 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:25:16,381 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:25:16,381 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:25:16,391 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:25:46,404 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:25:46,404 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:25:46,413 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:26:16,449 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:26:16,450 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:26:16,460 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8934.10946999 lambda range: 5934.10946999 - 11934.10947
+2014-04-04 17:26:16,460 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 24
+2014-04-04 17:26:16,460 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 10
+2014-04-04 17:26:16,461 - DEBUG - RLDecisionMaker - TAKEDECISION state 5 current reward : 5 training set reward: 5
+2014-04-04 17:26:16,461 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 5 with gain 5
+2014-04-04 17:26:16,461 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 11
+2014-04-04 17:26:16,461 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 1
+2014-04-04 17:26:16,462 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain 6
+2014-04-04 17:26:16,462 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 5 with state 6
+2014-04-04 17:26:16,462 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5}, max V = 5 V[5] 5
+2014-04-04 17:26:16,462 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5, 6: 6}, max V = 6 V[6] 6
+2014-04-04 17:26:16,462 - DEBUG - RLDecisionMaker - Decided to change state to_next: 6 from_curr: 5
+2014-04-04 17:26:16,462 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+will add 1 nodes
+2014-04-04 17:26:46,497 - DEBUG - RLDecisionMaker - TAKEDECISION state: 5
+2014-04-04 17:26:46,497 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:26:46,506 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:27:16,529 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:27:16,529 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:27:16,539 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:27:46,552 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:27:46,552 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:27:46,562 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:28:16,585 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:28:16,585 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:28:16,595 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:28:46,632 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:28:46,632 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:28:46,643 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1046.05977072 lambda range: -1953.94022928 - 4046.05977072
+2014-04-04 17:28:46,643 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 25
+2014-04-04 17:28:46,643 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 9
+2014-04-04 17:28:46,644 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 5 with gain 5
+2014-04-04 17:28:46,644 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 15
+2014-04-04 17:28:46,644 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 11
+2014-04-04 17:28:46,645 - DEBUG - RLDecisionMaker - TAKEDECISION state 6 current reward : 6 training set reward: 6
+2014-04-04 17:28:46,645 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 6 with gain 6
+2014-04-04 17:28:46,645 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 19
+2014-04-04 17:28:46,645 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 9
+2014-04-04 17:28:46,646 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain 7
+2014-04-04 17:28:46,646 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 6 with state 5
+2014-04-04 17:28:46,646 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 6 with state 7
+2014-04-04 17:28:46,646 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5}, max V = 5 V[5] 5
+2014-04-04 17:28:46,646 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5, 6: 6}, max V = 6 V[6] 6
+2014-04-04 17:28:46,646 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {5: 5, 6: 6, 7: 7}, max V = 7 V[7] 7
+2014-04-04 17:28:46,647 - DEBUG - RLDecisionMaker - Decided to change state to_next: 7 from_curr: 6
+2014-04-04 17:28:46,647 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+will add 1 nodes
+2014-04-04 17:29:16,682 - DEBUG - RLDecisionMaker - TAKEDECISION state: 6
+2014-04-04 17:29:16,682 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:29:16,693 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:29:46,728 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:29:46,729 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:29:46,739 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:30:16,774 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:30:16,774 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:30:16,784 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:30:46,830 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:30:46,831 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:30:46,841 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:31:16,869 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:31:16,869 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:31:16,880 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8942.47896036 lambda range: 5942.47896036 - 11942.4789604
+2014-04-04 17:31:16,880 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 16
+2014-04-04 17:31:16,880 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 17:31:16,881 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 6 with gain 6
+2014-04-04 17:31:16,881 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 23
+2014-04-04 17:31:16,881 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 9
+2014-04-04 17:31:16,882 - DEBUG - RLDecisionMaker - TAKEDECISION state 7 current reward : 7 training set reward: 7
+2014-04-04 17:31:16,882 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 7 with gain 7
+2014-04-04 17:31:16,882 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 20
+2014-04-04 17:31:16,882 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 3
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 6
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 7 with state 8
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6}, max V = 6 V[6] 6
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {6: 6, 7: 7}, max V = 7 V[7] 7
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 6: 6, 7: 7}, max V = 8 V[8] 8
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - Decided to change state to_next: 8 from_curr: 7
+2014-04-04 17:31:16,883 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+will add 1 nodes
+2014-04-04 17:31:46,916 - DEBUG - RLDecisionMaker - TAKEDECISION state: 7
+2014-04-04 17:31:46,916 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:31:46,927 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:32:16,968 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:32:16,968 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:32:16,979 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:32:47,000 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:32:47,000 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:32:47,011 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:33:17,049 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:33:17,049 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:33:17,060 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:33:47,095 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:33:47,096 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:33:47,106 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1040.49384495 lambda range: -1959.50615505 - 4040.49384495
+2014-04-04 17:33:47,107 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 24
+2014-04-04 17:33:47,107 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 10
+2014-04-04 17:33:47,108 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 7 with gain 7
+2014-04-04 17:33:47,108 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 24
+2014-04-04 17:33:47,108 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 16
+2014-04-04 17:33:47,109 - DEBUG - RLDecisionMaker - TAKEDECISION state 8 current reward : 8 training set reward: 8
+2014-04-04 17:33:47,109 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 8 with gain 8
+2014-04-04 17:33:47,109 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 53
+2014-04-04 17:33:47,109 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 27
+2014-04-04 17:33:47,110 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain 9
+2014-04-04 17:33:47,110 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 7
+2014-04-04 17:33:47,110 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 8 with state 9
+2014-04-04 17:33:47,111 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {7: 7}, max V = 7 V[7] 7
+2014-04-04 17:33:47,111 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 7: 7}, max V = 8 V[8] 8
+2014-04-04 17:33:47,111 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9, 7: 7}, max V = 9 V[9] 9
+2014-04-04 17:33:47,111 - DEBUG - RLDecisionMaker - Decided to change state to_next: 9 from_curr: 8
+2014-04-04 17:33:47,111 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+will add 1 nodes
+2014-04-04 17:34:17,138 - DEBUG - RLDecisionMaker - TAKEDECISION state: 8
+2014-04-04 17:34:17,138 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:34:17,149 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:34:47,160 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:34:47,160 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:34:47,171 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:35:17,212 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:35:17,212 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:35:17,226 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:35:47,262 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:35:47,262 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:35:47,274 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:36:17,302 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:36:17,302 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:36:17,314 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8949.65483138 lambda range: 5949.65483138 - 11949.6548314
+2014-04-04 17:36:17,314 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 25
+2014-04-04 17:36:17,314 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 4
+2014-04-04 17:36:17,315 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 8 with gain 8
+2014-04-04 17:36:17,315 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 57
+2014-04-04 17:36:17,315 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 20
+2014-04-04 17:36:17,316 - DEBUG - RLDecisionMaker - TAKEDECISION state 9 current reward : 9 training set reward: 9
+2014-04-04 17:36:17,316 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 9 with gain 9
+2014-04-04 17:36:17,316 - DEBUG - RLDecisionMaker - DOKMEANS self.memory[state]['arrayMeas'] is None :|
+2014-04-04 17:36:17,316 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 10 with gain 10
+2014-04-04 17:36:17,317 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 8
+2014-04-04 17:36:17,317 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 9 with state 10
+2014-04-04 17:36:17,317 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8}, max V = 8 V[8] 8
+2014-04-04 17:36:17,317 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9}, max V = 9 V[9] 9
+2014-04-04 17:36:17,317 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {8: 8, 9: 9, 10: 10}, max V = 10 V[10] 10
+2014-04-04 17:36:17,317 - DEBUG - RLDecisionMaker - Decided to change state to_next: 10 from_curr: 9
+2014-04-04 17:36:17,317 - DEBUG - RLDecisionMaker - TAKEDECISION: action ADD 1 nodes.
+will add 1 nodes
+2014-04-04 17:36:47,356 - DEBUG - RLDecisionMaker - TAKEDECISION state: 9
+2014-04-04 17:36:47,356 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:36:47,368 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:37:17,403 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:37:17,404 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:37:17,415 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:37:47,443 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:37:47,443 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:37:47,455 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:38:17,493 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:38:17,493 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:38:17,505 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:38:47,532 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:38:47,533 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:38:47,544 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1050.63956245 lambda range: -1949.36043755 - 4050.63956245
+2014-04-04 17:38:47,545 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 58
+2014-04-04 17:38:47,545 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 28
+2014-04-04 17:38:47,546 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain 9
+2014-04-04 17:38:47,546 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 4
+2014-04-04 17:38:47,546 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 2
+2014-04-04 17:38:47,547 - DEBUG - RLDecisionMaker - TAKEDECISION state 10 current reward : 10 training set reward: 10
+2014-04-04 17:38:47,547 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 10 with gain 10
+2014-04-04 17:38:47,547 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 10 with state 9
+2014-04-04 17:38:47,547 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9}, max V = 9 V[9] 9
+2014-04-04 17:38:47,547 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9, 10: 10}, max V = 10 V[10] 10
+2014-04-04 17:38:47,547 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+2014-04-04 17:39:17,581 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:39:17,582 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:39:17,593 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:39:47,626 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:39:47,626 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:39:47,638 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:40:17,671 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:40:17,671 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:40:17,683 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:40:47,716 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:40:47,716 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:40:47,727 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:41:17,761 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:41:17,761 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:41:17,772 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8960.6684828 lambda range: 5960.6684828 - 11960.6684828
+2014-04-04 17:41:17,773 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 58
+2014-04-04 17:41:17,773 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 21
+2014-04-04 17:41:17,774 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain 9
+2014-04-04 17:41:17,774 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 9
+2014-04-04 17:41:17,775 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 3
+2014-04-04 17:41:17,775 - DEBUG - RLDecisionMaker - TAKEDECISION state 10 current reward : 10 training set reward: 10
+2014-04-04 17:41:17,775 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 10 with gain 10
+2014-04-04 17:41:17,776 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 10 with state 9
+2014-04-04 17:41:17,776 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9}, max V = 9 V[9] 9
+2014-04-04 17:41:17,776 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9, 10: 10}, max V = 10 V[10] 10
+2014-04-04 17:41:17,776 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+2014-04-04 17:41:47,807 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:41:47,807 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:41:47,819 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:42:17,847 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:42:17,848 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:42:17,859 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:42:47,896 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:42:47,896 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:42:47,907 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:43:17,936 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:43:17,936 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:43:17,948 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:43:47,983 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:43:47,983 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:43:47,994 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 1038.53627115 lambda range: -1961.46372885 - 4038.53627115
+2014-04-04 17:43:47,995 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 58
+2014-04-04 17:43:47,995 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 28
+2014-04-04 17:43:47,996 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain 9
+2014-04-04 17:43:47,996 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 14
+2014-04-04 17:43:47,996 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 6
+2014-04-04 17:43:47,997 - DEBUG - RLDecisionMaker - TAKEDECISION state 10 current reward : 10 training set reward: 10
+2014-04-04 17:43:47,997 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 10 with gain 10
+2014-04-04 17:43:47,997 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 10 with state 9
+2014-04-04 17:43:47,997 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9}, max V = 9 V[9] 9
+2014-04-04 17:43:47,997 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9, 10: 10}, max V = 10 V[10] 10
+2014-04-04 17:43:47,997 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing
+2014-04-04 17:44:18,035 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:44:18,035 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:44:18,046 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+doing nothing
+2014-04-04 17:44:48,084 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:44:48,084 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:44:48,095 - DEBUG - RLDecisionMaker - New decision in 1.5 mins, see you later!
+doing nothing
+2014-04-04 17:45:18,127 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:45:18,127 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:45:18,138 - DEBUG - RLDecisionMaker - New decision in 1.0 mins, see you later!
+doing nothing
+2014-04-04 17:45:48,169 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:45:48,169 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:45:48,180 - DEBUG - RLDecisionMaker - New decision in 0.5 mins, see you later!
+doing nothing
+2014-04-04 17:46:18,209 - DEBUG - RLDecisionMaker - TAKEDECISION state: 10
+2014-04-04 17:46:18,210 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-04 17:46:18,221 - DEBUG - RLDecisionMaker - TAKEDECISION current lambda: 8972.76705112 lambda range: 5972.76705112 - 11972.7670511
+2014-04-04 17:46:18,221 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 58
+2014-04-04 17:46:18,222 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 21
+2014-04-04 17:46:18,223 - DEBUG - RLDecisionMaker - TAKEDECISION adding state 9 with gain 9
+2014-04-04 17:46:18,223 - DEBUG - RLDecisionMaker - DOKMEANS length of self.memory[state]['arrayMeas']: 19
+2014-04-04 17:46:18,223 - DEBUG - RLDecisionMaker - DOKMEANS length of sliced_data to be fed to kmeans: 7
+2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION state 10 current reward : 10 training set reward: 10
+2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION adding current state 10 with gain 10
+2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION connecting state 10 with state 9
+2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9}, max V = 9 V[9] 9
+2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9, 10: 10}, max V = 10 V[10] 10
+2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
+doing nothing

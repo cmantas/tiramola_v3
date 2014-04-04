@@ -35,10 +35,11 @@ def create_cluster(worker_count=0, client_count=0):
     for i in range(worker_count):
         nodes.append(Node(cluster_name, node_type="node", number=len(nodes)+1, create=True))
     for i in range(client_count):
-        if i==0:
-            clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True))
+        if i == 0:
+            # give a floating IPv4 to the first client only
+            clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True,  IPv4=True))
         else:
-            clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True, IPv4=True))
+            clients.append(Node(cluster_name, node_type="client", number=len(clients)+1, create=True))
     #wait until everybody is ready
     save_cluster()
     wait_everybody()
@@ -101,6 +102,9 @@ def resume_cluster():
             if n.type == "seed": seeds.append(n)
             elif n.type == "node": nodes.append(n)
             elif n.type == "client": clients.append(n)
+    #sort nodes by name
+    nodes.sort(key=lambda x: x.name)
+    clients.sort(key=lambda x: x.name)
 
 
 def save_cluster():

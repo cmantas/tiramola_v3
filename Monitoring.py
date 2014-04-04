@@ -98,7 +98,7 @@ class MonitorVms:
                 continue
             break
         if self.soc is None:
-            print 'could not open socket'
+            print 'could not open socket %s:%s' % (str(self.ganglia_host), str(self.ganglia_port))
             sys.exit(1)
         self.allmetrics = None
         f = self.soc.makefile("r")

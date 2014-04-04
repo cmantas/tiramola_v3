@@ -12,7 +12,7 @@ echo "Removing cassandra files and logs" &>>ctool.log
 rm -rf /var/lib/cassandra/* &>>ctool.log
 rm /var/log/cassandra/system.log &>>ctool.log
 #cleaning ctool rrds
-echo "Removing ctool rrds" &>>ctool.log
+echo "Removing ganglia rrds" &>>ctool.log
 rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
 
 

@@ -64,7 +64,7 @@ def create_vm(name, flavor_id, image_id, IPv4, log_path):
     Creates this VM in the okeanos through kamaki
     """
     networks = [{'uuid': env_vars['cassandra_network_id']}]
-    if IPv4: networks.append({'uuid': 5639})
+    if IPv4: networks.append({'uuid': 2216})
 
     try:
         my_dict = cyclades_client.create_server(name, flavor_id, image_id, personality=personality('root'),

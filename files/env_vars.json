@@ -20,15 +20,23 @@
     "cassandra_node_bootstrap": "scripts/regular_node_bootstrap.sh",
     "cassandra_client_bootstrap": "scripts/client_bootstrap.sh",
     "ganglia_endpoint": "scripts/ganglia_endpoint.sh",
-    "initial_cluster_size": 4,
+    "min_cluster_size": 5,
     "clients_count": 3,
-    "max_cluster_size": 8,
+    "max_cluster_size": 10,
     "add_nodes": 1,
     "rem_nodes": 1,
     "serv_throughput": 3500,
     "ssh_giveup_timeout": 600,
     "trans_cost": "0",
     "gain": "(throughput * 0.001) - (num_nodes * 0.3) - (latency * 0.01)",
-    "metric_fetch_interval": 30
+    "metric_fetch_interval": 30,
+    "decision_interval": 120,
+    "training_vars": {
+        "target_load":5000,
+        "offset_load": 4000,
+        "period": 300,
+        "total_records":200000,
+        "asked_records": 10000
+         }
 
 }

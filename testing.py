@@ -1,20 +1,35 @@
 __author__ = 'cmantas'
 
-import lib.connector_eucalyptus as iaas
+import logging
+import logging.handlers
+import sys
 
-ids = iaas.get_all_vm_ids()
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+logger.name = "test"
+
+ch = logging.StreamHandler(sys.stdout)
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter('[%(levelname)s] - %(name)s: %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
+ch = logging.handlers.RotatingFileHandler('files/logs/test.log', maxBytes=2 * 1024 * 1024, backupCount=5)
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter('[%(levelname)s] %(asctime)s - %(name)s: %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
+
+logger.error("helloo")
+
+class test:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return  self.name
 
 
-test_image_id = "ami-0000000a"
-test_flavor_id = "m1.small"
-vm_id = iaas.create_vm("christos", test_flavor_id, test_image_id, "/dev/null")
+all= [test("christos"), test("giannis"), test("aristos"), test("xavier")]
 
-print "vm created"
-import time
-time.sleep(40)
 
-iaas.shutdown_vm(vm_id)
-print "shut down"
-time.sleep(30)
-iaas.startup_vm(vm_id)
-print "startup"
+for a in all: print a

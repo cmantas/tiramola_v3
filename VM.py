@@ -170,7 +170,7 @@ class VM (object):
             stderr.write('this VM does not exist (yet),'
                          ' so you cannot run commands on it')
             return "ERROR"
-        self.log.debug("running SSH command:\n\n\"%s\"\n\n" % reindent(command, 5))
+        self.log.debug("running SSH command:\n\n%s\n\n" % reindent(command, 5))
         rv= run_ssh_command(self.get_public_addr(), user, command, indent, prefix)
         self.log.debug("command returned:\n\n %s\n\n" % rv)
 

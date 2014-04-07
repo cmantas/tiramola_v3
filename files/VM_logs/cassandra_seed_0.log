@@ -1,0 +1,39 @@
+Apr07 19:28:55 [INFO]- VM [cassandra_seed_0]	: creating (async)
+Apr07 19:28:55 [DEBUG]- NODE [cassandra_seed_0]	: Not active yet. Sleeping
+Apr07 19:29:42 [INFO]- NODE [cassandra_seed_0]	: IaaS status is now ACTIVE (took 46 sec)
+Apr07 19:29:43 [INFO]- NODE [cassandra_seed_0]	: Waiting for SSH daemon (83.212.118.4)
+Apr07 19:30:00 [INFO]- NODE [cassandra_seed_0]	: now ready (took 16 sec)
+Apr07 19:30:00 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
+
+"     echo '## AUTO GENERATED #### 
+     
+     10.0.0.4 cassandra_seednode
+     ff02::1 ip6-allnodes
+     ff00::0 ip6-mcastprefix
+     ::1 ip6-localhost ip6-loopback
+     10.0.0.4 cassandra_seed_0
+     ff02::2 ip6-allrouters
+     127.0.0.1 localhost
+     fe00::0 ip6-localnet' > /etc/hosts; echo cassandra_seed_0 >/etc/hostname"
+
+
+Apr07 19:30:00 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+
+ 	$:  
+
+
+Apr07 19:30:00 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
+
+"     service ganglia-monitor restart; service gmetad restart"
+
+
+Apr07 19:30:00 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+

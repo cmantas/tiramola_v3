@@ -1,6 +1,6 @@
 __author__ = 'cmantas'
 import sys
-
+from lib.tiramola_logging import get_logger
 raw_args = sys.argv
 args = dict()
 
@@ -17,7 +17,7 @@ def parse_args():
             args[key] = value
     return chosen_function
 
-
+log = get_logger("CLI\t\t\t", 'INFO')
 
 ##############################  AVAILABLE ACTIONS  #######################################
 
@@ -40,11 +40,11 @@ tiramola destroy_all
 def load_data():
     try:
         record_count = int(args["records"])
-        print "CLI: Loading %d records in the cluster" % record_count
+        log.info("Loading %d records in the cluster" % record_count)
         import CassandraCluster
         CassandraCluster.run_load_phase(record_count)
     except KeyError as e:
-        print "CLI: record_count requires argument %s" % e.args[0]
+        log.info("record_count requires argument %s" % e.args[0])
 
 
 def run_sinusoid():
@@ -52,32 +52,32 @@ def run_sinusoid():
         target = int(args["target"])
         period = int(args["period"])
         offset = int(args["offset"])
-        print "CLI: running sinusoid for target=%d, offset=%d, period=%d" % (target, offset, period)
+        log.info("running sinusoid for target=%d, offset=%d, period=%d" % (target, offset, period))
         import CassandraCluster
         CassandraCluster.run_sinusoid(target, offset, period)
     except KeyError as e:
-        print "CLI: run_sinusoid requires argument %s" % e.args[0]
+        log.info("run_sinusoid requires argument %s" % e.args[0])
 
 
 def create_cluster():
     try:
         nodes = int(args["nodes"])
         clients = int(args["clients"])
-        print "CLI: creating cluster with %d nodes and %d clients" % (nodes, clients)
+        log.info("creating cluster with %d nodes and %d clients" % (nodes, clients))
         import CassandraCluster
         CassandraCluster.create_cluster(nodes-1, clients)
     except KeyError as e:
-        print "CLI: create_cluster requires argument %s" % e.args[0]
+        log.info("create_cluster requires argument %s" % e.args[0])
 
 
 def kill_workload():
-    print "CLI: killing workload"
+    log.info("killing workload")
     import CassandraCluster
     CassandraCluster.kill_clients()
 
 
 def kill_nodes():
-    print "CLI: killing cassandra nodes"
+    log.info("killing cassandra nodes")
     import CassandraCluster
     CassandraCluster.kill_nodes()
 
@@ -142,5 +142,5 @@ try:
     #just call the appropriate function with eval!
     eval(function+"()")
 except NameError:
-    print "CLI: No such action"
+    log.error("No such action")
     info()

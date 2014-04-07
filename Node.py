@@ -1,8 +1,9 @@
 __author__ = 'cmantas'
 
-from VM import VM, Timer
+from VM import VM, Timer, LOGS_DIR
 from VM import get_all_vms
 from lib.persistance_module import env_vars, get_script_text
+from lib.tiramola_logging import get_logger
 
 
 class Node (VM):
@@ -31,6 +32,8 @@ class Node (VM):
             self.from_vm(vm)
         else:
             super(Node, self).__init__(self.name, self.flavor, self.image, IPv4=IPv4, create=create, wait=wait)
+        #self.log = get_logger('NODE [%s]\t' % self.name, 'INFO', logfile=self.logfile)
+        self.log.name = 'NODE [%s]\t' % self.name
 
     def __str__(self):
         rv = "Node || name: %s, type: %s" % (self.name, self.type)
@@ -42,9 +45,11 @@ class Node (VM):
         :param vm:
         :return:
         """
-        if not vm.created:
-            print "this VM is not created, so you cann't create a node from it"
         self.name = vm.name
+        if not vm.created:
+            self.log.error("this VM is not created, so you cann't create a node from it")
+            return
+        self.log = vm.log
         super(Node, self).__init__(self.name, self.flavor, self.image, IPv4=vm.IPv4)
         self.id = vm.id
         self.created = True
@@ -56,11 +61,12 @@ class Node (VM):
         Runs the required bootstrap scripts on the node
         """
         command = ""
-        print "NODE: [%s] running bootstrap script" % self.name
+        self.log.info("running bootstrap script" % self.name)
         command += get_script_text(self.type, "bootstrap")
         timer = Timer.get_timer()
-        rv = self.run_command(command, silent=True)
-        print "NODE: %s is now bootstrapped (took %d sec)" % (self.name, timer.stop())
+        rv = self.run_command(command)
+        self.log.debug("command returned:\n"+rv)
+        self.log.info("is now bootstrapped (took %d sec)" % (self.name, timer.stop()))
         self.bootstraped = True
 
     def decommission(self):
@@ -68,7 +74,7 @@ class Node (VM):
         Cecommissions a node from the Cluster
         :return:
         """
-        print "NODE: [%s] running decommission script" % self.name
+        self.log.info( "running decommission script" % self.name)
         command = get_script_text(self.type, "decommission")
         timer = Timer.get_timer()
         self.run_command(command, silent=True)
@@ -76,13 +82,13 @@ class Node (VM):
         if action == "KEEP": pass
         elif action == "SHUTDOWN": self.shutdown()
         elif action == "DESTROY": self.destroy()
-        print "NODE: %s is now decommissioned (took %d sec)" % (self.name, timer.stop())
+        self.log.info( "now decommissioned (took %d sec)" % (self.name, timer.stop()))
 
     def kill(self):
         """
         Runs the required scripts to kill the application being run in the cluster
         """
-        print "NODE: [%s] running kill script" % self.name
+        self.log.info( "running kill script" % self.name)
         command = get_script_text(self.type, "kill")
         self.run_command(command, silent=True)
 

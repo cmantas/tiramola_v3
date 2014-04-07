@@ -59,7 +59,7 @@ def get_addreses(vm_id):
     return rv
 
 
-def create_vm(name, flavor_id, image_id, IPv4, log_path):
+def create_vm(name, flavor_id, image_id, IPv4, logger):
     """
     Creates this VM in the okeanos through kamaki
     """
@@ -74,10 +74,12 @@ def create_vm(name, flavor_id, image_id, IPv4, log_path):
     except ClientError:
         stderr.write('Failed while creating server %s' % name)
         raise
-    if log_path:
-        with open(abspath(log_path), 'w+') as f:
-            from json import dump
-            dump(my_dict, f, indent=2)
+
+        s="\n ============== SYNNEFO INFO ======================\n\n"
+        from json import dumps
+        s += dumps(my_dict, indent=2)
+        s += "\n ============== END SYNNEFO INFO ======================\n\n"
+        logger.debug(" Synnefo created the server. Info :\n\n%s" % s)
     return vm_id
 
 

@@ -1,13 +1,14 @@
 __author__ = 'cmantas'
 from sys import stderr
 from os.path import exists
-from os import mkdir
+from os import mkdir, remove
 from time import time, sleep
 import ntpath
 import thread
 
 from lib.scp_utils import *
 from lib.persistance_module import env_vars
+from lib.tiramola_logging import get_logger
 
 
 #choose the IaaS provider
@@ -47,12 +48,14 @@ class VM (object):
         self.log_path = log_path
         self.image_id = image_id
         self.public_addresses = []
-        self.log_path = log_path
         self.addresses = []
         self.id = -1
         self.IPv4 = IPv4
+        self.logfile = "%s/%s.log" % (LOGS_DIR, self.name)
+        self.log = get_logger('VM [%s]\t'%self.name, 'INFO', logfile=self.logfile)
         if create:
             self.create(wait)
+
 
     def load_addresses(self):
         """
@@ -72,13 +75,13 @@ class VM (object):
         self.id = in_dict['id']
 
     def create(self, wait=False):
-        print ("VM: creating '"+self.name+"'"),
+
         if wait:
-            print "(sync)"
+            self.log.info("creating (synchronously)")
             self.create_sync()
             self.wait_ready()
         else:
-            print "(async)"
+            self.log.info("creating (async)")
             thread.start_new_thread(self.create_sync, ())
 
     def create_sync(self):
@@ -91,7 +94,10 @@ class VM (object):
         self.id = iaas.create_vm(self.name, self.flavor_id, self.image_id, self.IPv4, LOGS_DIR+"/%s.log" % self.name)
         new_status = iaas.get_vm_status(self.id)
         delta = timer.stop()
-        print 'VM: IaaS status for "%s" is now %s (took %d sec)' % (self.name, new_status, delta )
+        if new_status == 'ERROR':
+            self.log.error("IaaS creation FAILED")
+            return
+        self.log.info('IaaS status is now %s (took %d sec)' % (new_status, delta ) )
         self.created = True
         self.load_addresses()
 
@@ -99,7 +105,7 @@ class VM (object):
         """
         Issues the 'shutdown' command to the IaaS provider
         """
-        print 'VM: Shutting down "%s" (id: %d)' % (self.name, self.id)
+        self.log.info('Shutting down (id: %d)' % self.id)
         return iaas.shutdown_vm(self.id)
 
     def startup(self):
@@ -108,13 +114,17 @@ class VM (object):
         :return: true if VM exist false if not
         """
         if not self.created: return False;
-        print 'VM: starting up "%s" (id: %d)' % (self.name, self.id)
+        self.log.info('starting up (id: %d)' %  self.id)
         return iaas.startup_vm(self.id)
 
     def destroy(self):
         """Issues the 'destory' command to the IaaS provider  """
-        print "VM: Destroying %s" % self.name
+        self.log.info("Destroying ")
         iaas.destroy_vm(self.id)
+        #delete the logfile
+        try:
+            remove(self.logfile)
+        except: pass
 
     def __str__(self):
             text = ''
@@ -160,9 +170,9 @@ class VM (object):
             stderr.write('this VM does not exist (yet),'
                          ' so you cannot run commands on it')
             return "ERROR"
-        if not silent:
-            print "VM: [%s] running SSH command \"%s\"" % (self.name, command)
-        return run_ssh_command(self.get_public_addr(), user, command, indent, prefix)
+        self.log.debug("running SSH command:\n\n\"%s\"\n\n" % reindent(command, 5))
+        rv= run_ssh_command(self.get_public_addr(), user, command, indent, prefix)
+        self.log.debug("command returned:\n\n %s\n\n" % rv)
 
     def put_files(self, files, user='root', remote_path='.', recursive=False):
         """
@@ -205,15 +215,16 @@ class VM (object):
         success = False
         attempts = 0
         if not self.created:
+            self.log.debug("Not active yet. Sleeping")
             while not self.created:  sleep(3)
-        print "VM: [%s] waiting for SSH deamon (addr: %s)" % (self.name, self.get_public_addr())
+        self.log.info( "Waiting for SSH daemon (%s)" % self.get_public_addr())
         #time to stop trying
         end_time = datetime.now()+timedelta(seconds=ssh_giveup_timeout)
         timer = Timer()
         timer.start()
-        #print("VM: Trying ssh, attempt "),
+        #self.log.info(("VM: Trying ssh, attempt "),
         while not success:
-            #if(attempts%5 == 0): print ("%d" % attempts),
+            #if(attempts%5 == 0): self.log.info( ("%d" % attempts),
             attempts += 1
             if test_ssh(self.get_public_addr(), 'root'):
                 success = True
@@ -221,12 +232,14 @@ class VM (object):
                 if datetime.now() > end_time:
                     break
                 sleep(ATTEMPT_INTERVAL)
-        if success: print ("VM: %s now ready" % self.name),
-        else: print("VM: %s FAIL to be SSH-able" % self.name),
-        print ("  (took " + str(timer.stop())+" sec)")
+        delta = timer.stop()
+        if success:
+            self.log.info("now ready (took %d sec)" % delta)
+        else:
+            self.log.error(" FAILED to be SSH-able (after %d sec)" % delta)
         return success
 
-    def get_public_addr(self, IPv4=False):
+    def get_public_addr(self):
         """ Returns a publicly accessible IP address !!! for now, only checks for IPv6+fixed !!!"""
         rv = None
         if len(self.addresses) == 0:
@@ -234,10 +247,10 @@ class VM (object):
         for i in self.addresses:
             if i.type == "fixed" and i.version == 6:
                 rv = i.ip
-        if IPv4:
-            for i in self.addresses:
-                if i.type == "floating" and i.version == 4:
-                    rv = i.ip
+        #if there is a floating IP available, return this one
+        for i in self.addresses:
+            if i.type == "floating" and i.version == 4:
+                rv = i.ip
         return rv
 
     def get_private_addr(self):

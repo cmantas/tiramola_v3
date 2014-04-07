@@ -15,22 +15,22 @@ function check_seed(){
 
 	if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
 	then	
-		 echo CTOOL: ERROR - cassandra_seednode not pingable, exiting &>>ctool.log
+		 echo CTOOL: ERROR - cassandra_seednode not pingable, exiting 
 		exit -1 
 	fi
 }
 
 function be_seed(){
 	#change the gmond.conf file
-	echo "Changing the gmond.conf file" &>>ctool.log	 
+	echo "Changing the gmond.conf file" 	 
 	sed -i.bak "s/deaf = yes/deaf = no/g" /etc/ganglia/gmond.conf
 	my_priv_addr=$(my_ip)
-	echo "my address is $my_priv_addr" &>>ctool.log
+	echo "my address is $my_priv_addr" 
 	configure $my_priv_addr
-	echo "(Re)starting Ganglia, gmetad, apache" &>>ctool.log
-	service ganglia-monitor restart    &>>ctool.log
-	service gmetad restart    &>>ctool.log
-	service apache2 restart    &>>ctool.log
+	echo "(Re)starting Ganglia, gmetad, apache" 
+	service ganglia-monitor restart    
+	service gmetad restart    
+	service apache2 restart    
 }
 
 function my_ip(){
@@ -55,15 +55,15 @@ function status(){
 	jout=$(jps|grep CassandraDaemon)
 	if [[ "$jout" != *CassandraDaemon* ]] ;
 	then
-		echo "not_ready" &>>ctool.log
+		echo "not_ready" 
 		return
 	fi
 	if grep -q "Startup completed! Now serving reads." /var/log/cassandra/system.log;
 	then
-		echo "ready"  &>>ctool.log
+		echo "ready"  
 		return
 	else
-		echo  "not_ready" &>>ctool.log
+		echo  "not_ready" 
 	fi 
 }
 
@@ -93,24 +93,24 @@ function configure(){
         #make sure no requests are dropped by using a big timeout       
         sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
         sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
-	echo "CTOOL: Done configuring" &>>ctool.log
+	echo "CTOOL: Done configuring" 
 }
 
 function clean(){
 	kill_it
-	echo "Removing cassandra files and logs" &>>ctool.log
+	echo "Removing cassandra files and logs" 
 	#cleaning cassandra files
-	rm -rf /var/lib/cassandra/* &>>ctool.log
-	rm /var/log/cassandra/system.log &>>ctool.log
+	rm -rf /var/lib/cassandra/* 
+	rm /var/log/cassandra/system.log 
 	#cleaning ctool rrds
-	echo "Removing ganglia rrds" &>>ctool.log
-	rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+	echo "Removing ganglia rrds" 
+	rm -rf /var/lib/ganglia/rrds/* 
 }
 
 function c_start(){
 	if jps |grep CassandraDaemon ;
 	then 
-		echo Cassandra process already running, status: $(status) &>>ctool.log
+		echo Cassandra process already running, status: $(status) 
 		exit
 	fi
 
@@ -121,19 +121,19 @@ function c_start(){
 	else
 		#only delete any previous log files
 		echo "deleting previous log files"
-		rm /var/log/cassandra/system.log &>>ctool.log
+		rm /var/log/cassandra/system.log 
 	fi
 	chmod -R o+rw /var/lib/cassandra
 	check_seed
-	echo Starting casandra service, ganglia-monitor &>>ctool.log
+	echo Starting casandra service, ganglia-monitor 
 	service cassandra start
 	service ganglia-monitor restart &>>ctool.
 }
 
 function kill_it(){
 	CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
-	echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" &>>ctool.log
-	kill -9 $CAS_PID &>>ctool.log
+	echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" 
+	kill -9 $CAS_PID 
 }
 
 #configure

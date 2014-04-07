@@ -5,6 +5,7 @@ from json import loads, dumps
 from os import remove
 from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
+from lib.tiramola_logging import get_logger
 
 orchestrator = None     # the VM to which the others report to
 
@@ -22,6 +23,8 @@ save_file = "files/saved_%s_cluster.json" % cluster_name
 # the flavor and image for the VMs used int the cluster
 Node.flavor = env_vars["default_flavor"]
 Node.image = env_vars["cassandra_base_image"]
+
+log = get_logger('CLUSTER\t\t\t', 'INFO')
 
 
 def create_cluster(worker_count=0, client_count=0):
@@ -44,14 +47,14 @@ def create_cluster(worker_count=0, client_count=0):
     save_cluster()
     wait_everybody()
     inject_hosts_files()
-    print "CLUSTER: Every node is ready for SSH"
+    log.info('Every node is ready for SSH')
 
 
 def wait_everybody():
     """
     Waits for all the Nodes in the cluster to be SSH-able
     """
-    print "CLUSTER: Waiting for SSH on all nodes"
+    log.info('Waiting for SSH on all nodes')
     for i in seeds + nodes + clients:
         i.wait_ready()
 
@@ -61,13 +64,13 @@ def bootstrap_cluster():
     Runs the necessary boostrap commnands to each of the Seed Node and the other nodes
     """
     inject_hosts_files()
-    print "CLUSTER: Running bootstrap scripts"
+    log.info("Running bootstrap scripts")
     #bootstrap the seed node
     seeds[0].bootstrap()
     #bootstrap the rest of the nodes
     for n in nodes+clients:
         n.bootstrap(params={"seednode": seeds[0].get_private_addr()})
-    print "CLUSTER: READY!!"
+    log.info("READY!!")
 
 
 def resume_cluster():
@@ -75,7 +78,7 @@ def resume_cluster():
     Re-loads the cluster representation based on the VMs pre-existing on the IaaS and the 'save_file'
     """
     if not isfile(save_file):
-        print "CLUSTER: No existing created cluster"
+        log.info("No existing created cluster")
         return
     saved_cluster = loads(open(save_file, 'r').read())
     saved_nodes = saved_cluster['nodes']
@@ -90,7 +93,7 @@ def resume_cluster():
     to_remove = []
     for n in saved_nodes:
         if n not in [i.name for i in in_nodes]:
-            print "CLUSTER: ERROR, node %s does actually exist in the cloud, re-create the cluster" % n
+            log.error("node %s does actually exist in the cloud, re-create the cluster" % n)
             remove(save_file)
             exit(-1)
     for n in in_nodes:
@@ -126,7 +129,7 @@ def kill_clients():
     """
     Runs the kill scripts for all the clients
     """
-    print "CLUSTER: Killing clients"
+    log.error(" Killing clients")
     for c in clients: c.kill()
 
 
@@ -134,7 +137,7 @@ def kill_nodes():
     """
     Runs the kill scripts for all the nodes in the cluster
     """
-    print "CLUSTER: Killing cassandra nodes"
+    log.info("Killing cassandra nodes")
     for n in seeds+nodes+stash:
         n.kill()
 
@@ -153,7 +156,7 @@ def inject_hosts_files():
     know each other by hostname. Also restarts the ganglia daemons
     :return:
     """
-    print "CLUSTER: Injecting host files"
+    log.info("Injecting host files")
     hosts = dict()
     for i in seeds+nodes + clients:
         hosts[i.name] = i.get_private_addr()
@@ -185,12 +188,12 @@ def add_nodes(count=1):
     Adds a node to the cassandra cluster. Refreshes the hosts in all nodes
     :return:
     """
-    print "CLUSTER: Adding %d nodes" % (count)
+    log.info('Adding %d nodes' % count )
     new_nodes = []
     for i in range(count):
         if not len(stash) == 0:
             new_guy = stash.pop(0)
-            print "CLUSTER: Using %s from my stash" % new_guy.name
+            log.info("Using %s from my stash" % new_guy.name)
         else:
             new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
         nodes.append(new_guy)
@@ -201,7 +204,7 @@ def add_nodes(count=1):
         #inject host files to everybody
         n.inject_hostnames(get_hosts(private=True))
         n.bootstrap()
-        print "CLUSTER: Node %s is live " % new_guy.name
+        log.info("Node %s is live " % new_guy.name)
     #inform all
     inject_hosts_files()
 
@@ -214,11 +217,11 @@ def remove_nodes(count=1):
     action = env_vars['decommission_action']
     for i in range(count):
         dead_guy = nodes.pop()
-        print "CLUSTER: Removing node %s" % dead_guy.name
+        log.info("Removing node %s" % dead_guy.name)
         dead_guy.decommission()
         if action == "KEEP":
             stash[:] = [dead_guy] + stash
-        print "CLUSTER: Node %s is removed" % dead_guy.name
+        log.info("Node %s is removed" % dead_guy.name)
         save_cluster()
     inject_hosts_files()
 
@@ -236,7 +239,7 @@ def run_load_phase(record_count):
     for c in clients:
         load_command = "echo '%s' > /opt/hosts;" % host_text
         load_command += get_script_text("ycsb", "load") % (str(record_count), str(step), str(start), c.name[-1:])
-        print "CLUSTER: running load phase on %s" % c.name
+        log.info("running load phase on %s" % c.name)
         c.run_command(load_command, silent=True)
         start += step
 
@@ -257,7 +260,7 @@ def run_sinusoid(target_total, offset_total, period):
     for c in clients:
         load_command = "echo '%s' > /opt/hosts;" % host_text
         load_command += get_script_text("ycsb", "run_sin") % (target, offset, period, c.name[-1:])
-        print "CLUSTER: running workload on %s" % c.name
+        log.info("running workload on %s" % c.name)
         c.run_command(load_command, silent=True)
 
 
@@ -265,6 +268,7 @@ def destroy_all():
     """
     Destroys all the VMs in the cluster (not the orchestrator)
     """
+    log.info("Destroying the %s cluster" % cluster_name)
     for n in seeds+nodes+clients+stash:
         n.destroy()
     remove(save_file)
@@ -311,7 +315,7 @@ def get_monitoring_endpoint():
     for c in clients:
         if c.name != "cassandra_client_1":
             continue
-        return c.get_public_addr(IPv4=True)
+        return c.get_public_addr()
 
 
 #=============================== MAIN ==========================

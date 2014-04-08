@@ -172,7 +172,9 @@ class VM (object):
             return "ERROR"
         self.log.debug("running SSH command:\n\n%s\n\n" % reindent(command, 5))
         rv= run_ssh_command(self.get_public_addr(), user, command, indent, prefix)
-        self.log.debug("command returned:\n\n %s\n\n" % rv)
+        if rv is not None:
+            self.log.debug("command returned:\n\n %s\n\n" % rv)
+        return rv
 
     def put_files(self, files, user='root', remote_path='.', recursive=False):
         """
@@ -266,6 +268,8 @@ def get_all_vms(check_active=False):
     """
     Creates VM instances for all the VMs of the user available in the IaaS
     """
+    log = get_logger("VM [static]\t\t", 'INFO')
+    log.debug("getting all VMs")
     vms = []
     vm_ids = iaas.get_all_vm_ids()
     for vm_id in vm_ids:

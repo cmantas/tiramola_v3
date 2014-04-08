@@ -61,12 +61,12 @@ class Node (VM):
         Runs the required bootstrap scripts on the node
         """
         command = ""
-        self.log.info("running bootstrap script" % self.name)
+        self.log.info("running bootstrap script")
         command += get_script_text(self.type, "bootstrap")
         timer = Timer.get_timer()
         rv = self.run_command(command)
         self.log.debug("command returned:\n"+rv)
-        self.log.info("is now bootstrapped (took %d sec)" % (self.name, timer.stop()))
+        self.log.info("is now bootstrapped (took %d sec)" % timer.stop())
         self.bootstraped = True
 
     def decommission(self):
@@ -74,7 +74,7 @@ class Node (VM):
         Cecommissions a node from the Cluster
         :return:
         """
-        self.log.info( "running decommission script" % self.name)
+        self.log.info( "running decommission script")
         command = get_script_text(self.type, "decommission")
         timer = Timer.get_timer()
         self.run_command(command, silent=True)
@@ -82,13 +82,13 @@ class Node (VM):
         if action == "KEEP": pass
         elif action == "SHUTDOWN": self.shutdown()
         elif action == "DESTROY": self.destroy()
-        self.log.info( "now decommissioned (took %d sec)" % (self.name, timer.stop()))
+        self.log.info( "now decommissioned (took %d sec)" % (timer.stop()))
 
     def kill(self):
         """
         Runs the required scripts to kill the application being run in the cluster
         """
-        self.log.info( "running kill script" % self.name)
+        self.log.info( "running kill script")
         command = get_script_text(self.type, "kill")
         self.run_command(command, silent=True)
 

@@ -23,7 +23,7 @@ def get_logger(name, level, show_level=False, show_time=False, logfile=None):
 
     #add console handler
     console_handler.setFormatter(formatter)
-    console_handler.setLevel(logging.INFO)
+    eval("console_handler.setLevel(logging.%s)" % level)
     new_logger.addHandler(console_handler)
     
     #Different handler for logfile

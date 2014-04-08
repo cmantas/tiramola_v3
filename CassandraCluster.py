@@ -88,7 +88,7 @@ def resume_cluster():
     nodes[:] = []
     seeds[:] = []
 
-    in_nodes = Node.get_all_nodes(cluster_name=cluster_name, check_active=True)
+    in_nodes = Node.get_all_nodes(check_active=True)
     #check that all saved nodes actually exist and exit if not remove
     to_remove = []
     for n in saved_nodes:
@@ -100,6 +100,9 @@ def resume_cluster():
         if n.name not in saved_nodes+saved_seeds+saved_clients:
             if n.name in saved_stash:
                 stash.append(n)
+            if "orchestrator" in n.name:
+                global orchestrator
+                orchestrator = n
             continue
         else:
             if n.type == "seed": seeds.append(n)
@@ -168,19 +171,6 @@ def inject_hosts_files():
         i.inject_hostnames(hosts)
     seeds[0].run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
     orchestrator.run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
-
-
-def find_orchestrator():
-    """
-    Uses the firs VM whose name includes 'orchestrator' as an orchestrator for the cluster
-    :return:
-    """
-    vms = get_all_vms()
-    for vm in vms:
-        if "orchestrator" in vm.name:
-            global orchestrator
-            orchestrator = Node(vm=vm)
-            return
 
 
 def add_nodes(count=1):
@@ -322,7 +312,6 @@ def get_monitoring_endpoint():
 
 
 ################ INIT actions ###########
-find_orchestrator()
 resume_cluster()
 ########################################
 

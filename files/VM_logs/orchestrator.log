@@ -47,3 +47,173 @@ Apr07 19:30:05 [DEBUG]- NODE [orchestrator]	: command returned:
 	$:  
 
 
+Apr08 13:56:41 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     echo '## AUTO GENERATED #### 
+     
+     10.0.0.2 cassandra_seednode
+     ff02::1 ip6-allnodes
+     ff00::0 ip6-mcastprefix
+     ::1 ip6-localhost ip6-loopback
+     10.0.0.2 cassandra_seed_0
+     ff02::2 ip6-allrouters
+     127.0.0.1 localhost
+     fe00::0 ip6-localnet' > /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr08 13:56:42 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  
+
+
+Apr08 13:56:52 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr08 13:56:52 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr08 13:57:24 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     echo '## AUTO GENERATED #### 
+     
+     10.0.0.2 cassandra_seednode
+     ff02::1 ip6-allnodes
+     ff00::0 ip6-mcastprefix
+     ::1 ip6-localhost ip6-loopback
+     10.0.0.2 cassandra_seed_0
+     ff02::2 ip6-allrouters
+     127.0.0.1 localhost
+     fe00::0 ip6-localnet' > /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr08 13:57:24 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  
+
+
+Apr08 13:57:24 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr08 13:57:24 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr08 13:59:31 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     echo '## AUTO GENERATED #### 
+     
+     10.0.0.2 cassandra_seednode
+     ff02::1 ip6-allnodes
+     ff00::0 ip6-mcastprefix
+     ::1 ip6-localhost ip6-loopback
+     10.0.0.2 cassandra_seed_0
+     ff02::2 ip6-allrouters
+     127.0.0.1 localhost
+     fe00::0 ip6-localnet' > /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr08 13:59:31 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  
+
+
+Apr08 13:59:31 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr08 13:59:32 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr08 14:09:39 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     echo '## AUTO GENERATED #### 
+     
+     10.0.0.2 cassandra_seednode
+     ff02::1 ip6-allnodes
+     ff00::0 ip6-mcastprefix
+     ::1 ip6-localhost ip6-loopback
+     10.0.0.2 cassandra_seed_0
+     ff02::2 ip6-allrouters
+     127.0.0.1 localhost
+     fe00::0 ip6-localnet' > /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr08 14:09:40 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  
+
+
+Apr08 14:09:41 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr08 14:09:41 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr08 14:10:30 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     echo '## AUTO GENERATED #### 
+     
+     10.0.0.2 cassandra_seednode
+     ff02::1 ip6-allnodes
+     ff00::0 ip6-mcastprefix
+     ::1 ip6-localhost ip6-loopback
+     10.0.0.2 cassandra_seed_0
+     ff02::2 ip6-allrouters
+     127.0.0.1 localhost
+     fe00::0 ip6-localnet' > /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr08 14:10:30 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  
+
+
+Apr08 14:10:31 [DEBUG]- NODE [orchestrator]	: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr08 14:10:31 [DEBUG]- NODE [orchestrator]	: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+

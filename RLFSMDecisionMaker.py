@@ -50,13 +50,13 @@ class RLFSMDecisionMaker():
         LOG_FILENAME = self.utils.install_dir+'/logs/Coordinator.log'
         self.my_logger = logging.getLogger('RLFSMDecisionMaker')
         self.my_logger.setLevel(logging.DEBUG)
-        
+
         handler = logging.handlers.RotatingFileHandler(
                       LOG_FILENAME, maxBytes=2*1024*1024, backupCount=5)
         formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s")
         handler.setFormatter(formatter)
         self.my_logger.addHandler(handler)
-        
+
         # Load any previous statics.
         self.measurementsFile = self.utils.install_dir+'/logs/measurements.txt'
         self.sumMetrics = {}

@@ -16,7 +16,7 @@ def get_logger(name, level, show_level=False, show_time=False, logfile=None):
     console_handler = logging.StreamHandler(sys.stdout)
 
     #construct format
-    console_format = '%(name)s: %(message)s'
+    console_format = '|%(name)23s: %(message)s'
     if show_level: console_format = '[%(levelname)s] ' + console_format
     if show_time: console_format = '%(asctime)-15s  - ' + console_format
     formatter = logging.Formatter(console_format, "%b%d %H:%M:%S")
@@ -30,7 +30,7 @@ def get_logger(name, level, show_level=False, show_time=False, logfile=None):
     if not logfile is None:
         file_handler = logging.FileHandler(logfile)
         file_handler.setLevel(logging.DEBUG)
-        fformat = '%(asctime)-15s[%(levelname)s]- %(name)s: %(message)s'
+        fformat = '%(asctime)-15s[%(levelname)5s] %(name)20s: %(message)s'
         fformatter = logging.Formatter(fformat, "%b%d %H:%M:%S")
         file_handler.setFormatter(fformatter)
         #print "adding handler for %s" % logfile

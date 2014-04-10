@@ -8,6 +8,7 @@ from scipy.cluster.vq import kmeans2
 from lib.persistance_module import env_vars
 from scipy.stats import linregress
 from collections import deque
+from lib.tiramola_logging import get_logger
 
 
 class RLDecisionMaker:
@@ -24,8 +25,6 @@ class RLDecisionMaker:
         # average, centroid
         self.measurementsPolicy = 'centroid'
         self.prediction = False
-        ## find a better way to do this
-        self.acted = ["done"]
 
         # used only in simulation!!
         self.countdown = 0
@@ -41,13 +40,7 @@ class RLDecisionMaker:
 
         ## Install logger
         LOG_FILENAME = 'files/logs/Coordinator.log'
-        self.my_logger = logging.getLogger('RLDecisionMaker')
-        self.my_logger.setLevel(logging.DEBUG)
-
-        handler = logging.handlers.RotatingFileHandler(LOG_FILENAME, maxBytes=2 * 1024 * 1024, backupCount=5)
-        formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s")
-        handler.setFormatter(formatter)
-        self.my_logger.addHandler(handler)
+        self.my_logger = get_logger('RLDecisionMaker', 'INFO', logfile=LOG_FILENAME)
 
         # Load any previous statics.
         self.measurementsFile = 'files/logs/measurements.txt'
@@ -110,7 +103,6 @@ class RLDecisionMaker:
             ms.write(str(metrics[0]) + '\t\t' + str(metrics[1]) + '\t\t' + str(metrics[2]) + '\t\t' +
                      str(metrics[3]) + '\t\t' + str(metrics[4]) + '\t\t' + str(metrics[5]) + '\n')
             ms.close()
-
 
     # param state: string Get the average metrics (throughput, latency) for this state.
     # return a dictionary with the averages
@@ -198,6 +190,7 @@ class RLDecisionMaker:
             self.my_logger.debug("DOKMEANS self.memory[state]['arrayMeas'] is None :|")
 
         return ctd
+
 
     def moving_average(self, iterable, n=3):
         # moving_average([40, 30, 50, 46, 39, 44]) --> 40.0 42.0 45.0 43.0
@@ -328,59 +321,33 @@ class RLDecisionMaker:
             except:
                 pass
 
-
-        # ?? HELP ??
-        # acted: we need a shared structure for checking if an action (= adding/removing VMs) is taking place at the moment
-        if not self.acted[len(self.acted) - 1].startswith("done"):
-            # Take decision as soon as decisions are unblocked.
-            #self.waitForIt = 0
+        # if there is a pending action, discard measurements, don't take a decision
+        if not self.pending_action is None:
             self.my_logger.debug("Last action " + str(self.acted[len(self.acted) - 1]) +
                                  " hasn't finished yet, see you later!")
-            #print str(self.debug) + " Ouf " + str(self.countdown)
-            if self.debug & self.countdown != 0:
-                if self.countdown == 1:
-                    self.acted.pop()
-                    self.my_logger.debug("Running a simulation, set state from: " + str(self.currentState) + " to "
-                                         + str(self.nextState))
-                    self.currentState = self.nextState
-
-                self.countdown = self.countdown - 1
-                print "Reducing countdown to " + str(self.countdown)
-            else:
-                print "Tha se trellanw..." + str(self.countdown - 1)
-                self.countdown = self.countdown - 1
-                print "Tha se trellanw..." + str(self.countdown)
-
-            if self.acted[len(self.acted) - 1].startswith("remove"):
-                #1. Save the current metrics in memory.
-                self.addMeasurement([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
-                                     allmetrics['latency'], datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")],
-                                    True)
-            elif self.acted[len(self.acted) - 1].startswith("add"):
-                self.my_logger.debug("Discarding measurement: " + str([str(self.currentState),
-                                                                       allmetrics['inlambda'], allmetrics['throughput'],
-                                                                       allmetrics['latency'],
-                                                                       datetime.datetime.now().strftime(
-                                                                           "%Y-%m-%d %H:%M:%S")]))
-                dms = open('files/logs/discarded-measurements.txt', 'a')
-                # metrics[4] contains the time tick -- when running a simulation, it represents the current minute,
-                # on actual experiments, it is the current time. Used for debugging and plotting
-                dms.write(str(self.currentState) + '\t\t' + str(allmetrics['inlambda']) + '\t\t' +
-                          str(allmetrics['throughput']) + '\t\t' + str(allmetrics['latency']) + '\t\t' +
-                          str(allmetrics['cpu']) + '\t\t' + datetime.datetime.now().strftime(
-                    "%Y-%m-%d %H:%M:%S") + '\n')
-                dms.close()
+            self.my_logger.debug("Discarding measurement: " +
+                                 str([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
+                                 allmetrics['latency'], datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")]))
+            dms = open('files/logs/discarded-measurements.txt', 'a')
+            # metrics[4] contains the time tick -- when running a simulation, it represents the current minute,
+            # on actual experiments, it is the current time. Used for debugging and plotting
+            dms.write(str(self.currentState) + '\t\t' + str(allmetrics['inlambda']) + '\t\t' +
+                      str(allmetrics['throughput']) + '\t\t' + str(allmetrics['latency']) + '\t\t' +
+                      str(allmetrics['cpu']) + '\t\t' + datetime.datetime.now().strftime(
+                "%Y-%m-%d %H:%M:%S") + '\n')
+            dms.close()
             # skip decision
             self.decision["action"] = "PASS"
             self.decision["count"] = 0
-
             return self.decision
+
 
         #1. Save the current metrics in memory.
         self.add_measurement([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
                               allmetrics['latency'], allmetrics['cpu'],
                               datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")], True)
 
+        # manage the interval counter (waitForIt)
         if self.waitForIt == 0:
             self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         else:

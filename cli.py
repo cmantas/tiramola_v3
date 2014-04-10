@@ -4,6 +4,7 @@ from lib.tiramola_logging import get_logger
 raw_args = sys.argv
 args = dict()
 
+
 def parse_args():
     chosen_function = raw_args[1]
     global args
@@ -17,9 +18,10 @@ def parse_args():
             args[key] = value
     return chosen_function
 
-log = get_logger("CLI\t\t\t", 'INFO')
+log = get_logger("CLI", 'INFO')
 
 ##############################  AVAILABLE ACTIONS  #######################################
+
 
 def info():
         print """==============   USAGE   ==================
@@ -34,6 +36,7 @@ tiramola remove_nodes [count=2]
 tiramola kill_workload
 tiramola kill_nodes
 tiramola destroy_all
+tiramola add_clients count=2
 """
 
 
@@ -41,8 +44,11 @@ def load_data():
     try:
         record_count = int(args["records"])
         log.info("Loading %d records in the cluster" % record_count)
-        import CassandraCluster
-        CassandraCluster.run_load_phase(record_count)
+        import CassandraCluster, ClientsCluster
+        svr_hosts = CassandraCluster.get_hosts(private=True)
+        args['type'] = 'load'
+        args['servers'] = svr_hosts
+        ClientsCluster.run(args)
     except KeyError as e:
         log.info("record_count requires argument %s" % e.args[0])
 
@@ -53,16 +59,30 @@ def run_sinusoid():
         period = int(args["period"])
         offset = int(args["offset"])
         log.info("running sinusoid for target=%d, offset=%d, period=%d" % (target, offset, period))
-        import CassandraCluster
-        CassandraCluster.run_sinusoid(target, offset, period)
+        import ClientsCluster, CassandraCluster
+        svr_hosts = CassandraCluster.get_hosts(private=True)
+        args['type'] = 'sinusoid'
+        args['servers'] = svr_hosts
+        ClientsCluster.run(args)
     except KeyError as e:
         log.info("run_sinusoid requires argument %s" % e.args[0])
+
+
+def run_stress():
+    log.info("running stress workload" )
+    import ClientsCluster, CassandraCluster
+    svr_hosts = CassandraCluster.get_hosts(private=True)
+    params = {'type':'stress', 'servers': svr_hosts}
+    ClientsCluster.run(params)
 
 
 def create_cluster():
     try:
         nodes = int(args["nodes"])
-        clients = int(args["clients"])
+        if 'clients' in args:
+            clients = int(args["clients"])
+        else:
+            clients = 0
         log.info("creating cluster with %d nodes and %d clients" % (nodes, clients))
         import CassandraCluster
         CassandraCluster.create_cluster(nodes-1, clients)
@@ -70,10 +90,30 @@ def create_cluster():
         log.info("create_cluster requires argument %s" % e.args[0])
 
 
+def add_clients():
+    if "count" in args.keys():
+        count = int(args['count'])
+    else:
+        count = 1;
+    log.info("adding %d clients" % count)
+    import ClientsCluster
+    ClientsCluster.add_nodes(count)
+
+
+def remove_clients():
+    if "count" in args.keys():
+        count = int(args['count'])
+    else:
+        count = 1;
+    log.info("removing %d clients" % count)
+    import ClientsCluster
+    ClientsCluster.remove_nodes(count)
+
+
 def kill_workload():
     log.info("killing workload")
-    import CassandraCluster
-    CassandraCluster.kill_clients()
+    import ClientsCluster
+    ClientsCluster.kill_nodes()
 
 
 def kill_nodes():
@@ -93,13 +133,14 @@ def destroy_all():
 
 
 def hosts():
-    import CassandraCluster
-    hosts = CassandraCluster.get_hosts(include_clients=True)
+    import CassandraCluster, ClientsCluster
+    svr_hosts = CassandraCluster.get_hosts()
+    clnt_hosts = ClientsCluster.get_hosts()
+    hosts = dict(svr_hosts.items() + clnt_hosts.items())
     rv = ""
     for h in hosts.keys():
             rv += hosts[h] + " " + h + "\n"
     print rv
-
 
 
 def private_hosts():

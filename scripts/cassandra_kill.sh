@@ -19,4 +19,6 @@ rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
 
 
 
-echo '\n\n############  KILLED  ##############' >> ycsb_run.log
+echo '
+
+############  KILLED  ##############' >> ycsb_run.log

@@ -52,7 +52,7 @@ class VM (object):
         self.id = -1
         self.IPv4 = IPv4
         self.logfile = "%s/%s.log" % (LOGS_DIR, self.name)
-        self.log = get_logger('VM [%s]\t'%self.name, 'INFO', logfile=self.logfile)
+        self.log = get_logger('VM [%s]' % self.name, 'INFO', logfile=self.logfile)
         if create:
             self.create(wait)
 
@@ -268,7 +268,7 @@ def get_all_vms(check_active=False):
     """
     Creates VM instances for all the VMs of the user available in the IaaS
     """
-    log = get_logger("VM [static]\t\t", 'INFO')
+    log = get_logger("VM [static]", 'INFO')
     log.debug("getting all VMs")
     vms = []
     vm_ids = iaas.get_all_vm_ids()

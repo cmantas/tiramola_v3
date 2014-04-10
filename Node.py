@@ -27,13 +27,14 @@ class Node (VM):
         self.name = cluster_name + "_" + node_type + "_" + str(number)
         self.type = node_type
         self.number = number
+        self.cluster_name = cluster_name
         if not vm is None:
             # init a node from a VM
             self.from_vm(vm)
         else:
             super(Node, self).__init__(self.name, self.flavor, self.image, IPv4=IPv4, create=create, wait=wait)
         #self.log = get_logger('NODE [%s]\t' % self.name, 'INFO', logfile=self.logfile)
-        self.log.name = 'NODE [%s]\t' % self.name
+        self.log.name = "NODE [%s]" % self.name
 
     def __str__(self):
         rv = "Node || name: %s, type: %s" % (self.name, self.type)
@@ -54,6 +55,8 @@ class Node (VM):
         self.id = vm.id
         self.created = True
         self.type = self.name[self.name.find("_")+1:][:self.name[self.name.find("_")+1:].find("_")]
+        self.cluster_name = self.name[:self.name.find("_")]
+        self.log.debug("cluster = "+self.cluster_name)
         self.addresses = vm.addresses
 
     def bootstrap(self, params=None):
@@ -62,7 +65,7 @@ class Node (VM):
         """
         command = ""
         self.log.info("running bootstrap script")
-        command += get_script_text(self.type, "bootstrap")
+        command += get_script_text(self.cluster_name, self.type, "bootstrap")
         timer = Timer.get_timer()
         rv = self.run_command(command)
         self.log.debug("command returned:\n"+rv)
@@ -75,10 +78,10 @@ class Node (VM):
         :return:
         """
         self.log.info( "running decommission script")
-        command = get_script_text(self.type, "decommission")
+        command = get_script_text(self.cluster_name, self.type, "decommission")
         timer = Timer.get_timer()
         self.run_command(command, silent=True)
-        action = env_vars["decommission_action"]
+        action = env_vars["%s_decommission_action" % self.cluster_name]
         if action == "KEEP": pass
         elif action == "SHUTDOWN": self.shutdown()
         elif action == "DESTROY": self.destroy()
@@ -89,25 +92,22 @@ class Node (VM):
         Runs the required scripts to kill the application being run in the cluster
         """
         self.log.info( "running kill script")
-        command = get_script_text(self.type, "kill")
+        command = get_script_text(self.cluster_name, self.type, "kill")
         self.run_command(command, silent=True)
 
-    def inject_hostnames(self, hostnames):
+    def inject_hostnames(self, hostnames, delete=None):
         """
-        Recreates the /etc/hosts file in the node so that it inlcludes the given hostnames and ips
+        appends hostnames to /etc/hosts file in the node so that it inlcludes the given hostnames and ips
+        if delete is specified, it removes from /etc/hosts the lines containing the given string
         :param hostnames: a mapping of hostnames-->IPs
         """
-        #add some default hostnames
-        hostnames["localhost"] = "127.0.0.1"
-        hostnames["ip6-localhost ip6-loopback"] = "::1"
-        hostnames["ip6-localnet"] = "fe00::0"
-        hostnames["ip6-mcastprefix"] = "ff00::0"
-        hostnames["ip6-allnodes"] = "ff02::1"
-        hostnames["ip6-allrouters"] = "ff02::2"
         text = ""
+        if not delete is None:
+            # delete required entries
+            self.run_command('sed -i "/.*%s.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts' % delete)
         for host in hostnames.keys():
             text += "\n%s %s" % (hostnames[host], host)
-        self.run_command("echo '## AUTO GENERATED #### \n%s' > /etc/hosts; echo %s >/etc/hostname" %
+        self.run_command("echo '%s' >> /etc/hosts; echo %s >/etc/hostname" %
                          (text, self.name), silent=True)
 
     def get_status(self):

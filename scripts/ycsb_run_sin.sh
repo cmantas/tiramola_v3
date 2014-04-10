@@ -2,15 +2,13 @@
 target=%s
 offset=%s
 period=%s
-clientNo=%s
-threads=40
+threads=200
 
 echo "
 period=$period
 target=$target
 offset=$offset
-clientno=$clientNo
-recordcount=1000
+recordcount=100
 operationcount=10000000
 workload=com.yahoo.ycsb.workloads.CoreWorkload
 sinusoidal=true

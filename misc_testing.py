@@ -21,15 +21,4 @@ logger.addHandler(handler)
 
 logger.error("helloo")
 
-class test:
-    def __init__(self, name):
-        self.name = name
-
-    def __str__(self):
-        return  self.name
-
-
-all= [test("christos"), test("giannis"), test("aristos"), test("xavier")]
-
-
-for a in all: print a
+print "%02d" % 2 + str("hello")

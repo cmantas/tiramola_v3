@@ -83,10 +83,10 @@ def store_openstack_name(vm_id, name):
         json.dump(openstack_names, outfile, indent=3)
 
 
-def get_script_text(node_type, script_type):
+def get_script_text(cluster, node_type, script_type):
     scripts = json.loads(open(SCRIPTS_FILE, 'r').read())
     try:
-        filename = scripts[node_type+"_"+script_type]
+        filename = scripts[cluster+"_"+node_type+"_"+script_type]
         file = open(filename, 'r')
         return file.read()+"\n"
     except KeyError:

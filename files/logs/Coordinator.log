@@ -1825,3 +1825,528 @@ doing nothing
 2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION Vs: {9: 9, 10: 10}, max V = 10 V[10] 10
 2014-04-04 17:46:18,224 - DEBUG - RLDecisionMaker - TAKEDECISION: action PASS 0 nodes.
 doing nothing
+Cluster exists
+Cluster exists
+Apr10 16:05:53 [INFO]- |         COORDINATOR: Cluster exists
+Apr10 16:27:31 [INFO]- |         COORDINATOR: Cluster exists
+2014-04-10 16:28:10,728 - DEBUG - RLDecisionMaker - TAKEDECISION state: 16
+2014-04-10 16:28:10,728 - DEBUG - RLDecisionMaker - Collecting metrics
+2014-04-10 16:28:10,753 - DEBUG - RLDecisionMaker - New decision in 2.0 mins, see you later!
+Apr10 16:28:10 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:02:46 [INFO]- |         COORDINATOR: Cluster exists
+Apr10 17:03:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:03:38 [DEBUG]- |     RLDecisionMaker: Collecting metrics
+Apr10 17:03:38 [DEBUG]- |     RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr10 17:03:38 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:04:08 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:04:08 [DEBUG]- |     RLDecisionMaker: Collecting metrics
+Apr10 17:04:08 [DEBUG]- |     RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr10 17:04:08 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:04:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:04:38 [DEBUG]- |     RLDecisionMaker: Collecting metrics
+Apr10 17:04:38 [DEBUG]- |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:04:38 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:05:08 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:05:08 [DEBUG]- |     RLDecisionMaker: Collecting metrics
+Apr10 17:05:08 [DEBUG]- |     RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:05:08 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: Collecting metrics
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION adding state 15 with gain 15
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 6
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 6
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state 16 current reward : 16 training set reward: 16
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION adding current state 16 with gain 16
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION Vs: {15: 15}, max V = 15 V[15] 15
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION Vs: {16: 16, 15: 15}, max V = 16 V[16] 16
+Apr10 17:05:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:05:38 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:06:08 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:06:08 [DEBUG]- |     RLDecisionMaker: Collecting metrics
+Apr10 17:06:08 [DEBUG]- |     RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr10 17:06:08 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:06:38 [DEBUG]- |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:06:38 [DEBUG]- |     RLDecisionMaker: Collecting metrics
+Apr10 17:06:38 [DEBUG]- |     RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr10 17:06:38 [INFO]- |         COORDINATOR: doing nothing
+Apr10 17:07:23 [INFO]	 |         COORDINATOR: Cluster exists
+Apr10 17:08:17 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:08:17 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:08:17 [DEBUG]	 |     RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr10 17:08:17 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:08:47 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:08:47 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:08:47 [DEBUG]	 |     RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr10 17:08:47 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:09:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:09:18 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:09:18 [DEBUG]	 |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:09:18 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:09:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:09:48 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:09:48 [DEBUG]	 |     RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:09:48 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding state 15 with gain 15
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 13
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 13
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state 16 current reward : 16 training set reward: 16
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding current state 16 with gain 16
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {15: 15}, max V = 15 V[15] 15
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {16: 16, 15: 15}, max V = 16 V[16] 16
+Apr10 17:10:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:10:18 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:10:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:10:48 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:10:48 [DEBUG]	 |     RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr10 17:10:48 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:11:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:11:18 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:11:18 [DEBUG]	 |     RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr10 17:11:18 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:11:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:11:48 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:11:48 [DEBUG]	 |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:11:48 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:12:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:12:18 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:12:18 [DEBUG]	 |     RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:12:18 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:12:44 [INFO]	 |         COORDINATOR: Cluster exists
+Apr10 17:13:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:13:48 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:13:48 [DEBUG]	 |     RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr10 17:13:48 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:14:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:14:18 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:14:18 [DEBUG]	 |     RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr10 17:14:18 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:14:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:14:48 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:14:48 [DEBUG]	 |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:14:48 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:15:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:15:18 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:15:18 [DEBUG]	 |     RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:15:18 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding state 15 with gain 15
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 22
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 22
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state 16 current reward : 16 training set reward: 16
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding current state 16 with gain 16
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {15: 15}, max V = 15 V[15] 15
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {16: 16, 15: 15}, max V = 16 V[16] 16
+Apr10 17:15:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:15:48 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:16:18 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:16:18 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:16:18 [DEBUG]	 |     RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr10 17:16:18 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:16:48 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:16:48 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:16:48 [DEBUG]	 |     RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr10 17:16:48 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:17:23 [INFO]	 |         COORDINATOR: Cluster exists
+Apr10 17:17:41 [DEBUG]	 |         COORDINATOR: --------- NEW RUN  -----------------
+Apr10 17:18:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:18:12 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:18:12 [DEBUG]	 |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:18:12 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:18:42 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:18:42 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:18:42 [DEBUG]	 |     RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:18:42 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding state 15 with gain 15
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 27
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 27
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state 16 current reward : 16 training set reward: 16
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding current state 16 with gain 16
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {15: 15}, max V = 15 V[15] 15
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {16: 16, 15: 15}, max V = 16 V[16] 16
+Apr10 17:19:12 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:19:12 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:19:42 [DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:19:42 [DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:19:42 [DEBUG]	 |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:19:42 [INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:24:51 [  INFO]	 |         COORDINATOR: Cluster exists
+Apr10 17:25:13 [ DEBUG]	 |         COORDINATOR: --------- NEW RUN  -----------------
+Apr10 17:25:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:25:44 [ DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:25:44 [ DEBUG]	 |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:25:44 [  INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:26:14 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:26:14 [ DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:26:14 [ DEBUG]	 |     RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:26:14 [  INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: num_nodes  15
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding state 15 with gain 15
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 31
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 31
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: num_nodes  16
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION state 16 current reward : 16 training set reward: 16
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION adding current state 16 with gain 16
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {15: 15}, max V = 15 V[15] 15
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION Vs: {16: 16, 15: 15}, max V = 16 V[16] 16
+Apr10 17:26:44 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:26:44 [  INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:27:14 [ DEBUG]	 |     RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:27:14 [ DEBUG]	 |     RLDecisionMaker: Collecting metrics
+Apr10 17:27:14 [ DEBUG]	 |     RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:27:14 [  INFO]	 |         COORDINATOR: doing nothing
+Apr10 17:28:35 [ INFO] COORDINATOR: Cluster exists
+Apr10 17:28:44 [DEBUG] COORDINATOR: --------- NEW RUN  -----------------
+Apr10 17:29:16 [DEBUG] RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:29:16 [DEBUG] RLDecisionMaker: Collecting metrics
+Apr10 17:29:16 [DEBUG] RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:29:16 [ INFO] COORDINATOR: doing nothing
+Apr10 17:29:46 [DEBUG] RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:29:46 [DEBUG] RLDecisionMaker: Collecting metrics
+Apr10 17:29:46 [DEBUG] RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:29:46 [ INFO] COORDINATOR: doing nothing
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: Collecting metrics
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: -num_nodes  -15
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION adding state 15 with gain -15
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 35
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 35
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: -num_nodes  -16
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION state 16 current reward : -16 training set reward: -16
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION adding current state 16 with gain -16
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: Decided to change state to_next: 15 from_curr: 16
+Apr10 17:30:16 [DEBUG] RLDecisionMaker: TAKEDECISION: action REMOVE 1 nodes.
+Apr10 17:30:16 [ INFO] COORDINATOR: will remove 1 nodes
+Apr10 17:30:46 [DEBUG] RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:30:46 [DEBUG] RLDecisionMaker: Collecting metrics
+Apr10 17:30:46 [DEBUG] RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:30:46 [ INFO] COORDINATOR: doing nothing
+Apr10 17:31:16 [DEBUG] RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:31:16 [DEBUG] RLDecisionMaker: Collecting metrics
+Apr10 17:31:16 [DEBUG] RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:31:16 [ INFO] COORDINATOR: doing nothing
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: Collecting metrics
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: -num_nodes  -15
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION adding state 15 with gain -15
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 38
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 38
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: -num_nodes  -16
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION state 16 current reward : -16 training set reward: -16
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION adding current state 16 with gain -16
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: Decided to change state to_next: 15 from_curr: 16
+Apr10 17:31:46 [DEBUG] RLDecisionMaker: TAKEDECISION: action REMOVE 1 nodes.
+Apr10 17:31:46 [ INFO] COORDINATOR: will remove 1 nodes
+Apr10 17:33:06 [ INFO]          COORDINATOR: Cluster exists
+Apr10 17:33:31 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+Apr10 17:34:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:34:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:34:02 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:34:02 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:34:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:34:32 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:34:32 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:34:32 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: -num_nodes  -15
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 15 with gain -15
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 41
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 41
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: -num_nodes  -16
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state 16 current reward : -16 training set reward: -16
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 16 with gain -16
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 16 with state 15
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: Decided to change state to_next: 15 from_curr: 16
+Apr10 17:35:02 [DEBUG]      RLDecisionMaker: TAKEDECISION: action REMOVE 1 nodes.
+Apr10 17:35:02 [ INFO]          COORDINATOR: will remove 1 nodes
+Apr10 17:35:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 16
+Apr10 17:35:32 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:35:32 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:35:32 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:36:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:36:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:36:02 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:36:02 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 2
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 2
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: -num_nodes  -15
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state 15 current reward : -15 training set reward: -15
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 15 with gain -15
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 42
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 42
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: -num_nodes  -16
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 16 with gain -16
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 16
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:36:32 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:36:32 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:37:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:37:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:37:02 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:37:02 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:37:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:37:32 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:37:32 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:37:32 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 5
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 5
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: -num_nodes  -15
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state 15 current reward : -15 training set reward: -15
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 15 with gain -15
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 42
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 42
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: -num_nodes  -16
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 16 with gain -16
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 16
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:38:02 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:38:02 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:38:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:38:32 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:38:32 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:38:32 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:39:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:39:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:39:02 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:39:02 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 8
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 8
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: -num_nodes  -15
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state 15 current reward : -15 training set reward: -15
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 15 with gain -15
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 42
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 42
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: -num_nodes  -16
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 16 with gain -16
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 16
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:39:32 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:39:32 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:40:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:40:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:40:02 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:40:02 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:40:32 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:40:32 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:40:32 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:40:32 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 11
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 11
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: -num_nodes  -15
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION state 15 current reward : -15 training set reward: -15
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 15 with gain -15
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 42
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 42
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: -num_nodes  -16
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 16 with gain -16
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 16
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:41:02 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:41:02 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:41:33 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:41:33 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:41:33 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:41:33 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:42:03 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:42:03 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:42:03 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 17:42:03 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 14
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 14
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: -num_nodes  -15
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION state 15 current reward : -15 training set reward: -15
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 15 with gain -15
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 42
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 42
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: -num_nodes  -16
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 16 with gain -16
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 16
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {15: -15}, max V = 15 V[15] -15
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: -16, 15: -15}, max V = 16 V[16] -16
+Apr10 17:42:33 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 17:42:33 [ INFO]          COORDINATOR: doing nothing
+Apr10 17:43:03 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 17:43:03 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 17:43:03 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 17:43:03 [ INFO]          COORDINATOR: doing nothing
+Apr10 18:03:54 [ INFO]          COORDINATOR: Cluster exists
+Apr10 18:04:18 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+Apr10 18:04:49 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:04:49 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:04:49 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+Apr10 18:04:49 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:05:19 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:05:19 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:05:19 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+Apr10 18:05:19 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:05:49 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:05:49 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:05:49 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+Apr10 18:05:49 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:06:19 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:06:19 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:06:19 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+Apr10 18:06:19 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:06:49 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:06:49 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:06:49 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+Apr10 18:06:49 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:07:19 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:07:19 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:07:19 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+Apr10 18:07:19 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:10:06 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+Apr10 18:10:06 [ INFO]          COORDINATOR: Cluster exists
+Apr10 18:10:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:10:53 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:10:53 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+Apr10 18:10:53 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:11:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:11:23 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:11:23 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+Apr10 18:11:23 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:11:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:11:53 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:11:53 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+Apr10 18:11:53 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:12:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:12:23 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:12:23 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+Apr10 18:12:23 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:12:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:12:53 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:12:53 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+Apr10 18:12:53 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:13:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:13:23 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:13:23 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+Apr10 18:13:23 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:13:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:13:53 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:13:53 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr10 18:13:53 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:14:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:14:23 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:14:23 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr10 18:14:23 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:14:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:14:53 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:14:53 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 18:14:53 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:15:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:15:23 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:15:23 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 18:15:23 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 14 with gain 14
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 32
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 32
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state 15 current reward : 15 training set reward: 15
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 15 with gain 15
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 42
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 42
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 16 with gain 16
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 14
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 16
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {14: 14}, max V = 14 V[14] 14
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {14: 14, 15: 15}, max V = 15 V[15] 15
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: 16, 14: 14, 15: 15}, max V = 16 V[16] 16
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: Decided to change state to_next: 16 from_curr: 15
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: ups changed my mind...staying at state: 15 cause the gain difference is: 1 which is less than 10% of the current reward 0.0666666666667 15
+Apr10 18:15:53 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 18:15:53 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:16:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:16:23 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:16:23 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 18:16:23 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:18:15 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+Apr10 18:18:15 [ INFO]          COORDINATOR: Cluster exists
+Apr10 18:19:23 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+Apr10 18:19:23 [ INFO]          COORDINATOR: Cluster exists
+Apr10 18:20:15 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:20:15 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:20:15 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr10 18:20:15 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:20:45 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:20:45 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:20:45 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr10 18:20:45 [DEBUG]          COORDINATOR: doing nothing
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: Collecting metrics
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 5000.0 lambda range: 2000.0 - 8000.0
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 14 with gain 1400
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 36
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 36
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION state 15 current reward : 1500 training set reward: 1500
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 15 with gain 1500
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 42
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 42
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION adding state 16 with gain 1600
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 14
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION connecting state 15 with state 16
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {14: 1400}, max V = 14 V[14] 1400
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {14: 1400, 15: 1500}, max V = 15 V[15] 1500
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs: {16: 1600, 14: 1400, 15: 1500}, max V = 16 V[16] 1600
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: Decided to change state to_next: 16 from_curr: 15
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: ups changed my mind...staying at state: 15 cause the gain difference is: 100 which is less than 10% of the current reward 0.0666666666667 1500
+Apr10 18:21:15 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr10 18:21:15 [DEBUG]          COORDINATOR: doing nothing

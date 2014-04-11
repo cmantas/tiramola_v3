@@ -1,3 +1,4 @@
+#!/bin/sh
 #########  YCSB WORKLOAD PARAMS  ########
 target=%s
 offset=%s
@@ -8,8 +9,7 @@ echo "
 period=$period
 target=$target
 offset=$offset
-recordcount=100
-operationcount=10000000
+recordcount=1000
 workload=com.yahoo.ycsb.workloads.CoreWorkload
 sinusoidal=true
 readallfields=true

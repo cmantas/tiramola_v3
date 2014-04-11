@@ -263,7 +263,7 @@ class RLDecisionMaker:
         # read metrics
         allmetrics = None
         allmetrics = rcvallmetrics.copy()
-        self.my_logger.debug("TAKEDECISION state: " + str(self.currentState))
+        self.my_logger.debug("TAKEDECISION state: %s, pending action: %s" % (str(self.currentState), str(self.pending_action)))
 
         # avoid type errors at start up
         if not allmetrics.has_key('inlambda'):
@@ -323,11 +323,10 @@ class RLDecisionMaker:
 
         # if there is a pending action, discard measurements, don't take a decision
         if not self.pending_action is None:
-            self.my_logger.debug("Last action " + str(self.acted[len(self.acted) - 1]) +
-                                 " hasn't finished yet, see you later!")
+            self.my_logger.debug("Last action " + self.pending_action + " hasn't finished yet, see you later!")
             self.my_logger.debug("Discarding measurement: " +
                                  str([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
-                                 allmetrics['latency'], datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")]))
+                                 allmetrics['latency'] ]))
             dms = open('files/logs/discarded-measurements.txt', 'a')
             # metrics[4] contains the time tick -- when running a simulation, it represents the current minute,
             # on actual experiments, it is the current time. Used for debugging and plotting
@@ -498,7 +497,7 @@ class RLDecisionMaker:
             # You've chosen to change state, that means that nextState has a greater reward, therefore d is always > 0
             d = self.memory[str(self.nextState)]['r'] - self.memory[str(self.currentState)]['r']
             if (self.memory[str(self.currentState)]['r'] > 0):
-                if (float(d) / self.memory[str(self.currentState)]['r'] < 0.1):
+                if (float(d) / self.memory[str(self.currentState)]['r'] < 0.05):
                     #false alarm, stay where you are
                     self.nextState = self.currentState
                     # skip decision
@@ -506,7 +505,7 @@ class RLDecisionMaker:
                     self.decision["count"] = 0
                     self.my_logger.debug("ups changed my mind...staying at state: " + str(self.currentState)
                                          + " cause the gain difference is: " + str(
-                        abs(d)) + " which is less than 10% of the current reward " +
+                        abs(d)) + " which is less than 5% of the current reward " +
                                          str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + " " +
                                          str(self.memory[str(self.currentState)]['r']))
             # If the reward is the same with the state you're in, don't move
@@ -532,14 +531,14 @@ class RLDecisionMaker:
 
         ## Don't perform the action if we're debugging/simulating!!!
         if self.debug:
-            if self.acted[len(self.acted) - 1] == "done" and not action.startswith("none"):
-                self.acted.append("busy")
+            if self.pending_action == None and not self.decision["action"].startswith("PASS"):
+                self.pending_action = self.decision['action']
                 self.countdown = 5
                 #self.currentState = str(self.nextState)
                 self.my_logger.debug("TAKEDECISION simulation, action will finish in: " +
                                      str(self.countdown) + " mins")
             else:
-                self.my_logger.debug("TAKEDECISION Waiting for action to finish: " + str(action) + str(self.acted))
+                self.my_logger.debug("TAKEDECISION Waiting for action to finish: " + str(action) + str(self.pending_action))
 
         return self.decision
 
@@ -587,7 +586,7 @@ class RLDecisionMaker:
 
             #nomizw de xreiazetai giati ginetai kai take_decision kai se debug mode
             #self.addMeasurement([self.currentState, str(l), str(throughput), str(latency), str(i)], True)
-            #if self.acted[len(self.acted)-1] == "done" :
+            #if self.pending_action[len(self.pending_action)-1] == "done" :
             self.take_decision(values)
 
             time.sleep(1)

@@ -9,6 +9,7 @@ import xml.parsers.expat
 #import CassandraCluster as cluster_manager
 from os.path import isfile
 from time import sleep
+from lib.tiramola_logging import get_logger
 
 LOG_FILENAME = 'files/logs/Coordinator.log'
 
@@ -65,12 +66,7 @@ class MonitorVms:
 
         ## Install logger
 
-        self.my_logger = logging.getLogger('MonitorVms')
-        self.my_logger.setLevel(logging.DEBUG)
-        handler = handlers.RotatingFileHandler(LOG_FILENAME, maxBytes=2*1024*1024, backupCount=5)
-        formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(name)s - %(message)s")
-        handler.setFormatter(formatter)
-        self.my_logger.addHandler(handler)
+        self.my_logger = get_logger("MonitorVMs", "INFO", logfile=LOG_FILENAME)
 
         self.allmetrics={}
         self.parser = GParser()
@@ -78,11 +74,13 @@ class MonitorVms:
         # parser to update the dictionary object.
         self.refreshMetrics()
 
+
     def refreshMetrics(self):
         """
         runs periodically and refreshes the metrics
         :return:
         """
+        self.my_logger.debug("Refreshing metrics from %s:%s" % (self.ganglia_host, self.ganglia_port))
         for res in socket.getaddrinfo(self.ganglia_host, self.ganglia_port, socket.AF_UNSPEC, socket.SOCK_STREAM):
             af, socktype, proto, canonname, sa = res
             try:

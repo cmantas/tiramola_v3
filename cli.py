@@ -79,13 +79,9 @@ def run_stress():
 def create_cluster():
     try:
         nodes = int(args["nodes"])
-        if 'clients' in args:
-            clients = int(args["clients"])
-        else:
-            clients = 0
-        log.info("creating cluster with %d nodes and %d clients" % (nodes, clients))
+        log.info("creating cluster with %d nodes" % nodes)
         import CassandraCluster
-        CassandraCluster.create_cluster(nodes-1, clients)
+        CassandraCluster.create_cluster(nodes-1)
     except KeyError as e:
         log.info("create_cluster requires argument %s" % e.args[0])
 

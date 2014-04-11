@@ -1,114 +1,187 @@
-Apr08 18:09:40 [INFO]- VM [cassandra_seed_0]	: creating (async)
-Apr08 18:09:40 [DEBUG]- NODE [cassandra_seed_0]	: Not active yet. Sleeping
-Apr08 18:12:23 [INFO]- NODE [cassandra_seed_0]	: IaaS status is now ACTIVE (took 163 sec)
-Apr08 18:12:25 [INFO]- NODE [cassandra_seed_0]	: Waiting for SSH daemon (83.212.118.12)
-Apr08 18:13:08 [INFO]- NODE [cassandra_seed_0]	: now ready (took 43 sec)
-Apr08 18:25:20 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
+Apr10 19:10:11 [ INFO]   [cassandra_seed_0]: creating (async)
+Apr10 19:10:11 [DEBUG]   [cassandra_seed_0]: Not active yet. Sleeping
+Apr10 19:12:31 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:12:31 [ INFO]   [cassandra_seed_0]: creating (async)
+Apr10 19:12:31 [ INFO]   [cassandra_seed_0]: Waiting for SSH daemon (83.212.118.12)
+Apr10 19:12:36 [ INFO]   [cassandra_seed_0]: now ready (took 5 sec)
+Apr10 19:12:36 [DEBUG]   [cassandra_seed_0]: Not active yet. Sleeping
+Apr10 19:13:20 [ INFO]   [cassandra_seed_0]: IaaS status is now ACTIVE (took 49 sec)
+Apr10 19:13:21 [ INFO]   [cassandra_seed_0]: Waiting for SSH daemon (83.212.118.6)
+Apr10 19:13:42 [ INFO]   [cassandra_seed_0]: now ready (took 20 sec)
+Apr10 19:18:59 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:18:59 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:19:00 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
-     echo '## AUTO GENERATED #### 
-     
-     ::1 ip6-localhost ip6-loopback
-     10.0.0.19 cassandra_node_09
-     10.0.0.23 cassandra_node_08
-     10.0.0.17 cassandra_node_01
-     10.0.0.16 cassandra_node_03
-     10.0.0.7 cassandra_node_02
-     10.0.0.26 cassandra_node_05
-     10.0.0.20 cassandra_node_04
-     10.0.0.25 cassandra_node_07
-     10.0.0.10 cassandra_node_06
-     ff02::1 ip6-allnodes
-     ff00::0 ip6-mcastprefix
-     127.0.0.1 localhost
-     10.0.0.21 cassandra_seednode
-     10.0.0.6 cassandra_client_4
-     10.0.0.4 cassandra_client_3
-     10.0.0.2 cassandra_client_2
-     10.0.0.8 cassandra_client_1
-     10.0.0.24 cassandra_node_12
-     10.0.0.5 cassandra_node_13
-     10.0.0.22 cassandra_node_10
-     10.0.0.18 cassandra_node_11
-     10.0.0.12 cassandra_node_14
-     10.0.0.27 cassandra_node_15
-     10.0.0.21 cassandra_seed_0
-     ff02::2 ip6-allrouters
-     fe00::0 ip6-localnet' > /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
 
 
-Apr08 18:25:26 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+Apr10 19:19:05 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  
 
 
-Apr08 18:25:30 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
+Apr10 19:19:05 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.19 cassandra_node_20
+     10.0.0.18 cassandra_node_06
+     10.0.0.13 cassandra_seednode
+     10.0.0.28 cassandra_node_18
+     10.0.0.25 cassandra_node_19
+     10.0.0.15 cassandra_node_12
+     10.0.0.29 cassandra_node_13
+     10.0.0.31 cassandra_node_10
+     10.0.0.33 cassandra_node_11
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.14 cassandra_node_14
+     10.0.0.30 cassandra_node_15
+     10.0.0.17 cassandra_seed_0' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr10 19:19:05 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:19:05 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr10 19:19:15 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:19:15 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.19 cassandra_node_20
+     10.0.0.18 cassandra_node_06
+     10.0.0.13 cassandra_seednode
+     10.0.0.28 cassandra_node_18
+     10.0.0.25 cassandra_node_19
+     10.0.0.15 cassandra_node_12
+     10.0.0.29 cassandra_node_13
+     10.0.0.31 cassandra_node_10
+     10.0.0.33 cassandra_node_11
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.14 cassandra_node_14
+     10.0.0.30 cassandra_node_15
+     10.0.0.17 cassandra_seed_0' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr10 19:19:15 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:19:25 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
      service ganglia-monitor restart; service gmetad restart
 
 
-Apr08 18:25:36 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+Apr10 19:19:25 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  Stopping Ganglia Monitor Daemon: gmond.
 	$:  Starting Ganglia Monitor Daemon: gmond.
 	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
 	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
 	$:  
 
 
-Apr08 18:27:14 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
+Apr10 19:21:44 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:21:44 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:21:45 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
-     echo '## AUTO GENERATED #### 
-     
-     ::1 ip6-localhost ip6-loopback
-     10.0.0.19 cassandra_node_09
-     10.0.0.23 cassandra_node_08
-     10.0.0.17 cassandra_node_01
-     10.0.0.16 cassandra_node_03
-     10.0.0.7 cassandra_node_02
-     10.0.0.26 cassandra_node_05
-     10.0.0.20 cassandra_node_04
-     10.0.0.25 cassandra_node_07
-     10.0.0.10 cassandra_node_06
-     ff02::1 ip6-allnodes
-     ff00::0 ip6-mcastprefix
-     127.0.0.1 localhost
-     10.0.0.21 cassandra_seednode
-     10.0.0.6 cassandra_client_4
-     10.0.0.4 cassandra_client_3
-     10.0.0.2 cassandra_client_2
-     10.0.0.8 cassandra_client_1
-     10.0.0.24 cassandra_node_12
-     10.0.0.5 cassandra_node_13
-     10.0.0.22 cassandra_node_10
-     10.0.0.18 cassandra_node_11
-     10.0.0.12 cassandra_node_14
-     10.0.0.27 cassandra_node_15
-     10.0.0.21 cassandra_seed_0
-     ff02::2 ip6-allrouters
-     fe00::0 ip6-localnet' > /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
 
 
-Apr08 18:27:14 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+Apr10 19:21:45 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  
 
 
-Apr08 18:27:17 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
+Apr10 19:21:45 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.17 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr10 19:21:45 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:21:45 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr10 19:21:45 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:21:45 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.17 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr10 19:21:46 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:21:47 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
      service ganglia-monitor restart; service gmetad restart
 
 
-Apr08 18:27:21 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+Apr10 19:21:47 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  Stopping Ganglia Monitor Daemon: gmond.
 	$:  Starting Ganglia Monitor Daemon: gmond.
 	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
 	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
 	$:  
 
 
-Apr08 18:27:21 [INFO]- NODE [cassandra_seed_0]	: running bootstrap script
-Apr08 18:27:21 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
+Apr10 19:21:48 [ INFO]   [cassandra_seed_0]: running bootstrap script
+Apr10 19:21:48 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
      echo 'data_source "clients" cassandra_client_1' >> /etc/ganglia/gmetad.conf
      sed -i 's/data_source "cassandra" .*/ data_source "cassandra" cassandra_seednode/g ' /etc/ganglia/gmetad.conf
@@ -120,11 +193,11 @@ Apr08 18:27:21 [DEBUG]- NODE [cassandra_seed_0]	: running SSH command:
      
 
 
-Apr08 18:28:54 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+Apr10 19:22:17 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  Changing the gmond.conf file
-	$:  my address is 10.0.0.21
-	$:  configuring cassandra.yaml for my address:10.0.0.21
+	$:  my address is 10.0.0.13
+	$:  configuring cassandra.yaml for my address:10.0.0.13
 	$:  (Re)starting Ganglia, gmetad, apache
 	$:  CTOOL: Killing CassandraDaemon ()
 	$:  Removing cassandra files and logs
@@ -135,13 +208,15 @@ Apr08 18:28:54 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
 	$:  creating ycsb keyspace
 	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
 	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
 	$:  
 
 
-Apr08 18:28:54 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
+Apr10 19:22:17 [DEBUG]   [cassandra_seed_0]: command returned:
 	$:  Changing the gmond.conf file
-	$:  my address is 10.0.0.21
-	$:  configuring cassandra.yaml for my address:10.0.0.21
+	$:  my address is 10.0.0.13
+	$:  configuring cassandra.yaml for my address:10.0.0.13
 	$:  (Re)starting Ganglia, gmetad, apache
 	$:  CTOOL: Killing CassandraDaemon ()
 	$:  Removing cassandra files and logs
@@ -152,142 +227,90 @@ Apr08 18:28:54 [DEBUG]- NODE [cassandra_seed_0]	: command returned:
 	$:  creating ycsb keyspace
 	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
 	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
 	$:  
-Apr08 18:28:54 [INFO]- NODE [cassandra_seed_0]	: is now bootstrapped (took 92 sec)
-Apr09 18:35:06 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandr
-Apr09 18:36:08 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 18:40:01 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 18:54:32 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 18:55:23 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 18:58:05 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 19:00:57 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 19:06:15 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 19:06:49 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 19:08:39 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 19:09:00 [DEBUG]- VM [cassandra_seed_0]	: cluster = cassandra
-Apr09 19:10:24 [DEBUG]- VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:13:19 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:15:31 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:20:15 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:21:17 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:22:22 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:22:35 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr09 19:24:44 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:24:58 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr09 19:29:02 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:29:22 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr09 19:29:35 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr09 19:31:23 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 12:32:15 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 12:32:27 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 12:45:50 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 13:42:47 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 13:42:59 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 13:44:04 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 13:44:16 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 13:55:05 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 13:55:52 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:06:03 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:06:14 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 14:13:03 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:14:02 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:15:21 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:17:19 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:18:15 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:18:27 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 14:28:03 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:28:14 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 14:29:26 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:29:37 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 14:42:23 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:43:12 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:43:23 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 14:44:17 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:44:28 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 14:47:12 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:47:53 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 14:48:04 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 15:08:33 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 15:18:07 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 15:19:57 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:01:08 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:01:19 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:02:14 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:02:26 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:04:04 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:04:17 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:05:41 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:05:53 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:27:19 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:27:31 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:31:40 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:32:08 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:32:21 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:34:07 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:34:34 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:34:47 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:40:04 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:40:25 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:40:38 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 16:44:13 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:44:44 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 16:44:56 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:02:34 [DEBUG]- |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 17:02:46 [DEBUG]- |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:07:10 [DEBUG]	 |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 17:07:23 [DEBUG]	 |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:12:31 [DEBUG]	 |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 17:12:44 [DEBUG]	 |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:17:10 [DEBUG]	 |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 17:17:23 [DEBUG]	 |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:24:39 [ DEBUG]	 |VM [cassandra_seed_0]: cluster = cassandra
-Apr10 17:24:51 [ DEBUG]	 |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:28:22 [DEBUG] VM [cassandra_seed_0]: cluster = cassandra
-Apr10 17:28:35 [DEBUG] |NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:32:54 [DEBUG] VM [cassandra_seed_0]: cluster = cassandra
-Apr10 17:33:06 [DEBUG] NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 17:38:37 [DEBUG] NODE [cassandra_seed_0]: running SSH command:
+Apr10 19:22:17 [ INFO]   [cassandra_seed_0]: is now bootstrapped (took 29 sec)
+Apr10 19:25:43 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:25:43 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:26:26 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:26:26 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:30:57 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:30:57 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:31:32 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:31:32 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:36:12 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:36:12 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:41:07 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:41:07 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:49:01 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:49:01 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:50:03 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:50:03 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:50:17 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:50:17 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:51:40 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
      sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
 
 
-Apr10 17:38:38 [DEBUG] NODE [cassandra_seed_0]: command returned:
+Apr10 19:51:40 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  
 
 
-Apr10 17:38:38 [DEBUG] NODE [cassandra_seed_0]: running SSH command:
+Apr10 19:51:40 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
      echo '
-     10.0.0.21 cassandra_seednode
-     10.0.0.18 cassandra_node_11
-     10.0.0.22 cassandra_node_10
-     10.0.0.21 cassandra_seed_0
-     10.0.0.19 cassandra_node_09
-     10.0.0.23 cassandra_node_08
-     10.0.0.24 cassandra_node_12
-     10.0.0.12 cassandra_node_14
-     10.0.0.17 cassandra_node_01
-     10.0.0.5 cassandra_node_13
-     10.0.0.16 cassandra_node_03
-     10.0.0.7 cassandra_node_02
-     10.0.0.26 cassandra_node_05
-     10.0.0.20 cassandra_node_04
-     10.0.0.25 cassandra_node_07
-     10.0.0.10 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+     10.0.0.13 cassandra_seednode
+     10.0.0.17 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.27 cassandra_node_15' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
 
 
-Apr10 17:38:38 [DEBUG] NODE [cassandra_seed_0]: command returned:
+Apr10 19:51:41 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  
 
 
-Apr10 17:39:37 [DEBUG] NODE [cassandra_seed_0]: running SSH command:
+Apr10 19:51:41 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr10 19:51:51 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:51:51 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.17 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.27 cassandra_node_15' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr10 19:51:51 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 19:51:53 [DEBUG]   [cassandra_seed_0]: running SSH command:
 
      service ganglia-monitor restart; service gmetad restart
 
 
-Apr10 17:39:38 [DEBUG] NODE [cassandra_seed_0]: command returned:
+Apr10 19:51:53 [DEBUG]   [cassandra_seed_0]: command returned:
 
  	$:  Stopping Ganglia Monitor Daemon: gmond.
 	$:  Starting Ganglia Monitor Daemon: gmond.
@@ -298,11 +321,944 @@ Apr10 17:39:38 [DEBUG] NODE [cassandra_seed_0]: command returned:
 	$:  
 
 
-Apr10 18:03:43 [DEBUG] VM [cassandra_seed_0]: cluster = cassandra
-Apr10 18:03:54 [DEBUG] NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 18:09:54 [DEBUG] VM [cassandra_seed_0]: cluster = cassandra
-Apr10 18:10:06 [DEBUG] NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 18:18:03 [DEBUG] VM [cassandra_seed_0]: cluster = cassandra
-Apr10 18:18:14 [DEBUG] NODE [cassandra_seed_0]: cluster = cassandra
-Apr10 18:19:11 [DEBUG] VM [cassandra_seed_0]: cluster = cassandra
-Apr10 18:19:22 [DEBUG] NODE [cassandra_seed_0]: cluster = cassandra
+Apr10 19:55:38 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:55:38 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:55:51 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 19:55:51 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:00:07 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:00:07 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:00:21 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:00:21 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:07:07 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:07:20 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:09:36 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 20:09:48 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 21:14:03 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 21:14:16 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr10 22:22:28 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr10 22:22:28 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 22:22:28 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr10 22:22:28 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 22:22:55 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr10 22:22:56 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr10 23:27:13 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr10 23:27:14 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 23:27:14 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr10 23:27:14 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr10 23:27:37 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr10 23:27:38 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 00:20:41 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 00:20:41 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 00:20:41 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 00:20:41 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 00:21:09 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 00:21:09 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 01:19:51 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 01:19:51 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 01:19:51 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 01:19:51 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 01:20:28 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 01:20:28 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 02:27:12 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 02:27:13 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 02:27:13 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 02:27:13 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 02:27:28 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 02:27:28 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 03:22:49 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 03:22:49 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 03:22:49 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 03:22:50 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 03:23:16 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 03:23:16 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 04:23:50 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 04:23:50 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 04:23:50 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 04:23:50 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 04:24:09 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 04:24:09 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 05:27:40 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 05:27:40 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 05:27:40 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 05:27:40 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 05:27:47 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 05:27:48 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 06:25:02 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 06:25:02 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 06:25:02 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 06:25:02 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 06:25:31 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 06:25:32 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 13:31:36 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 13:31:49 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 13:36:18 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 13:37:18 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 13:37:30 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 13:49:03 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 14:40:45 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 14:40:45 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 14:40:45 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.30 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 14:40:45 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 14:41:48 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 14:41:49 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 14:54:05 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 14:54:17 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:09:05 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:09:17 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:10:23 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:10:36 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:14:06 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:19:14 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:19:25 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:22:28 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:22:41 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:28:41 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 15:28:41 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:28:41 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.8 cassandra_node_19
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 15:28:41 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:31:34 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 15:31:34 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:31:34 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.8 cassandra_node_19
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 15:31:34 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:32:00 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 15:32:01 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 15:42:16 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:42:29 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:44:39 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:44:51 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:51:27 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:51:40 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 15:55:27 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 15:55:28 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:55:28 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 15:55:28 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:56:33 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 15:56:33 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 15:59:14 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 15:59:14 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:59:14 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 15:59:15 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 15:59:42 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 15:59:43 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 16:00:33 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:00:46 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:01:23 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:01:36 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:04:20 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 16:04:21 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:04:21 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 16:04:21 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:06:54 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:07:07 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:10:07 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 16:10:08 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:10:08 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.8 cassandra_node_19
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 16:10:08 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:10:42 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:10:55 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:13:51 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:14:04 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:17:33 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 16:17:33 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:17:33 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 16:17:34 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:18:12 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:18:26 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:21:16 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 16:21:16 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:21:16 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.8 cassandra_node_19
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo cassandra_seed_0 >/etc/hostname
+
+
+Apr11 16:21:17 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  
+
+
+Apr11 16:22:18 [DEBUG]   [cassandra_seed_0]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 16:22:19 [DEBUG]   [cassandra_seed_0]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  Warning: we failed to resolve data source name cassandra_client_1
+	$:  
+
+
+Apr11 16:25:11 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:25:31 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:25:45 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:31:42 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:32:06 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:32:19 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:36:06 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:36:25 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:36:38 [DEBUG]   [cassandra_seed_0]: cluster = cassandra
+Apr11 16:42:46 [DEBUG]   [cassandra_seed_0]: cluster = cassandra

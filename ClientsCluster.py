@@ -22,7 +22,7 @@ save_file = "files/saved_%s_cluster.json" % cluster_name
 Node.flavor = env_vars["default_flavor"]
 Node.image = env_vars["cassandra_base_image"]
 # the logger for this file
-log = get_logger('CLIENTS', 'INFO')
+log = get_logger('CLIENTS', 'INFO', logfile='files/logs/Coordinator.log')
 
 
 def wait_everybody():
@@ -113,6 +113,7 @@ def add_nodes(count=1):
     """
     log.info('Adding %d nodes' % count )
     new_nodes = []
+    Node.flavor = env_vars['client_flavor']
     for i in range(count):
         #check if cluster did not previously exist
         if i == 0 and len(all_nodes) == 0:
@@ -172,7 +173,7 @@ def run(params):
             log.info("running sinusoid on %s" % c.name)
             c.run_command(load_command, silent=True)
     elif run_type == 'load':
-        record_count = int(params['record_count'])
+        record_count = int(params['records'])
         start = 0
         step = record_count/len(all_nodes)
         for c in all_nodes:
@@ -224,7 +225,7 @@ def get_monitoring_endpoint():
     """
     returns the IP of the node that has the monitoring data we want
     """
-    all_nodes[0].get_public_addr()
+    return all_nodes[0].get_public_addr()
 
 
 

@@ -13,12 +13,15 @@
       "cassandra_node_11", 
       "cassandra_node_12", 
       "cassandra_node_13", 
-      "cassandra_node_14"
+      "cassandra_node_14", 
+      "cassandra_node_15", 
+      "cassandra_node_16", 
+      "cassandra_node_17", 
+      "cassandra_node_18", 
+      "cassandra_node_19"
    ], 
    "seeds": [
       "cassandra_seed_0"
    ], 
-   "stash": [
-      "cassandra_node_15"
-   ]
+   "stash": []
 }

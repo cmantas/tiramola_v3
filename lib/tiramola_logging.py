@@ -16,7 +16,7 @@ def get_logger(name, level, show_level=False, show_time=False, logfile=None):
     console_handler = logging.StreamHandler(sys.stdout)
 
     #construct format
-    console_format = '|%(name)23s: %(message)s'
+    console_format = '|%(name)19s: %(message)s'
     if show_level: console_format = '[%(levelname)s] ' + console_format
     if show_time: console_format = '%(asctime)-15s  - ' + console_format
     formatter = logging.Formatter(console_format, "%b%d %H:%M:%S")

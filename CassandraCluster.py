@@ -23,10 +23,10 @@ save_file = "files/saved_%s_cluster.json" % cluster_name
 Node.flavor = env_vars["default_flavor"]
 Node.image = env_vars["cassandra_base_image"]
 
-log = get_logger('CLUSTER', 'INFO')
+log = get_logger('CLUSTER', 'DEBUG', logfile='files/logs/Coordinator.log')
 
 
-def create_cluster(worker_count=0, client_count=0):
+def create_cluster(worker_count=0):
     """
     Creates a Cassandra Cluster with a single Seed Node and 'worker_count' other nodes
     :param worker_count: the number of the nodes to create-apart from the seednode
@@ -111,6 +111,7 @@ def resume_cluster():
             elif n.type == "node": nodes.append(n)
     #sort nodes by name
     nodes.sort(key=lambda x: x.name)
+    stash.sort(key=lambda x: x.name)
 
 
 def save_cluster():
@@ -212,7 +213,6 @@ def destroy_all():
 def get_hosts(string=False, private=False):
     """
     Produces a mapping of hostname-->IP for the nodes in the cluster
-    :param include_clients: if False (default) the clients are not included
     :param string: if True the output is a string able to be appended in /etc/hosts
     :return: a dict or a string of hostnames-->IPs
     """

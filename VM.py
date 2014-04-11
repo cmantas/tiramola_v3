@@ -52,7 +52,7 @@ class VM (object):
         self.id = -1
         self.IPv4 = IPv4
         self.logfile = "%s/%s.log" % (LOGS_DIR, self.name)
-        self.log = get_logger('VM [%s]' % self.name, 'INFO', logfile=self.logfile)
+        self.log = get_logger('[%s]' % self.name, 'INFO', logfile=self.logfile)
         if create:
             self.create(wait)
 

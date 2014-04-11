@@ -3,8 +3,7 @@
 threads=200
 
 echo "
-recordcount=100
-operationcount=10000000
+recordcount=1000
 workload=com.yahoo.ycsb.workloads.CoreWorkload
 sinusoidal=false
 readallfields=true

@@ -33,8 +33,6 @@ class Node (VM):
             self.from_vm(vm)
         else:
             super(Node, self).__init__(self.name, self.flavor, self.image, IPv4=IPv4, create=create, wait=wait)
-        #self.log = get_logger('NODE [%s]\t' % self.name, 'INFO', logfile=self.logfile)
-        self.log.name = "NODE [%s]" % self.name
 
     def __str__(self):
         rv = "Node || name: %s, type: %s" % (self.name, self.type)

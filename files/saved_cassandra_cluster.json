@@ -4,7 +4,12 @@
       "cassandra_node_02", 
       "cassandra_node_03", 
       "cassandra_node_04", 
-      "cassandra_node_05", 
+      "cassandra_node_05"
+   ], 
+   "seeds": [
+      "cassandra_seed_0"
+   ], 
+   "stash": [
       "cassandra_node_06", 
       "cassandra_node_07", 
       "cassandra_node_08", 
@@ -19,9 +24,5 @@
       "cassandra_node_17", 
       "cassandra_node_18", 
       "cassandra_node_19"
-   ], 
-   "seeds": [
-      "cassandra_seed_0"
-   ], 
-   "stash": []
+   ]
 }

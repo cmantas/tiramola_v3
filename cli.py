@@ -37,6 +37,8 @@ tiramola kill_workload
 tiramola kill_nodes
 tiramola destroy_all
 tiramola add_clients count=2
+tiramola train
+tiramola auto_pilot
 """
 
 
@@ -166,8 +168,16 @@ def remove_nodes():
     CassandraCluster.remove_nodes(count)
 
 
-def run_coordinator():
+def train():
+    log.info(" Will run training routine. WARNING: will start load automatically")
     import Coordinator
+    Coordinator.train()
+
+
+def auto_pilot():
+    import Coordinator
+    Coordinator.run()
+
 
 
 ############################   MAIN  ################################################

@@ -2460,3 +2460,1063 @@ Apr11 16:36:06 [DEBUG]       [orchestrator]: cluster = orchestrato
 Apr11 16:36:25 [DEBUG]       [orchestrator]: cluster = orchestrato
 Apr11 16:36:38 [DEBUG]       [orchestrator]: cluster = orchestrato
 Apr11 16:42:46 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 16:46:30 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 16:46:44 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 17:48:48 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 17:48:48 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr11 17:48:48 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr11 17:48:48 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr11 17:49:50 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 17:49:50 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr11 18:17:58 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 18:18:26 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 18:21:29 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 18:21:42 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 18:22:18 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 18:23:15 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 18:23:15 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 18:23:15 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr11 18:23:15 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr11 18:23:15 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr11 18:23:23 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 18:23:23 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr11 18:30:51 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 18:31:05 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 20:31:19 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 20:31:32 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr11 21:36:19 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr11 21:36:19 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr11 21:36:19 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr11 21:36:19 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr11 21:37:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr11 21:37:00 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr12 18:40:18 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr12 18:43:28 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr12 18:43:28 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 18:43:28 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr12 18:43:28 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 18:43:55 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr12 18:43:55 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr12 18:45:31 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr12 18:46:20 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr12 18:48:55 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr12 18:48:55 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 18:48:55 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr12 18:48:55 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 18:49:01 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr12 18:49:01 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr12 20:48:40 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr12 20:52:48 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr12 20:52:49 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 20:52:49 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr12 20:52:49 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 20:53:20 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr12 20:53:21 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr12 20:58:53 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr12 20:59:09 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr12 20:59:21 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr12 22:04:09 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr12 22:04:09 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 22:04:09 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr12 22:04:09 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 22:04:27 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr12 22:04:28 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr12 23:08:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr12 23:08:46 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 23:08:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr12 23:08:47 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr12 23:09:10 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr12 23:09:11 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 00:13:33 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 00:13:33 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 00:13:33 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 00:13:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 00:14:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 00:14:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 01:18:05 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 01:18:05 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 01:18:05 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 01:18:06 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 01:18:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 01:18:41 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 02:31:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 02:31:41 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 02:31:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 02:31:41 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 02:32:27 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 02:32:27 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 03:36:13 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 03:36:13 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 03:36:13 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 03:36:14 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 03:36:59 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 03:36:59 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 04:40:53 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 04:40:53 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 04:40:53 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 04:40:53 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 04:41:57 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 04:41:57 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 05:45:26 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 05:45:26 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 05:45:26 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 05:45:26 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 05:46:03 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 05:46:03 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 06:49:52 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 06:49:52 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 06:49:52 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 06:49:52 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 06:50:18 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 06:50:18 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 07:53:38 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 07:53:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 07:53:38 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 07:53:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 07:54:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 07:54:08 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 08:57:27 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 08:57:27 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 08:57:27 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 08:57:28 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 08:58:09 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 08:58:09 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr13 10:02:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr13 10:02:04 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 10:02:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.33 cassandra_node_11
+     10.0.0.31 cassandra_node_10
+     10.0.0.27 cassandra_node_15
+     10.0.0.32 cassandra_node_16
+     10.0.0.22 cassandra_node_17
+     10.0.0.13 cassandra_seed_0
+     10.0.0.26 cassandra_node_09
+     10.0.0.21 cassandra_node_08
+     10.0.0.7 cassandra_node_18
+     10.0.0.8 cassandra_node_19
+     10.0.0.15 cassandra_node_12
+     10.0.0.14 cassandra_node_14
+     10.0.0.5 cassandra_node_01
+     10.0.0.29 cassandra_node_13
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.23 cassandra_node_07
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr13 10:02:04 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr13 10:02:35 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr13 10:02:35 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr14 12:08:44 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:10:35 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:10:35 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr14 12:10:35 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:10:35 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.12 cassandra_node_04' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr14 12:10:35 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:10:38 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr14 12:10:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr14 12:20:45 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:22:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr14 12:22:46 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:22:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04
+     10.0.0.18 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr14 12:22:46 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:23:03 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr14 12:23:03 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr14 12:26:20 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:28:28 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr14 12:28:28 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:28:28 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr14 12:28:28 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:28:39 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr14 12:28:40 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+Apr14 12:29:58 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:30:11 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:39:05 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:41:04 [DEBUG]       [orchestrator]: cluster = orchestrato
+Apr14 12:41:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+Apr14 12:41:04 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:41:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.13 cassandra_seednode
+     10.0.0.13 cassandra_seed_0
+     10.0.0.5 cassandra_node_01
+     10.0.0.10 cassandra_node_03
+     10.0.0.11 cassandra_node_02
+     10.0.0.9 cassandra_node_05
+     10.0.0.12 cassandra_node_04' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+Apr14 12:41:04 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+Apr14 12:41:11 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+Apr14 12:41:12 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+

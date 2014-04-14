@@ -5,3 +5,7 @@ nodetool decommission
 CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
 echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" >> ctool.log
 kill $CAS_PID &>/dev/null
+
+
+#report not alive
+gmetric -n alive -v 0 -t int32 -u nodes -d 10000

@@ -1,3 +1,4 @@
+#!/bin/sh
 CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
 echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
 kill -9 $CAS_PID &>/dev/null
@@ -22,3 +23,6 @@ rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
 echo '
 
 ############  KILLED  ##############' >> ycsb_run.log
+
+#report not alive
+gmetric -n alive -v 0 -t int32 -u nodes -d 10000

@@ -9,14 +9,10 @@ from lib.tiramola_logging import get_logger
 import thread
 
 ####### Variables  ###############
-initial_cluster_size = env_vars["min_cluster_size"]
-clients_count = env_vars["clients_count"]
-metrics_interval = env_vars["metric_fetch_interval"]
-
 my_logger = get_logger('COORDINATOR', 'INFO', logfile='files/logs/Coordinator.log')
 my_logger.debug("--------- NEW RUN  -----------------")
 
-#the pending decision at the moment
+#the (pending) decision at the present moment
 decision = None
 
 
@@ -44,22 +40,13 @@ def implement_decision():
 
 
 
-#check if cluster exists and create it if not
+#check if cluster exists
 if Servers.exists():
-    my_logger.info( "Cluster exists")
+    my_logger.info( "Cluster exists using it as is")
     #make sure no workload is running
-    Clients.kill_nodes()
 else:
-    #create the cluster
-    Servers.create_cluster(initial_cluster_size-1)
-    Clients.create_cluster(clients_count)
-    Servers.bootstrap_cluster()
-    t_vars = env_vars["training_vars"]
-    Servers.run_load_phase(t_vars['total_records'])
-    #waiting for load to finish
-    my_logger.info('Sleeping a while after load phase')
-    sleep(300)
-    pass
+    my_logger.error("Create the cluster first and then run the coordinator")
+    exit(-1)
 
 #get the endpoint for the monitoring system
 monitoring_endpoint = Clients.get_monitoring_endpoint()
@@ -67,10 +54,14 @@ monitoring_endpoint = Clients.get_monitoring_endpoint()
 monVms = MonitorVms(monitoring_endpoint)
 
 
-
 def run():
+    """
+    Runs cluster with automatic decision taking
+    """
     global decision_module
     decision_module = DM(monitoring_endpoint, Servers.node_count())
+    #the time interval between metrics refresh
+    metrics_interval = env_vars["metric_fetch_interval"]
     while True:
     # main loop that fetches metric and takes decisions
         sleep(metrics_interval)
@@ -81,23 +72,24 @@ def run():
 
 
 def train():
-
+    """
+    Runs a training phase in order to collect a training set of metrics for the given cluster
+    """
     #change the gain function for training purposes
-    env_vars['gain'] = '-num_nodes'
-
+    env_vars['gain'] = 'num_nodes'
+    # load the training vars
     t_vars = env_vars["training_vars"]
     env_vars['decision_interval'] = t_vars['decision_interval']
     env_vars['period'] = t_vars['period']
     env_vars['max_cluster_size'] = t_vars['max_cluster_size']
     env_vars['min_cluster_size'] = t_vars['min_cluster_size']
-
+    #get the server hostnames and addresses
     svr_hosts = Servers.get_hosts(private=True)
+    #create the parameters dictionary for the training phase
     params = {'type': 'sinusoid', 'servers': svr_hosts, 'target': t_vars['target_load'],
               'offset': t_vars['offset_load'], 'period': t_vars['period']}
+    #run the workload with the specified params to the clients
     Clients.run(params)
-    global decision_module
-    decision_module = DM(monitoring_endpoint, Servers.node_count())
-    decision_module.waitForIt = env_vars['decision_interval']/ env_vars['metric_fetch_interval']
     #now run as usual
     run()
 

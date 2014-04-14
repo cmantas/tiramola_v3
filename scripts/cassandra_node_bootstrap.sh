@@ -148,3 +148,6 @@ while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
 rm ycsb_cql.temp
 
 
+#report alive in gmetric
+gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+

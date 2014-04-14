@@ -14,7 +14,7 @@ from lib.tiramola_logging import get_logger
 class RLDecisionMaker:
     def __init__(self, monitoring_endpoint, cluster_size=0):
         self.monitoring_endpoint = monitoring_endpoint
-        self.debug = False
+        self.debug = True
         self.currentState = cluster_size
         self.nextState = self.currentState
         self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
@@ -76,25 +76,24 @@ class RLDecisionMaker:
                                            'throughput': self.sumMetrics[metrics[0]]['throughput'] + float(metrics[2]),
                                            'latency': self.sumMetrics[metrics[0]]['latency'] + float(metrics[3]),
                                            'divide_by': self.sumMetrics[metrics[0]]['divide_by'] + 1}
-
-        # metrics-> 0: state, 1: lambda, 2: thoughtput, 3:latency, 4:cpu, 5:time
-        if not self.memory.has_key(metrics[0]):
-            self.memory[str(metrics[0])] = {}
-            #self.memory[str(metrics[0])]['V'] = None # placeholder for rewards and metrics
-            self.memory[str(metrics[0])]['r'] = None
-            self.memory[str(metrics[0])]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
-                                                                  float(metrics[3]), float(metrics[4])], ndmin=2)
-        elif self.memory[metrics[0]]['arrayMeas'] == None:
-            self.memory[metrics[0]]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
-                                                             float(metrics[3]), float(metrics[4])], ndmin=2)
+        if self.debug and writeFile:
+            self.my_logger.debug("add_measurements: won't load measurement to memory")
         else:
-            self.memory[metrics[0]]['arrayMeas'] = np.append(self.memory[metrics[0]]['arrayMeas'],
-                                                             [[float(metrics[1]), float(metrics[2]),
-                                                               float(metrics[3]), float(metrics[4])]], axis=0)
-            # but add 1 zero measurement for each state for no load cases ??? too many 0s affect centroids?
-
-        #        else:
-        #            self.my_logger.debug("ADDMEASUREMENT zero measurement, won't be considered "+ str(metrics[3]))
+            # metrics-> 0: state, 1: lambda, 2: thoughtput, 3:latency, 4:cpu, 5:time
+            if not self.memory.has_key(metrics[0]):
+                self.memory[str(metrics[0])] = {}
+                #self.memory[str(metrics[0])]['V'] = None # placeholder for rewards and metrics
+                self.memory[str(metrics[0])]['r'] = None
+                self.memory[str(metrics[0])]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
+                                                                      float(metrics[3]), float(metrics[4])], ndmin=2)
+            elif self.memory[metrics[0]]['arrayMeas'] == None:
+                self.memory[metrics[0]]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
+                                                                 float(metrics[3]), float(metrics[4])], ndmin=2)
+            else:
+                self.memory[metrics[0]]['arrayMeas'] = np.append(self.memory[metrics[0]]['arrayMeas'],
+                                                                 [[float(metrics[1]), float(metrics[2]),
+                                                                   float(metrics[3]), float(metrics[4])]], axis=0)
+                # but add 1 zero measurement for each state for no load cases ??? too many 0s affect centroids?
 
         if writeFile:
             ms = open(self.measurementsFile, 'a')
@@ -257,7 +256,7 @@ class RLDecisionMaker:
              virtual nodes is due.
             '''
         ## Take decision based on metrics
-        action = "none"
+        #action = "none"
 
         #        self.my_logger.debug("TAKEDECISION rcvallmetrics: " + str(rcvallmetrics))
         # read metrics
@@ -324,17 +323,28 @@ class RLDecisionMaker:
         # if there is a pending action, discard measurements, don't take a decision
         if not self.pending_action is None:
             self.my_logger.debug("Last action " + self.pending_action + " hasn't finished yet, see you later!")
-            self.my_logger.debug("Discarding measurement: " +
-                                 str([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
-                                 allmetrics['latency'] ]))
-            dms = open('files/logs/discarded-measurements.txt', 'a')
-            # metrics[4] contains the time tick -- when running a simulation, it represents the current minute,
-            # on actual experiments, it is the current time. Used for debugging and plotting
-            dms.write(str(self.currentState) + '\t\t' + str(allmetrics['inlambda']) + '\t\t' +
-                      str(allmetrics['throughput']) + '\t\t' + str(allmetrics['latency']) + '\t\t' +
-                      str(allmetrics['cpu']) + '\t\t' + datetime.datetime.now().strftime(
-                "%Y-%m-%d %H:%M:%S") + '\n')
-            dms.close()
+            if self.debug:
+                if self.countdown == 0:
+                    self.my_logger.debug("Running a simulation, set state from " + str(self.currentState) + " to " +
+                                        str(self.nextState))
+                    self.currentState = self.nextState
+                    self.pending_action = None
+                else:
+                    self.countdown -= self.countdown
+                    self.my_logger.debug("Reducing countdown to "+ str(self.countdown))
+            else:
+                self.my_logger.debug("Discarding measurement: " +
+                                     str([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
+                                     allmetrics['latency'] ]))
+                dms = open('files/logs/discarded-measurements.txt', 'a')
+                # metrics[4] contains the time tick -- when running a simulation, it represents the current minute,
+                # on actual experiments, it is the current time. Used for debugging and plotting
+                dms.write(str(self.currentState) + '\t\t' + str(allmetrics['inlambda']) + '\t\t' +
+                          str(allmetrics['throughput']) + '\t\t' + str(allmetrics['latency']) + '\t\t' +
+                          str(allmetrics['cpu']) + '\t\t' + datetime.datetime.now().strftime(
+                    "%Y-%m-%d %H:%M:%S") + '\n')
+                dms.close()
+
             # skip decision
             self.decision["action"] = "PASS"
             self.decision["count"] = 0
@@ -359,8 +369,8 @@ class RLDecisionMaker:
         # Select values close to the current throughtput, define tha lambda range we're interested in -+ 5%
         #from_inlambda = 0.95 * allmetrics['inlambda']
         #to_inlambda = 1.05 * allmetrics['inlambda']
-        from_inlambda = allmetrics['inlambda'] - 3000
-        to_inlambda = allmetrics['inlambda'] + 3000
+        from_inlambda = allmetrics['inlambda'] - 1000 #- 3000
+        to_inlambda = allmetrics['inlambda'] + 1000 #+ 3000
 
         if self.prediction:
             predicted_l = self.predict_load()
@@ -415,13 +425,19 @@ class RLDecisionMaker:
                     states.add(fset.FuzzyElement(str(i), self.memory[str(i)]['r']))
             # For the current state, use current measurement
             if self.currentState == i:
-                cur_gain = eval(env_vars["gain"], allmetrics)
-                # for debugging purposes I compare the current reward with the one computed using the training set
-                self.my_logger.debug(
-                    "TAKEDECISION state " + str(i) + " current reward : " + str(cur_gain) + " training set reward: " +
-                    str(self.memory[str(i)]['r']))
-                self.memory[str(i)]['r'] = cur_gain
-                self.my_logger.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
+                if not self.debug:
+                    cur_gain = eval(env_vars["gain"], allmetrics)
+                    # for debugging purposes I compare the current reward with the one computed using the training set
+                    self.my_logger.debug(
+                        "TAKEDECISION state " + str(i) + " current reward : " + str(cur_gain) + " training set reward: "
+                        + str(self.memory[str(i)]['r']))
+                    self.memory[str(i)]['r'] = cur_gain
+                    self.my_logger.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
+                else:
+                    cur_gain = str(self.memory[str(i)]['r'])
+                    self.my_logger.debug("TAKEDECISION state " + str(i) + " current state training set reward: "
+                                         + cur_gain)
+
                 states.add(fset.FuzzyElement(str(i), cur_gain))
 
         # Create the transition graph
@@ -435,8 +451,8 @@ class RLDecisionMaker:
             if j != self.currentState:
                 # Connect nodes with allowed transitions from the current node.connect(tail, head, mu) head--mu-->tail
                 stategraph.connect(str(j), str(self.currentState), eval(env_vars["trans_cost"], allmetrics))
-                self.my_logger.debug(
-                    "TAKEDECISION connecting state " + str(self.currentState) + " with state " + str(j))
+                #self.my_logger.debug(
+                #    "TAKEDECISION connecting state " + str(self.currentState) + " with state " + str(j))
                 # Connect nodes with allowed transitions from node j.
                 #for k in range(max(int(env_vars["min_cluster_size"]), j - int(env_vars["rem_nodes"])),
                 #               min(j + int(env_vars["add_nodes"]), int(env_vars["max_cluster_size"])+1)):
@@ -472,7 +488,7 @@ class RLDecisionMaker:
                 #                    V[s] = self.memory[str(s)]['r']
                 V[s] = self.memory[str(s)]['r']
 
-            self.my_logger.debug(
+        self.my_logger.debug(
                 "TAKEDECISION Vs: " + str(V) + ", max V = " + str(max(V)) + " V[" + str(s) + "] " + str(V[s]))
 
         # Find the max V
@@ -497,7 +513,7 @@ class RLDecisionMaker:
             # You've chosen to change state, that means that nextState has a greater reward, therefore d is always > 0
             d = self.memory[str(self.nextState)]['r'] - self.memory[str(self.currentState)]['r']
             if (self.memory[str(self.currentState)]['r'] > 0):
-                if (float(d) / self.memory[str(self.currentState)]['r'] < 0.05):
+                if (float(d) / self.memory[str(self.currentState)]['r'] < 0.1):
                     #false alarm, stay where you are
                     self.nextState = self.currentState
                     # skip decision
@@ -505,7 +521,7 @@ class RLDecisionMaker:
                     self.decision["count"] = 0
                     self.my_logger.debug("ups changed my mind...staying at state: " + str(self.currentState)
                                          + " cause the gain difference is: " + str(
-                        abs(d)) + " which is less than 5% of the current reward " +
+                        abs(d)) + " which is less than 10% of the current reward " +
                                          str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + " " +
                                          str(self.memory[str(self.currentState)]['r']))
             # If the reward is the same with the state you're in, don't move
@@ -538,7 +554,7 @@ class RLDecisionMaker:
                 self.my_logger.debug("TAKEDECISION simulation, action will finish in: " +
                                      str(self.countdown) + " mins")
             else:
-                self.my_logger.debug("TAKEDECISION Waiting for action to finish: " + str(action) + str(self.pending_action))
+                self.my_logger.debug("TAKEDECISION Waiting for action to finish: " + str(self.pending_action))
 
         return self.decision
 
@@ -592,7 +608,30 @@ class RLDecisionMaker:
             time.sleep(1)
         return
 
+    def simulate_training_set(self):
+        # run state 12 lambdas
+        self.my_logger.debug("START SIMULATION!!")
+        load = []
+        for k in range(11, 15):
+            for j in self.memory[str(12)]['arrayMeas']:
+                load.append(j[0])
+
+
+        #for i in range(0, 120, 1): # paizei? 1 wra ana miso lepto
+        for i in range(0, 480, 1): # 4 wres ana miso lepto
+            l = load[i]
+            # throughput = (800 * self.currentState)
+            # if l < (800 * self.currentState):
+            #     throughput = l
+            values = {'inlambda': l, 'num_nodes': self.currentState}
+            self.my_logger.debug(
+                "SIMULATE i: " + str(i) + " state: " + str(self.currentState) + " values:" + str(values))
+
+            self.take_decision(values)
+
+
+
 
 if __name__ == '__main__':
-    fsm = RLDecisionMaker(4)
-    fsm.simulate()
+    fsm = RLDecisionMaker("localhost", 8)
+    fsm.simulate_training_set()

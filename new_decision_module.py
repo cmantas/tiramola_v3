@@ -612,8 +612,8 @@ class RLDecisionMaker:
         # run state 12 lambdas
         self.my_logger.debug("START SIMULATION!!")
         load = []
-        for k in range(11, 15):
-            for j in self.memory[str(12)]['arrayMeas']:
+        for k in range(17, 21):
+            for j in self.memory[str(k)]['arrayMeas']:
                 load.append(j[0])
 
 

@@ -407,7 +407,7 @@ class RLDecisionMaker:
                 met = self.getAverages(str(i))
             elif self.measurementsPolicy.startswith('centroid'):
                 met = self.doKmeans(str(i), from_inlambda, to_inlambda)
-                #self.my_logger.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(met))
+                self.my_logger.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(met))
                 if met != None and len(met) > 0:
                     # Been in this state before, use the measurements
                     allmetrics['inlambda'] = met['inlambda']
@@ -420,8 +420,8 @@ class RLDecisionMaker:
 
                 self.memory[str(i)]['r'] = eval(env_vars["gain"], allmetrics)
                 if self.currentState != i:
-                    self.my_logger.debug(
-                        "TAKEDECISION adding state " + str(i) + " with gain " + str(self.memory[str(i)]['r']))
+                    # self.my_logger.debug(
+                    #     "TAKEDECISION adding state " + str(i) + " with gain " + str(self.memory[str(i)]['r']))
                     states.add(fset.FuzzyElement(str(i), self.memory[str(i)]['r']))
             # For the current state, use current measurement
             if self.currentState == i:
@@ -513,7 +513,7 @@ class RLDecisionMaker:
             # You've chosen to change state, that means that nextState has a greater reward, therefore d is always > 0
             d = self.memory[str(self.nextState)]['r'] - self.memory[str(self.currentState)]['r']
             if (self.memory[str(self.currentState)]['r'] > 0):
-                if (float(d) / self.memory[str(self.currentState)]['r'] < 0.1):
+                if (float(d) / self.memory[str(self.currentState)]['r'] < 0.03):
                     #false alarm, stay where you are
                     self.nextState = self.currentState
                     # skip decision
@@ -521,7 +521,7 @@ class RLDecisionMaker:
                     self.decision["count"] = 0
                     self.my_logger.debug("ups changed my mind...staying at state: " + str(self.currentState)
                                          + " cause the gain difference is: " + str(
-                        abs(d)) + " which is less than 10% of the current reward " +
+                        abs(d)) + " which is less than 3% of the current reward " +
                                          str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + " " +
                                          str(self.memory[str(self.currentState)]['r']))
             # If the reward is the same with the state you're in, don't move

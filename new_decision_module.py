@@ -44,23 +44,25 @@ class RLDecisionMaker:
 
         # Load any previous statics.
         self.measurementsFile = 'files/logs/measurements.txt'
+        self.trainingFile = 'files/logs/training-set.txt'
         self.sumMetrics = {}
+        # initialize measurements file
         meas = open(self.measurementsFile, 'a')
         if os.stat(self.measurementsFile).st_size == 0:
             # The file is empty, set the headers for each column.
             meas.write('State\t\tLambda\t\tThroughput\t\tLatency\t\tCPU\t\tTime\n')
-        else:
-            # Read the measurements saved in the file.
-            meas.close()
-            meas = open(self.measurementsFile, 'r')
+        meas.close()
 
+        # load training set
+        meas = open(self.trainingFile, 'r')
+        if os.stat(self.trainingFile).st_size != 0:
+            # Read the training set measurements saved in the file.
             meas.next()  # Skip the first line with the headers of the columns
             for line in meas:
                 # Skip comments (used in training sets)
                 if not line.startswith('###'):
                     m = line.split('\t\t')
                     self.add_measurement(m)
-
         meas.close()
 
     # param metrics: array The metrics to store. An array containing [state, lamdba, throughput, latency, time]

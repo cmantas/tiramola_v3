@@ -143,6 +143,7 @@ def inject_hosts_files():
     know each other by hostname. Also restarts the ganglia daemons
     :return:
     """
+    # FIXME remove Clients entries. Servers should only know themselves
     log.info("Injecting host files")
     hosts = dict()
     for i in seeds+nodes :
@@ -178,7 +179,7 @@ def add_nodes(count=1):
         #inject host files to everybody
         n.inject_hostnames(get_hosts(private=True), delete=cluster_name)
         n.bootstrap()
-        log.info("Node %s is live " % new_guy.name)
+        log.info("Node %s is live " % n.name)
     #inform all
     inject_hosts_files()
 

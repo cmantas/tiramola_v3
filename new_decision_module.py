@@ -14,7 +14,7 @@ from lib.tiramola_logging import get_logger
 class RLDecisionMaker:
     def __init__(self, monitoring_endpoint, cluster_size=0):
         self.monitoring_endpoint = monitoring_endpoint
-        self.debug = True
+        self.debug = False
         self.currentState = cluster_size
         self.nextState = self.currentState
         self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']

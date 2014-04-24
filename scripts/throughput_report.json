@@ -1,0 +1,10 @@
+{
+   "report_name" : "throughput_report",
+   "report_type" : "standard",
+   "title" : "Throughput",
+   "vertical_label" : "ops/sec",
+   "series" : [
+      { "metric": "ycsb_THROUGHPUT", "color": "0000ff", "label": "Total Throughput", "line_width": "2", "type": "line" },
+      { "metric": "ycsb_TARGET", "color": "ff0000", "label": "Offered Load", "line_width": "2", "type": "line" }
+   ]
+}

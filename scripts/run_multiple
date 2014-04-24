@@ -1,0 +1,16 @@
+hosts=$1
+echo iterating $hosts
+
+echo "Enter the command [ENTER]: "
+read command
+$command
+
+cat $hosts |\
+while read address
+do
+	echo ================== BEGIN HOST: $address ============================
+	</dev/null rsh root@$address "$command" & 
+#	</dev/null rsh root@$address 'bash -s' < install_cassandra  & 
+#
+	echo END: $address
+done

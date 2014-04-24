@@ -6,6 +6,7 @@ from os import remove
 from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
+from threading import Thread
 
 orchestrator = None     # the VM to which the others report to
 
@@ -26,17 +27,24 @@ Node.image = env_vars["cassandra_base_image"]
 log = get_logger('CLUSTER', 'DEBUG', logfile='files/logs/Coordinator.log')
 
 
-def create_cluster(worker_count=0):
+def create_cluster(worker_count=0, used=None):
     """
     Creates a Cassandra Cluster with a single Seed Node and 'worker_count' other nodes
     :param worker_count: the number of the nodes to create-apart from the seednode
     """
+    global nodes, stash, seeds
     #create the seed node
     seeds.append(Node(cluster_name, node_type="seed", number=0, create=True, IPv4=True))
     #create the rest of the nodes
     for i in range(worker_count):
-        nodes.append(Node(cluster_name, node_type="node", number="%02d"%(len(nodes)+1), create=True))
+        nodes.append(Node(cluster_name, node_type="node", number="%02d"%(len(nodes)+1), create=True, IPv4=True))
     #wait until everybody is ready
+
+    #if 'used' is specified, only use this number of nodes
+    if not used is None:
+        stash = nodes[used:]
+        nodes = nodes[:used-1]
+    #save the cluster to file
     save_cluster()
     wait_everybody()
     find_orchestrator()
@@ -158,30 +166,46 @@ def inject_hosts_files():
     orchestrator.run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
 
 
+def add_one_node():
+    """
+    Helper function for add_nodes
+    """
+    if not len(stash) == 0:
+            new_guy = stash.pop(0)
+            log.info("Using %s from my stash" % new_guy.name)
+    else:
+            new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
+    nodes.append(new_guy)
+    new_guy.wait_ready()
+    new_guy.inject_hostnames(get_hosts(private=True), delete=cluster_name)
+    new_guy.bootstrap()
+    log.info("Node %s is live " % new_guy.name)
+
+
 def add_nodes(count=1):
     """
     Adds a node to the cassandra cluster. Refreshes the hosts in all nodes
     :return:
     """
     log.info('Adding %d nodes' % count )
-    new_nodes = []
+    threads = []
+    #start the threads that add the nodes
     for i in range(count):
-        if not len(stash) == 0:
-            new_guy = stash.pop(0)
-            log.info("Using %s from my stash" % new_guy.name)
-        else:
-            new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
-        nodes.append(new_guy)
-        new_nodes.append(new_guy)
-        save_cluster()
-    for n in new_nodes:
-        n.wait_ready()
-        #inject host files to everybody
-        n.inject_hostnames(get_hosts(private=True), delete=cluster_name)
-        n.bootstrap()
-        log.info("Node %s is live " % n.name)
+        t = Thread(target=add_one_node, args=())
+        threads.append(t)
+        t.start()
+        #TODO join with timeout if serial
+        #t.join()
+    #FIXME parallel adding of nodes (ssh problem)
+    #wait for all the threads to finish
+    log.debug("Waiting for all the threads to finish adding")
+    for t in threads:
+        t.join()
+    #save the current cluster state
+    save_cluster()
     #inform all
     inject_hosts_files()
+    log.info("Finished adding %d nodes" % count)
 
 
 def remove_nodes(count=1):

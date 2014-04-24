@@ -335,9 +335,8 @@ class RLDecisionMaker:
                     self.countdown -= self.countdown
                     self.my_logger.debug("Reducing countdown to "+ str(self.countdown))
             else:
-                self.my_logger.debug("Discarding measurement: " +
-                                     str([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
-                                     allmetrics['latency'] ]))
+                self.my_logger.debug("Discarding measurement: %d, %d, %d, %d" %
+                                     (self.currentState, allmetrics['inlambda'], allmetrics['throughput'], allmetrics['latency'] ))
                 dms = open('files/logs/discarded-measurements.txt', 'a')
                 # metrics[4] contains the time tick -- when running a simulation, it represents the current minute,
                 # on actual experiments, it is the current time. Used for debugging and plotting

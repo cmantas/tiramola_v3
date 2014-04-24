@@ -1,0 +1,111 @@
+Apr24 15:56:22 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:26:46 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:27:39 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:28:34 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:29:34 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:30:21 [ INFO]  [cassandra_node_18]: running kill script
+Apr24 16:30:21 [DEBUG]  [cassandra_node_18]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+Apr24 16:30:21 [DEBUG]  [cassandra_node_18]: Connecting to SSH
+Apr24 16:30:31 [DEBUG]  [cassandra_node_18]: connected in 10 sec. Running SSH command
+Apr24 16:30:31 [DEBUG]  [cassandra_node_18]: SSH command took 0 sec
+Apr24 16:30:32 [DEBUG]  [cassandra_node_18]: command returned:
+
+ 	$:  
+
+
+Apr24 16:30:57 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:33:19 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:34:10 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 16:34:24 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:18:16 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:18:31 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:18:56 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:33:21 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:47:47 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:48:17 [ INFO]  [cassandra_node_18]: running kill script
+Apr24 17:48:17 [DEBUG]  [cassandra_node_18]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+Apr24 17:48:17 [DEBUG]  [cassandra_node_18]: Connecting to SSH
+Apr24 17:48:18 [DEBUG]  [cassandra_node_18]: connected in 0 sec. Running SSH command
+Apr24 17:48:18 [DEBUG]  [cassandra_node_18]: SSH command took 0 sec
+Apr24 17:48:22 [DEBUG]  [cassandra_node_18]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  java: no process found
+	$:  Unable to create UDP client for cassandra_seednode:8649. Exiting.
+	$:  
+	$:  
+
+
+Apr24 17:49:13 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:52:06 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 17:54:23 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 18:09:23 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 18:15:02 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 18:28:29 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 18:28:44 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 18:30:00 [DEBUG]  [cassandra_node_18]: cluster = cassandra
+Apr24 18:30:14 [DEBUG]  [cassandra_node_18]: cluster = cassandra

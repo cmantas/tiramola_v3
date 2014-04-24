@@ -1,3 +1,4 @@
+#!/bin/sh
 ### RUN THIS FROM PYTHON ONLY, SPECIFYING THE FOLLOWING PARAMS
 count=%s
 step=%s
@@ -8,5 +9,5 @@ start=%s
 		-threads 20 -s \
 		-p hostsFile=/opt/hosts \
 		-p recordcount=$count -p insertcount=$step -p insertstart=$start \
-		&> /root/ycsb_load.log &
+		&> /root/ycsb_load.log
 

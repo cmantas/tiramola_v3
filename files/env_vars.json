@@ -2,7 +2,7 @@
     "iaas": "okeanos",
     "active_cluster_name": "cassandra",
     "auth_url" : "https://accounts.okeanos.grnet.gr/identity/v2.0",
-    "cmantas_token": "Nn54p0cvJPPsnfc6Xnt_iFW-sF4z7y8kCElM3pSZLfg",
+    "cmantas_token": "c38NObKWxC1fMEX1ah2fDzClMhbdxC1hquV_vl6Ipgw",
     "cassandra_base_image": "b8ffbf00-09c1-41b2-9526-23313e04aae4",
     "ubuntu_bare_image": "t545d36df-53da-46bd-86ed-759ac3eb1995",
     "cassandra_network_id": 67768,
@@ -23,7 +23,7 @@
     "serv_throughput": 3500,
     "ssh_giveup_timeout": 600,
     "trans_cost": "0",
-    "gain": "(throughput * 0.035) - (num_nodes * 3.5) - (latency * 0.2)",
+    "gain": "(throughput * 0.035) - (num_nodes * 3.2) - (latency * 0.4)",
     "metric_fetch_interval": 30,
     "decision_interval": 300,
     "training_vars": {

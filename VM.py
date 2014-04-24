@@ -171,7 +171,7 @@ class VM (object):
                          ' so you cannot run commands on it')
             return "ERROR"
         self.log.debug("running SSH command:\n\n%s\n\n" % reindent(command, 5))
-        rv= run_ssh_command(self.get_public_addr(), user, command, indent, prefix)
+        rv = run_ssh_command(self.get_public_addr(), user, command, indent, prefix, logger=self.log)
         if rv is not None:
             self.log.debug("command returned:\n\n %s\n\n" % rv)
         return rv
@@ -219,16 +219,18 @@ class VM (object):
         if not self.created:
             self.log.debug("Not active yet. Sleeping")
             while not self.created:  sleep(3)
-        self.log.info( "Waiting for SSH daemon (%s)" % self.get_public_addr())
+        self.log.info("Waiting for SSH daemon (%s)" % self.get_public_addr())
         #time to stop trying
         end_time = datetime.now()+timedelta(seconds=ssh_giveup_timeout)
+        self.log.debug("end time:"+str(end_time))
         timer = Timer()
         timer.start()
         #self.log.info(("VM: Trying ssh, attempt "),
         while not success:
             #if(attempts%5 == 0): self.log.info( ("%d" % attempts),
             attempts += 1
-            if test_ssh(self.get_public_addr(), 'root'):
+            self.log.debug("ssh attempt:"+str(attempts))
+            if test_ssh(self.get_public_addr(), 'root', logger=self.log):
                 success = True
             else:
                 if datetime.now() > end_time:
@@ -303,6 +305,7 @@ class Timer():
         assert self.started is True, " Timer had not been started"
         start_time = self.start_time
         self.start_time = 0
+        self.started = False
         return float(end_time - start_time)/1000
 
     @staticmethod

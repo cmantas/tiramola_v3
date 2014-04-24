@@ -33,11 +33,9 @@ def implement_decision():
         my_logger.info("Will remove %d nodes" % count)
         Servers.remove_nodes(count)
     elif action == "PASS":
-        my_logger.debug("doing nothing")
         return
     decision_module.pending_action = None
     decision_module.currentState = Servers.node_count()
-
 
 
 #check if cluster exists

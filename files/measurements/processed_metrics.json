@@ -1,0 +1,794 @@
+[
+   {
+      "latency": 24.4175895833, 
+      "state": 8, 
+      "throughput": 3481, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 8.19119046172, 
+      "state": 9, 
+      "throughput": 3472, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 10.833357847, 
+      "state": 10, 
+      "throughput": 3584, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 13.4953017361, 
+      "state": 11, 
+      "throughput": 3562, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 10.5103423376, 
+      "state": 12, 
+      "throughput": 3562, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 12.0887528135, 
+      "state": 13, 
+      "throughput": 3509, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 11.5164801841, 
+      "state": 14, 
+      "throughput": 3507, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 9.33488437688, 
+      "state": 15, 
+      "throughput": 3567, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 17.2759978175, 
+      "state": 16, 
+      "throughput": 3563, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 9.61133693146, 
+      "state": 17, 
+      "throughput": 3572, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 10.9569570797, 
+      "state": 18, 
+      "throughput": 3478, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 10.2053385107, 
+      "state": 19, 
+      "throughput": 3514, 
+      "lambda": 6400
+   }, 
+   {
+      "latency": 25.1860192799, 
+      "state": 8, 
+      "throughput": 6119, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 30.8174830326, 
+      "state": 9, 
+      "throughput": 6394, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 29.1827928279, 
+      "state": 10, 
+      "throughput": 6548, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 14.5065483638, 
+      "state": 11, 
+      "throughput": 6686, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 8.95705025076, 
+      "state": 12, 
+      "throughput": 6777, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 10.9796881854, 
+      "state": 13, 
+      "throughput": 6719, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 9.66298884396, 
+      "state": 14, 
+      "throughput": 6729, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 11.1132317765, 
+      "state": 15, 
+      "throughput": 6807, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 9.41038142407, 
+      "state": 16, 
+      "throughput": 6813, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 14.3113499934, 
+      "state": 17, 
+      "throughput": 6782, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 7.8939434605, 
+      "state": 18, 
+      "throughput": 6700, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 9.22376533566, 
+      "state": 19, 
+      "throughput": 6793, 
+      "lambda": 7200
+   }, 
+   {
+      "latency": 34.1580277778, 
+      "state": 8, 
+      "throughput": 6367, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 20.2473227513, 
+      "state": 9, 
+      "throughput": 6725, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 24.1584730159, 
+      "state": 10, 
+      "throughput": 7081, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 12.8573563766, 
+      "state": 11, 
+      "throughput": 7236, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 10.526574937, 
+      "state": 12, 
+      "throughput": 7409, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 16.0101118415, 
+      "state": 13, 
+      "throughput": 7539, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 12.1295030519, 
+      "state": 14, 
+      "throughput": 7545, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 8.27887561513, 
+      "state": 15, 
+      "throughput": 7542, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 13.9414472709, 
+      "state": 16, 
+      "throughput": 7521, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 9.64557524416, 
+      "state": 17, 
+      "throughput": 7614, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 10.1449578692, 
+      "state": 18, 
+      "throughput": 7557, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 10.6141316675, 
+      "state": 19, 
+      "throughput": 7537, 
+      "lambda": 8000
+   }, 
+   {
+      "latency": 31.4337212502, 
+      "state": 8, 
+      "throughput": 6568, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 32.1034744133, 
+      "state": 9, 
+      "throughput": 6927, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 23.7251878917, 
+      "state": 10, 
+      "throughput": 7250, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 17.9868589506, 
+      "state": 11, 
+      "throughput": 7370, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 16.0838246155, 
+      "state": 12, 
+      "throughput": 7872, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 14.1426475129, 
+      "state": 13, 
+      "throughput": 8120, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 14.7301094368, 
+      "state": 14, 
+      "throughput": 8242, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 10.7006780675, 
+      "state": 15, 
+      "throughput": 8306, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 13.0874621781, 
+      "state": 16, 
+      "throughput": 8261, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 11.1014338717, 
+      "state": 17, 
+      "throughput": 8365, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 11.1926985964, 
+      "state": 18, 
+      "throughput": 8303, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 9.11850810316, 
+      "state": 19, 
+      "throughput": 8310, 
+      "lambda": 8800
+   }, 
+   {
+      "latency": 16.6773105159, 
+      "state": 8, 
+      "throughput": 6372, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 28.5578512374, 
+      "state": 9, 
+      "throughput": 6958, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 24.6147158282, 
+      "state": 10, 
+      "throughput": 7071, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 27.8300233115, 
+      "state": 11, 
+      "throughput": 7734, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 17.2392203418, 
+      "state": 12, 
+      "throughput": 8186, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 15.8559127265, 
+      "state": 13, 
+      "throughput": 8589, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 14.9912348454, 
+      "state": 14, 
+      "throughput": 8756, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 13.3587719577, 
+      "state": 15, 
+      "throughput": 8501, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 14.7440521802, 
+      "state": 16, 
+      "throughput": 8938, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 13.2097087846, 
+      "state": 17, 
+      "throughput": 9086, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 11.3619589443, 
+      "state": 18, 
+      "throughput": 9113, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 14.725313513, 
+      "state": 19, 
+      "throughput": 9048, 
+      "lambda": 9600
+   }, 
+   {
+      "latency": 26.6908472222, 
+      "state": 8, 
+      "throughput": 6425, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 30.8669345238, 
+      "state": 9, 
+      "throughput": 6986, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 19.8704730159, 
+      "state": 10, 
+      "throughput": 6850, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 21.5956744434, 
+      "state": 11, 
+      "throughput": 7969, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 30.600499532, 
+      "state": 12, 
+      "throughput": 8368, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 17.9044220537, 
+      "state": 13, 
+      "throughput": 8798, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 20.086177997, 
+      "state": 14, 
+      "throughput": 9090, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 15.9763193158, 
+      "state": 15, 
+      "throughput": 9278, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 13.5180189656, 
+      "state": 16, 
+      "throughput": 9553, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 13.130430155, 
+      "state": 17, 
+      "throughput": 9743, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 11.1609830272, 
+      "state": 18, 
+      "throughput": 9815, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 11.6482833536, 
+      "state": 19, 
+      "throughput": 9810, 
+      "lambda": 10400
+   }, 
+   {
+      "latency": 30.2029384283, 
+      "state": 8, 
+      "throughput": 6436, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 32.5276112438, 
+      "state": 9, 
+      "throughput": 7151, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 24.2965732994, 
+      "state": 10, 
+      "throughput": 7502, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 16.3616700337, 
+      "state": 11, 
+      "throughput": 7979, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 19.6694448707, 
+      "state": 12, 
+      "throughput": 7452, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 23.3483012802, 
+      "state": 13, 
+      "throughput": 8884, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 15.6834645412, 
+      "state": 14, 
+      "throughput": 9283, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 16.9898586221, 
+      "state": 15, 
+      "throughput": 9533, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 12.0751373457, 
+      "state": 16, 
+      "throughput": 9984, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 13.7239474615, 
+      "state": 17, 
+      "throughput": 10183, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 14.4394382338, 
+      "state": 18, 
+      "throughput": 10334, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 11.4111368054, 
+      "state": 19, 
+      "throughput": 10486, 
+      "lambda": 11200
+   }, 
+   {
+      "latency": 25.9351382223, 
+      "state": 8, 
+      "throughput": 6562, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 19.0508072397, 
+      "state": 9, 
+      "throughput": 7229, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 28.9283820261, 
+      "state": 10, 
+      "throughput": 7546, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 17.0879, 
+      "state": 11, 
+      "throughput": 8070, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 18.0023843537, 
+      "state": 12, 
+      "throughput": 8003, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 20.3059328283, 
+      "state": 13, 
+      "throughput": 9045, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 17.3438564419, 
+      "state": 14, 
+      "throughput": 8815, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 20.3579684291, 
+      "state": 15, 
+      "throughput": 9656, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 12.9451113416, 
+      "state": 16, 
+      "throughput": 10090, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 16.5769700855, 
+      "state": 17, 
+      "throughput": 10452, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 11.1718470016, 
+      "state": 18, 
+      "throughput": 10742, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 15.4933341283, 
+      "state": 19, 
+      "throughput": 10957, 
+      "lambda": 12000
+   }, 
+   {
+      "latency": 20.2998293105, 
+      "state": 8, 
+      "throughput": 6547, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 24.2298969643, 
+      "state": 9, 
+      "throughput": 7156, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 23.6316225875, 
+      "state": 10, 
+      "throughput": 7605, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 16.6945119048, 
+      "state": 11, 
+      "throughput": 7965, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 23.9015239488, 
+      "state": 12, 
+      "throughput": 8470, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 23.3252095655, 
+      "state": 13, 
+      "throughput": 8731, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 18.1365444644, 
+      "state": 14, 
+      "throughput": 9419, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 14.3151046543, 
+      "state": 15, 
+      "throughput": 9887, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 14.9245265302, 
+      "state": 16, 
+      "throughput": 10273, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 24.9939430823, 
+      "state": 17, 
+      "throughput": 10618, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 15.4406595604, 
+      "state": 18, 
+      "throughput": 10963, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 18.7886920037, 
+      "state": 19, 
+      "throughput": 11250, 
+      "lambda": 12800
+   }, 
+   {
+      "latency": 23.179659188, 
+      "state": 8, 
+      "throughput": 6615, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 23.2217416057, 
+      "state": 9, 
+      "throughput": 7141, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 28.7876074906, 
+      "state": 10, 
+      "throughput": 7592, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 25.7135642799, 
+      "state": 11, 
+      "throughput": 8142, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 19.4443090182, 
+      "state": 12, 
+      "throughput": 8446, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 23.4729228205, 
+      "state": 13, 
+      "throughput": 9138, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 18.2367989418, 
+      "state": 14, 
+      "throughput": 9544, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 21.6902278264, 
+      "state": 15, 
+      "throughput": 9940, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 21.036515873, 
+      "state": 16, 
+      "throughput": 10373, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 19.4316548089, 
+      "state": 17, 
+      "throughput": 10767, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 15.7357491901, 
+      "state": 18, 
+      "throughput": 11081, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 18.7311083234, 
+      "state": 19, 
+      "throughput": 11550, 
+      "lambda": 13600
+   }, 
+   {
+      "latency": 33.563331746, 
+      "state": 8, 
+      "throughput": 6552, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 20.3866414815, 
+      "state": 9, 
+      "throughput": 7152, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 13.3607009259, 
+      "state": 10, 
+      "throughput": 7633, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 27.499072278, 
+      "state": 11, 
+      "throughput": 8049, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 22.0283796651, 
+      "state": 12, 
+      "throughput": 8469, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 24.5763702153, 
+      "state": 13, 
+      "throughput": 9092, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 18.3969957357, 
+      "state": 14, 
+      "throughput": 9494, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 18.2164018519, 
+      "state": 15, 
+      "throughput": 9908, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 18.2244880724, 
+      "state": 16, 
+      "throughput": 10326, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 19.0993652272, 
+      "state": 17, 
+      "throughput": 10853, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 14.8304096761, 
+      "state": 18, 
+      "throughput": 11137, 
+      "lambda": 14400
+   }, 
+   {
+      "latency": 14.8570839535, 
+      "state": 19, 
+      "throughput": 11576, 
+      "lambda": 14400
+   }
+]

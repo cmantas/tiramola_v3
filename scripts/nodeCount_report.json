@@ -1,0 +1,10 @@
+{
+   "report_name" : "nodeCount_report",
+   "report_type" : "standard",
+   "title" : "Number of Nodes",
+   "vertical_label" : "Bytes/sec",
+   "series" : [
+      { "metric": "cpu_num", "color": "1100FF", "label": "Cores", "line_width": "2", "type": "line", "contexts": [ "cluster", "meta" ] },
+      { "metric": "cpu_num", "color": "ff0000", "label": "Nodes", "line_width": "2", "type": "line", "ds": "num", "contexts": [ "cluster", "meta" ] }
+   ]
+}

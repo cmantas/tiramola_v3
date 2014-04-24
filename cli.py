@@ -81,9 +81,13 @@ def run_stress():
 def create_cluster():
     try:
         nodes = int(args["nodes"])
-        log.info("creating cluster with %d nodes" % nodes)
+        if "used" in args.keys():
+            used = int(args['used'])
+        else:
+            used = None
+        log.info("creating cluster with %d nodes (%d used)" % (nodes, used))
         import CassandraCluster
-        CassandraCluster.create_cluster(nodes-1)
+        CassandraCluster.create_cluster(nodes-1, used-1)
     except KeyError as e:
         log.info("create_cluster requires argument %s" % e.args[0])
 

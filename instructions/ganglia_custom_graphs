@@ -1,0 +1,13 @@
+############### PHP (for AVG) ######################
+showed graphs:
+/var/lib/ganglia-web/conf -> edit default.json
+or /var/lib/ganglia/conf -> default.json
+enabled graphs:
+/etc/ganglia-webfrontend/ -> edit conf.php: ($optional_graphs = array('my_thing');
+or /usr/share/ganglia-webfrontend --> conf.php
+/usr/share/ganglia-webfrontend/graph.d/my_thing_report.php
+
+
+###################### JSON  (for simple SUM)##########################
+/var/lib/ganglia/conf -> default.json : add "mystuff_report" in included_reports
+/usr/share/ganglia-webfrontend/graph.d --> create mystuff_report.json

@@ -7,6 +7,7 @@ from os import remove
 from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
+from threading import Thread
 
 orchestrator = None     # the VM to which the others report to
 
@@ -176,12 +177,18 @@ def run(params):
         record_count = int(params['records'])
         start = 0
         step = record_count/len(all_nodes)
+        threads = []
         for c in all_nodes:
             load_command = "echo '%s' > /opt/hosts;" % host_text
             load_command += get_script_text(cluster_name, "", "load") % (str(record_count), str(step), str(start))
             log.info("running load phase on %s" % c.name)
-            c.run_command(load_command, silent=True)
+            t = Thread(target=c.run_command, args=(load_command,) )
+            threads.append(t)
+            t.start()
             start += step
+        log.info("waiting for load phase to finish in clients")
+        for t in threads:
+            t.join()
 
 
 def destroy_all():

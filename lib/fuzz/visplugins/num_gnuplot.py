@@ -88,7 +88,7 @@ class FuzzPyGnuplot(AbstractPlugin):
         filename = os.path.join(tmpdir, 'gnuplot-output' + output_format)
         plot('set output \"%s\"' % filename)
         plot.plot([[p[0], p[1]] for p in self._N.points])
-        # FIXME: is there a better way to know when Gnuplot output is ready?
+        #  is there a better way to know when Gnuplot output is ready?
         sleep(0.5)
         tmpfile = open(filename, 'r')
         output_data = tmpfile.read()

@@ -1,7 +1,6 @@
 __author__ = 'tiramola group'
 
-import os, logging, datetime, operator, thread, math, random, itertools, time
-import logging.handlers as handlers
+import os, datetime, operator, thread, math, random, itertools, time
 import numpy as np
 from lib.fuzz import fgraph, fset
 from scipy.cluster.vq import kmeans2
@@ -38,23 +37,23 @@ class RLDecisionMaker:
             self.memory[str(i)]['r'] = None
             self.memory[str(i)]['arrayMeas'] = None
 
-        ## Install logger
+        #Create logger
         LOG_FILENAME = 'files/logs/Coordinator.log'
-        self.my_logger = get_logger('RLDecisionMaker', 'INFO', logfile=LOG_FILENAME)
+        self.log = get_logger('RLDecisionMaker', 'INFO', logfile=LOG_FILENAME)
 
         # Load any previous statics.
-        self.measurementsFile = 'files/logs/measurements.txt'
-        self.trainingFile = 'files/logs/training-set.txt'
+        self.measurementsFile = env_vars["measurements_file"]
+        self.trainingFile = env_vars["training_file"]
         self.sumMetrics = {}
         # initialize measurements file
-        meas = open(self.measurementsFile, 'a')
+        meas = open(self.measurementsFile, 'a+')
         if os.stat(self.measurementsFile).st_size == 0:
             # The file is empty, set the headers for each column.
             meas.write('State\t\tLambda\t\tThroughput\t\tLatency\t\tCPU\t\tTime\n')
         meas.close()
 
         # load training set
-        meas = open(self.trainingFile, 'r')
+        meas = open(self.trainingFile, 'r+')
         if os.stat(self.trainingFile).st_size != 0:
             # Read the training set measurements saved in the file.
             meas.next()  # Skip the first line with the headers of the columns
@@ -65,39 +64,46 @@ class RLDecisionMaker:
                     self.add_measurement(m)
         meas.close()
 
-    # param metrics: array The metrics to store. An array containing [state, lamdba, throughput, latency, time]
-    # param writeFile: boolean If set write the measurement in the txt file
-    def add_measurement(self, metrics, writeFile=False):
-
+    def add_measurement(self, metrics, write_file=False, write_mem=True):
+        """
+        adds the measurement to either memory or file or both
+        @param metrics: array The metrics to store. An array containing [state, lamdba, throughput, latency, time]
+        @param writeFile: boolean If set write the measurement in the txt file
+        :return:
+        """
         if self.measurementsPolicy.startswith('average'):
             if not self.sumMetrics.has_key(metrics[0]):
-                # Save the metric with the state as key metrics = [state, inlambda, throughput, latency]
-                self.sumMetrics[metrics[0]] = {'inlambda': 0.0, 'throughput': 0.0, 'latency': 0.0, 'divide_by': 0}
+                    # Save the metric with the state as key metrics = [state, inlambda, throughput, latency]
+                    self.sumMetrics[metrics[0]] = {'inlambda': 0.0, 'throughput': 0.0, 'latency': 0.0, 'divide_by': 0}
 
             self.sumMetrics[metrics[0]] = {'inlambda': self.sumMetrics[metrics[0]]['inlambda'] + float(metrics[1]),
                                            'throughput': self.sumMetrics[metrics[0]]['throughput'] + float(metrics[2]),
                                            'latency': self.sumMetrics[metrics[0]]['latency'] + float(metrics[3]),
                                            'divide_by': self.sumMetrics[metrics[0]]['divide_by'] + 1}
-        if self.debug and writeFile:
-            self.my_logger.debug("add_measurements: won't load measurement to memory")
+        if self.debug and write_file:
+            self.log.debug("add_measurements: won't load measurement to memory")
         else:
-            # metrics-> 0: state, 1: lambda, 2: thoughtput, 3:latency, 4:cpu, 5:time
-            if not self.memory.has_key(metrics[0]):
-                self.memory[str(metrics[0])] = {}
-                #self.memory[str(metrics[0])]['V'] = None # placeholder for rewards and metrics
-                self.memory[str(metrics[0])]['r'] = None
-                self.memory[str(metrics[0])]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
-                                                                      float(metrics[3]), float(metrics[4])], ndmin=2)
-            elif self.memory[metrics[0]]['arrayMeas'] == None:
-                self.memory[metrics[0]]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
-                                                                 float(metrics[3]), float(metrics[4])], ndmin=2)
+            if write_mem:
+                # metrics-> 0: state, 1: lambda, 2: thoughtput, 3:latency, 4:cpu, 5:time
+                if not self.memory.has_key(metrics[0]):
+                    self.memory[str(metrics[0])] = {}
+                    #self.memory[str(metrics[0])]['V'] = None # placeholder for rewards and metrics
+                    self.memory[str(metrics[0])]['r'] = None
+                    self.memory[str(metrics[0])]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
+                                                                          float(metrics[3]), float(metrics[4])], ndmin=2)
+                elif self.memory[metrics[0]]['arrayMeas'] is None:
+                    self.memory[metrics[0]]['arrayMeas'] = np.array([float(metrics[1]), float(metrics[2]),
+                                                                     float(metrics[3]), float(metrics[4])], ndmin=2)
+                else:
+                    self.memory[metrics[0]]['arrayMeas'] = np.append(self.memory[metrics[0]]['arrayMeas'],
+                                                                     [[float(metrics[1]), float(metrics[2]),
+                                                                       float(metrics[3]), float(metrics[4])]], axis=0)
+                    # but add 1 zero measurement for each state for no load cases ??? too many 0s affect centroids?
             else:
-                self.memory[metrics[0]]['arrayMeas'] = np.append(self.memory[metrics[0]]['arrayMeas'],
-                                                                 [[float(metrics[1]), float(metrics[2]),
-                                                                   float(metrics[3]), float(metrics[4])]], axis=0)
-                # but add 1 zero measurement for each state for no load cases ??? too many 0s affect centroids?
+                self.log.debug("Discarding measurement from memory: %d, %d, %d, %d" %
+                                     (self.currentState, metrics['inlambda'], metrics['throughput'], metrics['latency'] ))
 
-        if writeFile:
+        if write_file:
             ms = open(self.measurementsFile, 'a')
             # metrics[5] contains the time tick -- when running a simulation, it represents the current minute,
             # on actual experiments, it is the current time. Used for debugging and plotting
@@ -113,7 +119,7 @@ class RLDecisionMaker:
             averages['throughput'] = float(self.sumMetrics[state]['throughput'] / self.sumMetrics[state]['divide_by'])
             averages['latency'] = float(self.sumMetrics[state]['latency'] / self.sumMetrics[state]['divide_by'])
 
-            self.my_logger.debug("GETAVERAGES Average metrics for state: " + state + " num of measurements: " + str(
+            self.log.debug("GETAVERAGES Average metrics for state: " + state + " num of measurements: " + str(
                 self.sumMetrics[state]['divide_by']) +
                                  " av. throughput: " + str(averages['throughput']) + " av. latency: " +
                                  str(averages['latency']))
@@ -125,7 +131,7 @@ class RLDecisionMaker:
         label = []
         centroids = {}
         if self.memory[state]['arrayMeas'] != None:
-            self.my_logger.debug(
+            self.log.debug(
                 "DOKMEANS length of self.memory[state]['arrayMeas']: " + str(len(self.memory[state]['arrayMeas'])))
             sliced_data = None
             for j in self.memory[state]['arrayMeas']:
@@ -159,9 +165,9 @@ class RLDecisionMaker:
                 #                #centroids, label = kmeans2(self.memory[state]['arrayMeas'], k, minit='points') # (obs, k)
                 #            #else:
                 #            if sliced_data == None:
-                self.my_logger.debug("No known lamdba values close to current lambda measurement. Returning zeros!")
+                self.log.debug("No known lamdba values close to current lambda measurement. Returning zeros!")
             else:
-                self.my_logger.debug("DOKMEANS length of sliced_data to be fed to kmeans: " + str(len(sliced_data)))
+                self.log.debug("DOKMEANS length of sliced_data to be fed to kmeans: " + str(len(sliced_data)))
                 centroids, label = kmeans2(sliced_data, k, minit='points')
 
             # initialize dictionary
@@ -181,14 +187,14 @@ class RLDecisionMaker:
                 ctd['latency'] = centroids[int(max_meas_cluster)][2]
                 #ctd['cpu'] = centroids[int(max_meas_cluster)][3]
             else:
-                self.my_logger.debug("DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros")
+                self.log.debug("DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros")
                 ctd['inlambda'] = 0.0
                 ctd['throughput'] = 0.0
                 ctd['latency'] = 0.0
                 #ctd['cpu'] = 0.0
                 #return None
         else:
-            self.my_logger.debug("DOKMEANS self.memory[state]['arrayMeas'] is None :|")
+            self.log.debug("DOKMEANS self.memory[state]['arrayMeas'] is None :|")
 
         return ctd
 
@@ -230,8 +236,8 @@ class RLDecisionMaker:
         (slope, intercept, r_value, p_value, stderr) = linregress(ten_min_ra, run_avg)
         # fit the running average in a polynomial
         coeff = np.polyfit(ten_min, ten_min_l, deg=2)
-        self.my_logger.debug("Slope (a): " + str(slope) + " Intercept(b): " + str(intercept))
-        self.my_logger.debug("Polynom coefficients: " + str(coeff))
+        self.log.debug("Slope (a): " + str(slope) + " Intercept(b): " + str(intercept))
+        self.log.debug("Polynom coefficients: " + str(coeff))
         #self.my_logger.debug("next 10 min prediction "+str(float(slope * (p + 10) + intercept + stderr)))
         predicted_l = float(slope * (ten_min[19] + 10) + intercept + stderr)  # lambda in 10 mins from now
         #predicted_l = np.polyval(coeff, (ten_min[9] + 10)) # lambda in 10 mins from now
@@ -240,12 +246,12 @@ class RLDecisionMaker:
             #if predicted_l > allmetrics['inlambda'] :
             dif = 6000 + 10 * int(slope)
             #dif = 6000 + 0.2 * int(predicted_l - allmetrics['inlambda'])
-            self.my_logger.debug("Positive slope: " + str(slope) + " dif: " + str(dif)
+            self.log.debug("Positive slope: " + str(slope) + " dif: " + str(dif)
                                  + ", the load is increasing. Moving the lambda slice considered 3K up")
         else:
             dif = -6000 + 10 * int(slope)
             #dif = -6000 + 0.2 * int(predicted_l - allmetrics['inlambda'])
-            self.my_logger.debug("Negative slope " + str(slope) + " dif: " + str(dif)
+            self.log.debug("Negative slope " + str(slope) + " dif: " + str(dif)
                                  + ", the load is decreasing. Moving the lambda slice considered 3K down")
             #dif = ((predicted_l - allmetrics['inlambda'])/ allmetrics['inlambda']) * 0.1 * 6000#* allmetrics['inlambda']
             #dif = int((predicted_l / allmetrics['inlambda']) * 6000)
@@ -264,7 +270,7 @@ class RLDecisionMaker:
         # read metrics
         allmetrics = None
         allmetrics = rcvallmetrics.copy()
-        self.my_logger.debug("TAKEDECISION state: %s, pending action: %s" % (str(self.currentState), str(self.pending_action)))
+
 
         # avoid type errors at start up
         if not allmetrics.has_key('inlambda'):
@@ -283,7 +289,7 @@ class RLDecisionMaker:
             ## Aggreggation of YCSB client metrics
             clients = 0
             # We used to collect server cpu too, do we need it?
-            self.my_logger.debug("Collecting metrics")
+            self.log.debug("TAKEDECISION state: %d, pending action: %s. Collecting metrics" % (self.currentState, str(self.pending_action)))
             for host in allmetrics.keys():
                 metric = allmetrics[host]
                 if isinstance(metric, dict):
@@ -322,46 +328,38 @@ class RLDecisionMaker:
             except:
                 pass
 
-        # if there is a pending action, discard measurements, don't take a decision
-        if not self.pending_action is None:
-            self.my_logger.debug("Last action " + self.pending_action + " hasn't finished yet, see you later!")
+
+        pending_action = not self.pending_action is None # true if there is no pending action
+
+        #1. Save the current metrics to file and in memory only if there is no pending action.
+        self.add_measurement([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
+                              allmetrics['latency'], allmetrics['cpu'],
+                              datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")],
+                             write_file=True, write_mem=(not pending_action))
+
+        # if there is a pending action, don't take a decision
+        if pending_action:
+            self.log.debug("Last action " + self.pending_action + " hasn't finished yet, see you later!")
             if self.debug:
                 if self.countdown == 0:
-                    self.my_logger.debug("Running a simulation, set state from " + str(self.currentState) + " to " +
+                    self.log.debug("Running a simulation, set state from " + str(self.currentState) + " to " +
                                         str(self.nextState))
                     self.currentState = self.nextState
                     self.pending_action = None
                 else:
                     self.countdown -= self.countdown
-                    self.my_logger.debug("Reducing countdown to "+ str(self.countdown))
-            else:
-                self.my_logger.debug("Discarding measurement: %d, %d, %d, %d" %
-                                     (self.currentState, allmetrics['inlambda'], allmetrics['throughput'], allmetrics['latency'] ))
-                dms = open('files/logs/discarded-measurements.txt', 'a')
-                # metrics[4] contains the time tick -- when running a simulation, it represents the current minute,
-                # on actual experiments, it is the current time. Used for debugging and plotting
-                dms.write(str(self.currentState) + '\t\t' + str(allmetrics['inlambda']) + '\t\t' +
-                          str(allmetrics['throughput']) + '\t\t' + str(allmetrics['latency']) + '\t\t' +
-                          str(allmetrics['cpu']) + '\t\t' + datetime.datetime.now().strftime(
-                    "%Y-%m-%d %H:%M:%S") + '\n')
-                dms.close()
+                    self.log.debug("Reducing countdown to "+ str(self.countdown))
 
             # skip decision
             self.decision["action"] = "PASS"
             self.decision["count"] = 0
             return self.decision
 
-
-        #1. Save the current metrics in memory.
-        self.add_measurement([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
-                              allmetrics['latency'], allmetrics['cpu'],
-                              datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")], True)
-
         # manage the interval counter (waitForIt)
         if self.waitForIt == 0:
             self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         else:
-            self.my_logger.debug("New decision in " + str(float(self.waitForIt)/ 2) + " mins, see you later!")
+            self.log.debug("New decision in " + str(float(self.waitForIt)/ 2) + " mins, see you later!")
             self.waitForIt -= 1
             self.decision["action"] = "PASS"
             self.decision["count"] = 0
@@ -376,18 +374,18 @@ class RLDecisionMaker:
         if self.prediction:
             predicted_l = self.predict_load()
             dif = abs(allmetrics['inlambda'] - predicted_l)
-            self.my_logger.debug(
+            self.log.debug(
                 "Predicted: " + str(predicted_l) + " lambda :" + str(allmetrics['inlambda']) + " New diff: " + str(dif))
             from_inlambda = predicted_l - 3000
             to_inlambda = predicted_l + 3000
 
-        self.my_logger.debug("TAKEDECISION current lambda: " + str(allmetrics['inlambda']) + " lambda range: " +
+        self.log.debug("TAKEDECISION current lambda: " + str(allmetrics['inlambda']) + " lambda range: " +
                              str(from_inlambda) + " - " + str(to_inlambda))
         # too low to care, the initial num of nodes can answer 1000 req/sec,
         # so consider it as 0 1000 * len(cluster.size)!!
         if 0.0 < to_inlambda < 1000:
             from_inlambda = 0.0
-            self.my_logger.debug("TAKEDECISION current lambda: " + str(allmetrics['inlambda'])
+            self.log.debug("TAKEDECISION current lambda: " + str(allmetrics['inlambda'])
                                  + " changed lambda range to: " + str(from_inlambda) + " - " + str(to_inlambda))
 
 
@@ -408,7 +406,7 @@ class RLDecisionMaker:
                 met = self.getAverages(str(i))
             elif self.measurementsPolicy.startswith('centroid'):
                 met = self.doKmeans(str(i), from_inlambda, to_inlambda)
-                self.my_logger.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(met))
+                self.log.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(met))
                 if met != None and len(met) > 0:
                     # Been in this state before, use the measurements
                     allmetrics['inlambda'] = met['inlambda']
@@ -429,14 +427,14 @@ class RLDecisionMaker:
                 if not self.debug:
                     cur_gain = eval(env_vars["gain"], allmetrics)
                     # for debugging purposes I compare the current reward with the one computed using the training set
-                    self.my_logger.debug(
+                    self.log.debug(
                         "TAKEDECISION state " + str(i) + " current reward : " + str(cur_gain) + " training set reward: "
                         + str(self.memory[str(i)]['r']))
                     self.memory[str(i)]['r'] = cur_gain
-                    self.my_logger.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
+                    self.log.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
                 else:
                     cur_gain = str(self.memory[str(i)]['r'])
-                    self.my_logger.debug("TAKEDECISION state " + str(i) + " current state training set reward: "
+                    self.log.debug("TAKEDECISION state " + str(i) + " current state training set reward: "
                                          + cur_gain)
 
                 states.add(fset.FuzzyElement(str(i), cur_gain))
@@ -489,8 +487,12 @@ class RLDecisionMaker:
                 #                    V[s] = self.memory[str(s)]['r']
                 V[s] = self.memory[str(s)]['r']
 
-        self.my_logger.debug(
-                "TAKEDECISION Vs: " + str(V) + ", max V = " + str(max(V)) + " V[" + str(s) + "] " + str(V[s]))
+        #format Vs output
+        out = "TAKEDECISION Vs=["
+        for i in V.keys(): out += "%d:%d, " %(i, V[i])
+        out += "]"
+        self.log.debug(out)
+        self.log.debug("max(V): %d (GAIN=%d)" % (s,V[s]))
 
         # Find the max V
         self.nextState = max(V.iteritems(), key=operator.itemgetter(1))[0]
@@ -509,7 +511,7 @@ class RLDecisionMaker:
         #            fp.close()
 
         if self.nextState != self.currentState:
-            self.my_logger.debug(
+            self.log.debug(
                 "Decided to change state to_next: " + str(self.nextState) + " from_curr: " + str(self.currentState))
             # You've chosen to change state, that means that nextState has a greater reward, therefore d is always > 0
             d = self.memory[str(self.nextState)]['r'] - self.memory[str(self.currentState)]['r']
@@ -520,7 +522,7 @@ class RLDecisionMaker:
                     # skip decision
                     self.decision["action"] = "PASS"
                     self.decision["count"] = 0
-                    self.my_logger.debug("ups changed my mind...staying at state: " + str(self.currentState)
+                    self.log.debug("ups changed my mind...staying at state: " + str(self.currentState)
                                          + " cause the gain difference is: " + str(
                         abs(d)) + " which is less than 3% of the current reward " +
                                          str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + " " +
@@ -532,7 +534,7 @@ class RLDecisionMaker:
                 # skip decision
                 self.decision["action"] = "PASS"
                 self.decision["count"] = 0
-                self.my_logger.debug("ups changed my mind...staying at state: " + str(self.currentState) +
+                self.log.debug("ups changed my mind...staying at state: " + str(self.currentState) +
                                      " cause the gain difference is: " + str(abs(d)) +
                                      " which is less than 10% of the current reward "
                                      + str(self.memory[str(self.currentState)]['r']))
@@ -543,7 +545,7 @@ class RLDecisionMaker:
             self.decision["action"] = "REMOVE"
 
         self.decision["count"] = abs(int(self.currentState) - int(self.nextState))
-        self.my_logger.debug("TAKEDECISION: action " + self.decision["action"] + " " + str(self.decision["count"]) +
+        self.log.debug("TAKEDECISION: action " + self.decision["action"] + " " + str(self.decision["count"]) +
                              " nodes.")
 
         ## Don't perform the action if we're debugging/simulating!!!
@@ -552,15 +554,15 @@ class RLDecisionMaker:
                 self.pending_action = self.decision['action']
                 self.countdown = 5
                 #self.currentState = str(self.nextState)
-                self.my_logger.debug("TAKEDECISION simulation, action will finish in: " +
+                self.log.debug("TAKEDECISION simulation, action will finish in: " +
                                      str(self.countdown) + " mins")
             else:
-                self.my_logger.debug("TAKEDECISION Waiting for action to finish: " + str(self.pending_action))
+                self.log.debug("TAKEDECISION Waiting for action to finish: " + str(self.pending_action))
 
         return self.decision
 
     def simulate(self):
-        self.my_logger.debug("START SIMULATION!!")
+        self.log.debug("START SIMULATION!!")
         ## creates a sin load simulated for an hour
         #        for i in range(0, 3600, 10):
         #for i in range(0, 14400, 60): # 4 hours
@@ -597,7 +599,7 @@ class RLDecisionMaker:
 
             values = {'latency': latency, 'cpu': cpu, 'inlambda': l, 'throughput': throughput,
                       'num_nodes': self.currentState}
-            self.my_logger.debug(
+            self.log.debug(
                 "SIMULATE i: " + str(i) + " state: " + str(self.currentState) + " values:" + str(values)
                 + " maxThroughput: " + str(maxThroughput))
 
@@ -611,7 +613,7 @@ class RLDecisionMaker:
 
     def simulate_training_set(self):
         # run state 12 lambdas
-        self.my_logger.debug("START SIMULATION!!")
+        self.log.debug("START SIMULATION!!")
         load = []
         for k in range(17, 21):
             for j in self.memory[str(k)]['arrayMeas']:
@@ -625,7 +627,7 @@ class RLDecisionMaker:
             # if l < (800 * self.currentState):
             #     throughput = l
             values = {'inlambda': l, 'num_nodes': self.currentState}
-            self.my_logger.debug(
+            self.log.debug(
                 "SIMULATE i: " + str(i) + " state: " + str(self.currentState) + " values:" + str(values))
 
             self.take_decision(values)

@@ -6,14 +6,26 @@ from lib.persistance_module import env_vars
 from Monitoring import MonitorVms
 from new_decision_module import RLDecisionMaker as DM
 from lib.tiramola_logging import get_logger
+from time import time
+from os import remove
 import thread
 
-####### Variables  ###############
+#######  STATIC VARS  ###############
 my_logger = get_logger('COORDINATOR', 'INFO', logfile='files/logs/Coordinator.log')
 my_logger.debug("--------- NEW RUN  -----------------")
-
 #the (pending) decision at the present moment
 decision = None
+#get the endpoint for the monitoring system
+monitoring_endpoint = Clients.get_monitoring_endpoint()
+monVms = MonitorVms(monitoring_endpoint)
+
+#check if cluster exists
+if Servers.exists():
+    my_logger.info( "Cluster exists using it as is")
+    #make sure no workload is running
+else:
+    my_logger.error("Create the cluster first and then run the coordinator")
+    exit(-1)
 
 
 def implement_decision():
@@ -38,21 +50,7 @@ def implement_decision():
     decision_module.currentState = Servers.node_count()
 
 
-#check if cluster exists
-if Servers.exists():
-    my_logger.info( "Cluster exists using it as is")
-    #make sure no workload is running
-else:
-    my_logger.error("Create the cluster first and then run the coordinator")
-    exit(-1)
-
-#get the endpoint for the monitoring system
-monitoring_endpoint = Clients.get_monitoring_endpoint()
-#refresh metrics
-monVms = MonitorVms(monitoring_endpoint)
-
-
-def run():
+def run(timeout=None):
     """
     Runs cluster with automatic decision taking
     """
@@ -63,9 +61,16 @@ def run():
     while True:
     # main loop that fetches metric and takes decisions
         sleep(metrics_interval)
+        #check timeout
+        if not (timeout is None) and (time() >= timeout): break
+        # refresh the metrics
         all_metrics = monVms.refreshMetrics()
+
+        #take a decision based on the new metrics
         global decision
         decision = decision_module.take_decision(all_metrics)
+
+        # asynchronously implement that decision
         thread.start_new(implement_decision, ())
 
 
@@ -75,22 +80,63 @@ def train():
     """
     #change the gain function for training purposes
     env_vars['gain'] = 'num_nodes'
-    # load the training vars
+
+    # load the training vars into the regular enviroment vars
     t_vars = env_vars["training_vars"]
     env_vars['decision_interval'] = t_vars['decision_interval']
     env_vars['period'] = t_vars['period']
     env_vars['max_cluster_size'] = t_vars['max_cluster_size']
     env_vars['min_cluster_size'] = t_vars['min_cluster_size']
-    #get the server hostnames and addresses
+    env_vars["add_nodes"] = 1
+    env_vars["rem_nodes"] = 1
+    env_vars["measurements_file"] = env_vars["training_file"]
+    # remove the old measurements/training file so that it is replaced
+    try:remove(env_vars["measurements_file"])
+    except: pass
+
+    # Sanity-Check the nodecount
+    if Servers.node_count() != t_vars['min_cluster_size']:
+        my_logger.error("TRAINING: Start training with the Minimum cluster size, %d (now:%d)" %(t_vars['min_cluster_size'], Servers.node_count()))
+        exit()
+
+    # get the workload parameters
     svr_hosts = Servers.get_hosts(private=True)
     #create the parameters dictionary for the training phase
     params = {'type': 'sinusoid', 'servers': svr_hosts, 'target': t_vars['target_load'],
               'offset': t_vars['offset_load'], 'period': t_vars['period']}
-    #run the workload with the specified params to the clients
-    Clients.run(params)
-    #now run as usual
-    run()
 
-if __name__ == "__main__":
-    train()
+    # init the decision module
+    global decision_module
+    decision_module = DM(monitoring_endpoint, Servers.node_count())
+    #the time interval between metrics refresh
+    metrics_interval = env_vars["metric_fetch_interval"]
+
+    # run 1 period of workload for each of the the states between min and max cluster size
+    for i in range(env_vars['max_cluster_size'] - t_vars['min_cluster_size'] +1):
+
+        #run the workload with the specified params to the clients
+        Clients.run(params)
+
+        #run for 1 period
+        timeout = time() + env_vars['period']
+        while time() <= timeout:
+        #fetch metrics and takes decisions
+            sleep(metrics_interval)
+
+            #check timeout
+            if not (timeout is None) and (time() >= timeout): break
+            # refresh the metrics
+            all_metrics = monVms.refreshMetrics()
+
+            #This should only decide to add a node after a period is passed
+            global decision
+            decision = decision_module.take_decision(all_metrics)
+
+            # synchronously implement that decision
+            implement_decision()
+
+        #stop the clients after one period has passed
+        Clients.kill_nodes()
+
+    my_logger.info("TRAINING DONE")
 

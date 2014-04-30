@@ -27,25 +27,24 @@ Node.image = env_vars["cassandra_base_image"]
 log = get_logger('CLUSTER', 'DEBUG', logfile='files/logs/Coordinator.log')
 
 
-def create_cluster(worker_count=0, used=None):
+def create_cluster(worker_count=0):
     """
     Creates a Cassandra Cluster with a single Seed Node and 'worker_count' other nodes
     :param worker_count: the number of the nodes to create-apart from the seednode
     """
     global nodes, stash, seeds
+    nodes = []
+    seeds = []
+    stash = []
     #create the seed node
     seeds.append(Node(cluster_name, node_type="seed", number=0, create=True, IPv4=True))
     #create the rest of the nodes
     for i in range(worker_count):
-        nodes.append(Node(cluster_name, node_type="node", number="%02d"%(len(nodes)+1), create=True, IPv4=True))
-    #wait until everybody is ready
+        stash.append(Node(cluster_name, node_type="node", number="%02d" % (i+1), create=True, IPv4=True))
 
-    #if 'used' is specified, only use this number of nodes
-    if not used is None:
-        stash = nodes[used:]
-        nodes = nodes[:used-1]
     #save the cluster to file
     save_cluster()
+    #wait until everybody is ready
     wait_everybody()
     find_orchestrator()
     inject_hosts_files()
@@ -61,10 +60,15 @@ def wait_everybody():
         i.wait_ready()
 
 
-def bootstrap_cluster():
+def bootstrap_cluster(used):
     """
     Runs the necessary boostrap commnands to each of the Seed Node and the other nodes
     """
+    global stash, nodes
+    #assuming nodes is empty
+    used -= 1
+    nodes = stash[:used]
+    stash = stash[used-1:]
     inject_hosts_files()
     log.info("Running bootstrap scripts")
     #bootstrap the seed node
@@ -72,6 +76,7 @@ def bootstrap_cluster():
     #bootstrap the rest of the nodes
     for n in nodes:
         n.bootstrap(params={"seednode": seeds[0].get_private_addr()})
+    save_cluster()
     log.info("READY!!")
 
 
@@ -99,8 +104,7 @@ def resume_cluster():
     seeds[:] = []
 
     in_nodes = Node.get_all_nodes(check_active=True)
-    #check that all saved nodes actually exist and exit if not remove
-    to_remove = []
+    #check that all saved nodes actually exist
     for n in saved_nodes:
         if n not in [i.name for i in in_nodes]:
             log.error("node %s does actually exist in the cloud, re-create the cluster" % n)
@@ -115,7 +119,8 @@ def resume_cluster():
                 orchestrator = n
             continue
         else:
-            if n.type == "seed": seeds.append(n)
+            if n.type == "seed":
+                seeds.append(n)
             elif n.type == "node": nodes.append(n)
     #sort nodes by name
     nodes.sort(key=lambda x: x.name)
@@ -141,8 +146,12 @@ def kill_nodes():
     Runs the kill scripts for all the nodes in the cluster
     """
     log.info("Killing cassandra nodes")
+    global seeds, nodes, stash
     for n in seeds+nodes+stash:
         n.kill()
+    stash = nodes + stash
+    nodes = []
+    save_cluster()
 
 
 def inject_hosts_files():
@@ -151,10 +160,9 @@ def inject_hosts_files():
     know each other by hostname. Also restarts the ganglia daemons
     :return:
     """
-    # FIXME remove Clients entries. Servers should only know themselves
     log.info("Injecting host files")
     hosts = dict()
-    for i in seeds+nodes :
+    for i in seeds+nodes:
         hosts[i.name] = i.get_private_addr()
     #manually add  the entry for the seednode
     hosts["cassandra_seednode"] = seeds[0].get_private_addr()
@@ -187,19 +195,18 @@ def add_nodes(count=1):
     Adds a node to the cassandra cluster. Refreshes the hosts in all nodes
     :return:
     """
-    log.info('Adding %d nodes' % count )
+    log.info('Adding %d nodes' % count)
     threads = []
     #start the threads that add the nodes
     for i in range(count):
         t = Thread(target=add_one_node, args=())
         threads.append(t)
         t.start()
-        #TODO join with timeout if serial
-        #t.join()
-    #FIXME parallel adding of nodes (ssh problem)
+
     #wait for all the threads to finish
     log.debug("Waiting for all the threads to finish adding")
     for t in threads:
+        #TODO add timeout in join so as not to block
         t.join()
     #save the current cluster state
     save_cluster()

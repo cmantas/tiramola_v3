@@ -28,7 +28,7 @@ def info():
 tiramola hosts
 tiramola private_hosts
 tiramola create_cluster nodes=2 clients=2
-tiramola bootstrap_cluster
+tiramola bootstrap_cluster used=8
 tiramola load_data records=100000
 tiramola run_sinusoid target=100 offset=80 period=60
 tiramola add_nodes [count=2]
@@ -81,13 +81,9 @@ def run_stress():
 def create_cluster():
     try:
         nodes = int(args["nodes"])
-        if "used" in args.keys():
-            used = int(args['used'])
-        else:
-            used = None
-        log.info("creating cluster with %d nodes (%d used)" % (nodes, used))
+        log.info("creating cluster with %d nodes " % nodes)
         import CassandraCluster
-        CassandraCluster.create_cluster(nodes-1, used-1)
+        CassandraCluster.create_cluster(nodes-1)
     except KeyError as e:
         log.info("create_cluster requires argument %s" % e.args[0])
 
@@ -125,8 +121,13 @@ def kill_nodes():
 
 
 def bootstrap_cluster():
-    import CassandraCluster
-    CassandraCluster.bootstrap_cluster()
+    try:
+        used = int(args['used'])
+        log.info('Bootstraping Cluster with %d nodes' % used)
+        import CassandraCluster
+        CassandraCluster.bootstrap_cluster(used)
+    except KeyError as e:
+        log.info("bootstrap_cluster requires argument %s" % e.args[0])
 
 
 def destroy_all():
@@ -179,6 +180,7 @@ def train():
 
 
 def auto_pilot():
+    log.info("Running Tiramola Auto Provisioning super algorithm")
     import Coordinator
     Coordinator.run()
 

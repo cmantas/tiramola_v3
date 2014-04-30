@@ -24,5 +24,5 @@ hostsFile=/opt/hosts
 maxexecutiontime=1000000000
 " > my_workload
 
-ycsb run cassandra-cql -P my_workload -threads $threads  -s &> /root/ycsb_run.log &
+/etc/YCSB/bin/ycsb run cassandra-cql -P my_workload -threads $threads  -s &> /root/ycsb_run.log &
 

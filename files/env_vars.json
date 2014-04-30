@@ -20,19 +20,22 @@
     "max_cluster_size": 20,
     "add_nodes": 4,
     "rem_nodes": 4,
-    "serv_throughput": 3500,
+    "serv_throughput": 800,
     "ssh_giveup_timeout": 600,
     "trans_cost": "0",
     "gain": "(throughput * 0.035) - (num_nodes * 3.2) - (latency * 0.4)",
     "metric_fetch_interval": 30,
     "decision_interval": 300,
+    "measurements_file": "files/measurements/measurements.txt",
+    "training_file": "files/measurements/training_set.txt",
     "training_vars": {
         "target_load":8000,
         "offset_load": 6000,
         "period": 3600,
         "decision_interval": 3600,
         "max_cluster_size": 20,
-        "min_cluster_size": 8
+        "min_cluster_size": 8,
+        "records": 10000000
          }
 
 }

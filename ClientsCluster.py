@@ -112,7 +112,7 @@ def add_nodes(count=1):
     Adds a node to the cassandra cluster. Refreshes the hosts in all nodes
     :return:
     """
-    log.info('Adding %d nodes' % count )
+    log.info('Adding %d nodes' % count)
     new_nodes = []
     Node.flavor = env_vars['client_flavor']
     for i in range(count):

@@ -5,4 +5,8 @@ b = {'a': 3}
 
 c = dict(a.items() + b.items())
 
-print c
+from time import time
+
+print time()
+from os import remove
+

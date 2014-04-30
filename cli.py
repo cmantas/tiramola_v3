@@ -38,7 +38,7 @@ tiramola kill_nodes
 tiramola destroy_all
 tiramola add_clients count=2
 tiramola train
-tiramola auto_pilot
+tiramola auto_pilot minutes=60
 """
 
 
@@ -181,8 +181,10 @@ def train():
 
 def auto_pilot():
     log.info("Running Tiramola Auto Provisioning super algorithm")
+    mins = int(args['minutes'])
+    secs = 60 * mins
     import Coordinator
-    Coordinator.run()
+    Coordinator.run(secs)
 
 
 

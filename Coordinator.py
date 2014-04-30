@@ -53,16 +53,21 @@ def implement_decision():
 def run(timeout=None):
     """
     Runs cluster with automatic decision taking
+    @param timeout: the time in seconds this run should last
     """
+    # convert relative timeout to absolute time
+    if not timeout is None: timeout = time() + timeout
+
+    #init the decision module
     global decision_module
     decision_module = DM(monitoring_endpoint, Servers.node_count())
+
     #the time interval between metrics refresh
     metrics_interval = env_vars["metric_fetch_interval"]
-    while True:
+
     # main loop that fetches metric and takes decisions
+    while (timeout is None) or (time() <= timeout):
         sleep(metrics_interval)
-        #check timeout
-        if not (timeout is None) and (time() >= timeout): break
         # refresh the metrics
         all_metrics = monVms.refreshMetrics()
 
@@ -72,6 +77,8 @@ def run(timeout=None):
 
         # asynchronously implement that decision
         thread.start_new(implement_decision, ())
+    # DONE
+    my_logger.info(" run is finished")
 
 
 def train():

@@ -7634,3 +7634,49 @@ Apr30 16:29:53 [DEBUG]          COORDINATOR: --------- NEW RUN  ----------------
 Apr30 16:29:53 [ INFO]          COORDINATOR: Cluster exists using it as is
 Apr30 16:30:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
 Apr30 16:30:23 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+Apr30 16:30:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:30:53 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+Apr30 16:31:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:31:23 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+Apr30 16:31:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:31:53 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+Apr30 16:32:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:32:23 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+Apr30 16:32:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:32:53 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+Apr30 16:33:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:33:23 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+Apr30 16:33:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:33:53 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+Apr30 16:34:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:34:23 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+Apr30 16:34:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:34:53 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 2366.56094058 lambda range: 1366.56094058 - 3366.56094058
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 132
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 39
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8 met: {'inlambda': 2373.0897615216122, 'latency': 13.238562486263467, 'throughput': 2368.8005812695783}
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 current reward : 52.0125953499 training set reward: 52.0125953499
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 8 with gain 52.0125953499
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 28
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {'inlambda': 2477.0257765507135, 'latency': 12.853974549808571, 'throughput': 2473.4829709285718}
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 27
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 2485.0612422188888, 'latency': 11.728866201585925, 'throughput': 2484.1582551388888}
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 26
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {'inlambda': 2451.8887237569229, 'latency': 13.054329591488074, 'throughput': 2447.5114131219229}
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 26
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 12 met: {'inlambda': 2451.8454774873071, 'latency': 11.715312151989231, 'throughput': 2448.8825782642302}
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[8:52, 9:52, 10:50, 11:45, 12:42, ]
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: max(V): 12 (GAIN=42)
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: Decided to change state to_next: 9 from_curr: 8
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: ups changed my mind...staying at state: 8 cause the gain difference is: 0.617718812647 which is less than 3% of the current reward 0.0118763312711 52.0125953499
+Apr30 16:35:23 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+Apr30 16:35:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:35:53 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+Apr30 16:36:23 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+Apr30 16:36:23 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!

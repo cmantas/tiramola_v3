@@ -100,8 +100,10 @@ class RLDecisionMaker:
                                                                        float(metrics[3]), float(metrics[4])]], axis=0)
                     # but add 1 zero measurement for each state for no load cases ??? too many 0s affect centroids?
             else:
-                self.log.debug("Discarding measurement from memory: %d, %d, %d, %d" %
-                                     (self.currentState, metrics['inlambda'], metrics['throughput'], metrics['latency'] ))
+                #TODO error: list indices must be integers, not str
+                # self.log.debug("Discarding measurement from memory: %d, %d, %d, %d" %
+                #                      (self.currentState, metrics['inlambda'], metrics['throughput'], metrics['latency'] ))
+                self.log.debug("Discarding measurement from memory")
 
         if write_file:
             ms = open(self.measurementsFile, 'a')

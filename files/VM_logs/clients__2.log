@@ -1496,3 +1496,334 @@ May02 15:27:25 [DEBUG]         [clients__2]: command returned:
  	$:  
 
 
+May02 16:20:19 [DEBUG]         [clients__2]: cluster = clients
+May02 16:20:36 [DEBUG]         [clients__2]: cluster = clients
+May02 16:20:38 [ INFO]         [clients__2]: running kill script
+May02 16:20:38 [DEBUG]         [clients__2]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May02 16:20:38 [DEBUG]         [clients__2]: Connecting to SSH
+May02 16:20:39 [DEBUG]         [clients__2]: connected in 0 sec. Running SSH command
+May02 16:20:41 [DEBUG]         [clients__2]: SSH command took 2 sec
+May02 16:20:41 [DEBUG]         [clients__2]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  
+
+
+May02 16:21:00 [DEBUG]         [clients__2]: cluster = clients
+May02 16:28:24 [DEBUG]         [clients__2]: cluster = clients
+May02 16:28:39 [DEBUG]         [clients__2]: cluster = clients
+May02 16:28:39 [DEBUG]         [clients__2]: running SSH command:
+
+     echo '10.0.0.35
+     10.0.0.35
+     10.0.0.31
+     10.0.0.11
+     10.0.0.38
+     10.0.0.16
+     10.0.0.45
+     10.0.0.37
+     10.0.0.44
+     ' > /opt/hosts;#!/bin/sh
+     ### RUN THIS FROM PYTHON ONLY, SPECIFYING THE FOLLOWING PARAMS
+     count=10000
+     step=3333
+     start=3333
+     
+     /etc/YCSB/bin/ycsb load cassandra-cql \
+     -P /etc/YCSB/workloads/workloada -p port=9042 \
+     -threads 20 -s \
+     -p hostsFile=/opt/hosts \
+     -p recordcount=$count -p insertcount=$step -p insertstart=$start \
+     &> /root/ycsb_load.log
+     
+     
+     
+
+
+May02 16:28:39 [DEBUG]         [clients__2]: Connecting to SSH
+May02 16:28:39 [DEBUG]         [clients__2]: connected in 0 sec. Running SSH command
+May02 16:28:50 [DEBUG]         [clients__2]: SSH command took 11 sec
+May02 16:28:50 [DEBUG]         [clients__2]: command returned:
+
+ 	$:  
+
+
+May02 16:29:05 [DEBUG]         [clients__2]: cluster = clients
+May02 16:29:19 [DEBUG]         [clients__2]: cluster = clients
+May02 16:29:20 [DEBUG]         [clients__2]: running SSH command:
+
+     echo '10.0.0.35
+     10.0.0.35
+     10.0.0.31
+     10.0.0.11
+     10.0.0.38
+     10.0.0.16
+     10.0.0.45
+     10.0.0.37
+     10.0.0.44
+     ' > /opt/hosts;#!/bin/sh
+     #########  YCSB WORKLOAD PARAMS  ########
+     target=26666
+     offset=2000
+     period=3600
+     threads=200
+     
+     echo "
+     period=$period
+     target=$target
+     offset=$offset
+     recordcount=1000
+     workload=com.yahoo.ycsb.workloads.CoreWorkload
+     sinusoidal=true
+     readallfields=true
+     
+     readproportion=1
+     updateproportion=0
+     scanproportion=0
+     insertproportion=0
+     
+     requestdistribution=uniform
+     hostsFile=/opt/hosts
+     maxexecutiontime=1000000000
+     " > my_workload
+     
+     /etc/YCSB/bin/ycsb run cassandra-cql -P my_workload -threads $threads  -s &> /root/ycsb_run.log &
+     
+     
+     
+
+
+May02 16:29:20 [DEBUG]         [clients__2]: Connecting to SSH
+May02 16:29:20 [DEBUG]         [clients__2]: connected in 0 sec. Running SSH command
+May02 16:29:20 [DEBUG]         [clients__2]: SSH command took 0 sec
+May02 16:29:20 [DEBUG]         [clients__2]: command returned:
+
+ 	$:  
+
+
+May02 16:52:21 [DEBUG]         [clients__2]: cluster = clients
+May02 16:52:22 [ INFO]         [clients__2]: running kill script
+May02 16:52:22 [DEBUG]         [clients__2]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May02 16:52:22 [DEBUG]         [clients__2]: Connecting to SSH
+May02 16:52:22 [DEBUG]         [clients__2]: connected in 0 sec. Running SSH command
+May02 16:52:24 [DEBUG]         [clients__2]: SSH command took 1 sec
+May02 16:52:24 [DEBUG]         [clients__2]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  
+
+
+May02 16:52:40 [DEBUG]         [clients__2]: cluster = clients
+May02 16:52:54 [DEBUG]         [clients__2]: cluster = clients
+May02 16:52:54 [DEBUG]         [clients__2]: running SSH command:
+
+     echo '10.0.0.35
+     10.0.0.35
+     10.0.0.31
+     10.0.0.11
+     10.0.0.38
+     10.0.0.16
+     10.0.0.45
+     10.0.0.37
+     10.0.0.44
+     ' > /opt/hosts;#!/bin/sh
+     #########  YCSB WORKLOAD PARAMS  ########
+     target=26666
+     offset=2000
+     period=3600
+     threads=200
+     
+     echo "
+     period=$period
+     target=$target
+     offset=$offset
+     recordcount=1000
+     workload=com.yahoo.ycsb.workloads.CoreWorkload
+     sinusoidal=true
+     readallfields=true
+     
+     readproportion=1
+     updateproportion=0
+     scanproportion=0
+     insertproportion=0
+     
+     requestdistribution=uniform
+     hostsFile=/opt/hosts
+     maxexecutiontime=1000000000
+     " > my_workload
+     
+     /etc/YCSB/bin/ycsb run cassandra-cql -P my_workload -threads $threads  -s &> /root/ycsb_run.log &
+     
+     
+     
+
+
+May02 16:52:54 [DEBUG]         [clients__2]: Connecting to SSH
+May02 16:52:54 [DEBUG]         [clients__2]: connected in 0 sec. Running SSH command
+May02 16:52:54 [DEBUG]         [clients__2]: SSH command took 0 sec
+May02 16:52:54 [DEBUG]         [clients__2]: command returned:
+
+ 	$:  
+
+
+May02 17:14:26 [DEBUG]         [clients__2]: cluster = clients
+May02 17:14:27 [ INFO]         [clients__2]: running kill script
+May02 17:14:27 [DEBUG]         [clients__2]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May02 17:14:27 [DEBUG]         [clients__2]: Connecting to SSH
+May02 17:14:27 [DEBUG]         [clients__2]: connected in 0 sec. Running SSH command
+May02 17:14:29 [DEBUG]         [clients__2]: SSH command took 1 sec
+May02 17:14:29 [DEBUG]         [clients__2]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  
+
+
+May02 17:14:45 [DEBUG]         [clients__2]: cluster = clients
+May02 17:14:59 [DEBUG]         [clients__2]: cluster = clients
+May02 17:14:59 [DEBUG]         [clients__2]: running SSH command:
+
+     echo '10.0.0.35
+     10.0.0.35
+     10.0.0.31
+     10.0.0.11
+     10.0.0.38
+     10.0.0.16
+     10.0.0.45
+     10.0.0.37
+     10.0.0.44
+     ' > /opt/hosts;#!/bin/sh
+     #########  YCSB WORKLOAD PARAMS  ########
+     target=26666
+     offset=2000
+     period=3600
+     threads=200
+     
+     echo "
+     period=$period
+     target=$target
+     offset=$offset
+     recordcount=1000
+     workload=com.yahoo.ycsb.workloads.CoreWorkload
+     sinusoidal=true
+     readallfields=true
+     
+     readproportion=1
+     updateproportion=0
+     scanproportion=0
+     insertproportion=0
+     
+     requestdistribution=uniform
+     hostsFile=/opt/hosts
+     maxexecutiontime=1000000000
+     " > my_workload
+     
+     /etc/YCSB/bin/ycsb run cassandra-cql -P my_workload -threads $threads  -s &> /root/ycsb_run.log &
+     
+     
+     
+
+
+May02 17:14:59 [DEBUG]         [clients__2]: Connecting to SSH
+May02 17:14:59 [DEBUG]         [clients__2]: connected in 0 sec. Running SSH command
+May02 17:14:59 [DEBUG]         [clients__2]: SSH command took 0 sec
+May02 17:14:59 [DEBUG]         [clients__2]: command returned:
+
+ 	$:  
+
+

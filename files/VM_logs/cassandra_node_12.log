@@ -804,3 +804,59 @@ May02 15:46:25 [DEBUG]  [cassandra_node_12]: command returned:
  	$:  
 
 
+May02 16:20:19 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:20:19 [ INFO]  [cassandra_node_12]: running kill script
+May02 16:20:19 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May02 16:20:19 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May02 16:20:19 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May02 16:20:20 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May02 16:20:20 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon (24113)
+	$:  
+
+
+May02 16:20:36 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:21:00 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:28:24 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:28:39 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:29:05 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:29:19 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:52:21 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:52:40 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 16:52:54 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 17:14:26 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 17:14:45 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 17:14:59 [DEBUG]  [cassandra_node_12]: cluster = cassandra

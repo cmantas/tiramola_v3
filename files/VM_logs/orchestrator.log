@@ -794,3 +794,68 @@ May02 15:46:29 [DEBUG]       [orchestrator]: command returned:
 	$:  
 
 
+May02 16:20:19 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:20:36 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:21:00 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:21:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May02 16:21:00 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 16:21:00 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 16:21:00 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 16:21:00 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May02 16:21:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May02 16:21:00 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 16:21:00 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 16:21:00 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 16:21:00 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May02 16:21:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May02 16:21:04 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 16:21:04 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 16:21:04 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 16:21:04 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May02 16:28:24 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:28:39 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:29:05 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:29:19 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:52:21 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:52:40 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 16:52:54 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 17:14:26 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 17:14:45 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 17:14:59 [DEBUG]       [orchestrator]: cluster = orchestrato

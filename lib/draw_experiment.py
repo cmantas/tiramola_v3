@@ -1,6 +1,9 @@
 import math, itertools, sys
 import numpy as np
-import pylab as pl
+from matplotlib import use
+use('Agg')
+import matplotlib.pyplot as pl
+
 from collections import deque
 
 def moving_average(iterable, n=3):
@@ -15,14 +18,14 @@ def moving_average(iterable, n=3):
         d.append(elem)
         yield s / float(n)
 
-def draw_exp():
+
+def draw_exp(meas_file):
     states = []
     l = []
     thr = []
     lat = []
     cpu = []
     ticks = []
-    meas_file = sys.argv[1]
     fig_name = meas_file.replace('.txt', '')
     fig_name = fig_name.replace('measurements-', '')
 
@@ -170,4 +173,4 @@ def draw_exp():
     return
 
 if __name__ == '__main__':
-    draw_exp()
+    draw_exp(sys.argv[1])

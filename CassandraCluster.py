@@ -147,11 +147,17 @@ def kill_nodes():
     """
     log.info("Killing cassandra nodes")
     global seeds, nodes, stash
+    threads = []
     for n in seeds+nodes+stash:
-        n.kill()
+        t=Thread(target=n.kill, args=())
+        threads.append(t)
+        t.start()
     stash = nodes + stash
     nodes = []
     save_cluster()
+    for t in threads:
+        t.join()
+
 
 
 def inject_hosts_files():

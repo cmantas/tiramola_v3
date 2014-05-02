@@ -9939,3 +9939,287 @@ May02 16:06:59 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you l
 May02 16:07:29 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 15, pending action: None. Collecting metrics
 May02 16:07:29 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
 May02 16:07:29 [ INFO]          COORDINATOR:  run is finished
+May02 16:20:19 [ INFO]              CLUSTER: Killing cassandra nodes
+May02 16:20:36 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 16:20:36 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 16:21:00 [ INFO]              CLUSTER: Injecting host files
+May02 16:21:04 [ INFO]              CLUSTER: Running bootstrap scripts
+May02 16:28:08 [ INFO]              CLUSTER: READY!!
+May02 16:28:39 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 16:28:39 [ INFO]              CLIENTS: running load phase on clients__1
+May02 16:28:39 [ INFO]              CLIENTS: running load phase on clients__2
+May02 16:28:39 [ INFO]              CLIENTS: running load phase on clients__3
+May02 16:28:39 [ INFO]              CLIENTS: waiting for load phase to finish in clients
+May02 16:29:05 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 16:29:19 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 16:29:20 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 16:29:20 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 16:29:20 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 16:29:20 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 16:29:50 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:29:50 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+May02 16:30:20 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:30:20 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+May02 16:30:50 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:30:50 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+May02 16:31:20 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:31:20 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+May02 16:31:50 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:31:50 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+May02 16:32:20 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:32:20 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+May02 16:32:50 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:32:50 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+May02 16:33:20 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:33:20 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+May02 16:33:50 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:33:50 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 16:34:20 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:34:20 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 74917.0778917 lambda range: 73917.0778917 - 75917.0778917
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 132
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 11
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8 met: {'inlambda': 74341.368845054647, 'latency': 33.620636983023068, 'throughput': 8572.3060616017974}
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 current reward : 260.982457363 training set reward: 260.982457363
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 8 with gain 260.982457363
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:34:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:34:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:34:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:34:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:34:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 12 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[8:260, 9:-28, 10:-32, 11:-35, 12:-38, ]
+May02 16:34:51 [DEBUG]      RLDecisionMaker: max(V): 12 (GAIN=-38)
+May02 16:34:51 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+May02 16:35:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:35:21 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+May02 16:35:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:35:51 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+May02 16:36:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:36:21 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+May02 16:36:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:36:51 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+May02 16:37:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:37:21 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+May02 16:37:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:37:51 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+May02 16:38:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:38:21 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+May02 16:38:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:38:51 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+May02 16:39:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:39:21 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 16:39:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:39:51 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 77485.483773 lambda range: 76485.483773 - 78485.483773
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 143
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 4
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8 met: {'inlambda': 77069.427855220871, 'latency': 16.356110984730858, 'throughput': 11292.596576694876}
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 current reward : 363.09843579 training set reward: 363.09843579
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 8 with gain 363.09843579
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:40:21 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:40:21 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:40:21 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:40:21 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:40:21 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 12 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[8:363, 9:-28, 10:-32, 11:-35, 12:-38, ]
+May02 16:40:21 [DEBUG]      RLDecisionMaker: max(V): 12 (GAIN=-38)
+May02 16:40:21 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+May02 16:40:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:40:51 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+May02 16:41:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:41:21 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+May02 16:41:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:41:51 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+May02 16:42:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:42:21 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+May02 16:42:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:42:51 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+May02 16:43:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:43:21 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+May02 16:43:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:43:51 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+May02 16:44:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:44:21 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+May02 16:44:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:44:51 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 16:45:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:45:21 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 80870.0327876 lambda range: 79870.0327876 - 81870.0327876
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 154
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 4
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8 met: {'inlambda': 80399.282894290634, 'latency': 20.573103064042794, 'throughput': 11317.905849723955}
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 current reward : 362.297463515 training set reward: 362.297463515
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 8 with gain 362.297463515
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:45:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:45:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:45:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:45:51 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:45:51 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 12 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[8:362, 9:-28, 10:-32, 11:-35, 12:-38, ]
+May02 16:45:51 [DEBUG]      RLDecisionMaker: max(V): 12 (GAIN=-38)
+May02 16:45:51 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+May02 16:46:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:46:21 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+May02 16:46:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:46:51 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+May02 16:47:21 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:47:21 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+May02 16:47:51 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:47:52 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+May02 16:48:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:48:22 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+May02 16:48:52 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:48:52 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+May02 16:49:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:49:22 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+May02 16:49:52 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:49:52 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+May02 16:50:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:50:22 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 16:50:52 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:50:52 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 83971.2053167 lambda range: 82971.2053167 - 84971.2053167
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 165
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 4
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8 met: {'inlambda': 83598.761022128339, 'latency': 17.052570293721118, 'throughput': 11293.790283795122}
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 current reward : 362.861631815 training set reward: 362.861631815
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 8 with gain 362.861631815
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:51:22 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:51:22 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:51:22 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:51:22 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:51:22 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 12 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[8:362, 9:-28, 10:-32, 11:-35, 12:-38, ]
+May02 16:51:22 [DEBUG]      RLDecisionMaker: max(V): 12 (GAIN=-38)
+May02 16:51:22 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+May02 16:52:21 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 16:52:21 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 16:52:40 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 16:52:54 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 16:52:54 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 16:52:54 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 16:52:54 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 16:52:54 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 16:53:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:53:25 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+May02 16:53:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:53:55 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+May02 16:54:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:54:25 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+May02 16:54:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:54:55 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+May02 16:55:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:55:25 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+May02 16:55:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:55:55 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+May02 16:56:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:56:25 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+May02 16:56:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:56:55 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+May02 16:57:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:57:25 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 16:57:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:57:55 [DEBUG]      RLDecisionMaker: New decision in 0.5 mins, see you later!
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION current lambda: 74917.6798215 lambda range: 73917.6798215 - 75917.6798215
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 132
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 11
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8 met: {'inlambda': 74341.767436347262, 'latency': 17.600109314595823, 'throughput': 11197.204879505907}
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 current reward : 359.262127057 training set reward: 359.262127057
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION adding current state 8 with gain 359.262127057
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:58:25 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:58:25 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:58:25 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS length of self.memory[state]['arrayMeas']: 121
+May02 16:58:25 [DEBUG]      RLDecisionMaker: No known lamdba values close to current lambda measurement. Returning zeros!
+May02 16:58:25 [DEBUG]      RLDecisionMaker: DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 12 met: {'inlambda': 0.0, 'latency': 0.0, 'throughput': 0.0}
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[8:359, 9:-28, 10:-32, 11:-35, 12:-38, ]
+May02 16:58:25 [DEBUG]      RLDecisionMaker: max(V): 12 (GAIN=-38)
+May02 16:58:25 [DEBUG]      RLDecisionMaker: TAKEDECISION: action PASS 0 nodes.
+May02 16:58:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:58:55 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+May02 16:59:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:59:25 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+May02 16:59:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 16:59:55 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+May02 17:00:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:00:25 [DEBUG]      RLDecisionMaker: New decision in 3.5 mins, see you later!
+May02 17:00:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:00:55 [DEBUG]      RLDecisionMaker: New decision in 3.0 mins, see you later!
+May02 17:01:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:01:25 [DEBUG]      RLDecisionMaker: New decision in 2.5 mins, see you later!
+May02 17:01:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:01:55 [DEBUG]      RLDecisionMaker: New decision in 2.0 mins, see you later!
+May02 17:02:25 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:02:25 [DEBUG]      RLDecisionMaker: New decision in 1.5 mins, see you later!
+May02 17:02:55 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:02:55 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 17:02:55 [ INFO]          COORDINATOR:  run is finished
+May02 17:14:26 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 17:14:26 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 17:14:45 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 17:14:59 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 17:14:59 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 17:14:59 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 17:15:00 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 17:15:00 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 17:15:30 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:15:30 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!

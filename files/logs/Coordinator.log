@@ -10223,3 +10223,7 @@ May02 17:15:00 [DEBUG]          COORDINATOR: --------- NEW RUN  ----------------
 May02 17:15:00 [ INFO]          COORDINATOR: Cluster exists using it as is
 May02 17:15:30 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
 May02 17:15:30 [DEBUG]      RLDecisionMaker: New decision in 5.0 mins, see you later!
+May02 17:16:00 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:16:00 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
+May02 17:16:30 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
+May02 17:16:30 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!

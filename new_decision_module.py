@@ -131,8 +131,8 @@ class RLDecisionMaker:
         label = []
         centroids = {}
         if self.memory[state]['arrayMeas'] != None:
-            self.log.debug(
-                "DOKMEANS length of self.memory[state]['arrayMeas']: " + str(len(self.memory[state]['arrayMeas'])))
+            self.log.debug("DOKMEANS " + str(len(self.memory[state]['arrayMeas'])) +
+                           " measurements available for state " + state)
             sliced_data = None
             for j in self.memory[state]['arrayMeas']:
                 #self.my_logger.debug("DOKMEANS self.memory[state]['arrayMeas'][j]: "+ str(j))
@@ -187,7 +187,7 @@ class RLDecisionMaker:
                 ctd['latency'] = centroids[int(max_meas_cluster)][2]
                 #ctd['cpu'] = centroids[int(max_meas_cluster)][3]
             else:
-                self.log.debug("DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros")
+                #self.log.debug("DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros")
                 ctd['inlambda'] = 0.0
                 ctd['throughput'] = 0.0
                 ctd['latency'] = 0.0
@@ -289,7 +289,7 @@ class RLDecisionMaker:
             ## Aggreggation of YCSB client metrics
             clients = 0
             # We used to collect server cpu too, do we need it?
-            self.log.debug("TAKEDECISION state: %d, pending action: %s. Collecting metrics" % (self.currentState, str(self.pending_action)))
+            #self.log.debug("TAKEDECISION state: %d, pending action: %s. Collecting metrics" % (self.currentState, str(self.pending_action)))
             for host in allmetrics.keys():
                 metric = allmetrics[host]
                 if isinstance(metric, dict):
@@ -359,7 +359,8 @@ class RLDecisionMaker:
         if self.waitForIt == 0:
             self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         else:
-            self.log.debug("New decision in " + str(float(self.waitForIt)/ 2) + " mins, see you later!")
+            if self.waitForIt == env_vars['decision_interval'] / env_vars['metric_fetch_interval']:
+                self.log.debug("New decision in " + str(float(self.waitForIt)/2) + " mins, see you later!")
             self.waitForIt -= 1
             self.decision["action"] = "PASS"
             self.decision["count"] = 0
@@ -379,14 +380,13 @@ class RLDecisionMaker:
             from_inlambda = predicted_l - 3000
             to_inlambda = predicted_l + 3000
 
-        self.log.debug("TAKEDECISION current lambda: " + str(allmetrics['inlambda']) + " lambda range: " +
-                             str(from_inlambda) + " - " + str(to_inlambda))
+        self.log.debug("TAKEDECISION state %d lambda range: %d - %d" % (self.currentState, from_inlambda, to_inlambda))
         # too low to care, the initial num of nodes can answer 1000 req/sec,
         # so consider it as 0 1000 * len(cluster.size)!!
         if 0.0 < to_inlambda < 1000:
             from_inlambda = 0.0
-            self.log.debug("TAKEDECISION current lambda: " + str(allmetrics['inlambda'])
-                                 + " changed lambda range to: " + str(from_inlambda) + " - " + str(to_inlambda))
+            self.log.debug("TAKEDECISION state %d current lambda %d changed lambda range to: %d - %d"
+                           % (self.currentState, allmetrics['inlambda'], from_inlambda, to_inlambda))
 
 
         # The subgraph we are interested in. It contains only the allowed transitions from the current state.
@@ -406,7 +406,12 @@ class RLDecisionMaker:
                 met = self.getAverages(str(i))
             elif self.measurementsPolicy.startswith('centroid'):
                 met = self.doKmeans(str(i), from_inlambda, to_inlambda)
-                self.log.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(met))
+                #format met output
+                out = "TAKEDECISION state: "+ str(i) + " met=[ "
+                for i in met.keys(): out += "%s:%d, " % (i, met[i])
+                out += "]"
+                self.log.debug(out)
+
                 if met != None and len(met) > 0:
                     # Been in this state before, use the measurements
                     allmetrics['inlambda'] = met['inlambda']
@@ -427,15 +432,14 @@ class RLDecisionMaker:
                 if not self.debug:
                     cur_gain = eval(env_vars["gain"], allmetrics)
                     # for debugging purposes I compare the current reward with the one computed using the training set
-                    self.log.debug(
-                        "TAKEDECISION state " + str(i) + " current reward : " + str(cur_gain) + " training set reward: "
-                        + str(self.memory[str(i)]['r']))
+                    self.log.debug("TAKEDECISION state %d current reward: %d training set reward: %d"
+                                    % (self.currentState, cur_gain, self.memory[str(i)]['r']))
                     self.memory[str(i)]['r'] = cur_gain
-                    self.log.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
+                    #self.log.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
                 else:
                     cur_gain = str(self.memory[str(i)]['r'])
-                    self.log.debug("TAKEDECISION state " + str(i) + " current state training set reward: "
-                                         + cur_gain)
+                    self.log.debug("TAKEDECISION state %d current state training set reward: %d"
+                                   % (self.currentState, cur_gain))
 
                 states.add(fset.FuzzyElement(str(i), cur_gain))
 
@@ -489,13 +493,14 @@ class RLDecisionMaker:
 
         #format Vs output
         out = "TAKEDECISION Vs=["
-        for i in V.keys(): out += "%d:%d, " %(i, V[i])
+        for i in V.keys(): out += "%d:%d, " % (i, V[i])
         out += "]"
         self.log.debug(out)
-        self.log.debug("max(V): %d (GAIN=%d)" % (s,V[s]))
 
         # Find the max V
         self.nextState = max(V.iteritems(), key=operator.itemgetter(1))[0]
+        self.log.debug("max(V): %d (GAIN=%d)" % (self.nextState, V[self.nextState]))
+
         #self.my_logger.debug("TAKEDECISION next state: "+ str(self.nextState))
         # Remember the V values calculated ???
         #for i in V.keys():
@@ -522,11 +527,10 @@ class RLDecisionMaker:
                     # skip decision
                     self.decision["action"] = "PASS"
                     self.decision["count"] = 0
-                    self.log.debug("ups changed my mind...staying at state: " + str(self.currentState)
-                                         + " cause the gain difference is: " + str(
-                        abs(d)) + " which is less than 3% of the current reward " +
-                                         str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + " " +
-                                         str(self.memory[str(self.currentState)]['r']))
+                    self.log.debug("ups changed my mind...staying at state: " + str(self.currentState) +
+                                   " cause the gain difference is: " + str(abs(d)) +
+                                   " which is less than 3% of the current reward, it's actually " +
+                                   str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + "% ")
             # If the reward is the same with the state you're in, don't move
             elif (d == 0):
                 #false alarm, stay where you are
@@ -545,17 +549,16 @@ class RLDecisionMaker:
             self.decision["action"] = "REMOVE"
 
         self.decision["count"] = abs(int(self.currentState) - int(self.nextState))
-        self.log.debug("TAKEDECISION: action " + self.decision["action"] + " " + str(self.decision["count"]) +
-                             " nodes.")
+        #self.log.debug("TAKEDECISION: action " + self.decision["action"] + " " + str(self.decision["count"]) +
+        #               " nodes.")
 
         ## Don't perform the action if we're debugging/simulating!!!
         if self.debug:
-            if self.pending_action == None and not self.decision["action"].startswith("PASS"):
+            if self.pending_action is None and not self.decision["action"].startswith("PASS"):
                 self.pending_action = self.decision['action']
                 self.countdown = 5
                 #self.currentState = str(self.nextState)
-                self.log.debug("TAKEDECISION simulation, action will finish in: " +
-                                     str(self.countdown) + " mins")
+                self.log.debug("TAKEDECISION simulation, action will finish in: " + str(self.countdown) + " mins")
             else:
                 self.log.debug("TAKEDECISION Waiting for action to finish: " + str(self.pending_action))
 

@@ -179,7 +179,7 @@ def remove_nodes():
 
 
 def train():
-    log.info(" Will run training routine. WARNING: will start load automatically")
+    log.info(" Will run training routine. WARNING: will start workload automatically")
     import Coordinator
     Coordinator.train()
 

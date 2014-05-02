@@ -409,10 +409,8 @@ class RLDecisionMaker:
             elif self.measurementsPolicy.startswith('centroid'):
                 met = self.doKmeans(str(i), from_inlambda, to_inlambda)
                 #format met output
-                out = "TAKEDECISION state: "+ str(i) + " met=[ "
-                for i in met.keys(): out += "%s:%d, " % (i, met[i])
-                out += "]"
-                self.log.debug(out)
+                self.log.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(met))
+
 
                 if met != None and len(met) > 0:
                     # Been in this state before, use the measurements

@@ -10227,3 +10227,165 @@ May02 17:16:00 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending acti
 May02 17:16:00 [DEBUG]      RLDecisionMaker: New decision in 4.5 mins, see you later!
 May02 17:16:30 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8, pending action: None. Collecting metrics
 May02 17:16:30 [DEBUG]      RLDecisionMaker: New decision in 4.0 mins, see you later!
+May02 18:46:44 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 18:46:44 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 18:46:44 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 18:46:44 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 18:46:44 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 18:46:44 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 18:47:17 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 18:47:17 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 18:47:52 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 18:47:52 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 18:47:52 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 18:47:52 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 18:47:53 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 18:47:53 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 18:48:23 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 18:48:53 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 18:49:02 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 18:49:02 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 18:49:02 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 18:50:02 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 18:50:10 [ INFO]          COORDINATOR: TRAINING DONE
+May02 18:54:15 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 18:54:15 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 18:54:43 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 18:54:44 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 18:54:44 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 18:54:44 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 18:54:44 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 18:54:44 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 18:54:44 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 18:55:44 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 18:55:53 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 18:55:53 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 18:55:53 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 18:55:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 lambda range: 1434 - 3434
+May02 18:55:53 [DEBUG]      RLDecisionMaker: DOKMEANS 3 measurements available for state 8
+May02 18:55:53 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 2
+May02 18:55:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 8 met: {'inlambda': 2402.3489992323539, 'latency': 9.2950818633435013, 'throughput': 2278.0436618091935}
+May02 18:55:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state 8 current reward: 8 training set reward: 8
+May02 18:55:53 [DEBUG]      RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+May02 18:55:53 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {}
+May02 18:55:53 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[8:8, 9:9, ]
+May02 18:55:53 [DEBUG]      RLDecisionMaker: max(V): 9 (GAIN=9)
+May02 18:55:53 [DEBUG]      RLDecisionMaker: Decided to change state to_next: 9 from_curr: 8
+May02 18:55:53 [ INFO]          COORDINATOR: Will add 1 nodes
+May02 18:55:53 [ INFO]              CLUSTER: Adding 1 nodes
+May02 18:55:53 [ INFO]              CLUSTER: Using cassandra_node_08 from my stash
+May02 18:55:53 [DEBUG]              CLUSTER: Waiting for all the threads to finish adding
+May02 18:56:57 [ INFO]              CLUSTER: Node cassandra_node_08 is live 
+May02 18:56:57 [ INFO]              CLUSTER: Injecting host files
+May02 18:57:04 [ INFO]              CLUSTER: Finished adding 1 nodes
+May02 18:57:34 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 18:57:39 [ INFO]          COORDINATOR: TRAINING DONE
+May02 19:00:09 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:00:09 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 19:00:38 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:00:38 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 19:00:38 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 19:00:38 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:00:38 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:00:39 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:00:39 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 19:01:39 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 19:01:48 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:01:48 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:01:48 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:01:48 [DEBUG]      RLDecisionMaker: TAKEDECISION state 9 lambda range: 1416 - 3416
+May02 19:01:48 [DEBUG]      RLDecisionMaker: DOKMEANS 3 measurements available for state 9
+May02 19:01:48 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 1
+May02 19:01:48 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 9 met: {'inlambda': 2416.8547386961659, 'latency': 18.628835718545023, 'throughput': 2294.1865096030742}
+May02 19:01:48 [DEBUG]      RLDecisionMaker: TAKEDECISION state 9 current reward: 9 training set reward: 9
+May02 19:01:48 [DEBUG]      RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+May02 19:01:48 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {}
+May02 19:01:48 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[9:9, 10:10, ]
+May02 19:01:48 [DEBUG]      RLDecisionMaker: max(V): 10 (GAIN=10)
+May02 19:01:48 [DEBUG]      RLDecisionMaker: Decided to change state to_next: 10 from_curr: 9
+May02 19:01:48 [ INFO]          COORDINATOR: Will add 1 nodes
+May02 19:01:48 [ INFO]              CLUSTER: Adding 1 nodes
+May02 19:01:48 [ INFO]              CLUSTER: Using cassandra_node_09 from my stash
+May02 19:01:48 [DEBUG]              CLUSTER: Waiting for all the threads to finish adding
+May02 19:02:47 [ INFO]              CLUSTER: Node cassandra_node_09 is live 
+May02 19:02:47 [ INFO]              CLUSTER: Injecting host files
+May02 19:02:54 [ INFO]              CLUSTER: Finished adding 1 nodes
+May02 19:03:24 [ INFO]              CLIENTS: Killing cassandra nodes
+May02 19:03:28 [ INFO]          COORDINATOR: TRAINING DONE
+May02 19:06:54 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:06:54 [ INFO]              CLIENTS: Killing client nodes
+May02 19:07:28 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:07:28 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 19:07:28 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 19:07:28 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:07:28 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:07:28 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:07:58 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 19:08:28 [ INFO]              CLIENTS: Killing client nodes
+May02 19:08:35 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:08:35 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:08:35 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:09:36 [ INFO]              CLIENTS: Killing client nodes
+May02 19:09:42 [ INFO]          COORDINATOR: TRAINING DONE
+May02 19:12:31 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:12:31 [ INFO]              CLIENTS: Killing client nodes
+May02 19:13:00 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:13:00 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 19:13:00 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 19:13:00 [ERROR]          COORDINATOR: TRAINING: Start training with the Minimum cluster size, 11 (now:10)
+May02 19:13:33 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:13:33 [ INFO]              CLIENTS: Killing client nodes
+May02 19:14:02 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:14:02 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 19:14:02 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 19:14:02 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:14:03 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:14:03 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:14:33 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 19:15:03 [ INFO]              CLIENTS: Killing client nodes
+May02 19:15:09 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:15:10 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:15:10 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:15:51 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:15:51 [ INFO]              CLIENTS: Killing client nodes
+May02 19:16:23 [DEBUG]              CLIENTS: Found orchestrator orchestrator
+May02 19:16:23 [DEBUG]          COORDINATOR: --------- NEW RUN  -----------------
+May02 19:16:23 [ INFO]          COORDINATOR: Cluster exists using it as is
+May02 19:16:23 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:16:24 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:16:24 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:16:24 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 19:17:24 [DEBUG]      RLDecisionMaker: TAKEDECISION state 10 lambda range: 3776 - 5776
+May02 19:17:24 [DEBUG]      RLDecisionMaker: DOKMEANS 3 measurements available for state 10
+May02 19:17:24 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 1
+May02 19:17:24 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 4776.9091458802859, 'latency': 26.665524300532656, 'throughput': 4522.6562754718725}
+May02 19:17:24 [DEBUG]      RLDecisionMaker: TAKEDECISION state 10 current reward: 10 training set reward: 10
+May02 19:17:24 [DEBUG]      RLDecisionMaker: DOKMEANS self.memory[state]['arrayMeas'] is None :|
+May02 19:17:24 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {}
+May02 19:17:24 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[10:10, 11:11, ]
+May02 19:17:24 [DEBUG]      RLDecisionMaker: max(V): 11 (GAIN=11)
+May02 19:17:24 [DEBUG]      RLDecisionMaker: Decided to change state to_next: 11 from_curr: 10
+May02 19:17:24 [ INFO]          COORDINATOR: Will add 1 nodes
+May02 19:17:24 [ INFO]              CLUSTER: Adding 1 nodes
+May02 19:17:24 [ INFO]              CLUSTER: Using cassandra_node_10 from my stash
+May02 19:17:24 [DEBUG]              CLUSTER: Waiting for all the threads to finish adding
+May02 19:18:28 [ INFO]              CLUSTER: Node cassandra_node_10 is live 
+May02 19:18:28 [ INFO]              CLUSTER: Injecting host files
+May02 19:18:35 [ INFO]              CLUSTER: Finished adding 1 nodes
+May02 19:18:35 [ INFO]              CLIENTS: Killing client nodes
+May02 19:18:42 [ INFO]              CLIENTS: running sinusoid on clients__1
+May02 19:18:43 [ INFO]              CLIENTS: running sinusoid on clients__2
+May02 19:18:43 [ INFO]              CLIENTS: running sinusoid on clients__3
+May02 19:18:43 [DEBUG]      RLDecisionMaker: New decision in 1.0 mins, see you later!
+May02 19:19:43 [DEBUG]      RLDecisionMaker: TAKEDECISION state 11 lambda range: 3755 - 5755
+May02 19:19:43 [DEBUG]      RLDecisionMaker: DOKMEANS 3 measurements available for state 10
+May02 19:19:43 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 1
+May02 19:19:43 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 10 met: {'inlambda': 4776.9091458802859, 'latency': 26.665524300532656, 'throughput': 4522.6562754718725}
+May02 19:19:43 [DEBUG]      RLDecisionMaker: DOKMEANS 3 measurements available for state 11
+May02 19:19:43 [DEBUG]      RLDecisionMaker: DOKMEANS length of sliced_data to be fed to kmeans: 2
+May02 19:19:43 [DEBUG]      RLDecisionMaker: TAKEDECISION state: 11 met: {'inlambda': 4478.4405662455756, 'latency': 11.38856967338209, 'throughput': 4469.7112635048688}
+May02 19:19:43 [DEBUG]      RLDecisionMaker: TAKEDECISION state 11 current reward: 11 training set reward: 11
+May02 19:19:43 [DEBUG]      RLDecisionMaker: TAKEDECISION Vs=[10:10, 11:11, ]
+May02 19:19:43 [DEBUG]      RLDecisionMaker: max(V): 11 (GAIN=11)
+May02 19:19:43 [ INFO]              CLIENTS: Killing client nodes
+May02 19:19:50 [ INFO]          COORDINATOR: TRAINING DONE

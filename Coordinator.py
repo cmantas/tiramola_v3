@@ -119,28 +119,32 @@ def train():
     metrics_interval = env_vars["metric_fetch_interval"]
 
     # run 1 period of workload for each of the the states between min and max cluster size
-    for i in range(env_vars['max_cluster_size'] - t_vars['min_cluster_size'] +1):
+    for i in range(env_vars['max_cluster_size'] - t_vars['min_cluster_size'] + 1):
+        print "iteration "+str(i)
 
         #run the workload with the specified params to the clients
         Clients.run(params)
+
+        #refresh once
+        all_metrics = monVms.refreshMetrics()
+        #This should only decide to add a node after a period is passed
+        global decision
+        decision = decision_module.take_decision(all_metrics)
 
         #run for 1 period
         timeout = time() + env_vars['period']
         while time() <= timeout:
         #fetch metrics and takes decisions
             sleep(metrics_interval)
-
-            #check timeout
-            if not (timeout is None) and (time() >= timeout): break
             # refresh the metrics
             all_metrics = monVms.refreshMetrics()
 
             #This should only decide to add a node after a period is passed
-            global decision
             decision = decision_module.take_decision(all_metrics)
 
             # synchronously implement that decision
             implement_decision()
+
 
         #stop the clients after one period has passed
         Clients.kill_nodes()

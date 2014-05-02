@@ -86,7 +86,7 @@ def kill_nodes():
     """
     Runs the kill scripts for all the nodes in the cluster
     """
-    log.info("Killing cassandra nodes")
+    log.info("Killing client nodes")
     for n in all_nodes:
         n.kill()
 

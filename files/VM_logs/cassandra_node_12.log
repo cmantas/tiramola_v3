@@ -883,3 +883,3175 @@ May02 19:14:02 [DEBUG]  [cassandra_node_12]: cluster = cassandra
 May02 19:15:51 [DEBUG]  [cassandra_node_12]: cluster = cassandra
 May02 19:16:09 [DEBUG]  [cassandra_node_12]: cluster = cassandra
 May02 19:16:23 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 19:22:09 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 19:22:09 [ INFO]  [cassandra_node_12]: running kill script
+May02 19:22:09 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May02 19:22:09 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May02 19:22:10 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May02 19:22:10 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May02 19:22:10 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  java: no process found
+	$:  
+
+
+May02 19:22:26 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 19:22:44 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 19:29:55 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 19:30:08 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 20:40:06 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 20:40:19 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 20:40:33 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 20:40:33 [ INFO]  [cassandra_node_12]: running kill script
+May02 20:40:33 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May02 20:40:33 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May02 20:40:33 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May02 20:40:34 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May02 20:40:34 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  java: no process found
+	$:  
+
+
+May02 20:40:51 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 20:41:07 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 20:48:33 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 20:48:47 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 21:25:46 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May02 21:26:00 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:02:30 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:02:47 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:03:01 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:05:11 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:05:24 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:11:00 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:30:44 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:31:12 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:31:26 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:35:18 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:38:18 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 12:38:31 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 22:31:29 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 22:31:29 [ INFO]  [cassandra_node_12]: running kill script
+May03 22:31:29 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May03 22:31:29 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May03 22:31:29 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May03 22:31:30 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May03 22:31:30 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  java: no process found
+	$:  
+
+
+May03 22:31:47 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 22:32:11 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 22:39:33 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 22:39:47 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 23:16:08 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May03 23:16:22 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 04:26:55 [ INFO]  [cassandra_node_12]: Waiting for SSH daemon (83.212.118.31)
+May04 04:26:55 [DEBUG]  [cassandra_node_12]: end time:2014-05-04 04:36:55.758801
+May04 04:26:55 [DEBUG]  [cassandra_node_12]: ssh attempt:1
+May04 04:26:55 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 04:26:55 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 04:26:55 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 04:26:55 [ INFO]  [cassandra_node_12]: now ready (took 0 sec)
+May04 04:26:55 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 04:26:55 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 04:26:56 [ INFO]  [cassandra_node_12]: running bootstrap script
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/bash
+     
+     MAX_WAIT=300  #5 min
+     
+     echo "started bootstrap" > bootsrap.log
+     
+     # check the seednode
+     if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
+     then
+     echo CTOOL: ERROR - cassandra_seednode not pingable, exiting
+     exit -1
+     fi
+     
+     # kill the cassandra process
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID
+     
+     # clean previous files and logs
+     echo "Removing cassandra files and logs"
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/*
+     rm /var/log/cassandra/system.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds"
+     rm -rf /var/lib/ganglia/rrds/*
+     rm /var/log/cassandra/system.log
+     
+     # find my IP
+     my_priv_addr=""
+     #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+     let if_count=($(ifconfig | grep eth | wc -l ))-1
+     for i in $(seq 0 $if_count)
+     do	#look for IPv4 address
+     line=$(ifconfig eth$i | grep "inet addr:")
+     line=$(echo $line | awk '{print $2}')
+     address=$(echo $line | sed 's/addr://g')
+     if [[ "$address" == 10.0.* ]] ;
+     then
+     my_priv_addr=$address
+     break
+     fi
+     done
+     
+     # configure cassandra
+     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+     #change the listen address of this node
+     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the rpc_address of this node to 0.0.0.0
+     sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the seeds to "cassandra_seednode"
+     sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #add the jmx server whatever to cassandra-env.sh
+     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     #make sure no requests are dropped by using a big timeout
+     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     echo "CTOOL: Done configuring"
+     
+     
+     # start cassandra
+     chmod -R o+rw /var/lib/cassandra
+     echo Starting casandra service, ganglia-monitor
+     service cassandra start
+     service ganglia-monitor restart
+     
+     #wait until ready and try to create keyspace
+     echo "Attempting to create ycsb keyspace"
+     echo "create keyspace ycsb  WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 }; use ycsb;  create table usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);" > ycsb_cql.temp
+     while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
+     rm ycsb_cql.temp
+     
+     echo "ended bootstrap" >> bootsrap.log
+     
+     #report alive in gmetric
+     gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+     
+     
+     
+
+
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 04:26:56 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 04:29:02 [DEBUG]  [cassandra_node_12]: SSH command took 125 sec
+May04 04:29:02 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+
+
+May04 04:29:02 [DEBUG]  [cassandra_node_12]: command returned:
+	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+May04 04:29:02 [ INFO]  [cassandra_node_12]: is now bootstrapped (took 125 sec)
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 04:29:08 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 05:31:49 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 06:34:16 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 07:36:58 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 08:40:19 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 09:42:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 10:45:19 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 10:45:19 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 10:45:20 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 11:48:43 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 11:48:43 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 11:48:43 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 11:48:44 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 11:48:44 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 11:48:44 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 11:48:44 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 11:48:44 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 11:48:44 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 11:48:44 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 22:45:44 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 22:45:44 [ INFO]  [cassandra_node_12]: running kill script
+May04 22:45:44 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID &>/dev/null
+     ## maybe problematic
+     killall java
+     
+     
+     
+     ################ debug #################3
+     echo "Removing cassandra files and logs" &>>ctool.log
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/* &>>ctool.log
+     rm /var/log/cassandra/system.log &>>ctool.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds" &>>ctool.log
+     rm -rf /var/lib/ganglia/rrds/* &>>ctool.log
+     
+     
+     
+     
+     
+     echo '
+     
+     ############  KILLED  ##############' >> ycsb_run.log
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May04 22:45:44 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 22:45:44 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 22:45:46 [DEBUG]  [cassandra_node_12]: SSH command took 1 sec
+May04 22:45:46 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon (30628)
+	$:  
+
+
+May04 22:46:04 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 22:46:21 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 22:54:14 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 22:54:29 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 23:31:18 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 23:31:32 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May04 23:56:35 [ INFO]  [cassandra_node_12]: Waiting for SSH daemon (83.212.118.31)
+May04 23:56:35 [DEBUG]  [cassandra_node_12]: end time:2014-05-05 00:06:35.935486
+May04 23:56:35 [DEBUG]  [cassandra_node_12]: ssh attempt:1
+May04 23:56:35 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 23:56:36 [ INFO]  [cassandra_node_12]: now ready (took 0 sec)
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 23:56:36 [ INFO]  [cassandra_node_12]: running bootstrap script
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/bash
+     
+     MAX_WAIT=300  #5 min
+     
+     echo "started bootstrap" > bootsrap.log
+     
+     # check the seednode
+     if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
+     then
+     echo CTOOL: ERROR - cassandra_seednode not pingable, exiting
+     exit -1
+     fi
+     
+     # kill the cassandra process
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID
+     
+     # clean previous files and logs
+     echo "Removing cassandra files and logs"
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/*
+     rm /var/log/cassandra/system.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds"
+     rm -rf /var/lib/ganglia/rrds/*
+     rm /var/log/cassandra/system.log
+     
+     # find my IP
+     my_priv_addr=""
+     #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+     let if_count=($(ifconfig | grep eth | wc -l ))-1
+     for i in $(seq 0 $if_count)
+     do	#look for IPv4 address
+     line=$(ifconfig eth$i | grep "inet addr:")
+     line=$(echo $line | awk '{print $2}')
+     address=$(echo $line | sed 's/addr://g')
+     if [[ "$address" == 10.0.* ]] ;
+     then
+     my_priv_addr=$address
+     break
+     fi
+     done
+     
+     # configure cassandra
+     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+     #change the listen address of this node
+     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the rpc_address of this node to 0.0.0.0
+     sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the seeds to "cassandra_seednode"
+     sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #add the jmx server whatever to cassandra-env.sh
+     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     #make sure no requests are dropped by using a big timeout
+     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     echo "CTOOL: Done configuring"
+     
+     
+     # start cassandra
+     chmod -R o+rw /var/lib/cassandra
+     echo Starting casandra service, ganglia-monitor
+     service cassandra start
+     service ganglia-monitor restart
+     
+     #wait until ready and try to create keyspace
+     echo "Attempting to create ycsb keyspace"
+     echo "create keyspace ycsb  WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 }; use ycsb;  create table usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);" > ycsb_cql.temp
+     while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
+     rm ycsb_cql.temp
+     
+     echo "ended bootstrap" >> bootsrap.log
+     
+     #report alive in gmetric
+     gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+     
+     
+     
+
+
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 23:56:36 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 23:58:55 [DEBUG]  [cassandra_node_12]: SSH command took 138 sec
+May04 23:58:55 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+
+
+May04 23:58:55 [DEBUG]  [cassandra_node_12]: command returned:
+	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+May04 23:58:55 [ INFO]  [cassandra_node_12]: is now bootstrapped (took 138 sec)
+May04 23:59:16 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 23:59:16 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May04 23:59:17 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:07:27 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:07:27 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:07:28 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:07:29 [DEBUG]  [cassandra_node_12]: SSH command took 1 sec
+May05 00:07:29 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:07:29 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 00:07:29 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:07:30 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:07:30 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:07:30 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:27:12 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:39:06 [ INFO]  [cassandra_node_12]: running decommission script
+May05 00:39:06 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     nodetool repair -h 127.0.0.1 ycsb
+     nodetool decommission
+     #kill cassandra
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" >> ctool.log
+     kill $CAS_PID &>/dev/null
+     
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May05 00:39:06 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:39:06 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:41:31 [DEBUG]  [cassandra_node_12]: SSH command took 144 sec
+May05 00:41:31 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  [2014-05-05 00:39:14,263] Starting repair command #1, repairing 256 ranges for keyspace ycsb
+	$:  [2014-05-05 00:39:20,247] Repair command #1 finished
+	$:  
+
+
+May05 00:41:31 [ INFO]  [cassandra_node_12]: now decommissioned (took 144 sec)
+May05 00:47:10 [ INFO]  [cassandra_node_12]: Waiting for SSH daemon (83.212.118.31)
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: end time:2014-05-05 00:57:10.148923
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: ssh attempt:1
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:47:10 [ INFO]  [cassandra_node_12]: now ready (took 0 sec)
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:47:10 [ INFO]  [cassandra_node_12]: running bootstrap script
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/bash
+     
+     MAX_WAIT=300  #5 min
+     
+     echo "started bootstrap" > bootsrap.log
+     
+     # check the seednode
+     if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
+     then
+     echo CTOOL: ERROR - cassandra_seednode not pingable, exiting
+     exit -1
+     fi
+     
+     # kill the cassandra process
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID
+     
+     # clean previous files and logs
+     echo "Removing cassandra files and logs"
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/*
+     rm /var/log/cassandra/system.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds"
+     rm -rf /var/lib/ganglia/rrds/*
+     rm /var/log/cassandra/system.log
+     
+     # find my IP
+     my_priv_addr=""
+     #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+     let if_count=($(ifconfig | grep eth | wc -l ))-1
+     for i in $(seq 0 $if_count)
+     do	#look for IPv4 address
+     line=$(ifconfig eth$i | grep "inet addr:")
+     line=$(echo $line | awk '{print $2}')
+     address=$(echo $line | sed 's/addr://g')
+     if [[ "$address" == 10.0.* ]] ;
+     then
+     my_priv_addr=$address
+     break
+     fi
+     done
+     
+     # configure cassandra
+     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+     #change the listen address of this node
+     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the rpc_address of this node to 0.0.0.0
+     sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the seeds to "cassandra_seednode"
+     sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #add the jmx server whatever to cassandra-env.sh
+     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     #make sure no requests are dropped by using a big timeout
+     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     echo "CTOOL: Done configuring"
+     
+     
+     # start cassandra
+     chmod -R o+rw /var/lib/cassandra
+     echo Starting casandra service, ganglia-monitor
+     service cassandra start
+     service ganglia-monitor restart
+     
+     #wait until ready and try to create keyspace
+     echo "Attempting to create ycsb keyspace"
+     echo "create keyspace ycsb  WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 }; use ycsb;  create table usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);" > ycsb_cql.temp
+     while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
+     rm ycsb_cql.temp
+     
+     echo "ended bootstrap" >> bootsrap.log
+     
+     #report alive in gmetric
+     gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+     
+     
+     
+
+
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:47:10 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:49:38 [DEBUG]  [cassandra_node_12]: SSH command took 147 sec
+May05 00:49:38 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+
+
+May05 00:49:38 [DEBUG]  [cassandra_node_12]: command returned:
+	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+May05 00:49:38 [ INFO]  [cassandra_node_12]: is now bootstrapped (took 147 sec)
+May05 00:49:52 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:49:52 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:49:52 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:49:53 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:49:53 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:49:53 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 00:49:53 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:49:53 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:49:53 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:49:53 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:58:05 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:58:05 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 00:58:06 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:06:27 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:06:27 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:06:27 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:06:27 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:06:27 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:06:27 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 01:06:27 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:06:28 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:06:28 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:06:28 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:25:43 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:38:41 [ INFO]  [cassandra_node_12]: running decommission script
+May05 01:38:41 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     nodetool repair -h 127.0.0.1 ycsb
+     nodetool decommission
+     #kill cassandra
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" >> ctool.log
+     kill $CAS_PID &>/dev/null
+     
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May05 01:38:41 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:38:41 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:41:22 [DEBUG]  [cassandra_node_12]: SSH command took 160 sec
+May05 01:41:22 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  [2014-05-05 01:38:49,107] Starting repair command #1, repairing 256 ranges for keyspace ycsb
+	$:  [2014-05-05 01:38:56,725] Repair command #1 finished
+	$:  
+
+
+May05 01:41:22 [ INFO]  [cassandra_node_12]: now decommissioned (took 160 sec)
+May05 01:46:44 [ INFO]  [cassandra_node_12]: Waiting for SSH daemon (83.212.118.31)
+May05 01:46:44 [DEBUG]  [cassandra_node_12]: end time:2014-05-05 01:56:44.472079
+May05 01:46:44 [DEBUG]  [cassandra_node_12]: ssh attempt:1
+May05 01:46:44 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:46:44 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:46:44 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:46:44 [ INFO]  [cassandra_node_12]: now ready (took 0 sec)
+May05 01:46:44 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:46:44 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:46:45 [ INFO]  [cassandra_node_12]: running bootstrap script
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/bash
+     
+     MAX_WAIT=300  #5 min
+     
+     echo "started bootstrap" > bootsrap.log
+     
+     # check the seednode
+     if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
+     then
+     echo CTOOL: ERROR - cassandra_seednode not pingable, exiting
+     exit -1
+     fi
+     
+     # kill the cassandra process
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID
+     
+     # clean previous files and logs
+     echo "Removing cassandra files and logs"
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/*
+     rm /var/log/cassandra/system.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds"
+     rm -rf /var/lib/ganglia/rrds/*
+     rm /var/log/cassandra/system.log
+     
+     # find my IP
+     my_priv_addr=""
+     #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+     let if_count=($(ifconfig | grep eth | wc -l ))-1
+     for i in $(seq 0 $if_count)
+     do	#look for IPv4 address
+     line=$(ifconfig eth$i | grep "inet addr:")
+     line=$(echo $line | awk '{print $2}')
+     address=$(echo $line | sed 's/addr://g')
+     if [[ "$address" == 10.0.* ]] ;
+     then
+     my_priv_addr=$address
+     break
+     fi
+     done
+     
+     # configure cassandra
+     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+     #change the listen address of this node
+     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the rpc_address of this node to 0.0.0.0
+     sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the seeds to "cassandra_seednode"
+     sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #add the jmx server whatever to cassandra-env.sh
+     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     #make sure no requests are dropped by using a big timeout
+     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     echo "CTOOL: Done configuring"
+     
+     
+     # start cassandra
+     chmod -R o+rw /var/lib/cassandra
+     echo Starting casandra service, ganglia-monitor
+     service cassandra start
+     service ganglia-monitor restart
+     
+     #wait until ready and try to create keyspace
+     echo "Attempting to create ycsb keyspace"
+     echo "create keyspace ycsb  WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 }; use ycsb;  create table usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);" > ycsb_cql.temp
+     while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
+     rm ycsb_cql.temp
+     
+     echo "ended bootstrap" >> bootsrap.log
+     
+     #report alive in gmetric
+     gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+     
+     
+     
+
+
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:46:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:49:50 [DEBUG]  [cassandra_node_12]: SSH command took 185 sec
+May05 01:49:50 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+
+
+May05 01:49:50 [DEBUG]  [cassandra_node_12]: command returned:
+	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+May05 01:49:50 [ INFO]  [cassandra_node_12]: is now bootstrapped (took 185 sec)
+May05 01:50:05 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:50:05 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:50:05 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:50:06 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:50:06 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:50:06 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 01:50:06 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:50:06 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:50:06 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:50:06 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:58:35 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:58:35 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:58:36 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:58:36 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:58:36 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 01:58:36 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 01:58:36 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 01:58:36 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 01:58:37 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 01:58:37 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 02:06:35 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 02:26:05 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 02:32:07 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May05 02:32:20 [DEBUG]  [cassandra_node_12]: cluster = cassandra
+May05 02:40:01 [ INFO]  [cassandra_node_12]: running decommission script
+May05 02:40:01 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     nodetool repair -h 127.0.0.1 ycsb
+     nodetool decommission
+     #kill cassandra
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" >> ctool.log
+     kill $CAS_PID &>/dev/null
+     
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May05 02:40:01 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 02:40:01 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 02:42:26 [DEBUG]  [cassandra_node_12]: SSH command took 144 sec
+May05 02:42:26 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  [2014-05-05 02:40:09,282] Starting repair command #1, repairing 256 ranges for keyspace ycsb
+	$:  [2014-05-05 02:40:13,117] Repair command #1 finished
+	$:  
+
+
+May05 02:42:26 [ INFO]  [cassandra_node_12]: now decommissioned (took 144 sec)
+May05 03:20:25 [ INFO]  [cassandra_node_12]: Waiting for SSH daemon (83.212.118.31)
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: end time:2014-05-05 03:30:25.156614
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: ssh attempt:1
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:20:25 [ INFO]  [cassandra_node_12]: now ready (took 0 sec)
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:20:25 [ INFO]  [cassandra_node_12]: running bootstrap script
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/bash
+     
+     MAX_WAIT=300  #5 min
+     
+     echo "started bootstrap" > bootsrap.log
+     
+     # check the seednode
+     if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
+     then
+     echo CTOOL: ERROR - cassandra_seednode not pingable, exiting
+     exit -1
+     fi
+     
+     # kill the cassandra process
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID
+     
+     # clean previous files and logs
+     echo "Removing cassandra files and logs"
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/*
+     rm /var/log/cassandra/system.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds"
+     rm -rf /var/lib/ganglia/rrds/*
+     rm /var/log/cassandra/system.log
+     
+     # find my IP
+     my_priv_addr=""
+     #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+     let if_count=($(ifconfig | grep eth | wc -l ))-1
+     for i in $(seq 0 $if_count)
+     do	#look for IPv4 address
+     line=$(ifconfig eth$i | grep "inet addr:")
+     line=$(echo $line | awk '{print $2}')
+     address=$(echo $line | sed 's/addr://g')
+     if [[ "$address" == 10.0.* ]] ;
+     then
+     my_priv_addr=$address
+     break
+     fi
+     done
+     
+     # configure cassandra
+     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+     #change the listen address of this node
+     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the rpc_address of this node to 0.0.0.0
+     sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the seeds to "cassandra_seednode"
+     sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #add the jmx server whatever to cassandra-env.sh
+     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     #make sure no requests are dropped by using a big timeout
+     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     echo "CTOOL: Done configuring"
+     
+     
+     # start cassandra
+     chmod -R o+rw /var/lib/cassandra
+     echo Starting casandra service, ganglia-monitor
+     service cassandra start
+     service ganglia-monitor restart
+     
+     #wait until ready and try to create keyspace
+     echo "Attempting to create ycsb keyspace"
+     echo "create keyspace ycsb  WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 }; use ycsb;  create table usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);" > ycsb_cql.temp
+     while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
+     rm ycsb_cql.temp
+     
+     echo "ended bootstrap" >> bootsrap.log
+     
+     #report alive in gmetric
+     gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+     
+     
+     
+
+
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:20:25 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:23:56 [DEBUG]  [cassandra_node_12]: SSH command took 210 sec
+May05 03:23:56 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+
+
+May05 03:23:56 [DEBUG]  [cassandra_node_12]: command returned:
+	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+May05 03:23:56 [ INFO]  [cassandra_node_12]: is now bootstrapped (took 210 sec)
+May05 03:24:49 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:24:49 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:24:49 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:24:49 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:24:49 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:24:49 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 03:24:49 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:24:50 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:24:50 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:24:50 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:33:47 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:33:47 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:33:47 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:33:48 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:33:48 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:33:48 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 03:33:48 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:33:48 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:33:48 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:33:48 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:41:55 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:41:55 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:41:55 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:41:55 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:41:55 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:41:55 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 03:41:55 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:41:56 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:41:56 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:41:56 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:50:13 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:50:13 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 03:50:14 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 04:05:43 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 04:05:44 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 04:05:44 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 04:18:39 [ INFO]  [cassandra_node_12]: running decommission script
+May05 04:18:39 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     nodetool repair -h 127.0.0.1 ycsb
+     nodetool decommission
+     #kill cassandra
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" >> ctool.log
+     kill $CAS_PID &>/dev/null
+     
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May05 04:18:39 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 04:18:39 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 04:21:34 [DEBUG]  [cassandra_node_12]: SSH command took 174 sec
+May05 04:21:34 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  [2014-05-05 04:18:46,033] Starting repair command #1, repairing 256 ranges for keyspace ycsb
+	$:  [2014-05-05 04:18:50,876] Repair command #1 finished
+	$:  
+
+
+May05 04:21:34 [ INFO]  [cassandra_node_12]: now decommissioned (took 174 sec)
+May05 05:06:03 [ INFO]  [cassandra_node_12]: Waiting for SSH daemon (83.212.118.31)
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: end time:2014-05-05 05:16:03.193059
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: ssh attempt:1
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:06:03 [ INFO]  [cassandra_node_12]: now ready (took 0 sec)
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:06:03 [ INFO]  [cassandra_node_12]: running bootstrap script
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/bash
+     
+     MAX_WAIT=300  #5 min
+     
+     echo "started bootstrap" > bootsrap.log
+     
+     # check the seednode
+     if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
+     then
+     echo CTOOL: ERROR - cassandra_seednode not pingable, exiting
+     exit -1
+     fi
+     
+     # kill the cassandra process
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID
+     
+     # clean previous files and logs
+     echo "Removing cassandra files and logs"
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/*
+     rm /var/log/cassandra/system.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds"
+     rm -rf /var/lib/ganglia/rrds/*
+     rm /var/log/cassandra/system.log
+     
+     # find my IP
+     my_priv_addr=""
+     #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+     let if_count=($(ifconfig | grep eth | wc -l ))-1
+     for i in $(seq 0 $if_count)
+     do	#look for IPv4 address
+     line=$(ifconfig eth$i | grep "inet addr:")
+     line=$(echo $line | awk '{print $2}')
+     address=$(echo $line | sed 's/addr://g')
+     if [[ "$address" == 10.0.* ]] ;
+     then
+     my_priv_addr=$address
+     break
+     fi
+     done
+     
+     # configure cassandra
+     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+     #change the listen address of this node
+     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the rpc_address of this node to 0.0.0.0
+     sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the seeds to "cassandra_seednode"
+     sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #add the jmx server whatever to cassandra-env.sh
+     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     #make sure no requests are dropped by using a big timeout
+     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     echo "CTOOL: Done configuring"
+     
+     
+     # start cassandra
+     chmod -R o+rw /var/lib/cassandra
+     echo Starting casandra service, ganglia-monitor
+     service cassandra start
+     service ganglia-monitor restart
+     
+     #wait until ready and try to create keyspace
+     echo "Attempting to create ycsb keyspace"
+     echo "create keyspace ycsb  WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 }; use ycsb;  create table usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);" > ycsb_cql.temp
+     while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
+     rm ycsb_cql.temp
+     
+     echo "ended bootstrap" >> bootsrap.log
+     
+     #report alive in gmetric
+     gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+     
+     
+     
+
+
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:06:03 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:09:55 [DEBUG]  [cassandra_node_12]: SSH command took 231 sec
+May05 05:09:55 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+
+
+May05 05:09:55 [DEBUG]  [cassandra_node_12]: command returned:
+	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+May05 05:09:55 [ INFO]  [cassandra_node_12]: is now bootstrapped (took 232 sec)
+May05 05:10:32 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:10:32 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:10:32 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:10:33 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:10:33 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:10:33 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 05:10:33 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:10:33 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:10:33 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:10:33 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:19:43 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:19:43 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:19:43 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:19:43 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:19:43 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:19:43 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 05:19:43 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:19:44 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:19:44 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:19:44 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:28:33 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:28:33 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:28:33 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:28:34 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:28:34 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:28:34 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 05:28:34 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:28:34 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:28:34 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:28:34 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:37:36 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:37:36 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:37:37 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:48:48 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:57:24 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:57:24 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:57:24 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:57:25 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:57:25 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 05:57:25 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 05:57:25 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 05:57:25 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 05:57:25 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 05:57:25 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 06:12:55 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 06:22:50 [ INFO]  [cassandra_node_12]: running decommission script
+May05 06:22:50 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     nodetool repair -h 127.0.0.1 ycsb
+     nodetool decommission
+     #kill cassandra
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" >> ctool.log
+     kill $CAS_PID &>/dev/null
+     
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May05 06:22:50 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 06:22:50 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 06:25:33 [DEBUG]  [cassandra_node_12]: SSH command took 163 sec
+May05 06:25:33 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  [2014-05-05 06:22:57,428] Starting repair command #1, repairing 256 ranges for keyspace ycsb
+	$:  [2014-05-05 06:23:04,719] Repair command #1 finished
+	$:  
+
+
+May05 06:25:33 [ INFO]  [cassandra_node_12]: now decommissioned (took 163 sec)
+May05 07:10:12 [ INFO]  [cassandra_node_12]: Waiting for SSH daemon (83.212.118.31)
+May05 07:10:12 [DEBUG]  [cassandra_node_12]: end time:2014-05-05 07:20:12.777398
+May05 07:10:12 [DEBUG]  [cassandra_node_12]: ssh attempt:1
+May05 07:10:12 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:10:12 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:10:12 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:10:12 [ INFO]  [cassandra_node_12]: now ready (took 0 sec)
+May05 07:10:12 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:10:12 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:10:13 [ INFO]  [cassandra_node_12]: running bootstrap script
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/bash
+     
+     MAX_WAIT=300  #5 min
+     
+     echo "started bootstrap" > bootsrap.log
+     
+     # check the seednode
+     if ! ping -q -c 1 cassandra_seednode &>/dev/null   ;
+     then
+     echo CTOOL: ERROR - cassandra_seednode not pingable, exiting
+     exit -1
+     fi
+     
+     # kill the cassandra process
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
+     kill -9 $CAS_PID
+     
+     # clean previous files and logs
+     echo "Removing cassandra files and logs"
+     #cleaning cassandra files
+     rm -rf /var/lib/cassandra/*
+     rm /var/log/cassandra/system.log
+     #cleaning ctool rrds
+     echo "Removing ganglia rrds"
+     rm -rf /var/lib/ganglia/rrds/*
+     rm /var/log/cassandra/system.log
+     
+     # find my IP
+     my_priv_addr=""
+     #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+     let if_count=($(ifconfig | grep eth | wc -l ))-1
+     for i in $(seq 0 $if_count)
+     do	#look for IPv4 address
+     line=$(ifconfig eth$i | grep "inet addr:")
+     line=$(echo $line | awk '{print $2}')
+     address=$(echo $line | sed 's/addr://g')
+     if [[ "$address" == 10.0.* ]] ;
+     then
+     my_priv_addr=$address
+     break
+     fi
+     done
+     
+     # configure cassandra
+     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+     #change the listen address of this node
+     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the rpc_address of this node to 0.0.0.0
+     sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #change the seeds to "cassandra_seednode"
+     sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+     #add the jmx server whatever to cassandra-env.sh
+     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
+     #make sure no requests are dropped by using a big timeout
+     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 50000/g" /etc/cassandra/cassandra.yaml
+     echo "CTOOL: Done configuring"
+     
+     
+     # start cassandra
+     chmod -R o+rw /var/lib/cassandra
+     echo Starting casandra service, ganglia-monitor
+     service cassandra start
+     service ganglia-monitor restart
+     
+     #wait until ready and try to create keyspace
+     echo "Attempting to create ycsb keyspace"
+     echo "create keyspace ycsb  WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor': 1 }; use ycsb;  create table usertable (y_id varchar primary key, field0 varchar, field1 varchar, field2 varchar, field3 varchar, field4 varchar, field5 varchar, field6 varchar, field7 varchar, field8 varchar, field9 varchar);" > ycsb_cql.temp
+     while ! cqlsh < ycsb_cql.temp 2>/dev/null;do sleep 2; done
+     rm ycsb_cql.temp
+     
+     echo "ended bootstrap" >> bootsrap.log
+     
+     #report alive in gmetric
+     gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+     
+     
+     
+
+
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:10:13 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:14:54 [DEBUG]  [cassandra_node_12]: SSH command took 280 sec
+May05 07:14:54 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+
+
+May05 07:14:54 [DEBUG]  [cassandra_node_12]: command returned:
+	$:  CTOOL: Killing CassandraDaemon ()
+	$:  Removing cassandra files and logs
+	$:  Removing ganglia rrds
+	$:  CTOOL: Done configuring
+	$:  Starting casandra service, ganglia-monitor
+	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Attempting to create ycsb keyspace
+	$:  kill: usage: kill [-s sigspec | -n signum | -sigspec] pid | jobspec ... or kill -l [sigspec]
+	$:  rm: cannot remove `/var/log/cassandra/system.log': No such file or directory
+	$:  
+May05 07:14:54 [ INFO]  [cassandra_node_12]: is now bootstrapped (took 281 sec)
+May05 07:15:09 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:15:09 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:15:10 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:15:10 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:15:10 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:15:10 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 07:15:10 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:15:10 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:15:11 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:15:11 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:24:17 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:24:17 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:24:18 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:33:01 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:33:01 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:33:01 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:33:01 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:33:01 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:33:01 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 07:33:01 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:33:02 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:33:02 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:33:02 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:40:44 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:40:44 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:40:44 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:40:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:40:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:40:45 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 07:40:45 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:40:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:40:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:40:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:49:06 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:49:06 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:49:06 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:49:06 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:49:06 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 07:49:06 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 07:49:06 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 07:49:07 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 07:49:07 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 07:49:07 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo cassandra_node_12 >/etc/hostname
+
+
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: SSH command took 0 sec
+May05 08:04:45 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  
+
+
+May05 08:15:35 [ INFO]  [cassandra_node_12]: running decommission script
+May05 08:15:35 [DEBUG]  [cassandra_node_12]: running SSH command:
+
+     #!/bin/sh
+     nodetool repair -h 127.0.0.1 ycsb
+     nodetool decommission
+     #kill cassandra
+     CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
+     echo "CTOOL: Killing CassandraDaemon ($CAS_PID)" >> ctool.log
+     kill $CAS_PID &>/dev/null
+     
+     
+     #report not alive
+     gmetric -n alive -v 0 -t int32 -u nodes -d 10000
+     
+
+
+May05 08:15:35 [DEBUG]  [cassandra_node_12]: Connecting to SSH
+May05 08:15:35 [DEBUG]  [cassandra_node_12]: connected in 0 sec. Running SSH command
+May05 08:18:20 [DEBUG]  [cassandra_node_12]: SSH command took 165 sec
+May05 08:18:20 [DEBUG]  [cassandra_node_12]: command returned:
+
+ 	$:  [2014-05-05 08:15:50,786] Starting repair command #1, repairing 256 ranges for keyspace ycsb
+	$:  [2014-05-05 08:15:58,345] Repair command #1 finished
+	$:  
+
+
+May05 08:18:20 [ INFO]  [cassandra_node_12]: now decommissioned (took 165 sec)

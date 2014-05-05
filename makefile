@@ -15,7 +15,6 @@ clean_quick:
 	tiramola load_data records=10000
 	rm files/logs/measurements.txt &>/dev/null
 train:
-	rm files/logs/measurements.txt
 	tiramola train
 
 experiment1:

@@ -1044,3 +1044,3759 @@ May02 19:18:35 [DEBUG]       [orchestrator]: command returned:
 	$:  
 
 
+May02 19:22:09 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 19:22:26 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 19:22:44 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 19:22:44 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May02 19:22:44 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 19:22:44 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 19:22:44 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 19:22:44 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May02 19:22:44 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May02 19:22:44 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 19:22:44 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 19:22:44 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 19:22:44 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May02 19:22:48 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May02 19:22:48 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 19:22:48 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 19:22:48 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 19:22:48 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May02 19:29:55 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 19:30:08 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 20:40:06 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 20:40:19 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 20:40:33 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 20:40:51 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 20:41:07 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 20:41:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May02 20:41:07 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 20:41:07 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 20:41:07 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 20:41:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May02 20:41:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May02 20:41:07 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 20:41:07 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 20:41:07 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 20:41:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May02 20:41:11 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May02 20:41:11 [DEBUG]       [orchestrator]: Connecting to SSH
+May02 20:41:11 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May02 20:41:11 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May02 20:41:11 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May02 20:48:33 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 20:48:47 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 21:25:46 [DEBUG]       [orchestrator]: cluster = orchestrato
+May02 21:26:00 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:02:30 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:02:47 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:03:01 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:05:11 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:05:24 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:08:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May03 12:08:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:08:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:08:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:08:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 12:08:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May03 12:08:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:08:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:08:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:08:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 12:08:59 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May03 12:08:59 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:08:59 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:08:59 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:08:59 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May03 12:11:00 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:16:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May03 12:16:46 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:16:46 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:16:46 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:16:46 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 12:16:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May03 12:16:46 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:16:46 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:16:46 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:16:46 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 12:16:59 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May03 12:16:59 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:16:59 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:16:59 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:16:59 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May03 12:30:44 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:31:12 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:31:26 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:35:18 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:37:59 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May03 12:37:59 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:37:59 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:37:59 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:37:59 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 12:37:59 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May03 12:37:59 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:38:00 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:38:00 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:38:00 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 12:38:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May03 12:38:04 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 12:38:05 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 12:38:05 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 12:38:05 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May03 12:38:18 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 12:38:31 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 13:40:59 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May03 13:40:59 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 13:40:59 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 13:40:59 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 13:40:59 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 13:40:59 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May03 13:40:59 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 13:40:59 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 13:40:59 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 13:40:59 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 13:41:05 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May03 13:41:05 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 13:41:05 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 13:41:05 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 13:41:05 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May03 22:31:29 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 22:31:47 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 22:32:11 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 22:32:11 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May03 22:32:11 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 22:32:11 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 22:32:11 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 22:32:11 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 22:32:11 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May03 22:32:11 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 22:32:12 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 22:32:12 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 22:32:12 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May03 22:32:15 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May03 22:32:15 [DEBUG]       [orchestrator]: Connecting to SSH
+May03 22:32:15 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May03 22:32:15 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May03 22:32:15 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May03 22:39:33 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 22:39:47 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 23:16:08 [DEBUG]       [orchestrator]: cluster = orchestrato
+May03 23:16:22 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 00:18:42 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 00:18:42 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 00:18:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 00:18:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 00:18:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 00:18:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 00:18:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 00:18:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 00:18:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 00:18:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 00:18:51 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 00:18:51 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 00:18:51 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 00:18:51 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 00:18:51 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 01:21:25 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 01:21:25 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 01:21:25 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 01:21:26 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 01:21:26 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 01:21:26 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 01:21:26 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 01:21:26 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 01:21:26 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 01:21:26 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 01:21:33 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 01:21:33 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 01:21:33 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 01:21:33 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 01:21:33 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 02:24:03 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 02:24:03 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 02:24:03 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 02:24:03 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 02:24:03 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 02:24:03 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 02:24:03 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 02:24:03 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 02:24:03 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 02:24:03 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 02:24:10 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 02:24:10 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 02:24:10 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 02:24:11 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 02:24:11 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 03:26:34 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 03:26:34 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 03:26:34 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 03:26:34 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 03:26:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 03:26:34 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 03:26:34 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 03:26:34 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 03:26:34 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 03:26:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 03:26:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 03:26:41 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 03:26:41 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 03:26:42 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 03:26:42 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 04:29:02 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 04:29:02 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 04:29:02 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 04:29:02 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 04:29:02 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 04:29:02 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 04:29:02 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 04:29:02 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 04:29:02 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 04:29:02 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 04:29:09 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 04:29:09 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 04:29:09 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 04:29:09 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 04:29:09 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 05:31:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 05:31:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 05:31:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 05:31:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 05:31:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 05:31:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 05:31:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 05:31:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 05:31:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 05:31:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 05:31:51 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 05:31:51 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 05:31:51 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 05:31:51 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 05:31:51 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 06:34:10 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 06:34:10 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 06:34:10 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 06:34:10 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 06:34:10 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 06:34:10 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 06:34:10 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 06:34:10 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 06:34:10 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 06:34:10 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 06:34:18 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 06:34:18 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 06:34:18 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 06:34:18 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 06:34:18 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 07:36:51 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 07:36:51 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 07:36:51 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 07:36:51 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 07:36:51 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 07:36:51 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 07:36:51 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 07:36:52 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 07:36:52 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 07:36:52 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 07:37:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 07:37:00 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 07:37:00 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 07:37:01 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 07:37:01 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 08:40:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 08:40:04 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 08:40:08 [DEBUG]       [orchestrator]: connected in 3 sec. Running SSH command
+May04 08:40:08 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 08:40:08 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 08:40:08 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 08:40:08 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 08:40:08 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 08:40:08 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 08:40:08 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 08:40:23 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 08:40:23 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 08:40:23 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 08:40:23 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 08:40:23 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 09:42:39 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 09:42:39 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 09:42:39 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 09:42:39 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 09:42:39 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 09:42:39 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 09:42:39 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 09:42:39 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 09:42:39 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 09:42:39 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 09:42:49 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 09:42:49 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 09:42:49 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 09:42:49 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 09:42:49 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 10:45:13 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 10:45:13 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 10:45:13 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 10:45:14 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 10:45:14 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 10:45:14 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 10:45:14 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 10:45:14 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 10:45:14 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 10:45:14 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 10:45:23 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 10:45:23 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 10:45:23 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 10:45:24 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 10:45:24 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 11:48:37 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 11:48:37 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 11:48:38 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 11:48:38 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 11:48:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 11:48:38 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 11:48:38 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 11:48:38 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 11:48:38 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 11:48:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 11:48:48 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 11:48:48 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 11:48:48 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 11:48:49 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 11:48:49 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 22:45:44 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 22:46:04 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 22:46:21 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 22:46:21 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 22:46:21 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 22:46:21 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 22:46:21 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 22:46:21 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 22:46:21 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 22:46:21 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 22:46:21 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 22:46:21 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 22:46:21 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 22:46:24 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 22:46:24 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 22:46:24 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 22:46:24 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 22:46:24 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 22:54:14 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 22:54:29 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 23:31:18 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 23:31:32 [DEBUG]       [orchestrator]: cluster = orchestrato
+May04 23:50:56 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 23:50:56 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 23:50:56 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 23:50:56 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 23:50:56 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 23:50:56 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 23:50:56 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 23:50:56 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 23:50:56 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 23:50:56 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 23:51:13 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 23:51:13 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 23:51:13 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 23:51:13 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 23:51:13 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May04 23:59:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May04 23:59:07 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 23:59:07 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 23:59:07 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 23:59:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 23:59:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May04 23:59:07 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 23:59:07 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 23:59:07 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 23:59:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May04 23:59:25 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May04 23:59:25 [DEBUG]       [orchestrator]: Connecting to SSH
+May04 23:59:26 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May04 23:59:26 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May04 23:59:26 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 00:07:15 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:07:15 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:07:15 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:07:15 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:07:15 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:07:15 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 00:07:15 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:07:15 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:07:15 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:07:15 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:07:44 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 00:07:44 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:07:44 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:07:44 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:07:44 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 00:27:05 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:27:05 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:27:05 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:27:05 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:27:05 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:27:05 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 00:27:05 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:27:05 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:27:05 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:27:05 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:27:14 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 00:27:14 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:27:14 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:27:14 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:27:14 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 00:41:31 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:41:31 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:41:31 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:41:31 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:41:31 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:41:31 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 00:41:31 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:41:31 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:41:31 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:41:31 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:41:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 00:41:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:41:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:41:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:41:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 00:49:38 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:49:38 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:49:38 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:49:38 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:49:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:49:38 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 00:49:38 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:49:38 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:49:38 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:49:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:49:54 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 00:49:54 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:49:54 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:49:54 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:49:54 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 00:57:51 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 00:57:51 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:57:52 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:57:52 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:57:52 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:57:52 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 00:57:52 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:57:52 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:57:52 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:57:52 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 00:58:14 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 00:58:14 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 00:58:14 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 00:58:14 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 00:58:14 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 01:06:15 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:06:15 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:06:15 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:06:15 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:06:15 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:06:15 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 01:06:15 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:06:16 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:06:16 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:06:16 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:06:38 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 01:06:38 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:06:38 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:06:38 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:06:38 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 01:25:35 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:25:35 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:25:36 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:25:36 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:25:36 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:25:36 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 01:25:36 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:25:36 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:25:36 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:25:36 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:25:45 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 01:25:45 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:25:45 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:25:45 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:25:45 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 01:41:22 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:41:22 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:41:22 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:41:22 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:41:22 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:41:22 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 01:41:22 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:41:22 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:41:22 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:41:22 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:41:34 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 01:41:34 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:41:34 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:41:34 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:41:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 01:49:50 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:49:50 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:49:50 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:49:50 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:49:50 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:49:50 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 01:49:50 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:49:51 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:49:51 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:49:51 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:50:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 01:50:07 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:50:07 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:50:07 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:50:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 01:58:17 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 01:58:17 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:58:17 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:58:17 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:58:17 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:58:17 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 01:58:17 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:58:17 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:58:17 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:58:17 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 01:58:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 01:58:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 01:58:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 01:58:44 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 01:58:44 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 02:06:21 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 02:06:21 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:06:21 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:06:21 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:06:21 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 02:06:21 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 02:06:21 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:06:21 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:06:21 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:06:21 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 02:06:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 02:06:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:06:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:06:44 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:06:44 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 02:25:56 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 02:25:56 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:25:56 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:25:56 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:25:56 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 02:25:56 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 02:25:56 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:25:56 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:25:56 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:25:56 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 02:26:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 02:26:07 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:26:07 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:26:07 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:26:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 02:32:07 [DEBUG]       [orchestrator]: cluster = orchestrato
+May05 02:32:20 [DEBUG]       [orchestrator]: cluster = orchestrato
+May05 02:45:23 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 02:45:23 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:45:23 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:45:24 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:45:24 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 02:45:24 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 02:45:24 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:45:24 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:45:24 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:45:24 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 02:45:35 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 02:45:35 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 02:45:35 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 02:45:35 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 02:45:35 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 03:04:39 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:04:39 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:04:39 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:04:39 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:04:39 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:04:39 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 03:04:39 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:04:40 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:04:40 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:04:40 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:04:55 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 03:04:55 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:04:55 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:04:55 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:04:55 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 03:14:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:14:46 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:14:47 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:14:47 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:14:47 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:14:47 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 03:14:47 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:14:47 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:14:47 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:14:47 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:15:05 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 03:15:05 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:15:05 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:15:05 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:15:05 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 03:24:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:24:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:24:30 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:24:30 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:24:30 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:24:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 03:24:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:24:30 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:24:30 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:24:30 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:24:55 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 03:24:55 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:24:56 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:24:56 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:24:56 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 03:33:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:33:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:33:30 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:33:30 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:33:30 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:33:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 03:33:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:33:30 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:33:30 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:33:30 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:34:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 03:34:00 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:34:00 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:34:01 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:34:01 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 03:41:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:41:41 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:41:41 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:41:41 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:41:41 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:41:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 03:41:41 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:41:41 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:41:41 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:41:41 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:42:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 03:42:04 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:42:04 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:42:04 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:42:04 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 03:50:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 03:50:00 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:50:00 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:50:00 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:50:00 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:50:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 03:50:00 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:50:01 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:50:01 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:50:01 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 03:50:22 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 03:50:22 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 03:50:22 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 03:50:23 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 03:50:23 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 04:05:31 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 04:05:31 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:05:31 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:05:31 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:05:31 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:05:31 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 04:05:31 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:05:31 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:05:31 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:05:31 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:05:48 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 04:05:48 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:05:48 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:05:48 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:05:48 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 04:21:34 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 04:21:34 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:21:34 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:21:34 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:21:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:21:34 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 04:21:34 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:21:34 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:21:34 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:21:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:21:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 04:21:46 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:21:46 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:21:46 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:21:46 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 04:40:34 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 04:40:34 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:40:34 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:40:34 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:40:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:40:34 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 04:40:34 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:40:34 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:40:34 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:40:34 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:40:45 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 04:40:45 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:40:45 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:40:45 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:40:45 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 04:50:31 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 04:50:31 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:50:31 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:50:31 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:50:31 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:50:31 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 04:50:31 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:50:31 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:50:31 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:50:31 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 04:50:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 04:50:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 04:50:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 04:50:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 04:50:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 05:00:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:00:41 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:00:41 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:00:41 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:00:41 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:00:41 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 05:00:41 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:00:41 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:00:41 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:00:41 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:00:58 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 05:00:58 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:00:58 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:00:58 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:00:58 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 05:10:16 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:10:16 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:10:16 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:10:16 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:10:16 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:10:16 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 05:10:16 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:10:17 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:10:17 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:10:17 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:10:36 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 05:10:36 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:10:36 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:10:36 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:10:36 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 05:19:25 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:19:25 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:19:25 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:19:25 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:19:25 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:19:25 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 05:19:25 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:19:25 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:19:25 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:19:25 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:19:51 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 05:19:51 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:19:52 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:19:52 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:19:52 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 05:28:18 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:28:18 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:28:18 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:28:18 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:28:18 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:28:18 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 05:28:18 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:28:18 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:28:18 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:28:18 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:28:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 05:28:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:28:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:28:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:28:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 05:37:19 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:37:19 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:37:19 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:37:19 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:37:19 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:37:19 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 05:37:19 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:37:19 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:37:19 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:37:19 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:37:44 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 05:37:44 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:37:44 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:37:44 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:37:44 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 05:48:32 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:48:32 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:48:33 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:48:33 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:48:33 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:48:33 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 05:48:33 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:48:33 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:48:33 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:48:33 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:48:53 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 05:48:53 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:48:53 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:48:54 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:48:54 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 05:57:13 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 05:57:13 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:57:13 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:57:13 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:57:13 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:57:13 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 05:57:13 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:57:13 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:57:13 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:57:13 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 05:57:32 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 05:57:32 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 05:57:32 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 05:57:32 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 05:57:32 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 06:12:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 06:12:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:12:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:12:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:12:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:12:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 06:12:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:12:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:12:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:12:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:12:58 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 06:12:58 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:12:58 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:12:58 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:12:58 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 06:28:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 06:28:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:28:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:28:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:28:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:28:43 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 06:28:43 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:28:43 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:28:43 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:28:43 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:28:53 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 06:28:53 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:28:53 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:28:53 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:28:53 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 06:43:49 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 06:43:49 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:43:49 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:43:49 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:43:49 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:43:49 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 06:43:49 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:43:49 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:43:49 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:43:49 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:44:00 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 06:44:00 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:44:00 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:44:00 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:44:00 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 06:54:18 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 06:54:18 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:54:18 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:54:18 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:54:18 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:54:18 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.35 cassandra_seed_0
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 06:54:18 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:54:18 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:54:18 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:54:18 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 06:54:33 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 06:54:33 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 06:54:33 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 06:54:33 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 06:54:33 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 07:04:45 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:04:45 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:04:45 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:04:45 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:04:45 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:04:45 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 07:04:45 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:04:45 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:04:45 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:04:45 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:05:07 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 07:05:07 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:05:07 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:05:07 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:05:07 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 07:14:54 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:14:54 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:14:54 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:14:54 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:14:54 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:14:54 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 07:14:54 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:14:54 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:14:54 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:14:54 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:15:14 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 07:15:14 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:15:14 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:15:14 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:15:14 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 07:24:01 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:24:01 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:24:02 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:24:02 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:24:02 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:24:02 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 07:24:02 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:24:02 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:24:02 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:24:02 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:24:23 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 07:24:23 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:24:23 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:24:23 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:24:23 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 07:32:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:32:46 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:32:46 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:32:46 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:32:46 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:32:46 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 07:32:46 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:32:47 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:32:47 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:32:47 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:33:09 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 07:33:09 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:33:09 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:33:10 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:33:10 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 07:40:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:40:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:40:30 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:40:30 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:40:30 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:40:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 07:40:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:40:31 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:40:31 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:40:31 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:40:50 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 07:40:50 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:40:50 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:40:50 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:40:50 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 07:48:49 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 07:48:49 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:48:49 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:48:49 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:48:49 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:48:49 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.39 cassandra_node_16
+     10.0.0.43 cassandra_node_17
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.40 cassandra_node_18
+     10.0.0.20 cassandra_node_19
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 07:48:49 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:48:50 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:48:50 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:48:50 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 07:49:13 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 07:49:13 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 07:49:13 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 07:49:13 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 07:49:13 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 08:04:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 08:04:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 08:04:30 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 08:04:30 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 08:04:30 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 08:04:30 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.32 cassandra_node_15
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.42 cassandra_node_12
+     10.0.0.33 cassandra_node_14
+     10.0.0.31 cassandra_node_01
+     10.0.0.41 cassandra_node_13
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 08:04:30 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 08:04:30 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 08:04:30 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 08:04:30 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 08:04:48 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 08:04:48 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 08:04:48 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 08:04:48 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 08:04:48 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+
+May05 08:21:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     sed -i "/.*cassandra.*/g" /etc/hosts; sed -i "/^$/d" /etc/hosts
+
+
+May05 08:21:04 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 08:21:04 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 08:21:04 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 08:21:04 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 08:21:04 [DEBUG]       [orchestrator]: running SSH command:
+
+     echo '
+     10.0.0.35 cassandra_seednode
+     10.0.0.18 cassandra_node_11
+     10.0.0.30 cassandra_node_10
+     10.0.0.35 cassandra_seed_0
+     10.0.0.17 cassandra_node_09
+     10.0.0.13 cassandra_node_08
+     10.0.0.31 cassandra_node_01
+     10.0.0.11 cassandra_node_03
+     10.0.0.38 cassandra_node_02
+     10.0.0.16 cassandra_node_05
+     10.0.0.45 cassandra_node_04
+     10.0.0.37 cassandra_node_07
+     10.0.0.44 cassandra_node_06' >> /etc/hosts; echo orchestrator >/etc/hostname
+
+
+May05 08:21:04 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 08:21:04 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 08:21:05 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 08:21:05 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  
+
+
+May05 08:21:19 [DEBUG]       [orchestrator]: running SSH command:
+
+     service ganglia-monitor restart; service gmetad restart
+
+
+May05 08:21:19 [DEBUG]       [orchestrator]: Connecting to SSH
+May05 08:21:20 [DEBUG]       [orchestrator]: connected in 0 sec. Running SSH command
+May05 08:21:20 [DEBUG]       [orchestrator]: SSH command took 0 sec
+May05 08:21:20 [DEBUG]       [orchestrator]: command returned:
+
+ 	$:  Stopping Ganglia Monitor Daemon: gmond.
+	$:  Starting Ganglia Monitor Daemon: gmond.
+	$:  Stopping Ganglia Monitor Meta-Daemon: gmetad.
+	$:  Starting Ganglia Monitor Meta-Daemon: gmetad.
+	$:  
+
+

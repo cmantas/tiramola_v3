@@ -31,10 +31,10 @@
     "training_vars": {
         "target_load":8000,
         "offset_load": 6000,
-        "period": 60,
-        "decision_interval": 60,
-        "max_cluster_size": 11,
-        "min_cluster_size": 10,
+        "period": 3600,
+        "decision_interval": 3600,
+        "max_cluster_size": 20,
+        "min_cluster_size": 8,
         "records": 10000000
          }
 

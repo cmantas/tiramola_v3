@@ -8,7 +8,7 @@ from new_decision_module import RLDecisionMaker as DM
 from lib.tiramola_logging import get_logger
 from time import time
 from os import remove
-import thread
+from threading import Thread
 
 #######  STATIC VARS  ###############
 my_logger = get_logger('COORDINATOR', 'INFO', logfile='files/logs/Coordinator.log')
@@ -49,6 +49,7 @@ def implement_decision():
     decision_module.pending_action = None
     decision_module.currentState = Servers.node_count()
 
+running_thread = None
 
 def run(timeout=None):
     """
@@ -76,8 +77,13 @@ def run(timeout=None):
         decision = decision_module.take_decision(all_metrics)
 
         # asynchronously implement that decision
-        thread.start_new(implement_decision, ())
+        global running_thread
+        running_thread = Thread(target=implement_decision, args=())
+        running_thread.start()
+
     # DONE
+    #join the running_thread
+    running_thread.join()
     my_logger.info(" run is finished")
 
 

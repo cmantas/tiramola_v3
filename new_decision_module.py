@@ -133,8 +133,9 @@ class RLDecisionMaker:
         label = []
         centroids = {}
         if self.memory[state]['arrayMeas'] != None:
-            self.log.debug("DOKMEANS " + str(len(self.memory[state]['arrayMeas'])) +
-                           " measurements available for state " + state)
+            count_state_measurements = len(self.memory[state]['arrayMeas'])
+            # self.log.debug("DOKMEANS " + str(len(self.memory[state]['arrayMeas'])) +
+            #                " measurements available for state " + state)
             sliced_data = None
             for j in self.memory[state]['arrayMeas']:
                 #self.my_logger.debug("DOKMEANS self.memory[state]['arrayMeas'][j]: "+ str(j))
@@ -169,7 +170,8 @@ class RLDecisionMaker:
                 #            if sliced_data == None:
                 self.log.debug("No known lamdba values close to current lambda measurement. Returning zeros!")
             else:
-                self.log.debug("DOKMEANS length of sliced_data to be fed to kmeans: " + str(len(sliced_data)))
+                self.log.debug("DOKMEANS length of sliced_data to be fed to kmeans: " + str(len(sliced_data))
+                               +  " (out of %d total)" % count_state_measurements)
                 centroids, label = kmeans2(sliced_data, k, minit='points')
 
             # initialize dictionary
@@ -409,7 +411,8 @@ class RLDecisionMaker:
             elif self.measurementsPolicy.startswith('centroid'):
                 met = self.doKmeans(str(i), from_inlambda, to_inlambda)
                 #format met output
-                self.log.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(met))
+                out_met = {k:int(v) for k,v in met.iteritems()}
+                self.log.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(out_met))
 
 
                 if met != None and len(met) > 0:
@@ -437,7 +440,7 @@ class RLDecisionMaker:
                     self.memory[str(i)]['r'] = cur_gain
                     #self.log.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
                 else:
-                    cur_gain = str(self.memory[str(i)]['r'])
+                    cur_gain = (self.memory[str(i)]['r'])
                     self.log.debug("TAKEDECISION state %d current state training set reward: %d"
                                    % (self.currentState, cur_gain))
 
@@ -521,7 +524,7 @@ class RLDecisionMaker:
             # You've chosen to change state, that means that nextState has a greater reward, therefore d is always > 0
             d = self.memory[str(self.nextState)]['r'] - self.memory[str(self.currentState)]['r']
             if (self.memory[str(self.currentState)]['r'] > 0):
-                if (float(d) / self.memory[str(self.currentState)]['r'] < 0.03):
+                if (float(d) / self.memory[str(self.currentState)]['r'] < env_vars['decision_threshold']):
                     #false alarm, stay where you are
                     self.nextState = self.currentState
                     # skip decision
@@ -529,7 +532,7 @@ class RLDecisionMaker:
                     self.decision["count"] = 0
                     self.log.debug("ups changed my mind...staying at state: " + str(self.currentState) +
                                    " cause the gain difference is: " + str(abs(d)) +
-                                   " which is less than 3% of the current reward, it's actually " +
+                                   " which is less than %d of the current reward, it's actually " % (int(100*env_vars['decision_threshold'])) +
                                    str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + "% ")
             # If the reward is the same with the state you're in, don't move
             elif (d == 0):

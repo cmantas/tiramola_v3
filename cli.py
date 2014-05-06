@@ -209,7 +209,10 @@ def experiment():
     info_short = "target=%dK,offset=%dK,period=%dmin" % (target/1000, offset/1000, period)
     #dir_path = "files/measurements/"+strftime('%b%d-%H:%M')
     dir_path = "files/measurements/"+info_short
-    mkdir(dir_path)
+    try:
+        mkdir(dir_path)
+    except:
+        pass
     move("files/measurements/measurements.txt", dir_path)
 
     #draw the result graphs

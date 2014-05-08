@@ -25,3 +25,5 @@ experiment2:
 	tiramola experiment target=8000 offset=6000 period=120 time=360
 test2:
 	tiramola experiment target=8000 offset=6000 period=120 time=240
+experiment3:
+	tiramola experiment target=6000 offset=4000 period=60 time=120

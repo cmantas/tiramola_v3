@@ -236,6 +236,16 @@ def draw():
     draw_exp("files/measurements/measurements.txt")
 
 
+def simulate():
+    try:
+        remove("files/measurements/measurements.txt")
+    except:
+        pass
+    from new_decision_module import RLDecisionMaker
+    fsm = RLDecisionMaker("localhost", 8)
+    fsm.simulate_training_set()
+
+
 
 ############################   MAIN  ################################################
 

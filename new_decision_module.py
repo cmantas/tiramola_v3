@@ -99,11 +99,6 @@ class RLDecisionMaker:
                                                                      [[float(metrics[1]), float(metrics[2]),
                                                                        float(metrics[3]), float(metrics[4])]], axis=0)
                     # but add 1 zero measurement for each state for no load cases ??? too many 0s affect centroids?
-            else:
-                #TODO error: list indices must be integers, not str
-                # self.log.debug("Discarding measurement from memory: %d, %d, %d, %d" %
-                #                      (self.currentState, metrics['inlambda'], metrics['throughput'], metrics['latency'] ))
-                self.log.debug("Discarding measurement from memory")
 
         if write_file:
             ms = open(self.measurementsFile, 'a')
@@ -262,6 +257,10 @@ class RLDecisionMaker:
 
         return predicted_l
 
+
+    #a log-related variable
+    pending_action_logged = False
+
     def take_decision(self, rcvallmetrics):
         '''
              this method reads allmetrics object created by Monitoring.py and decides whether a change of the number of participating
@@ -343,7 +342,10 @@ class RLDecisionMaker:
 
         # if there is a pending action, don't take a decision
         if pending_action:
-            self.log.debug("Last action " + self.pending_action + " hasn't finished yet, see you later!")
+            global pending_action_logged
+            if not pending_action_logged:
+                self.log.debug("Last action " + self.pending_action + " hasn't finished yet, see you later!")
+                pending_action_logged = True
             if self.debug:
                 if self.countdown == 0:
                     self.log.debug("Running a simulation, set state from " + str(self.currentState) + " to " +
@@ -359,12 +361,14 @@ class RLDecisionMaker:
             self.decision["count"] = 0
             return self.decision
 
+        pending_action_logged = False
+
         # manage the interval counter (waitForIt)
         if self.waitForIt == 0:
             self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         else:
             if self.waitForIt == env_vars['decision_interval'] / env_vars['metric_fetch_interval']:
-                self.log.debug("New decision in " + str(float(self.waitForIt)/2) + " mins, see you later!")
+                self.log.debug("New decision in " + str(float(self.waitForIt*env_vars['metric_fetch_interval'])/60) + " mins, see you later!")
             self.waitForIt -= 1
             self.decision["action"] = "PASS"
             self.decision["count"] = 0
@@ -532,8 +536,7 @@ class RLDecisionMaker:
                     self.decision["count"] = 0
                     self.log.debug("ups changed my mind...staying at state: " + str(self.currentState) +
                                    " cause the gain difference is: " + str(abs(d)) +
-                                   " which is less than %d of the current reward, it's actually " % (int(100*env_vars['decision_threshold'])) +
-                                   str(float(abs(d)) / self.memory[str(self.currentState)]['r']) + "% ")
+                                   " which is less than %d%% of the current reward, it's actually %f%%" % (int(100*env_vars['decision_threshold']) ,float(abs(d)*100) / self.memory[str(self.currentState)]['r']))
             # If the reward is the same with the state you're in, don't move
             elif (d == 0):
                 #false alarm, stay where you are
@@ -620,6 +623,7 @@ class RLDecisionMaker:
     def simulate_training_set(self):
         # run state 12 lambdas
         self.log.debug("START SIMULATION!!")
+        self.debug = True
         load = []
         for k in range(17, 21):
             for j in self.memory[str(k)]['arrayMeas']:

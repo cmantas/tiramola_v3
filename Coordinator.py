@@ -103,6 +103,7 @@ def train():
     env_vars["add_nodes"] = 1
     env_vars["rem_nodes"] = 1
     env_vars["measurements_file"] = env_vars["training_file"]
+    env_vars['decision_threshold'] = 0
     # remove the old measurements/training file so that it is replaced
     try:remove(env_vars["measurements_file"])
     except: pass

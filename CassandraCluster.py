@@ -212,8 +212,11 @@ def add_nodes(count=1):
     #wait for all the threads to finish
     log.debug("Waiting for all the threads to finish adding")
     for t in threads:
-        #TODO add timeout in join so as not to block
-        t.join()
+        t.join(env_vars['add_node_timeout'])
+        #check if it has not finished yet fail if so
+        if t.isAlive():
+            log.error("Timeout occurred for adding a node, exiting")
+            exit(-1)
     #save the current cluster state
     save_cluster()
     #inform all

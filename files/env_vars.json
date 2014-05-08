@@ -17,16 +17,17 @@
     "openstack_key_pair_name": "just_a_key",
     "ganglia_endpoint": "scripts/ganglia_endpoint.sh",
     "min_cluster_size": 8,
-    "max_cluster_size": 20,
+    "max_cluster_size": 16,
     "add_nodes": 4,
     "rem_nodes": 4,
     "serv_throughput": 800,
     "ssh_giveup_timeout": 600,
+    "add_node_timeout": 300,
     "trans_cost": "0",
-    "gain": "(throughput * 0.035) - (num_nodes * 3.2) - (latency * latency * 0.4)",
-    "decision_threshold": 0.05,
-    "metric_fetch_interval": 30,
-    "decision_interval": 300,
+    "gain": "(throughput - inlambda)*100 - (num_nodes * 30) - (latency * latency * 0.5)",
+    "decision_threshold": 0.1,
+    "metric_fetch_interval": 5,
+    "decision_interval": 180,
     "measurements_file": "files/measurements/measurements.txt",
     "training_file": "files/measurements/training_set.txt",
     "training_vars": {
@@ -35,7 +36,7 @@
         "period": 3600,
         "decision_interval": 3600,
         "max_cluster_size": 20,
-        "min_cluster_size": 8,
+        "min_cluster_size": 13,
         "records": 10000000
          }
 

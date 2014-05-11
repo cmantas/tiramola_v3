@@ -353,7 +353,7 @@ class RLDecisionMaker:
                     self.currentState = self.nextState
                     self.pending_action = None
                 else:
-                    self.countdown -= self.countdown
+                    self.countdown -= 1
                     self.log.debug("Reducing countdown to "+ str(self.countdown))
 
             # skip decision
@@ -562,7 +562,7 @@ class RLDecisionMaker:
         if self.debug:
             if self.pending_action is None and not self.decision["action"].startswith("PASS"):
                 self.pending_action = self.decision['action']
-                self.countdown = 5
+                self.countdown = 2 * self.decision['count'] * 60 / env_vars['metric_fetch_interval']
                 #self.currentState = str(self.nextState)
                 self.log.debug("TAKEDECISION simulation, action will finish in: " + str(self.countdown) + " mins")
             else:
@@ -625,13 +625,13 @@ class RLDecisionMaker:
         self.log.debug("START SIMULATION!!")
         self.debug = True
         load = []
-        for k in range(17, 21):
+        for k in range(9, 21):
             for j in self.memory[str(k)]['arrayMeas']:
                 load.append(j[0])
 
 
         #for i in range(0, 120, 1): # paizei? 1 wra ana miso lepto
-        for i in range(0, 480, 1): # 4 wres ana miso lepto
+        for i in range(0, 240*12, 1):
             l = load[i]
             # throughput = (800 * self.currentState)
             # if l < (800 * self.currentState):

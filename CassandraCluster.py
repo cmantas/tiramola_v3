@@ -224,6 +224,8 @@ def add_nodes(count=1):
     log.info("Finished adding %d nodes" % count)
 
 
+
+
 def remove_nodes(count=1):
     """
     Removes a node from the cassandra cluster. Refreshes the hosts in all nodes

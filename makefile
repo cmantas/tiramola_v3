@@ -17,13 +17,9 @@ train:
 	tiramola train
 
 experiment1:
-	tiramola experiment target=8000 offset=6000 period=60 time=180
-test1:
-	tiramola experiment target=8000 offset=6000 period=60 time=120
+	tiramola experiment target=8000 offset=6000 period=60 time=180 name=experiment1
 experiment2:
 	#6 hours
-	tiramola experiment target=8000 offset=6000 period=120 time=360
-test2:
-	tiramola experiment target=8000 offset=6000 period=120 time=240
+	tiramola experiment target=8000 offset=6000 period=120 time=360 name=experiment2
 experiment3:
-	tiramola experiment target=6000 offset=4000 period=60 time=120
+	tiramola experiment target=6000 offset=4000 period=60 time=120 name=experiment3

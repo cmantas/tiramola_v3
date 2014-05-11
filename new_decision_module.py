@@ -318,18 +318,18 @@ class RLDecisionMaker:
             #self.my_logger.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
 
             # Publish measurements to ganglia
-            try:
-                os.system("gmetric -n ycsb_inlambda -v " + str(
-                    allmetrics['inlambda']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
-                    self.monitoring_endpoint) + ":[DEBUG] hostname")
-                os.system("gmetric -n ycsb_throughput -v " + str(
-                    allmetrics['throughput']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
-                    self.monitoring_endpoint) + ":[DEBUG] hostname")
-                os.system(
-                    "gmetric -n ycsb_latency -v " + str(allmetrics['latency']) + " -d 15 -t float -u ms -S " + str(
-                        self.monitoring_endpoint) + ":[DEBUG] hostname")
-            except:
-                pass
+            # try:
+            #     os.system("gmetric -n ycsb_inlambda -v " + str(
+            #         allmetrics['inlambda']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
+            #         self.monitoring_endpoint) + ":[DEBUG] hostname")
+            #     os.system("gmetric -n ycsb_throughput -v " + str(
+            #         allmetrics['throughput']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
+            #         self.monitoring_endpoint) + ":[DEBUG] hostname")
+            #     os.system(
+            #         "gmetric -n ycsb_latency -v " + str(allmetrics['latency']) + " -d 15 -t float -u ms -S " + str(
+            #             self.monitoring_endpoint) + ":[DEBUG] hostname")
+            # except:
+            #     pass
 
 
         pending_action = not self.pending_action is None # true if there is no pending action

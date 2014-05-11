@@ -4,6 +4,9 @@ from lib.tiramola_logging import get_logger
 from os import remove, mkdir
 from shutil import move
 from time import strftime
+from os.path import isdir
+from random import random
+
 raw_args = sys.argv
 args = dict()
 
@@ -197,6 +200,12 @@ def auto_pilot():
 
 
 def experiment():
+    try:
+        experiment_name = args['name']
+    except KeyError as e:
+        log.error("experiment requires argument %s" % e.args[0])
+        return
+
     log.info("Running a full experiment")
     run_sinusoid()
     try:
@@ -205,14 +214,16 @@ def experiment():
         pass
     auto_pilot()
 
-    #move the newly generated measurements
-    info_short = "target=%dK,offset=%dK,period=%dmin" % (target/1000, offset/1000, period)
     #dir_path = "files/measurements/"+strftime('%b%d-%H:%M')
-    dir_path = "files/measurements/"+info_short
+    dir_path = "files/measurements/"+experiment_name
+
+    if isdir(dir_path):
+        dir_path += str(random())
     try:
         mkdir(dir_path)
     except:
-        pass
+        log.error("Could not create experiment directory")
+
     move("files/measurements/measurements.txt", dir_path)
 
     #draw the result graphs
@@ -223,6 +234,8 @@ def experiment():
     kill_workload()
     info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
            (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
+    from lib.persistance_module import env_vars
+    info_long += "\n gain = " + env_vars['gain']
 
     #write information to file
     with open (dir_path+"/info", 'w+') as f:

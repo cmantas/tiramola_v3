@@ -24,7 +24,7 @@
     "ssh_giveup_timeout": 600,
     "add_node_timeout": 300,
     "trans_cost": "0",
-    "gain": "(throughput - inlambda)*50 - (num_nodes * 250) - (latency -10) * 20",
+    "gain": "(throughput - inlambda)*50 - (num_nodes * 200) - (latency -10) * 20",
     "decision_threshold": 0.2,
     "metric_fetch_interval": 5,
     "decision_interval": 180,

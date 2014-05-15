@@ -1,11 +1,12 @@
 __author__ = 'cmantas'
-import sys
+import sys, traceback
 from lib.tiramola_logging import get_logger
 from os import remove, mkdir
-from shutil import move
+from shutil import move, copy
 from time import strftime
 from os.path import isdir
 from random import random
+from json import load, dumps
 
 raw_args = sys.argv
 args = dict()
@@ -209,16 +210,23 @@ def experiment():
     log.info("Running a full experiment")
     run_sinusoid()
     try:
-        remove("files/measurements/measurements.txt")
+        #empty the contents of the coordinator.log
+        open('files/logs/Coordinator.log', 'w+').close()
+        #f = open('file.txt', 'r+')
+        #f.truncate()
     except:
         pass
+
     auto_pilot()
 
-    #dir_path = "files/measurements/"+strftime('%b%d-%H:%M')
+    #kill the workload
+    kill_workload()
+
+    global dir_path
     dir_path = "files/measurements/"+experiment_name
 
     if isdir(dir_path):
-        dir_path += str(random())
+        dir_path += "_"+str(int(random()*1000))
     try:
         mkdir(dir_path)
     except:
@@ -226,27 +234,36 @@ def experiment():
 
     move("files/measurements/measurements.txt", dir_path)
 
-    #draw the result graphs
-    from lib.draw_experiment import draw_exp
-    draw_exp(dir_path+"/measurements.txt")
-
-    #kill the workload
-    kill_workload()
     info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
            (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
     from lib.persistance_module import env_vars
-    info_long += "\n gain = " + env_vars['gain']
+    info_long += "\ngain = " + env_vars['gain']
+    info_long += "\ndecision_interval = " + str(env_vars['decision_interval'])
+    info_long += "\ndecision_threshold = " + str(int(float(env_vars['decision_threshold'])*100)) + "%"
+    try:
+        global o_ev
+        info_long += "\n" + dumps(o_ev, indent=3)
+    except:
+        pass
 
     #write information to file
     with open (dir_path+"/info", 'w+') as f:
         f.write(info_long)
 
-    log.info("EXPERIMENT DONE: Result measurements in: "+dir_path)
+    # move the Coordinator log
+    try:
+        copy("files/logs/Coordinator.log", dir_path)
+    except:
+        pass
 
-
-def draw():
+    #draw the result graphs
     from lib.draw_experiment import draw_exp
-    draw_exp("files/measurements/measurements.txt")
+    try:
+        draw_exp(dir_path+"/measurements.txt")
+    except:
+            traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+
+    log.info("EXPERIMENT DONE: Result measurements in: "+dir_path)
 
 
 def simulate():
@@ -257,6 +274,53 @@ def simulate():
     from new_decision_module import RLDecisionMaker
     fsm = RLDecisionMaker("localhost", 8)
     fsm.simulate_training_set()
+    from lib.draw_experiment import draw_exp
+    try:
+        mkdir("files/measurements/simulation/")
+    except:
+        pass
+    move("files/measurements/measurements.txt", "files/measurements/simulation/measurements.txt")
+    draw_exp("files/measurements/simulation/measurements.txt")
+
+
+def run_experiments():
+    global args
+    try:
+        experiment_file = args['file']
+    except KeyError as e:
+        log.error("run_experiments requires argument %s" % e.args[0])
+        return
+
+    #load the file with all the experiments
+    exp_list = load(open(experiment_file))
+
+    #run each one of the experiments
+    for exp in exp_list:
+        # overwrite the given env_vars
+        from lib.persistance_module import env_vars
+        global o_ev
+        o_ev = exp['env_vars']
+        env_vars.update(o_ev)
+
+        # re-construct the args dict
+        args = exp['workload']
+        args['time'] = exp['time']
+        args['name'] = exp['name']
+
+        kill_workload()
+        if (not ('clean' in exp)) or bool(exp['clean']):
+            #clean-start the cluster by default or if clean is True
+            kill_nodes()
+            args["used"] = env_vars["min_cluster_size"]
+            bootstrap_cluster()
+            args["records"] = env_vars['records']
+            load_data()
+
+        #run the experiment
+        try:
+            experiment()
+        except:
+            traceback.print_exc(file=open(dir_path+"/errors", "w+"))
 
 
 

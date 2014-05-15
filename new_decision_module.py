@@ -338,7 +338,7 @@ class RLDecisionMaker:
         self.add_measurement([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
                               allmetrics['latency'], allmetrics['cpu'],
                               datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")],
-                             write_file=True, write_mem=(not pending_action))
+                             write_file=True, write_mem=((not pending_action) and bool(env_vars['update_metrics'])))
 
         # if there is a pending action, don't take a decision
         if pending_action:
@@ -401,6 +401,9 @@ class RLDecisionMaker:
         from_node = max(int(env_vars["min_cluster_size"]), (self.currentState - env_vars["rem_nodes"]))
         to_node = min(self.currentState + int(env_vars["add_nodes"]), int(env_vars["max_cluster_size"]))
         #self.my_logger.debug("TAKEDECISION creating graph from node: "+ str(from_node) +" to node "+ str(to_node))
+
+        #inject the current number of nodes
+        allmetrics['current_nodes'] = self.currentState
 
         states = fset.FuzzySet()
         # Calculate rewards using the values in memory if any, or defaults

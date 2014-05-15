@@ -10,6 +10,7 @@ from lib.scp import SCPClient
 from datetime import datetime, timedelta
 from persistance_module import env_vars
 from time import time
+import sys, traceback
 
 ssh_timeout = 10
 ssh_giveup_timeout = env_vars['ssh_giveup_timeout']
@@ -38,7 +39,11 @@ def run_ssh_command(host, user, command, indent=1, prefix="$: ", logger=None):
     if not logger is None:
         logger.debug("Connecting to SSH")
     timer = Timer.get_timer()
-    ssh.connect(host, username=user, timeout=ssh_timeout, pkey=private_key, allow_agent=False, look_for_keys=False)
+    try:
+        ssh.connect(host, username=user, timeout=ssh_timeout, pkey=private_key, allow_agent=False, look_for_keys=False)
+    except:
+        logger.error("Could not connect to "+ str(host))
+        traceback.print_exc()
     if not logger is None:
         logger.debug("connected in %d sec. Running SSH command" % timer.stop())
     timer.start()

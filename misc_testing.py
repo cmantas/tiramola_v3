@@ -1,11 +1,9 @@
 __author__ = 'cmantas'
 
 
-print "tralala %d %% " % 3
+print str(bool("False"))
 
+a = [0,1,2,3,4,5]
 
-test = 5
-
-test -= 1
-
-print test
+print a[:3]
+print a[3:]

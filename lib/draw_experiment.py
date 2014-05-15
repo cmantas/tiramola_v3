@@ -1,7 +1,7 @@
-import math, itertools, sys
-import numpy as np
-from matplotlib import use
-use('Agg')
+import itertools, sys
+import matplotlib
+matplotlib.use('Agg')
+
 import matplotlib.pyplot as pl
 
 from collections import deque

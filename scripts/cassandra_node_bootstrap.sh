@@ -14,17 +14,17 @@ echo "started bootstrap" > bootsrap.log
 # kill the cassandra process
 	CAS_PID=$(jps | grep CassandraDaemon | awk  '{print $1}')
 	echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
-	kill -9 $CAS_PID
+	kill $CAS_PID
 
 # clean previous files and logs
 	echo "Removing cassandra files and logs"
 	#cleaning cassandra files
 	rm -rf /var/lib/cassandra/*
 	rm /var/log/cassandra/system.log
-	#cleaning ctool rrds
+	#cleaning ganglia rrds
 	echo "Removing ganglia rrds"
 	rm -rf /var/lib/ganglia/rrds/*
-	rm /var/log/cassandra/system.log
+
 
 # find my IP
     my_priv_addr=""

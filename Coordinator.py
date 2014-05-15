@@ -51,6 +51,7 @@ def implement_decision():
 
 running_thread = None
 
+
 def run(timeout=None):
     """
     Runs cluster with automatic decision taking
@@ -158,3 +159,7 @@ def train():
 
     my_logger.info("TRAINING DONE")
 
+
+def test_vars():
+    print env_vars['gain']
+    print env_vars['max_cluster_size']

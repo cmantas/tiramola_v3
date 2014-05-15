@@ -65,10 +65,10 @@ def bootstrap_cluster(used):
     Runs the necessary boostrap commnands to each of the Seed Node and the other nodes
     """
     global stash, nodes
-    #assuming nodes is empty
+    #drecrement used to accommodate for the seednode
     used -= 1
     nodes = stash[:used]
-    stash = stash[used-1:]
+    stash = stash[used:]
     inject_hosts_files()
     log.info("Running bootstrap scripts")
     #bootstrap the seed node
@@ -97,9 +97,9 @@ def resume_cluster():
         log.info("No existing created cluster")
         return
     saved_cluster = loads(open(save_file, 'r').read())
-    saved_nodes = saved_cluster['nodes']
-    saved_seeds = saved_cluster['seeds']
-    saved_stash = saved_cluster['stash']
+    saved_nodes = list(set(saved_cluster['nodes']))
+    saved_seeds = list(set(saved_cluster['seeds']))
+    saved_stash = list(set(saved_cluster['stash']))
     nodes[:] = []
     seeds[:] = []
 
@@ -216,14 +216,12 @@ def add_nodes(count=1):
         #check if it has not finished yet fail if so
         if t.isAlive():
             log.error("Timeout occurred for adding a node, exiting")
-            exit(-1)
+            raise Exception("Node ADD was timed out for one node")
     #save the current cluster state
     save_cluster()
     #inform all
     inject_hosts_files()
     log.info("Finished adding %d nodes" % count)
-
-
 
 
 def remove_nodes(count=1):
@@ -235,9 +233,9 @@ def remove_nodes(count=1):
     for i in range(count):
         dead_guy = nodes.pop()
         log.info("Removing node %s" % dead_guy.name)
-        dead_guy.decommission()
         if action == "KEEP":
             stash[:] = [dead_guy] + stash
+        dead_guy.decommission()
         log.info("Node %s is removed" % dead_guy.name)
         save_cluster()
     inject_hosts_files()

@@ -1,4 +1,5 @@
 import itertools, sys
+from persistance_module import env_vars
 import matplotlib
 matplotlib.use('Agg')
 
@@ -33,6 +34,7 @@ def draw_exp(meas_file):
     #meas = open('/home/christina/tiramola/real_experiments/training-sets/90G-debugging/measurements-90G-states-10-14-clients-16-threads-200-target-10000.txt', 'r')
     meas.next() # Skip the first line with the headers of the columns
     mins = 0.0
+
     for line in meas:
         if not line.startswith('###') and not line.startswith('\n'):
             m = line.split('\t\t')
@@ -42,8 +44,12 @@ def draw_exp(meas_file):
             thr.append(float(m[2]))
             lat.append(float(m[3]))
             cpu.append(float(m[4]))
+#            datetime.strptime('2012-11-14 14:32:30', '%Y-%m-%d %H:%M:%S')
+            #t = time.strptime(m[5].rstrip(), "%Y-%m-%d %H:%M:%S")
             ticks.append(mins)
-            mins = mins + 0.5
+#            mins = mins + 0.5
+            mins += float(env_vars['metric_fetch_interval']) / 60
+
     meas.close()
 
     fig = pl.figure(1)
@@ -173,4 +179,7 @@ def draw_exp(meas_file):
     return
 
 if __name__ == '__main__':
-    draw_exp(sys.argv[1])
+    if len(sys.argv) == 2:
+        draw_exp(sys.argv[1])
+    else:
+        print 'Usage: python draw_experiment.py measurements_file'

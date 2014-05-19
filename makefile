@@ -3,6 +3,8 @@ default:
 	#doing nothing
 sync:
 	rsync -av * torchestrator:~/bin/tiramola
+pull_measurements:
+	scp -r torchestrator:/root/bin/tiramola/files/measurements/* files/measurements/	
 clean:
 	tiramola kill_nodes
 	tiramola kill_workload 

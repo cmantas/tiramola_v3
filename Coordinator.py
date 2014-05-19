@@ -19,6 +19,8 @@ decision = None
 monitoring_endpoint = Clients.get_monitoring_endpoint()
 monVms = MonitorVms(monitoring_endpoint)
 
+error = None
+
 #check if cluster exists
 if Servers.exists():
     my_logger.info( "Cluster exists using it as is")
@@ -36,20 +38,35 @@ def implement_decision():
     action = decision["action"]
     count = decision['count']
 
-    if action == "ADD":
-        decision_module.pending_action = action
-        my_logger.info("Will add %d nodes" % count)
-        Servers.add_nodes(count)
-    elif action == "REMOVE":
-        decision_module.pending_action = action
-        my_logger.info("Will remove %d nodes" % count)
-        Servers.remove_nodes(count)
-    elif action == "PASS":
-        return
-    decision_module.pending_action = None
-    decision_module.currentState = Servers.node_count()
+    try:
+        if action == "ADD":
+            decision_module.pending_action = action
+            my_logger.info("Will add %d nodes" % count)
+            Servers.add_nodes(count)
+        elif action == "REMOVE":
+            decision_module.pending_action = action
+            my_logger.info("Will remove %d nodes" % count)
+            Servers.remove_nodes(count)
+        elif action == "PASS":
+            return
+        sleep(env_vars['extra_decision_delay'])
+        decision_module.pending_action = None
+        decision_module.currentState = Servers.node_count()
+    except Exception as e:
+        #in case the action was failed set a globall error var as true
+        global error
+        error = e
 
 running_thread = None
+
+
+def check_for_error():
+    global error
+    if not (error is None):
+        my_logger.error("I detected an error in a previous action. Raising exception")
+        my_logger.error("Message:" + str(error))
+        error = None
+        raise error
 
 
 def run(timeout=None):
@@ -69,6 +86,9 @@ def run(timeout=None):
 
     # main loop that fetches metric and takes decisions
     while (timeout is None) or (time() <= timeout):
+
+        check_for_error()
+
         sleep(metrics_interval)
         # refresh the metrics
         all_metrics = monVms.refreshMetrics()

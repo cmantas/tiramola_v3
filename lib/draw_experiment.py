@@ -1,7 +1,7 @@
 import itertools, sys
 from persistance_module import env_vars
 import matplotlib
-matplotlib.use('Agg')
+#matplotlib.use('Agg')
 
 import matplotlib.pyplot as pl
 
@@ -165,7 +165,7 @@ def draw_exp(meas_file):
     ax1.plot(ticks, lat, 'black')#, t, my_inlambda, 'g-')
     ax1.set_xlabel('Time (min)')
     ax1.set_ylabel('Latency (msec)', color='black')
-    #ax1.set_ylim((0, 1500))
+    ax1.set_ylim((5, 40))
     ax1.grid(True)
 
     ax2 = ax1.twinx()

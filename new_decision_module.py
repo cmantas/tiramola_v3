@@ -101,11 +101,15 @@ class RLDecisionMaker:
                     # but add 1 zero measurement for each state for no load cases ??? too many 0s affect centroids?
 
         if write_file:
+            if write_mem:
+                used = "Yes"
+            else:
+                used = "No"
             ms = open(self.measurementsFile, 'a')
             # metrics[5] contains the time tick -- when running a simulation, it represents the current minute,
             # on actual experiments, it is the current time. Used for debugging and plotting
             ms.write(str(metrics[0]) + '\t\t' + str(metrics[1]) + '\t\t' + str(metrics[2]) + '\t\t' +
-                     str(metrics[3]) + '\t\t' + str(metrics[4]) + '\t\t' + str(metrics[5]) + '\n')
+                     str(metrics[3]) + '\t\t' + str(metrics[4]) + '\t\t' + str(metrics[5]) + '\t\t'+ used+'\n')
             ms.close()
 
     # param state: string Get the average metrics (throughput, latency) for this state.
@@ -331,8 +335,7 @@ class RLDecisionMaker:
             # except:
             #     pass
 
-
-        pending_action = not self.pending_action is None # true if there is no pending action
+        pending_action = not (self.pending_action is None) # true if there is no pending action
 
         #1. Save the current metrics to file and in memory only if there is no pending action.
         self.add_measurement([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],

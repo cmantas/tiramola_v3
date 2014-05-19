@@ -12,13 +12,13 @@ from Node import Node
 
 from lib.persistance_module import env_vars, get_script_text
 
-server_name = "test_node"
-flavor_id = 1;
-image_id = env_vars['cassandra_base_image']
+from VM import *
 
+t = Timer.get_timer()
+vms = get_all_vms()
+print t.stop()
 
+t = Timer.get_timer()
+vms = get_all_vms(True)
+print t.stop()
 
-
-node = Node("testing", "test", 0, create=True, wait=True, IPv4=True)
-
-print node

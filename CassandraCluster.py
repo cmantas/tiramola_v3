@@ -216,6 +216,7 @@ def add_nodes(count=1):
         #check if it has not finished yet fail if so
         if t.isAlive():
             log.error("Timeout occurred for adding a node, exiting")
+            t.__stop()
             raise Exception("Node ADD was timed out for one node")
     #save the current cluster state
     save_cluster()

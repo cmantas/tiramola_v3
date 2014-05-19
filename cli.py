@@ -190,14 +190,16 @@ def train():
 
 def auto_pilot():
     log.info("Running Tiramola Auto Provisioning super algorithm")
+    global minutes
     try:
-        global minutes
         minutes = int(args['time'])
-        secs = 60 * minutes
-        import Coordinator
-        Coordinator.run(secs)
     except KeyError as e:
         log.error("auto_pilot requires argument %s" % e.args[0])
+        return
+    secs = 60 * minutes
+    import Coordinator
+    Coordinator.run(secs)
+
 
 
 def experiment():
@@ -217,11 +219,8 @@ def experiment():
     except:
         pass
 
-    auto_pilot()
 
-    #kill the workload
-    kill_workload()
-
+    # create a directory for the experiment results
     global dir_path
     dir_path = "files/measurements/"+experiment_name
 
@@ -231,6 +230,17 @@ def experiment():
         mkdir(dir_path)
     except:
         log.error("Could not create experiment directory")
+
+    # run the tiramola automatic provisioning algorithm
+    try:
+        auto_pilot()
+    except:
+        traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+
+    #kill the workload
+    kill_workload()
+
+
 
     move("files/measurements/measurements.txt", dir_path)
 
@@ -332,6 +342,7 @@ function = parse_args()
 try:
     #just call the appropriate function with eval!
     eval(function+"()")
-except NameError:
+except NameError as ne:
     log.error("No such action")
+    print str(ne)
     info()

@@ -205,14 +205,23 @@ def auto_pilot():
 def experiment():
     try:
         experiment_name = args['name']
+        log.info("=======> EXPERIMENT: %s  <======" % experiment_name)
     except KeyError as e:
         log.error("experiment requires argument %s" % e.args[0])
         return
 
     log.info("Running a full experiment")
-    run_sinusoid()
+
+    #delete any previous measurements
     try:
-        #empty the contents of the coordinator.log
+        remove("files/measurements/measurements.txt", dir_path)
+    except:
+        pass
+
+    run_sinusoid()
+
+    #empty the contents of the coordinator.log
+    try:
         open('files/logs/Coordinator.log', 'w+').close()
         #f = open('file.txt', 'r+')
         #f.truncate()
@@ -223,7 +232,6 @@ def experiment():
     # create a directory for the experiment results
     global dir_path
     dir_path = "files/measurements/"+experiment_name
-
     if isdir(dir_path):
         dir_path += "_"+str(int(random()*1000))
     try:
@@ -239,8 +247,6 @@ def experiment():
 
     #kill the workload
     kill_workload()
-
-
 
     move("files/measurements/measurements.txt", dir_path)
 
@@ -307,7 +313,8 @@ def run_experiments():
     #run each one of the experiments
     for exp in exp_list:
         # overwrite the given env_vars
-        from lib.persistance_module import env_vars
+        from lib.persistance_module import env_vars, load_env_vars
+        load_env_vars()
         global o_ev
         o_ev = exp['env_vars']
         env_vars.update(o_ev)

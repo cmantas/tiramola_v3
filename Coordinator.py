@@ -49,7 +49,11 @@ def implement_decision():
             Servers.remove_nodes(count)
         elif action == "PASS":
             return
-        sleep(env_vars['extra_decision_delay'])
+
+        # artificially delay the decision in order to discard transient measurements
+        sleep(env_vars['extra_decision_delay_per_node']*count)
+
+        # update the state
         decision_module.pending_action = None
         decision_module.currentState = Servers.node_count()
     except Exception as e:

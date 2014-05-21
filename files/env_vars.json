@@ -31,10 +31,10 @@
     "decision_threshold": 0.05,
     "metric_fetch_interval": 5,
     "decision_interval": 180,
-    "extra_decision_delay": 180,
+    "extra_decision_delay_per_node": 60,
     "measurements_file": "files/measurements/measurements.txt",
     "training_file": "files/measurements/training_set.txt",
-    "records": 10000000,
+    "records": 3000000,
     "training_vars": {
         "target_load":8000,
         "offset_load": 6000,

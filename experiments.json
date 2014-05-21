@@ -1,43 +1,7 @@
 [
-
-     {
-     "name": "rel_gain2_no_RL_no_latency_smallData",
-     "time": "120",
-     "clean": 1,
-     "workload":{
-         "target": "6000",
-         "offset":"4000",
-         "period":"60"
-         },
-     "env_vars":{
-        "gain":"(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 ",
-        "update_metrics": 0,
-        "decision_interval": 120,
-        "decision_threshold": 0.05,
-        "records": 2000000
-        }
-      },
-
     {
-     "name": "old_gain_long",
-     "time": "360",
-     "clean": 1,
-     "workload":{
-         "target": "6000",
-         "offset":"4000",
-         "period":"120"
-         },
-     "env_vars":{
-        "gain":"(throughput * 0.035) - (num_nodes * 3.2) - (latency * 0.4)",
-        "update_metrics": 1,
-        "decision_interval": 120,
-        "decision_threshold": 0.05
-        }
-      },
-
-    {
-     "name": "rel_gain2_no_latency",
-     "time": "180",
+     "name": "rel_gain2_no_latency_longer",
+     "time": "240",
      "clean": 1,
      "workload":{
          "target": "6000",
@@ -52,26 +16,28 @@
         }
       },
 
-    {
-     "name": "rel_gain2_no_latency_long",
-     "time": "360",
+
+      {
+     "name": "rel_gain2_longer",
+     "time": "240",
      "clean": 1,
      "workload":{
          "target": "6000",
          "offset":"4000",
-         "period":"120"
+         "period":"60"
          },
      "env_vars":{
-        "gain":"(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 ",
+        "gain":"(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 - (latency -10) * 100",
         "update_metrics": 1,
         "decision_interval": 120,
         "decision_threshold": 0.05
         }
       },
 
+
      {
-     "name": "rel_gain2_no_latency_long_14K",
-     "time": "360",
+     "name": "rel_gain2_no_latency_longer_14K",
+     "time": "480",
      "clean": 1,
      "workload":{
          "target": "8000",
@@ -82,93 +48,8 @@
         "gain":"(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 ",
         "update_metrics": 1,
         "decision_interval": 120,
-        "decision_threshold": 0.05
-        }
-      },
-
-        {
-     "name": "rel_gain2_no_latency_extra_range",
-     "time": "180",
-     "clean": 1,
-     "workload":{
-         "target": "6000",
-         "offset":"4000",
-         "period":"60"
-         },
-     "env_vars":{
-        "gain":"(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 ",
-        "update_metrics": 1,
-        "decision_interval": 120,
         "decision_threshold": 0.05,
-        "max_cluster_size": 18
-        }
-      },
-
-      {
-     "name": "rel_gain2_long",
-     "time": "360",
-     "clean": 1,
-     "workload":{
-         "target": "6000",
-         "offset":"4000",
-         "period":"120"
-         },
-     "env_vars":{
-        "gain":"(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 - (latency -10) * 100",
-        "update_metrics": 1,
-        "decision_interval": 120,
-        "decision_threshold": 0.05
-        }
-      },
-
-      {
-     "name": "rel_gain2",
-     "time": "180",
-     "clean": 1,
-     "workload":{
-         "target": "6000",
-         "offset":"4000",
-         "period":"60"
-         },
-     "env_vars":{
-        "gain":"(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 - (latency -10) * 100",
-        "update_metrics": 1,
-        "decision_interval": 120,
-        "decision_threshold": 0.05
-        }
-      },
-
-    {
-     "name": "rel_gain_long",
-     "time": "360",
-     "clean": 1,
-     "workload":{
-         "target": "6000",
-         "offset":"4000",
-         "period":"120"
-         },
-     "env_vars":{
-        "gain":"(throughput - inlambda)*50 - (num_nodes * 200) - (latency -10) * 20",
-        "update_metrics": 1,
-        "decision_interval": 120,
-        "decision_threshold": 0.15
-        }
-      },
-
-      {
-     "name": "rel_gain",
-     "time": "180",
-     "clean": 1,
-     "workload":{
-         "target": "6000",
-         "offset":"4000",
-         "period":"60"
-         },
-     "env_vars":{
-        "gain":"(throughput - inlambda)*50 - (num_nodes * 200) - (latency -10) * 20",
-        "update_metrics": 1,
-        "decision_interval": 120,
-        "decision_threshold": 0.15
+        "max_cluster_size": 20
         }
       }
 ]

@@ -6,7 +6,7 @@ from os import remove
 from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
-from threading import Thread
+from multiprocessing import Process
 
 orchestrator = None     # the VM to which the others report to
 
@@ -75,7 +75,7 @@ def bootstrap_cluster(used):
     seeds[0].bootstrap()
     #bootstrap the rest of the nodes
     for n in nodes:
-        n.bootstrap(params={"seednode": seeds[0].get_private_addr()})
+        n.bootstrap()
     save_cluster()
     log.info("READY!!")
 
@@ -147,31 +147,35 @@ def kill_nodes():
     """
     log.info("Killing cassandra nodes")
     global seeds, nodes, stash
-    threads = []
+    procs = []
     for n in seeds+nodes+stash:
-        t=Thread(target=n.kill, args=())
-        threads.append(t)
-        t.start()
+        p=Process(target=n.kill, args=())
+        procs.append(p)
+        p.start()
     stash = nodes + stash
     nodes = []
     save_cluster()
-    for t in threads:
-        t.join()
+    for p in procs:
+        p.join()
 
 
 
 def inject_hosts_files():
     """
-    Creates a mapping of hostname -> IP for all the nodes in the cluster and injects it to all Nodes so that they
+    Creates a mappNng of hostname -> IP for all the nodes in the cluster and injects it to all Nodes so that they
     know each other by hostname. Also restarts the ganglia daemons
     :return:
     """
     log.info("Injecting host files")
     hosts = dict()
     for i in seeds+nodes:
-        hosts[i.name] = i.get_private_addr()
+        if(env_vars["private_netrwork"]):
+            hosts[i.name] = i.get_private_addr()
+        else:
+            hosts[i.name] = i.get_public_addr()
     #manually add  the entry for the seednode
-    hosts["cassandra_seednode"] = seeds[0].get_private_addr()
+    #hosts["cassandra_seednode"] = seeds[0].get_private_addr()
+    hosts["cassandra_seednode"] = seeds[0].get_public_addr()
     #add the host names to etc/hosts
     orchestrator.inject_hostnames(hosts, delete=cluster_name)
     for i in seeds+nodes:
@@ -191,7 +195,7 @@ def add_one_node():
             new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
     nodes.append(new_guy)
     new_guy.wait_ready()
-    new_guy.inject_hostnames(get_hosts(private=True), delete=cluster_name)
+    new_guy.inject_hostnames(get_hosts(private=env_vars["private_network"]), delete=cluster_name)
     new_guy.bootstrap()
     log.info("Node %s is live " % new_guy.name)
 
@@ -202,21 +206,21 @@ def add_nodes(count=1):
     :return:
     """
     log.info('Adding %d nodes' % count)
-    threads = []
-    #start the threads that add the nodes
+    procs = []
+    #start the procs that add the nodes
     for i in range(count):
-        t = Thread(target=add_one_node, args=())
-        threads.append(t)
-        t.start()
+        p = Process(target=add_one_node, args=())
+        procs.append(p)
+        p.start()
 
-    #wait for all the threads to finish
-    log.debug("Waiting for all the threads to finish adding")
-    for t in threads:
-        t.join(env_vars['add_node_timeout'])
+    #wait for all the procs to finish
+    log.debug("Waiting for all the procs to finish adding")
+    for p in procs:
+        p.join(env_vars['add_node_timeout'])
         #check if it has not finished yet fail if so
-        if t.isAlive():
+        if p.is_alive():
             log.error("Timeout occurred for adding a node, exiting")
-            t.__stop()
+            p.terminate()
             raise Exception("Node ADD was timed out for one node")
     #save the current cluster state
     save_cluster()
@@ -289,6 +293,16 @@ def get_monitoring_endpoint():
     """
     seeds[0].get_public_addr()
 
+
+def repair_cluster():
+    procs = []
+    for n in seeds+nodes:
+        log.info("Running repair on: " + n.name)
+        t=Process(target=n.run_command, args=("nodetool repair ycsb",))
+        procs.append(t)
+        t.start()
+    for t in procs:
+        t.join()
 
 #=============================== MAIN ==========================
 

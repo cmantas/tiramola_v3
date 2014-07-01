@@ -12,6 +12,13 @@ from lib.tiramola_logging import get_logger
 
 class RLDecisionMaker:
     def __init__(self, monitoring_endpoint, cluster_size=0):
+
+        #Create logger
+        LOG_FILENAME = 'files/logs/Coordinator.log'
+        self.log = get_logger('RLDecisionMaker', 'INFO', logfile=LOG_FILENAME)
+        self.log.info("Using 'gain' : " + env_vars['gain'] +" with threshold of "+str( env_vars["decision_threshold"]*100) + "% and interval: " + str(env_vars['decision_interval']))
+        self.log.info("Cluster Size from %d to %d nodes" % (env_vars['min_cluster_size'], env_vars['max_cluster_size']))
+
         self.monitoring_endpoint = monitoring_endpoint
         self.debug = False
         self.currentState = cluster_size
@@ -37,9 +44,7 @@ class RLDecisionMaker:
             self.memory[str(i)]['r'] = None
             self.memory[str(i)]['arrayMeas'] = None
 
-        #Create logger
-        LOG_FILENAME = 'files/logs/Coordinator.log'
-        self.log = get_logger('RLDecisionMaker', 'INFO', logfile=LOG_FILENAME)
+
 
         # Load any previous statics.
         self.measurementsFile = env_vars["measurements_file"]
@@ -380,8 +385,8 @@ class RLDecisionMaker:
         # Select values close to the current throughtput, define tha lambda range we're interested in -+ 5%
         #from_inlambda = 0.95 * allmetrics['inlambda']
         #to_inlambda = 1.05 * allmetrics['inlambda']
-        from_inlambda = allmetrics['inlambda'] - 1000 #- 3000
-        to_inlambda = allmetrics['inlambda'] + 1000 #+ 3000
+        from_inlambda = allmetrics['inlambda'] - 500 #- 3000
+        to_inlambda = allmetrics['inlambda'] + 500 #+ 3000
 
         if self.prediction:
             predicted_l = self.predict_load()

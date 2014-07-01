@@ -1,13 +1,14 @@
 {
     "cassandra_seed_bootstrap": "scripts/seednode_bootstrap.sh",
     "cassandra_node_bootstrap": "scripts/cassandra_node_bootstrap.sh",
-    "clients__bootstrap": "scripts/client_bootstrap.sh",
+    "clients_client_bootstrap": "scripts/client_bootstrap.sh",
     "cassandra_node_decommission": "scripts/cassandra_node_decommission.sh",
     "cassandra_node_kill": "scripts/cassandra_kill.sh",
     "cassandra_seed_kill": "scripts/cassandra_kill.sh",
-    "clients__kill": "scripts/cassandra_kill.sh",
-    "clients__load": "scripts/ycsb_load.sh",
-    "clients__run": "scripts/ycsb_run.sh",
-    "clients__run_sin": "scripts/ycsb_run_sin.sh"
+    "clients_client_kill": "scripts/ycsb_kill.sh",
+    "clients_client_load": "scripts/ycsb_load.sh",
+    "clients_client_run": "scripts/ycsb_run.sh",
+    "clients_client_run_sin": "scripts/ycsb_run_sin.sh",
+    "clients_client_bootstrap": "scripts/client_bootstrap.sh"
 
 }

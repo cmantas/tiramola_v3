@@ -2,6 +2,8 @@
 #########  YCSB WORKLOAD PARAMS  ########
 threads=200
 
+killall java
+
 echo "
 recordcount=1000
 workload=com.yahoo.ycsb.workloads.CoreWorkload

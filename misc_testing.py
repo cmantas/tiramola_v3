@@ -1,8 +1,22 @@
 __author__ = 'cmantas'
+from time import sleep
+from multiprocessing import Process
 
 
-print str(bool("False"))
+def func_sleep():
+    print "sleeping"
+    sleep(3)
+    print "end sleeping"
 
-a = [0,1,2,3,4,5]
 
-print 0.1+0.2
+
+
+# def __main__():
+
+print "hello"
+
+t = Process(target=func_sleep)
+t.start()
+t.join(1.0)
+t.terminate()
+print "thread joined alive: " + str(t.is_alive())

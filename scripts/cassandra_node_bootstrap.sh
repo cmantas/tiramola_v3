@@ -28,19 +28,14 @@ echo "started bootstrap" > bootsrap.log
 
 # find my IP
     my_priv_addr=""
-	#look for an IPv4 interface in range 10.0 and use that for the cassandra communication
-	let if_count=($(ifconfig | grep eth | wc -l ))-1
-	for i in $(seq 0 $if_count)
-	do	#look for IPv4 address
-		line=$(ifconfig eth$i | grep "inet addr:")
-		line=$(echo $line | awk '{print $2}')
-		address=$(echo $line | sed 's/addr://g')
-		if [[ "$address" == 10.0.* ]] ;
-		then
-			my_priv_addr=$address
-			break
-		fi
-	done
+    #look for an IPv4 interface in range 10.0 and use that for the cassandra communication
+    line=$(ifconfig eth2 | grep "inet addr:")
+    line=$(echo $line | awk '{print $2}')
+    address=$(echo $line | sed 's/addr://g')
+    my_priv_addr=$address
+    echo $my_priv_addr
+    
+
 
 # configure cassandra
     echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
@@ -61,7 +56,7 @@ echo "started bootstrap" > bootsrap.log
 
 # start cassandra
 	chmod -R o+rw /var/lib/cassandra
-	echo Starting casandra service, ganglia-monitor
+	echo "Starting casandra service, ganglia-monitor"
 	service cassandra start
 	service ganglia-monitor restart
 

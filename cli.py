@@ -7,6 +7,8 @@ from time import strftime
 from os.path import isdir
 from random import random
 from json import load, dumps
+from lib.persistance_module import reload_env_vars
+from time import sleep
 
 raw_args = sys.argv
 args = dict()
@@ -71,7 +73,7 @@ def run_sinusoid():
         offset = int(args["offset"])
         log.info("running sinusoid for target=%d, offset=%d, period=%d" % (target, offset, period))
         import ClientsCluster, CassandraCluster
-        svr_hosts = CassandraCluster.get_hosts(private=True)
+        svr_hosts = CassandraCluster.get_hosts(private=False)
         args['type'] = 'sinusoid'
         args['servers'] = svr_hosts
         ClientsCluster.run(args)
@@ -95,6 +97,16 @@ def create_cluster():
         CassandraCluster.create_cluster(nodes-1)
     except KeyError as e:
         log.info("create_cluster requires argument %s" % e.args[0])
+
+
+def create_clients():
+    try:
+        nodes = int(args["nodes"])
+        log.info("creating %d client nodes " % nodes)
+        import ClientsCluster
+        ClientsCluster.create_cluster(nodes)
+    except KeyError as e:
+        log.info("create_clients requires argument %s" % e.args[0])
 
 
 def add_clients():
@@ -201,6 +213,13 @@ def auto_pilot():
     Coordinator.run(secs)
 
 
+def monitor():
+    log.info("simply monitoring")
+    global  env_vars
+    env_vars["gain"] = '0'
+    auto_pilot()
+
+
 
 def experiment():
     try:
@@ -214,6 +233,7 @@ def experiment():
 
     #delete any previous measurements
     try:
+        global dir_path
         remove("files/measurements/measurements.txt", dir_path)
     except:
         pass
@@ -230,7 +250,6 @@ def experiment():
 
 
     # create a directory for the experiment results
-    global dir_path
     dir_path = "files/measurements/"+experiment_name
     if isdir(dir_path):
         dir_path += "_"+str(int(random()*1000))
@@ -252,7 +271,7 @@ def experiment():
 
     info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
            (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
-    from lib.persistance_module import env_vars
+    global env_vars
     info_long += "\ngain = " + env_vars['gain']
     info_long += "\ndecision_interval = " + str(env_vars['decision_interval'])
     info_long += "\ndecision_threshold = " + str(int(float(env_vars['decision_threshold'])*100)) + "%"
@@ -313,31 +332,44 @@ def run_experiments():
     #run each one of the experiments
     for exp in exp_list:
         # overwrite the given env_vars
-        from lib.persistance_module import env_vars, load_env_vars
-        load_env_vars()
-        global o_ev
+        from lib.persistance_module import env_vars
+        reload_env_vars()
+        global o_ev, env_vars
         o_ev = exp['env_vars']
+
         env_vars.update(o_ev)
+        #env_vars['gain']=o_ev['gain']
 
-        # re-construct the args dict
-        args = exp['workload']
-        args['time'] = exp['time']
-        args['name'] = exp['name']
+        if 'simulation' in exp and exp['simulation']:
+            simulate()
+        else:
+            # re-construct the args dict
+            args = exp['workload']
+            args['time'] = exp['time']
+            args['name'] = exp['name']
 
-        kill_workload()
-        if (not ('clean' in exp)) or bool(exp['clean']):
-            #clean-start the cluster by default or if clean is True
-            kill_nodes()
-            args["used"] = env_vars["min_cluster_size"]
-            bootstrap_cluster()
-            args["records"] = env_vars['records']
-            load_data()
+            kill_workload()
+            if (not ('clean' in exp)) or bool(exp['clean']):
+                #clean-start the cluster by default or if clean is True
+                kill_nodes()
+                args["used"] = env_vars["min_cluster_size"]
+                bootstrap_cluster()
+                sleep(30)
+                args["records"] = env_vars['records']
+                load_data()
+                sleep(2*60)
+                
 
-        #run the experiment
-        try:
-            experiment()
-        except:
-            traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+            #run the experiment
+            try:
+                experiment()
+            except:
+                traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+
+
+def repair():
+    import CassandraCluster
+    CassandraCluster.repair_cluster()
 
 
 

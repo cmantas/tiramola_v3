@@ -2,7 +2,8 @@ default:
 	tiramola auto_pilot minutes=1001
 	#doing nothing
 sync:
-	rsync -av * torchestrator:~/bin/tiramola
+	rsync -av --delete * root@torchestrator:~/bin/tiramola
+
 pull_measurements:
 	scp -r torchestrator:/root/bin/tiramola/files/measurements/* files/measurements/	
 clean:

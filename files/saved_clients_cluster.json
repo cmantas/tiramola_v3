@@ -1,7 +1,7 @@
 {
    "clients": [
-      "clients__1", 
-      "clients__2", 
-      "clients__3"
+    "clients_client_01",
+    "clients_client_02",
+    "clients_client_03"
    ]
 }

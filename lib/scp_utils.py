@@ -8,7 +8,7 @@ from socket import error as socketError
 sys.path.append('lib/scp.py')
 from lib.scp import SCPClient
 from datetime import datetime, timedelta
-from persistance_module import env_vars
+from lib.persistance_module import env_vars
 from time import time
 import sys, traceback
 
@@ -45,7 +45,7 @@ def run_ssh_command(host, user, command, indent=1, prefix="$: ", logger=None):
         logger.error("Could not connect to "+ str(host))
         traceback.print_exc()
     if not logger is None:
-        logger.debug("connected in %d sec. Running SSH command" % timer.stop())
+        logger.debug("connected in %d sec. now Running SSH command" % timer.stop())
     timer.start()
     ### EXECUTE THE COMMAND  ###
     stdin, stdout, stderr = ssh.exec_command(command)

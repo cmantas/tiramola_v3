@@ -5,6 +5,8 @@ offset=%s
 period=%s
 threads=200
 
+killall java
+
 echo "
 period=$period
 target=$target
@@ -23,6 +25,9 @@ requestdistribution=uniform
 hostsFile=/opt/hosts
 maxexecutiontime=1000000000
 " > my_workload
+
+#keep old run file
+mv ycsb_run.log "$(date)_ycsb_run.log"
 
 /etc/YCSB/bin/ycsb run cassandra-cql -P my_workload -threads $threads  -s &> /root/ycsb_run.log &
 

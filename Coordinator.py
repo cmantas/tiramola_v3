@@ -8,13 +8,14 @@ from new_decision_module import RLDecisionMaker as DM
 from lib.tiramola_logging import get_logger
 from time import time
 from os import remove
-from threading import Thread
+from multiprocessing import Process
 
 #######  STATIC VARS  ###############
 my_logger = get_logger('COORDINATOR', 'INFO', logfile='files/logs/Coordinator.log')
 my_logger.debug("--------- NEW RUN  -----------------")
 #the (pending) decision at the present moment
 decision = None
+running_process=None
 #get the endpoint for the monitoring system
 monitoring_endpoint = Clients.get_monitoring_endpoint()
 monVms = MonitorVms(monitoring_endpoint)
@@ -43,15 +44,15 @@ def implement_decision():
             decision_module.pending_action = action
             my_logger.info("Will add %d nodes" % count)
             Servers.add_nodes(count)
+            # artificially delay the decision in order to discard transient measurements
+            sleep(env_vars['extra_decision_delay_per_node']*count)
         elif action == "REMOVE":
             decision_module.pending_action = action
             my_logger.info("Will remove %d nodes" % count)
             Servers.remove_nodes(count)
-        elif action == "PASS":
-            return
-
-        # artificially delay the decision in order to discard transient measurements
-        sleep(env_vars['extra_decision_delay_per_node']*count)
+            #not supposed to be here for pass decsion
+#         elif action == "PASS":
+#             return
 
         # update the state
         decision_module.pending_action = None
@@ -61,7 +62,7 @@ def implement_decision():
         global error
         error = e
 
-running_thread = None
+running_process = None
 
 
 def check_for_error():
@@ -69,7 +70,7 @@ def check_for_error():
     if not (error is None):
         my_logger.error("I detected an error in a previous action. Raising exception")
         my_logger.error("Message:" + str(error))
-        error = None
+        running_process.terminate()
         raise error
 
 
@@ -78,8 +79,14 @@ def run(timeout=None):
     Runs cluster with automatic decision taking
     @param timeout: the time in seconds this run should last
     """
+    my_logger.debug("run: Time starts now, the experiment will take %d sec" % (timeout))
     # convert relative timeout to absolute time
     if not timeout is None: timeout = time() + timeout
+    my_logger.debug("run: start time: %d - end time: %d" % (time(), timeout))
+
+    #set global error to None
+    global error
+    error = None
 
     #init the decision module
     global decision_module
@@ -102,13 +109,17 @@ def run(timeout=None):
         decision = decision_module.take_decision(all_metrics)
 
         # asynchronously implement that decision
-        global running_thread
-        running_thread = Thread(target=implement_decision, args=())
-        running_thread.start()
+        if(decision["action"]=="PASS"):
+            continue
+        global running_process
+        if not running_process is None:
+            running_process.join()
+        running_process = Process(target=implement_decision, args=())
+        running_process.start()
 
     # DONE
-    #join the running_thread
-    running_thread.join()
+    #join the running_process
+    running_process.join()
     my_logger.info(" run is finished")
 
 

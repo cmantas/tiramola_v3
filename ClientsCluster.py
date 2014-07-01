@@ -15,6 +15,7 @@ all_nodes = []            # the clients of the cluster
 
 # the name of the cluster is used as a prefix for the VM names
 cluster_name = "clients"
+node_type = "client"
 
 # the save file for saving/reloading the active cluster
 save_file = "files/saved_%s_cluster.json" % cluster_name
@@ -56,7 +57,6 @@ def resume_cluster():
         saved_nodes = saved_cluster['clients']
 
     in_nodes = Node.get_all_nodes(check_active=True)
-
     for n in in_nodes:
         if n.name not in saved_nodes:
             if "orchestrator" in n.name:
@@ -82,13 +82,19 @@ def save_cluster():
     f.write(string)
 
 
-def kill_nodes():
-    """
-    Runs the kill scripts for all the nodes in the cluster
-    """
-    log.info("Killing client nodes")
-    for n in all_nodes:
-        n.kill()
+def create_cluster(count=1):
+    global clients
+    clients = []
+    for i in range(count):
+        clients.append(Node(cluster_name, node_type="client", number="%02d" % (i+1), create=True, IPv4=True))
+
+    #save the cluster to file
+    save_cluster()
+    #wait until everybody is ready
+    wait_everybody()
+    find_orchestrator()
+    inject_hosts_files()
+    log.info('Every node is ready for SSH')
 
 
 def inject_hosts_files():
@@ -100,11 +106,31 @@ def inject_hosts_files():
     log.info("Injecting host files")
     hosts = dict()
     for i in all_nodes:
-        hosts[i.name] = i.get_private_addr()
+        hosts[i.name] = i.get_public_addr()
+    #add the host names to etc/hosts
     orchestrator.inject_hostnames(hosts, delete=cluster_name)
     for i in all_nodes:
         i.inject_hostnames(hosts, delete=cluster_name)
+    all_nodes[0].run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
     orchestrator.run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
+
+
+def bootstrap_cluster():
+    """
+    Runs the necessary boostrap commnands to each of the Seed Node and the other nodes
+    """
+    for n in all_nodes:
+        n.bootstrap()
+    inject_hosts_files()
+
+
+def kill_nodes():
+    """
+    Runs the kill scripts for all the nodes in the cluster
+    """
+    log.info("Killing client nodes")
+    for n in all_nodes:
+        n.kill()
 
 
 def add_nodes(count=1):
@@ -150,6 +176,9 @@ def remove_nodes(count=1):
 
 
 def run(params):
+
+    bootstrap_cluster()
+
     run_type = params['type']
 
     # generate ycsb-specific hosts file text
@@ -161,7 +190,8 @@ def run(params):
     if run_type=='stress':
         for c in all_nodes:
             load_command = "echo '%s' > /opt/hosts;" % host_text
-            load_command += get_script_text(cluster_name, '', "run")
+            load_command += get_script_text(cluster_name, node_type, "run")
+            #load_command += get_script_text(cluster_name, '', "run")
             log.info("running stress workload on %s" % c.name)
             c.run_command(load_command, silent=True)
     elif run_type == 'sinusoid':
@@ -170,7 +200,8 @@ def run(params):
         period = int(params['period'])
         for c in all_nodes:
             load_command = "echo '%s' > /opt/hosts;" % host_text
-            load_command += get_script_text(cluster_name, "", "run_sin") % (target, offset, period)
+            load_command += get_script_text(cluster_name, node_type, "run_sin") % (target, offset, period)
+            #load_command += get_script_text(cluster_name, "", "run_sin") % (target, offset, period)
             log.info("running sinusoid on %s" % c.name)
             c.run_command(load_command, silent=True)
     elif run_type == 'load':
@@ -180,7 +211,8 @@ def run(params):
         threads = []
         for c in all_nodes:
             load_command = "echo '%s' > /opt/hosts;" % host_text
-            load_command += get_script_text(cluster_name, "", "load") % (str(record_count), str(step), str(start))
+            load_command += get_script_text(cluster_name, node_type, "load") % (str(record_count), str(step), str(start))
+            #load_command += get_script_text(cluster_name, "", "load") % (str(record_count), str(step), str(start))
             log.info("running load phase on %s" % c.name)
             t = Thread(target=c.run_command, args=(load_command,) )
             threads.append(t)

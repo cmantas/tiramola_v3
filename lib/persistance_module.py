@@ -16,13 +16,13 @@ db_file = "files/persistance.db"
 env_vars = None
 
 
-def load_env_vars():
+def reload_env_vars():
     global env_vars
-    env_vars = json.loads(open(ENV_VARS_FILE, 'r').read())
+    env_vars.update(json.loads(open(ENV_VARS_FILE, 'r').read()))
 
 
 #load the env vars from file
-load_env_vars()
+env_vars = json.loads(open(ENV_VARS_FILE, 'r').read())
 
 #load the openstack names from file
 openstack_names = json.loads(open(OPENSTACK_NAMES_FILE, 'r').read())

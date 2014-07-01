@@ -57,7 +57,7 @@ class Node (VM):
         self.log.debug("cluster = "+self.cluster_name)
         self.addresses = vm.addresses
 
-    def bootstrap(self, params=None):
+    def bootstrap(self):
         """
         Runs the required bootstrap scripts on the node
         """

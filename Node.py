@@ -11,11 +11,7 @@ class Node (VM):
     Class that represents a node a cluster. extends VM
     """
 
-    ### you should specify the image
-    flavor = env_vars["default_flavor"]
-    image = env_vars["default_image"]
-
-    def __init__(self, cluster_name='', node_type='', number=0, create=False, IPv4=False, wait=False, vm=None):
+    def __init__(self, cluster_name='', node_type='', number=0, create=False, IPv4=False, wait=False, vm=None, flavor=None, image=None):
         """
         Creates a Node object.
         :param cluster_name:
@@ -23,15 +19,27 @@ class Node (VM):
         :param create: if True then the actual VM will be created
         :param vm: used to create a Node from a pre-existing VM
         """
+
         self.bootstraped = False
         self.name = cluster_name + "_" + node_type + "_" + str(number)
         self.type = node_type
         self.number = number
         self.cluster_name = cluster_name
+
+        if flavor is None:
+            self.flavor = env_vars["default_flavor"]
+        else:
+            self.flavor = flavor
+        if image is None:
+            self.image = env_vars["default_image"]
+        else:
+            self.image = image
+
         if not vm is None:
             # init a node from a VM
             self.from_vm(vm)
         else:
+            #create a VM for this node
             super(Node, self).__init__(self.name, self.flavor, self.image, IPv4=IPv4, create=create, wait=wait)
 
     def __str__(self):

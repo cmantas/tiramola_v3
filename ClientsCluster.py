@@ -20,9 +20,10 @@ node_type = "client"
 # the save file for saving/reloading the active cluster
 save_file = "files/saved_%s_cluster.json" % cluster_name
 
-# the flavor and image for the VMs used int the cluster
-Node.flavor = env_vars["default_flavor"]
-Node.image = env_vars["cassandra_base_image"]
+# the flavor and image for this cluster's VMs
+flavor = env_vars["client_flavor"]
+image = env_vars["cassandra_base_image"]
+
 # the logger for this file
 log = get_logger('CLIENTS', 'INFO', logfile='files/logs/Coordinator.log')
 
@@ -83,10 +84,11 @@ def save_cluster():
 
 
 def create_cluster(count=1):
-    global clients
-    clients = []
+    global all_nodes
+    all_nodes = []
     for i in range(count):
-        clients.append(Node(cluster_name, node_type="client", number="%02d" % (i+1), create=True, IPv4=True))
+        all_nodes.append(Node(cluster_name, node_type="client", number="%02d" % (i+1), create=True, IPv4=True,
+                            flavor=flavor, image=image))
 
     #save the cluster to file
     save_cluster()

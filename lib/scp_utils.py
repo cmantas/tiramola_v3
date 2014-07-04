@@ -84,7 +84,7 @@ def test_ssh(host, user, logger=None):
     try:
         rv = run_ssh_command(host, user, 'echo success', logger=logger)
         return True
-    except socketError:
+    except:
         return False
     # except:
     #     print "error in connecting ssh:", sys.exc_info()[0]

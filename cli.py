@@ -44,7 +44,7 @@ tiramola add_nodes [count=2]
 tiramola remove_nodes [count=2]
 tiramola kill_workload
 tiramola kill_nodes
-tiramola destroy_all
+tiramola destroy_servers
 tiramola add_clients count=2
 tiramola train
 tiramola auto_pilot time=60 #time in minutes
@@ -151,9 +151,14 @@ def bootstrap_cluster():
         log.error("bootstrap_cluster requires argument %s" % e.args[0])
 
 
-def destroy_all():
+def destroy_servers():
     import CassandraCluster
     CassandraCluster.destroy_all()
+
+
+def destroy_clients():
+    import ClientsCluster
+    ClientsCluster.destroy_all()
 
 
 def hosts():

@@ -65,21 +65,23 @@ def create_vm(name, flavor_id, image_id, IPv4, logger):
     """
     networks = [{'uuid': env_vars['cassandra_network_id']}]
     if IPv4: networks.append({'uuid': 2216})
-
+    vm_id = -1
     try:
+        logger.info("creating flavor %d, image %s" % (flavor_id, image_id))
         my_dict = cyclades_client.create_server(name, flavor_id, image_id, personality=personality('root'),
                                                 networks=networks)
         vm_id = my_dict['id']
 
-    except ClientError:
-        stderr.write('Failed while creating server %s' % name)
-        raise
-
-        s="\n ============== SYNNEFO INFO ======================\n\n"
-        from json import dumps
-        s += dumps(my_dict, indent=2)
-        s += "\n ============== END SYNNEFO INFO ======================\n\n"
-        logger.debug(" Synnefo created the server. Info :\n\n%s" % s)
+    except ClientError as e:
+        logger.error("failed to create server with kamaki")
+        logger.error(e)
+        # print('Error: %s' % e)
+        # if e.status:
+        #     print('- error code: %s' % e.status)
+        # if e.details:
+        #     for detail in e.details:
+        #         print('- %s' % detail)
+        raise Exception("Failed creating server")
     return vm_id
 
 

@@ -93,7 +93,11 @@ class VM (object):
         #start the timer
         timer = Timer()
         timer.start()
-        self.id = iaas.create_vm(self.name, self.flavor_id, self.image_id, self.IPv4, LOGS_DIR+"/%s.log" % self.name)
+        try:
+            self.id = iaas.create_vm(self.name, self.flavor_id, self.image_id, self.IPv4, self.log)
+        except Exception as e:
+            self.log.error(e)
+            exit(-1)
         new_status = iaas.get_vm_status(self.id)
         delta = timer.stop()
         if new_status == 'ERROR':

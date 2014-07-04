@@ -10,75 +10,21 @@ from json import load, dumps
 from lib.persistance_module import reload_env_vars
 from time import sleep
 
-raw_args = sys.argv
-args = dict()
+
+## global logger
+log = get_logger("EXPERIMENT", 'INFO')
 
 
-def parse_args():
-    chosen_function = raw_args[1]
-    global args
-    for arg in raw_args[2:]:
-        i = arg.find("=")
-        if i == -1:
-            args[arg] = True
-        else:
-            key = arg[:i]
-            value = arg[i+1:]
-            args[key] = value
-    return chosen_function
-
-log = get_logger("CLI", 'INFO')
-
-##############################  AVAILABLE ACTIONS  #######################################
-
-
-def info():
-        print """==============   USAGE   ==================
-tiramola hosts
-tiramola private_hosts
-tiramola create_cluster nodes=2 clients=2
-tiramola bootstrap_cluster used=8
-tiramola load_data records=100000
-tiramola run_sinusoid target=100 offset=80 period=60 #period time in minutes
-tiramola add_nodes [count=2]
-tiramola remove_nodes [count=2]
-tiramola kill_workload
-tiramola kill_nodes
-tiramola destroy_all
-tiramola add_clients count=2
-tiramola train
-tiramola auto_pilot time=60 #time in minutes
-"""
-
-
-def load_data():
-    try:
-        record_count = int(args["records"])
-        log.info("Loading %d records in the cluster" % record_count)
-        import CassandraCluster, ClientsCluster
-        svr_hosts = CassandraCluster.get_hosts(private=True)
-        args['type'] = 'load'
-        args['servers'] = svr_hosts
-        ClientsCluster.run(args)
-    except KeyError as e:
-        log.info("record_count requires argument %s" % e.args[0])
-
-
-def run_sinusoid():
-    try:
-        global target, period, offset
-        target = int(args["target"])
-        period = 60 * int(args["period"])
-        args["period"] = period
-        offset = int(args["offset"])
-        log.info("running sinusoid for target=%d, offset=%d, period=%d" % (target, offset, period))
+def run_sinusoid(target, period, offset):
         import ClientsCluster, CassandraCluster
         svr_hosts = CassandraCluster.get_hosts(private=False)
+        args = dict()
+        args["target"] = target
+        args["period"] = period
         args['type'] = 'sinusoid'
         args['servers'] = svr_hosts
+        args['offset'] =offset
         ClientsCluster.run(args)
-    except KeyError as e:
-        log.info("run_sinusoid requires argument %s" % e.args[0])
 
 
 def run_stress():
@@ -89,136 +35,22 @@ def run_stress():
     ClientsCluster.run(params)
 
 
-def create_cluster():
-    try:
-        nodes = int(args["nodes"])
-        log.info("creating cluster with %d nodes " % nodes)
-        import CassandraCluster
-        CassandraCluster.create_cluster(nodes-1)
-    except KeyError as e:
-        log.info("create_cluster requires argument %s" % e.args[0])
-
-
-def create_clients():
-    try:
-        nodes = int(args["nodes"])
-        log.info("creating %d client nodes " % nodes)
-        import ClientsCluster
-        ClientsCluster.create_cluster(nodes)
-    except KeyError as e:
-        log.info("create_clients requires argument %s" % e.args[0])
-
-
-def add_clients():
-    if "count" in args.keys():
-        count = int(args['count'])
-    else:
-        count = 1;
-    log.info("adding %d clients" % count)
-    import ClientsCluster
-    ClientsCluster.add_nodes(count)
-
-
-def remove_clients():
-    if "count" in args.keys():
-        count = int(args['count'])
-    else:
-        count = 1;
-    log.info("removing %d clients" % count)
-    import ClientsCluster
-    ClientsCluster.remove_nodes(count)
-
-
 def kill_workload():
     log.info("killing workload")
     import ClientsCluster
     ClientsCluster.kill_nodes()
 
 
-def kill_nodes():
-    log.info("killing cassandra nodes")
-    import CassandraCluster
-    CassandraCluster.kill_nodes()
-
-
-def bootstrap_cluster():
-    try:
-        used = int(args['used'])
-        log.info('Bootstraping Cluster with %d nodes' % used)
-        import CassandraCluster
-        CassandraCluster.bootstrap_cluster(used)
-    except KeyError as e:
-        log.error("bootstrap_cluster requires argument %s" % e.args[0])
-
-
-def destroy_all():
-    import CassandraCluster
-    CassandraCluster.destroy_all()
-
-
-def hosts():
-    import CassandraCluster, ClientsCluster
-    svr_hosts = CassandraCluster.get_hosts(include_stash=True)
-    clnt_hosts = ClientsCluster.get_hosts()
-    hosts = dict(svr_hosts.items() + clnt_hosts.items())
-    rv = ""
-    for h in hosts.keys():
-            rv += hosts[h] + " " + h + "\n"
-    print rv
-
-
-def private_hosts():
-    import CassandraCluster
-    hosts = CassandraCluster.get_hosts(include_clients=True, private=True)
-    rv = ""
-    for h in hosts.keys():
-            rv += hosts[h] + " " + h + "\n"
-    print rv
-
-
-def add_nodes():
-    if "count" in args.keys():
-        count = int(args['count'])
-    else:
-        count = 1;
-    import CassandraCluster
-    CassandraCluster.add_nodes(count)
-
-
-def remove_nodes():
-    if "count" in args.keys():
-        count = int(args['count'])
-    else:
-        count = 1;
-    import CassandraCluster
-    CassandraCluster.remove_nodes(count)
-
-
-def train():
-    log.info(" Will run training routine. WARNING: will start workload automatically")
-    import Coordinator
-    Coordinator.train()
-
-
-def auto_pilot():
+def auto_pilot(minutes):
     log.info("Running Tiramola Auto Provisioning super algorithm")
-    global minutes
-    try:
-        minutes = int(args['time'])
-    except KeyError as e:
-        log.error("auto_pilot requires argument %s" % e.args[0])
-        return
     secs = 60 * minutes
     import Coordinator
     Coordinator.run(secs)
 
-
-def monitor():
+def monitor(minutes):
     log.info("simply monitoring")
     global  env_vars
     env_vars["gain"] = '0'
-    auto_pilot()
-
 
 
 def experiment():
@@ -268,7 +100,6 @@ def experiment():
     kill_workload()
 
     move("files/measurements/measurements.txt", dir_path)
-    #move("files/VM_logs", dir_path)
 
     info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
            (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
@@ -359,31 +190,10 @@ def run_experiments():
                 args["records"] = env_vars['records']
                 load_data()
                 sleep(2*60)
-                
+
 
             #run the experiment
             try:
                 experiment()
-            except Exception, err:
-                print traceback.format_exc()
+            except:
                 traceback.print_exc(file=open(dir_path+"/errors", "w+"))
-
-
-def repair():
-    import CassandraCluster
-    CassandraCluster.repair_cluster()
-
-
-
-############################   MAIN  ################################################
-
-
-function = parse_args()
-
-try:
-    #just call the appropriate function with eval!
-    eval(function+"()")
-except NameError as ne:
-    log.error("No such action")
-    print str(ne)
-    info()

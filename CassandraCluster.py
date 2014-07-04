@@ -93,6 +93,7 @@ def resume_cluster():
     """
     Re-loads the cluster representation based on the VMs pre-existing on the IaaS and the 'save_file'
     """
+    global nodes, seeds, stash
     if not isfile(save_file):
         log.info("No existing created cluster")
         return
@@ -159,7 +160,6 @@ def kill_nodes():
         p.join()
 
 
-
 def inject_hosts_files():
     """
     Creates a mappNng of hostname -> IP for all the nodes in the cluster and injects it to all Nodes so that they
@@ -167,15 +167,7 @@ def inject_hosts_files():
     :return:
     """
     log.info("Injecting host files")
-    hosts = dict()
-    for i in seeds+nodes:
-        if(env_vars["private_netrwork"]):
-            hosts[i.name] = i.get_private_addr()
-        else:
-            hosts[i.name] = i.get_public_addr()
-    #manually add  the entry for the seednode
-    #hosts["cassandra_seednode"] = seeds[0].get_private_addr()
-    hosts["cassandra_seednode"] = seeds[0].get_public_addr()
+    hosts = get_hosts(private=env_vars["private_network"], include_stash=True)
     #add the host names to etc/hosts
     orchestrator.inject_hostnames(hosts, delete=cluster_name)
     for i in seeds+nodes:
@@ -184,18 +176,20 @@ def inject_hosts_files():
     orchestrator.run_command("service ganglia-monitor restart; service gmetad restart", silent=True)
 
 
-def add_one_node():
+def add_one_node(stash_index):
     """
     Helper function for add_nodes
     """
+    log.info("adding node no:"+ str(stash_index))
     if not len(stash) == 0:
-            new_guy = stash.pop(0)
+            new_guy = stash[stash_index]
             log.info("Using %s from my stash" % new_guy.name)
     else:
-            new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
-    nodes.append(new_guy)
+            raise Exception("Adding a node out of stash is not implemented yet")
+            #new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
+
     new_guy.wait_ready()
-    new_guy.inject_hostnames(get_hosts(private=env_vars["private_network"]), delete=cluster_name)
+    new_guy.inject_hostnames(get_hosts(private=env_vars["private_network"], include_stash=True), delete=cluster_name)
     new_guy.bootstrap()
     log.info("Node %s is live " % new_guy.name)
 
@@ -206,10 +200,12 @@ def add_nodes(count=1):
     :return:
     """
     log.info('Adding %d nodes' % count)
+    global nodes, seeds, stash
     procs = []
+
     #start the procs that add the nodes
     for i in range(count):
-        p = Process(target=add_one_node, args=())
+        p = Process(target=add_one_node, args=(i,))
         procs.append(p)
         p.start()
 
@@ -217,11 +213,16 @@ def add_nodes(count=1):
     log.debug("Waiting for all the procs to finish adding")
     for p in procs:
         p.join(env_vars['add_node_timeout'])
+
         #check if it has not finished yet fail if so
         if p.is_alive():
             log.error("Timeout occurred for adding a node, exiting")
             p.terminate()
             raise Exception("Node ADD was timed out for one node")
+
+    #housekeeping for the stash and nodes list
+    nodes += stash[:count]
+    del stash[:count]
     #save the current cluster state
     save_cluster()
     #inform all
@@ -256,7 +257,7 @@ def destroy_all():
     remove(save_file)
 
 
-def get_hosts(string=False, private=False):
+def get_hosts(string=False, private=False, include_stash=False):
     """
     Produces a mapping of hostname-->IP for the nodes in the cluster
     :param string: if True the output is a string able to be appended in /etc/hosts
@@ -264,6 +265,8 @@ def get_hosts(string=False, private=False):
     """
     hosts = dict()
     all_nodes = seeds + nodes
+    if include_stash:
+        all_nodes += stash
     for i in all_nodes:
         if private:
             hosts[i.name] = i.get_private_addr()

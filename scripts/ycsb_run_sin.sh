@@ -3,7 +3,7 @@
 target=%s
 offset=%s
 period=%s
-threads=200
+threads=100
 
 killall java
 

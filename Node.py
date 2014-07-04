@@ -62,12 +62,12 @@ class Node (VM):
         Runs the required bootstrap scripts on the node
         """
         command = ""
-        self.log.info("running bootstrap script")
+        self.log.debug("running bootstrap script")
         command += get_script_text(self.cluster_name, self.type, "bootstrap")
         timer = Timer.get_timer()
         rv = self.run_command(command)
         self.log.debug("command returned:\n"+rv)
-        self.log.info("is now bootstrapped (took %d sec)" % timer.stop())
+        self.log.debug("is now bootstrapped (took %d sec)" % timer.stop())
         self.bootstraped = True
 
     def decommission(self):

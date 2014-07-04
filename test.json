@@ -1,0 +1,23 @@
+[
+    {
+     "name": "test",
+     "time": "60",
+     "clean": 1,
+     "workload":{
+         "target": "2000",
+         "offset":"1500",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"num_nodes",
+        "update_metrics": 1,
+        "decision_interval": 30,
+        "decision_threshold": 0.05,
+         "add_nodes": 2,
+         "min_cluster_size": 2,
+        "max_cluster_size":9,
+         "records": 1000
+        }
+      }
+
+]

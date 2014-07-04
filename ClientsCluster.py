@@ -184,6 +184,7 @@ def run(params):
     # generate ycsb-specific hosts file text
     host_text = ""
     servers = params['servers']
+    del servers["cassandra_seednode"]
     for key, value in servers.iteritems(): host_text += value+"\n"
 
     #choose type of run and do necessary actions

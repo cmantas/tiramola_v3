@@ -1,4 +1,22 @@
-[       
+[
+         {
+     "name": "rel_gain2.4_no_latency_14K_1hr_20nodes_max",
+     "time": "180",
+     "clean": 1,
+     "workload":{
+         "target": "8000",
+         "offset":"6000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"(throughput - inlambda)*20 - (num_nodes - current_nodes)*120 ",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "decision_threshold": 0.05,
+        "max_cluster_size": 20
+        }
+      },
+
     {
      "name": "rel_gain2.4_no_latency_10K_2hr_20nodes_max",
      "time": "360",
@@ -16,23 +34,7 @@
         "max_cluster_size": 20
         }
       },
-     {
-     "name": "rel_gain2.4_no_latency_14K_1hr_20nodes_max",
-     "time": "180",
-     "clean": 1,
-     "workload":{
-         "target": "8000",
-         "offset":"6000",
-         "period":"60"
-         },
-     "env_vars":{
-        "gain":"(throughput - inlambda)*20 - (num_nodes - current_nodes)*120 ",
-        "update_metrics": 1,
-        "decision_interval": 180,
-        "decision_threshold": 0.05,
-        "max_cluster_size": 20
-        }
-      },
+
 
     {
      "name": "rel_gain2.2_10K_1hr_20nodes_max",

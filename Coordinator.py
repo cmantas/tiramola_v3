@@ -8,7 +8,7 @@ from new_decision_module import RLDecisionMaker as DM
 from lib.tiramola_logging import get_logger
 from time import time
 from os import remove
-from multiprocessing import Process
+from threading import Thread
 
 #######  STATIC VARS  ###############
 my_logger = get_logger('COORDINATOR', 'INFO', logfile='files/logs/Coordinator.log')
@@ -114,7 +114,7 @@ def run(timeout=None):
         global running_process
         if not running_process is None:
             running_process.join()
-        running_process = Process(target=implement_decision, args=())
+        running_process = Thread(target=implement_decision, args=())
         running_process.start()
 
     # DONE

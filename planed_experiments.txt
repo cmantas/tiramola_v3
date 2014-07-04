@@ -1,0 +1,8 @@
+now
+2.3 no_lat 10 1hr 20max  (2 hours total)
+2.1 no_lat 14K 2hr 20max
+
+later
+
+2.2 12k 1hr
+2.2 12k 2hr

@@ -1,22 +1,25 @@
 __author__ = 'cmantas'
-from time import sleep
-from multiprocessing import Process
-
-
-def func_sleep():
-    print "sleeping"
-    sleep(3)
-    print "end sleeping"
 
 
 
+from multiprocessing import Process, Value, Array
 
-# def __main__():
+def f(n, a):
+    n.value = 3.1415927
+    for i in range(len(a)):
+        a[i] = -a[i]
 
-print "hello"
+if __name__ == '__main__':
+    num = Value('d', 0.0)
+    arr = Array('i', range(10))
+    print arr[:]
+    p = Process(target=f, args=(num, arr))
+    p.start()
+    p.join()
 
-t = Process(target=func_sleep)
-t.start()
-t.join(1.0)
-t.terminate()
-print "thread joined alive: " + str(t.is_alive())
+    print num.value
+    print arr[:]
+
+    list = [0,1,2,4]
+    del list[:2]
+    print list

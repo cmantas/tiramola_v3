@@ -1,7 +1,7 @@
 __author__ = 'cmantas'
 from sys import stderr
 from os.path import exists
-from os import mkdir, remove
+from os import mkdir, remove, makedirs
 from time import time, sleep
 import ntpath
 import thread
@@ -51,6 +51,8 @@ class VM (object):
         self.addresses = []
         self.id = -1
         self.IPv4 = IPv4
+        if not exists(LOGS_DIR):
+            makedirs(LOGS_DIR)
         self.logfile = "%s/%s.log" % (LOGS_DIR, self.name)
         self.log = get_logger('[%s]' % self.name, 'INFO', logfile=self.logfile)
         if create:
@@ -219,7 +221,7 @@ class VM (object):
         if not self.created:
             self.log.debug("Not active yet. Sleeping")
             while not self.created:  sleep(3)
-        self.log.info("Waiting for SSH daemon (%s)" % self.get_public_addr())
+        self.log.debug("Waiting for SSH daemon (%s)" % self.get_public_addr())
         #time to stop trying
         end_time = datetime.now()+timedelta(seconds=ssh_giveup_timeout)
         self.log.debug("end time:"+str(end_time))
@@ -238,7 +240,7 @@ class VM (object):
                 sleep(ATTEMPT_INTERVAL)
         delta = timer.stop()
         if success:
-            self.log.info("now ready (took %d sec)" % delta)
+            self.log.debug("now ready (took %d sec)" % delta)
         else:
             self.log.error(" FAILED to be SSH-able (after %d sec)" % delta)
         return success

@@ -178,6 +178,7 @@ def remove_nodes(count=1):
 
 
 def update_hostfiles(servers):
+    print servers
     log.info("updating hostfiles")
     # generate ycsb-specific hosts file text
     host_text = ""
@@ -188,7 +189,7 @@ def update_hostfiles(servers):
     host_text = host_text[:-1]  # remove trailing EOL
     command = "echo '%s' > /opt/hosts;" % host_text
     for c in all_nodes:
-        c.run_command(command, silent=True)
+        c.run_command(command, silent=False)
 
 
 def run(params):
@@ -197,8 +198,6 @@ def run(params):
 
     run_type = params['type']
 
-    # generate ycsb-specific hosts file text
-    host_text = ""
     servers = params['servers']
     update_hostfiles(servers)
 
@@ -215,8 +214,7 @@ def run(params):
         period = int(params['period'])
         threads = int(env_vars['client_threads'])
         for c in all_nodes:
-            load_command = "echo '%s' > /opt/hosts;" % host_text
-            load_command += get_script_text(cluster_name, node_type, "run_sin") % (target, offset, period, threads)
+            load_command = get_script_text(cluster_name, node_type, "run_sin") % (target, offset, period, threads)
             #load_command += get_script_text(cluster_name, "", "run_sin") % (target, offset, period)
             log.info("running sinusoid on %s" % c.name)
             c.run_command(load_command, silent=True)

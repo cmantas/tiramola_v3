@@ -1,19 +1,25 @@
 __author__ = 'cmantas'
 
-import ConfigParser
-
-config = ConfigParser.ConfigParser()
-config.read("config_test.ini")
-# print Config.sections()
-
-input_params = {}
+from ConfigParser import ConfigParser
 
 
-for section in config.sections():
-    input_params.update(dict(config.items(section)))
+def load_conf_file(filename):
+    config = ConfigParser()
+    config.read(filename)
+    # print Config.sections()
+
+    input_params = {}
+
+    for section in config.sections():
+        input_params.update(dict(config.items(section)))
+    return input_params
 
 
-for key, value in input_params.items():
-    print key, value
 
 
+
+if __name__ == '__main__':
+
+    d = load_conf_file("config_test.ini")
+    for key, value in d.items():
+        print key, value

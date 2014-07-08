@@ -13,7 +13,7 @@ SCRIPTS_FILE = 'files/scripts.json'
 
 db_file = "files/persistance.db"
 
-env_vars = None
+env_vars = {}
 
 
 def reload_env_vars():
@@ -28,43 +28,6 @@ env_vars = json.loads(open(ENV_VARS_FILE, 'r').read())
 openstack_names = json.loads(open(OPENSTACK_NAMES_FILE, 'r').read())
 
 
-def executescript(script):
-    try:
-        con = lite.connect(db_file)
-        cur = con.cursor()
-        cur.executescript(script)
-        con.commit()
-    except lite.Error, e:
-        if con: con.rollback()
-        print "Error %s:" % e.args[0]
-    finally:
-        try:
-            con
-            con.close()
-        except NameError:
-            pass
-
-# INIT the tables
-#executescript("CREATE TABLE IF NOT EXISTS ROLES(VMID INTEGER PRIMARY KEY, Role TEXT)")
-
-
-def execute_query(query):
-    try:
-        con = lite.connect(db_file)
-        cur = con.cursor()
-        cur.execute(query)
-        rows = cur.fetchall()
-        return rows
-    except lite.Error, e:
-        if con: con.rollback()
-        print "Error %s:" % e.args[0]
-        return None
-    finally:
-        if con: con.close()
-
-
-def execute_lookup(query):
-    for r in execute_query(query): return r
 
 
 def get_credentials(user):

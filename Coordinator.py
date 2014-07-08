@@ -51,9 +51,9 @@ def implement_decision():
             my_logger.info("Will remove %d nodes" % count)
             Servers.remove_nodes(count)
             #not supposed to be here for pass decsion
-#         elif action == "PASS":
-#             return
 
+        #update the hosts files in clients
+        Clients.update_hostfiles(Servers.get_hosts())
         # update the state
         decision_module.pending_action = None
         decision_module.currentState = Servers.node_count()

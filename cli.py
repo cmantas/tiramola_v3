@@ -1,14 +1,8 @@
 __author__ = 'cmantas'
-import sys, traceback
+import sys
 from lib.tiramola_logging import get_logger
 from os import remove, mkdir
-from shutil import move, copy
-from time import strftime
-from os.path import isdir
-from random import random
-from json import load, dumps
-from lib.persistance_module import reload_env_vars
-from time import sleep
+from shutil import move
 
 raw_args = sys.argv
 args = dict()
@@ -71,7 +65,7 @@ def run_sinusoid():
         period = 60 * int(args["period"])
         args["period"] = period
         offset = int(args["offset"])
-        log.info("running sinusoid for target=%d, offset=%d, period=%d" % (target, offset, period))
+        log.info("running sinusoid for target=%d, offset=%d, period=%d sec" % (target, offset, period))
         import ClientsCluster, CassandraCluster
         svr_hosts = CassandraCluster.get_hosts(private=False)
         args['type'] = 'sinusoid'

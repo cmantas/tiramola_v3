@@ -177,6 +177,20 @@ def remove_nodes(count=1):
     inject_hosts_files()
 
 
+def update_hostfiles(servers):
+    log.info("updating hostfiles")
+    # generate ycsb-specific hosts file text
+    host_text = ""
+    del servers["cassandra_seednode"]
+
+    #generate the "hosts" text for YCSB
+    for key, value in servers.iteritems(): host_text += value+"\n"
+    host_text = host_text[:-1]  # remove trailing EOL
+    command = "echo '%s' > /opt/hosts;" % host_text
+    for c in all_nodes:
+        c.run_command(command, silent=True)
+
+
 def run(params):
 
     bootstrap_cluster()
@@ -186,15 +200,12 @@ def run(params):
     # generate ycsb-specific hosts file text
     host_text = ""
     servers = params['servers']
-    del servers["cassandra_seednode"]
-    for key, value in servers.iteritems(): host_text += value+"\n"
+    update_hostfiles(servers)
 
     #choose type of run and do necessary actions
     if run_type=='stress':
         for c in all_nodes:
-            load_command = "echo '%s' > /opt/hosts;" % host_text
-            load_command += get_script_text(cluster_name, node_type, "run")
-            #load_command += get_script_text(cluster_name, '', "run")
+            load_command = get_script_text(cluster_name, node_type, "run")
             log.info("running stress workload on %s" % c.name)
             c.run_command(load_command, silent=True)
     elif run_type == 'sinusoid':

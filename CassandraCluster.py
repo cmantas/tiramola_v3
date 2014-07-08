@@ -180,7 +180,6 @@ def add_one_node(stash_index):
     """
     Helper function for add_nodes
     """
-    log.info("adding node no:"+ str(stash_index))
     if not len(stash) == 0:
             new_guy = stash[stash_index]
             log.info("Using %s from my stash" % new_guy.name)

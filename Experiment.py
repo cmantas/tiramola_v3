@@ -1,5 +1,5 @@
 __author__ = 'cmantas'
-import sys, traceback
+import traceback
 from lib.tiramola_logging import get_logger
 from os import remove, mkdir
 from shutil import move, copy
@@ -7,13 +7,13 @@ from time import strftime
 from os.path import isdir
 from random import random
 from json import load, dumps
-from lib.persistance_module import reload_env_vars
+from lib.persistance_module import env_vars, reload_env_vars
 from time import sleep
 import ClientsCluster, CassandraCluster
 
 ## global logger
 log = get_logger("EXPERIMENT", 'INFO')
-
+o_ev = {}
 measurements_dir = "files/measurements"
 
 
@@ -25,19 +25,27 @@ def run_sinusoid(target, period, offset):
         args["period"] = period
         args['type'] = 'sinusoid'
         args['servers'] = svr_hosts
-        args['offset'] =offset
+        args['offset'] = offset
         ClientsCluster.run(args)
 
 
 def run_stress():
-    log.info("running stress workload" )
+    log.info("running stress workload")
     svr_hosts = CassandraCluster.get_hosts(private=True)
-    params = {'type':'stress', 'servers': svr_hosts}
+    params = {'type': 'stress', 'servers': svr_hosts}
     ClientsCluster.run(params)
 
 
 def experiment(name, target, period, offset, minutes):
-
+    """
+    runs a full experiment and outputs the the results to directory inside the measurements dir
+    :param name:
+    :param target:
+    :param period:
+    :param offset:
+    :param minutes:
+    :return:
+    """
     #delete any previous measurements
     try:
         remove("%s/measurements.txt" % measurements_dir)
@@ -61,7 +69,6 @@ def experiment(name, target, period, offset, minutes):
     except:
         log.error("Could not create experiment directory")
         exit(-1)
-
 
     # actually run the tiramola automatic provisioning algorithm
     try:
@@ -131,6 +138,11 @@ def simulate():
 
 
 def run_experiments(experiment_file):
+    """
+    runs a batch of experiments as specified to the experiment file
+    :param experiment_file:
+    :return:
+    """
 
     #load the file with all the experiments
     try:
@@ -163,14 +175,12 @@ def run_experiments(experiment_file):
                 used = env_vars["min_cluster_size"]
                 CassandraCluster.bootstrap_cluster(used)
                 #load_data
-                svr_hosts = CassandraCluster.get_hosts(private=True)
+                svr_hosts = CassandraCluster.get_hosts()
                 args = {'type': 'load', 'servers': svr_hosts, 'records': env_vars['records']}
                 ClientsCluster.run(args)
 
             #run the experiment
             experiment(name, target, period, offset, minutes)
-
-
 
 
 if __name__ == '__main__':

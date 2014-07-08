@@ -224,8 +224,7 @@ def run(params):
         step = record_count/len(all_nodes)
         threads = []
         for c in all_nodes:
-            load_command = "echo '%s' > /opt/hosts;" % host_text
-            load_command += get_script_text(cluster_name, node_type, "load") % (str(record_count), str(step), str(start))
+            load_command = get_script_text(cluster_name, node_type, "load") % (str(record_count), str(step), str(start))
             #load_command += get_script_text(cluster_name, "", "load") % (str(record_count), str(step), str(start))
             log.info("running load phase on %s" % c.name)
             t = Thread(target=c.run_command, args=(load_command,) )

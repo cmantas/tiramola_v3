@@ -225,88 +225,6 @@ def monitor():
     auto_pilot()
 
 
-
-def experiment():
-    try:
-        experiment_name = args['name']
-        log.info("=======> EXPERIMENT: %s  <======" % experiment_name)
-    except KeyError as e:
-        log.error("experiment requires argument %s" % e.args[0])
-        return
-
-    log.info("Running a full experiment")
-
-    #delete any previous measurements
-    try:
-        global dir_path
-        remove("files/measurements/measurements.txt", dir_path)
-    except:
-        pass
-
-    run_sinusoid()
-
-    #empty the contents of the coordinator.log
-    try:
-        open('files/logs/Coordinator.log', 'w+').close()
-        #f = open('file.txt', 'r+')
-        #f.truncate()
-    except:
-        pass
-
-
-    # create a directory for the experiment results
-    dir_path = "files/measurements/"+experiment_name
-    if isdir(dir_path):
-        dir_path += "_"+str(int(random()*1000))
-    try:
-        mkdir(dir_path)
-    except:
-        log.error("Could not create experiment directory")
-
-    # run the tiramola automatic provisioning algorithm
-    try:
-        auto_pilot()
-    except:
-        traceback.print_exc(file=open(dir_path+"/errors", "w+"))
-
-    #kill the workload
-    kill_workload()
-
-    move("files/measurements/measurements.txt", dir_path)
-    #move("files/VM_logs", dir_path)
-
-    info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
-           (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
-    global env_vars
-    info_long += "\ngain = " + env_vars['gain']
-    info_long += "\ndecision_interval = " + str(env_vars['decision_interval'])
-    info_long += "\ndecision_threshold = " + str(int(float(env_vars['decision_threshold'])*100)) + "%"
-    try:
-        global o_ev
-        info_long += "\n" + dumps(o_ev, indent=3)
-    except:
-        pass
-
-    #write information to file
-    with open (dir_path+"/info", 'w+') as f:
-        f.write(info_long)
-
-    # move the Coordinator log
-    try:
-        copy("files/logs/Coordinator.log", dir_path)
-    except:
-        pass
-
-    #draw the result graphs
-    from lib.draw_experiment import draw_exp
-    try:
-        draw_exp(dir_path+"/measurements.txt")
-    except:
-            traceback.print_exc(file=open(dir_path+"/errors", "w+"))
-
-    log.info("EXPERIMENT DONE: Result measurements in: "+dir_path)
-
-
 def simulate():
     try:
         remove("files/measurements/measurements.txt")
@@ -325,53 +243,14 @@ def simulate():
 
 
 def run_experiments():
-    global args
+
     try:
         experiment_file = args['file']
     except KeyError as e:
         log.error("run_experiments requires argument %s" % e.args[0])
         return
-
-    #load the file with all the experiments
-    exp_list = load(open(experiment_file))
-
-    #run each one of the experiments
-    for exp in exp_list:
-        # overwrite the given env_vars
-        from lib.persistance_module import env_vars
-        reload_env_vars()
-        global o_ev, env_vars
-        o_ev = exp['env_vars']
-
-        env_vars.update(o_ev)
-        #env_vars['gain']=o_ev['gain']
-
-        if 'simulation' in exp and exp['simulation']:
-            simulate()
-        else:
-            # re-construct the args dict
-            args = exp['workload']
-            args['time'] = exp['time']
-            args['name'] = exp['name']
-
-            kill_workload()
-            if (not ('clean' in exp)) or bool(exp['clean']):
-                #clean-start the cluster by default or if clean is True
-                kill_nodes()
-                args["used"] = env_vars["min_cluster_size"]
-                bootstrap_cluster()
-                sleep(30)
-                args["records"] = env_vars['records']
-                load_data()
-                sleep(2*60)
-                
-
-            #run the experiment
-            try:
-                experiment()
-            except Exception, err:
-                print traceback.format_exc()
-                traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+    import Experiment
+    Experiment.run_experiments(experiment_file)
 
 
 def repair():

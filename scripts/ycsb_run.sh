@@ -1,6 +1,6 @@
 #!/bin/sh
 #########  YCSB WORKLOAD PARAMS  ########
-threads=200
+threads=150
 
 killall java
 

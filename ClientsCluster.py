@@ -198,12 +198,14 @@ def run(params):
             log.info("running stress workload on %s" % c.name)
             c.run_command(load_command, silent=True)
     elif run_type == 'sinusoid':
+        global env_vars
         target = int(params['target']) / len(all_nodes)
         offset = int(params['offset']) / len(all_nodes)
         period = int(params['period'])
+        threads = int(env_vars['client_threads'])
         for c in all_nodes:
             load_command = "echo '%s' > /opt/hosts;" % host_text
-            load_command += get_script_text(cluster_name, node_type, "run_sin") % (target, offset, period)
+            load_command += get_script_text(cluster_name, node_type, "run_sin") % (target, offset, period, threads)
             #load_command += get_script_text(cluster_name, "", "run_sin") % (target, offset, period)
             log.info("running sinusoid on %s" % c.name)
             c.run_command(load_command, silent=True)

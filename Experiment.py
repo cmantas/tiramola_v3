@@ -9,10 +9,12 @@ from random import random
 from json import load, dumps
 from lib.persistance_module import reload_env_vars
 from time import sleep
-
+import ClientsCluster, CassandraCluster
 
 ## global logger
 log = get_logger("EXPERIMENT", 'INFO')
+
+measurements_dir = "files/measurements"
 
 
 def run_sinusoid(target, period, offset):
@@ -29,76 +31,54 @@ def run_sinusoid(target, period, offset):
 
 def run_stress():
     log.info("running stress workload" )
-    import ClientsCluster, CassandraCluster
     svr_hosts = CassandraCluster.get_hosts(private=True)
     params = {'type':'stress', 'servers': svr_hosts}
     ClientsCluster.run(params)
 
 
-def kill_workload():
-    log.info("killing workload")
-    import ClientsCluster
-    ClientsCluster.kill_nodes()
-
-
-def auto_pilot(minutes):
-    log.info("Running Tiramola Auto Provisioning super algorithm")
-    secs = 60 * minutes
-    import Coordinator
-    Coordinator.run(secs)
-
-def monitor(minutes):
-    log.info("simply monitoring")
-    global  env_vars
-    env_vars["gain"] = '0'
-
-
-def experiment():
-    try:
-        experiment_name = args['name']
-        log.info("=======> EXPERIMENT: %s  <======" % experiment_name)
-    except KeyError as e:
-        log.error("experiment requires argument %s" % e.args[0])
-        return
-
-    log.info("Running a full experiment")
+def experiment(name, target, period, offset, minutes):
 
     #delete any previous measurements
     try:
-        global dir_path
-        remove("files/measurements/measurements.txt", dir_path)
+        remove("%s/measurements.txt" % measurements_dir)
     except:
         pass
 
-    run_sinusoid()
+    run_sinusoid(target, period, offset)
 
     #empty the contents of the coordinator.log
     try:
         open('files/logs/Coordinator.log', 'w+').close()
-        #f = open('file.txt', 'r+')
-        #f.truncate()
     except:
         pass
 
-
     # create a directory for the experiment results
-    dir_path = "files/measurements/"+experiment_name
+    dir_path = measurements_dir+"/"+name
     if isdir(dir_path):
         dir_path += "_"+str(int(random()*1000))
     try:
         mkdir(dir_path)
     except:
         log.error("Could not create experiment directory")
+        exit(-1)
 
-    # run the tiramola automatic provisioning algorithm
+
+    # actually run the tiramola automatic provisioning algorithm
     try:
-        auto_pilot()
+        log.info("Running the Coordinator")
+        secs = 60 * minutes
+        import Coordinator
+        Coordinator.run(secs)
+        pass
     except:
+        print traceback.format_exc()
         traceback.print_exc(file=open(dir_path+"/errors", "w+"))
 
     #kill the workload
-    kill_workload()
+    log.info(" killing workload")
+    ClientsCluster.kill_nodes()
 
+    #move the measurements file
     move("files/measurements/measurements.txt", dir_path)
 
     info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
@@ -150,16 +130,13 @@ def simulate():
     draw_exp("files/measurements/simulation/measurements.txt")
 
 
-def run_experiments():
-    global args
-    try:
-        experiment_file = args['file']
-    except KeyError as e:
-        log.error("run_experiments requires argument %s" % e.args[0])
-        return
+def run_experiments(experiment_file):
 
     #load the file with all the experiments
-    exp_list = load(open(experiment_file))
+    try:
+        exp_list = load(open(experiment_file))
+    except:
+        log.error("Malformed JSON experiments file")
 
     #run each one of the experiments
     for exp in exp_list:
@@ -170,30 +147,32 @@ def run_experiments():
         o_ev = exp['env_vars']
 
         env_vars.update(o_ev)
-        #env_vars['gain']=o_ev['gain']
 
         if 'simulation' in exp and exp['simulation']:
             simulate()
         else:
-            # re-construct the args dict
-            args = exp['workload']
-            args['time'] = exp['time']
-            args['name'] = exp['name']
+            target = int(exp['workload']["target"])
+            period = 60*int(exp['workload']["period"])
+            offset = int(exp['workload']["offset"])
+            minutes = int(exp['time'])
+            name = exp['name']
 
-            kill_workload()
             if (not ('clean' in exp)) or bool(exp['clean']):
                 #clean-start the cluster by default or if clean is True
-                kill_nodes()
-                args["used"] = env_vars["min_cluster_size"]
-                bootstrap_cluster()
-                sleep(30)
-                args["records"] = env_vars['records']
-                load_data()
-                sleep(2*60)
-
+                CassandraCluster.kill_nodes()
+                used = env_vars["min_cluster_size"]
+                CassandraCluster.bootstrap_cluster(used)
+                #load_data
+                svr_hosts = CassandraCluster.get_hosts(private=True)
+                args = {'type': 'load', 'servers': svr_hosts, 'records': env_vars['records']}
+                ClientsCluster.run(args)
 
             #run the experiment
-            try:
-                experiment()
-            except:
-                traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+            experiment(name, target, period, offset, minutes)
+
+
+
+
+if __name__ == '__main__':
+    print 'testing experiments creation'
+    run_experiments("test.json")

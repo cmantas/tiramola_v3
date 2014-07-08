@@ -34,8 +34,6 @@ echo "started bootstrap" > bootsrap.log
     address=$(echo $line | sed 's/addr://g')
     my_priv_addr=$address
     echo $my_priv_addr
-    
-
 
  
     

@@ -1,25 +1,17 @@
 __author__ = 'cmantas'
 
+import ConfigParser
+
+config = ConfigParser.ConfigParser()
+config.read("config_test.ini")
+# print Config.sections()
+
+input_params = {}
 
 
-from multiprocessing import Process, Value, Array
+for section in config.sections():
+    input_params.update(dict(config.items(section)))
 
-def f(n, a):
-    n.value = 3.1415927
-    for i in range(len(a)):
-        a[i] = -a[i]
 
-if __name__ == '__main__':
-    num = Value('d', 0.0)
-    arr = Array('i', range(10))
-    print arr[:]
-    p = Process(target=f, args=(num, arr))
-    p.start()
-    p.join()
-
-    print num.value
-    print arr[:]
-
-    list = [0,1,2,4]
-    del list[:2]
-    print list
+for key, value in input_params.items():
+    print key, value

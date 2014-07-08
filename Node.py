@@ -20,7 +20,7 @@ class Node (VM):
         :param vm: used to create a Node from a pre-existing VM
         """
 
-        self.bootstraped = False
+        self.bootstrapped = False
         self.name = cluster_name + "_" + node_type + "_" + str(number)
         self.type = node_type
         self.number = number
@@ -70,13 +70,13 @@ class Node (VM):
         Runs the required bootstrap scripts on the node
         """
         command = ""
-        self.log.debug("running bootstrap script")
+        self.log.info("Running bootstrap script")
         command += get_script_text(self.cluster_name, self.type, "bootstrap")
         timer = Timer.get_timer()
         rv = self.run_command(command)
         self.log.debug("command returned:\n"+rv)
         self.log.debug("is now bootstrapped (took %d sec)" % timer.stop())
-        self.bootstraped = True
+        self.bootstrapped = True
 
     def decommission(self):
         """

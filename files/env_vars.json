@@ -36,6 +36,7 @@
     "measurements_file": "files/measurements/measurements.txt",
     "training_file": "files/measurements/training_set.txt",
     "records": 3000000,
+    "client_threads":122,
     "training_vars": {
         "target_load":8000,
         "offset_load": 6000,

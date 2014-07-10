@@ -42,6 +42,7 @@ tiramola destroy_servers
 tiramola add_clients count=2
 tiramola train
 tiramola auto_pilot time=60 #time in minutes
+tiramola set_cluster_size count=5
 """
 
 
@@ -250,6 +251,16 @@ def run_experiments():
 def repair():
     import CassandraCluster
     CassandraCluster.repair_cluster()
+
+
+def set_cluster_size():
+    try:
+        count = int(args['count'])
+    except KeyError as e:
+        log.error("set cluster size requires argument %s" % e.args[0])
+        return
+    import CassandraCluster
+    CassandraCluster.set_cluster_size(count)
 
 
 

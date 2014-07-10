@@ -178,6 +178,9 @@ def run_experiments(experiment_file):
                 svr_hosts = CassandraCluster.get_hosts()
                 args = {'type': 'load', 'servers': svr_hosts, 'records': env_vars['records']}
                 ClientsCluster.run(args)
+            else:
+                #make sure the cluster is at its min size
+                CassandraCluster.set_cluster_size(env_vars["min_cluster_size"])
 
             #run the experiment
             experiment(name, target, period, offset, minutes)

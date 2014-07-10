@@ -93,6 +93,7 @@ def resume_cluster():
     """
     Re-loads the cluster representation based on the VMs pre-existing on the IaaS and the 'save_file'
     """
+    log.info("Loading info from the IaaS")
     global nodes, seeds, stash
     if not isfile(save_file):
         log.info("No existing created cluster")
@@ -305,6 +306,17 @@ def repair_cluster():
         t.start()
     for t in procs:
         t.join()
+
+
+def set_cluster_size(count):
+    diff = node_count() - count
+    if diff>0:
+        log.info("Will remove %d nodes to match cluster size: %d" %(diff, count))
+        remove_nodes(diff)
+    elif diff<0:
+        diff = -diff
+        log.info("Will add %d nodes to match cluster size: %d" %(diff, count))
+        add_nodes(diff)
 
 #=============================== MAIN ==========================
 

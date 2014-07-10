@@ -4,7 +4,7 @@
     "active_cluster_name": "cassandra",
     "auth_url" : "https://accounts.okeanos.grnet.gr/identity/v2.0",
     "cmantas_token": "LXLiwc-XoYP7PpeWiJ6Wdn0WNx6xi15w131HeYZlDTs",
-    "cassandra_base_image": "3ba25be3-67a1-43cc-8e64-3a7071c47331",
+    "cassandra_base_image": "430c24b4-5c75-4d38-88a9-eb95cebe27f8",
     "ubuntu_bare_image": "t545d36df-53da-46bd-86ed-759ac3eb1995",
     "cassandra_network_id": 67768,
     "default_flavor": 201,

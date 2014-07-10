@@ -60,12 +60,14 @@ def resume_cluster():
     in_nodes = Node.get_all_nodes(check_active=True)
     for n in in_nodes:
         if n.name not in saved_nodes:
+            print n.name + " not in saved nodes"
             if "orchestrator" in n.name:
                 global orchestrator
                 orchestrator = n
                 log.debug('Found orchestrator %s' % n.name)
             continue
         else:
+            print n.name + " we use"
             all_nodes.append(n)
     #sort nodes by name
     all_nodes.sort(key=lambda x: x.name)
@@ -178,7 +180,6 @@ def remove_nodes(count=1):
 
 
 def update_hostfiles(servers):
-    print servers
     log.info("updating hostfiles")
     # generate ycsb-specific hosts file text
     host_text = ""

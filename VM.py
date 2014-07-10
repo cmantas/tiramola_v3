@@ -149,7 +149,7 @@ class VM (object):
         :param in_dict: "server" or "server details" dictionary from synnefo
         :return: a VM instance for an existing vm
         """
-        vm_id, name, flavor_id, image_id = in_dict['id'], in_dict['name'], in_dict['flavor_id'], in_dict['image_id']
+        vm_id, name, flavor_id, image_id = in_dict['id'], in_dict['name'].strip(), in_dict['flavor_id'], in_dict['image_id']
         rv = VM(name, flavor_id, image_id)
         rv.created = True
         rv.id = vm_id

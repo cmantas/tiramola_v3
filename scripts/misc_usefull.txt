@@ -1,4 +1,5 @@
-
+# download and extract ycsb on all clients from orchestrator
+pdsh -R ssh -w clients_client_[01-04] "wget https://pithos.okeanos.grnet.gr/public/Fr13xPjuGZQxLgMfD0F6C7 -O ycsb.tar.gz &>/dev/null; rm -rf /etc/YCSB; tar xfz /root/ycsb.tar.gz -C /etc; rm ycsb.tar.gz; echo DONE" 
 
 #list the networks on kamaki
 kamaki network list
@@ -6,8 +7,6 @@ kamaki network list
 #attach server to a network on creation
 kamaki server create bla_bla_ --network net_id
 
-#add to /etc/hosts
-# I.P.V.4	host_alias
 
 #remove a dead node
 nodetool removetoken 7d82e630-40cf-4953-8b82-1541f018029b
@@ -32,7 +31,7 @@ ycsb run cassandra-cql     -P $WORKLOADS/workload_tiny  -p host=127.0.0.1 -p por
 #sinusoidal
 ycsb run cassandra-cql  -P $WORKLOADS/workload_read  -threads 20  -s  -p sinusoidal=true    -p target=2000 -p offset=500 -p period=240
 
-#just readS
+#just read
 ycsb run cassandra-cql -P $WORKLOADS/workloada -p maxexecutiontime=100000000 -p host=127.0.0.1 -p port=9042 -threads 4 -p operationcount=1000 -p recordcount=1000 -s
 
 

@@ -5,7 +5,7 @@ threads=150
 killall java
 
 echo "
-recordcount=1000
+recordcount=10000
 workload=com.yahoo.ycsb.workloads.CoreWorkload
 sinusoidal=false
 readallfields=true

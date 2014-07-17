@@ -45,7 +45,7 @@ def implement_decision():
             my_logger.info("Will add %d nodes" % count)
             Servers.add_nodes(count)
             # artificially delay the decision in order to discard transient measurements
-            my_logger("Sleeping! (artificial delay)")
+            my_logger.info("Sleeping! (artificial delay)")
             sleep(env_vars['extra_decision_delay_per_node']*count)
         elif action == "REMOVE":
             decision_module.pending_action = action
@@ -71,7 +71,7 @@ def check_for_error():
     if not (error is None):
         my_logger.error("I detected an error in a previous action. Raising exception")
         my_logger.error("Message:" + str(error))
-        running_process.terminate()
+        running_process.join()
         raise error
 
 

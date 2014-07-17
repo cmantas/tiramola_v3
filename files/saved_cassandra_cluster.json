@@ -4,6 +4,7 @@
       "cassandra_seed_0"
    ], 
    "stash": [
+      "cassandra_node_01",
       "cassandra_node_02", 
       "cassandra_node_03", 
       "cassandra_node_04", 

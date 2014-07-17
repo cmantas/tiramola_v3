@@ -60,14 +60,12 @@ def resume_cluster():
     in_nodes = Node.get_all_nodes(check_active=True)
     for n in in_nodes:
         if n.name not in saved_nodes:
-            print n.name + " not in saved nodes"
             if "orchestrator" in n.name:
                 global orchestrator
                 orchestrator = n
                 log.debug('Found orchestrator %s' % n.name)
             continue
         else:
-            print n.name + " we use"
             all_nodes.append(n)
     #sort nodes by name
     all_nodes.sort(key=lambda x: x.name)
@@ -180,6 +178,9 @@ def remove_nodes(count=1):
 
 
 def update_hostfiles(servers):
+    if not env_vars["update_hostfiles"]:
+        log.info("Not updtading ycsb client host files")
+        return
     log.info("updating hostfiles")
     # generate ycsb-specific hosts file text
     host_text = ""
@@ -227,7 +228,7 @@ def run(params):
         for c in all_nodes:
             load_command = get_script_text(cluster_name, node_type, "load") % (str(record_count), str(step), str(start))
             #load_command += get_script_text(cluster_name, "", "load") % (str(record_count), str(step), str(start))
-            log.info("running load phase on %s" % c.name)
+            log.info("running load phase on %s for %d records" % (c.name, record_count))
             t = Thread(target=c.run_command, args=(load_command,) )
             threads.append(t)
             t.start()
@@ -235,6 +236,7 @@ def run(params):
         log.info("waiting for load phase to finish in clients")
         for t in threads:
             t.join()
+        log.info("load finished")
 
 
 def destroy_all():

@@ -1,11 +1,14 @@
 import itertools, sys
 from persistance_module import env_vars
-import matplotlib
+#import matplotlib
 #matplotlib.use('Agg')
-
 import matplotlib.pyplot as pl
-
 from collections import deque
+
+############ figure size (in inches@80bpi) #################
+width = 12
+height = 6
+dpi = 80
 
 def moving_average(iterable, n=3):
     # moving_average([40, 30, 50, 46, 39, 44]) --> 40.0 42.0 45.0 43.0
@@ -52,7 +55,7 @@ def draw_exp(meas_file):
 
     meas.close()
 
-    fig = pl.figure(1)
+    fig = pl.figure(1, figsize=(width,height), dpi=dpi)
     ax1 = fig.add_subplot(111)
     #print str(len(ticks))
     #print str(len(l))
@@ -88,7 +91,7 @@ def draw_exp(meas_file):
     for u in thr_avg_gen:
         thr_run_avg.append(float(u))
 
-    fig2 = pl.figure(2)
+    fig2 = pl.figure(2, figsize=(width,height), dpi=dpi)
     ax1 = fig2.add_subplot(111)
     #print str(len(ticks_ra))
     #print str(len(l_run_avg))
@@ -118,7 +121,7 @@ def draw_exp(meas_file):
         l_run_avg.append(float(r))
         ticks_ra = ticks[2:(len(ticks)-2)] #np.arange(i-8, i-2, 1)
 
-    fig3 = pl.figure(3)
+    fig3 = pl.figure(3, figsize=(width,height), dpi=dpi)
     ax1 = fig3.add_subplot(111)
     #print str(len(ticks_ra))
     #print str(len(l_run_avg))
@@ -141,7 +144,7 @@ def draw_exp(meas_file):
     pl.clf()
     pl.cla()
 
-    fig4 = pl.figure(4)
+    fig4 = pl.figure(4, figsize=(width,height), dpi=dpi)
     ax1 = fig4.add_subplot(111)
     ax1.plot(ticks, cpu, 'black')#, t, my_inlambda, 'g-')
     ax1.set_xlabel('Time (min)')
@@ -160,7 +163,7 @@ def draw_exp(meas_file):
     pl.clf()
     pl.cla()
 
-    fig5 = pl.figure(5)
+    fig5 = pl.figure(5, figsize=(width,height), dpi=dpi)
     ax1 = fig5.add_subplot(111)
     ax1.plot(ticks, lat, 'black')#, t, my_inlambda, 'g-')
     ax1.set_xlabel('Time (min)')
@@ -176,6 +179,8 @@ def draw_exp(meas_file):
     pl.title('Latency vs. Time')
     pl.savefig(fig_name +'-latency')
 
+    pl.clf()
+    pl.cla()
     return
 
 if __name__ == '__main__':

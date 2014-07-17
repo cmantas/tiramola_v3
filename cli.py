@@ -79,7 +79,7 @@ def run_sinusoid():
 def run_stress():
     log.info("running stress workload" )
     import ClientsCluster, CassandraCluster
-    svr_hosts = CassandraCluster.get_hosts(private=True)
+    svr_hosts = CassandraCluster.get_hosts(private=False)
     params = {'type':'stress', 'servers': svr_hosts}
     ClientsCluster.run(params)
 

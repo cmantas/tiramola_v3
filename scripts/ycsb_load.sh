@@ -6,7 +6,7 @@ start=%s
 
 	/etc/YCSB/bin/ycsb load cassandra-cql \
 		-P /etc/YCSB/workloads/workloada -p port=9042 \
-		-threads 20 -s \
+		-threads 100 -s \
 		-p hostsFile=/opt/hosts \
 		-p recordcount=$count -p insertcount=$step -p insertstart=$start \
 		&> /root/ycsb_load.log

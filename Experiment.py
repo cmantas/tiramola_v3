@@ -8,7 +8,6 @@ from os.path import isdir
 from random import random
 from json import load, dumps
 from lib.persistance_module import env_vars, reload_env_vars
-from time import sleep
 import ClientsCluster, CassandraCluster
 
 ## global logger

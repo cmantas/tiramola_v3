@@ -1,5 +1,6 @@
 {
     "private_network": 0,
+    "update_hostfiles":1,
     "iaas": "okeanos",
     "active_cluster_name": "cassandra",
     "auth_url" : "https://accounts.okeanos.grnet.gr/identity/v2.0",
@@ -36,7 +37,7 @@
     "measurements_file": "files/measurements/measurements.txt",
     "training_file": "files/measurements/training_set.txt",
     "records": 3000000,
-    "client_threads":122,
+    "client_threads":200,
     "training_vars": {
         "target_load":8000,
         "offset_load": 6000,

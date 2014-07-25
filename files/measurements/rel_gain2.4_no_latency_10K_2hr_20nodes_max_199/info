@@ -1,0 +1,15 @@
+target = 6000
+offset = 4000
+period = 120min
+duration = 360min
+date = Jul05-03:36
+gain = (throughput - inlambda)*20 - (num_nodes - current_nodes)*120 
+decision_interval = 180
+decision_threshold = 5%
+{
+   "decision_threshold": 0.05, 
+   "max_cluster_size": 20, 
+   "update_metrics": 1, 
+   "gain": "(throughput - inlambda)*20 - (num_nodes - current_nodes)*120 ", 
+   "decision_interval": 180
+}

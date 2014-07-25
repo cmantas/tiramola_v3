@@ -5,7 +5,7 @@ import logging, sys, logging.handlers
 configured_loggers = []
 
 
-def get_logger(name, level, show_level=False, show_time=False, logfile=None):
+def get_logger(name, level='INFO', show_level=False, show_time=False, logfile=None):
     new_logger = logging.getLogger(name)
     #skip configuration if already configured
     if name in configured_loggers:

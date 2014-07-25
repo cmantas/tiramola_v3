@@ -10,6 +10,8 @@ width = 12
 height = 6
 dpi = 80
 
+fig_name=""
+
 def moving_average(iterable, n=3):
     # moving_average([40, 30, 50, 46, 39, 44]) --> 40.0 42.0 45.0 43.0
     # http://en.wikipedia.org/wiki/Moving_average
@@ -23,6 +25,36 @@ def moving_average(iterable, n=3):
         yield s / float(n)
 
 
+def my_avg(l, a=0.1):
+    prev=l[0]
+    rv = [prev]
+    for x in l[1:]:
+        v = (1.0-a)*prev + a*x
+        rv.append(v)
+        prev = v
+    return rv
+
+def my_draw(x, y, x_label, y_label, graph_name, ax2_x=None, ax2_label=None):
+    fig5 = pl.figure(5, figsize=(width,height), dpi=dpi)
+    ax1 = fig5.add_subplot(111)
+    ax1.plot(x, y, 'black')
+    ax1.set_xlabel(x_label)
+    ax1.set_ylabel(y_label, color='black')
+    ax1.set_ylim((10, 100))
+    ax1.grid(True)
+
+    if not ax2_x is None:
+        ax2 = ax1.twinx()
+        ax2.plot(x, ax2_x, 'g')
+        ax2.set_ylabel(ax2_label, color='black')
+
+    pl.title(graph_name)
+    pl.savefig(fig_name + "_"+graph_name)
+    pl.clf()
+    pl.cla()
+    return
+
+
 def draw_exp(meas_file):
     states = []
     l = []
@@ -30,6 +62,7 @@ def draw_exp(meas_file):
     lat = []
     cpu = []
     ticks = []
+    global fig_name
     fig_name = meas_file.replace('.txt', '')
     fig_name = fig_name.replace('measurements-', '')
 
@@ -168,19 +201,21 @@ def draw_exp(meas_file):
     ax1.plot(ticks, lat, 'black')#, t, my_inlambda, 'g-')
     ax1.set_xlabel('Time (min)')
     ax1.set_ylabel('Latency (msec)', color='black')
-    ax1.set_ylim((5, 40))
+    ax1.set_ylim((10, 100))
     ax1.grid(True)
 
-    ax2 = ax1.twinx()
-    ax2.plot(ticks, states, 'r--')
-    ax2.set_ylabel('Cluster Size', color='black')
-    ax2.set_ylim((0, 26))
 
     pl.title('Latency vs. Time')
-    pl.savefig(fig_name +'-latency')
+    pl.savefig(fig_name + '-latency')
 
     pl.clf()
     pl.cla()
+
+    #cmantas
+    lat_avg = my_avg(lat, a=0.2)
+    thr_avg = my_avg(thr, a=0.2)
+    my_draw(ticks, lat_avg, "Time (sec)", "latency EWMA (msec)", 'latency_ewma', thr_avg, "throughput")
+
     return
 
 if __name__ == '__main__':

@@ -189,6 +189,10 @@ def update_hostfiles(servers):
     #generate the "hosts" text for YCSB
     for key, value in servers.iteritems(): host_text += value+"\n"
     host_text = host_text[:-1]  # remove trailing EOL
+
+    #DEBUG keep just one host
+    #host_text = servers["cassandra_node_01"]
+
     command = "echo '%s' > /opt/hosts;" % host_text
     for c in all_nodes:
         c.run_command(command, silent=False)

@@ -28,6 +28,7 @@ def run_sinusoid(target, period, offset):
         ClientsCluster.run(args)
 
 
+
 def run_stress():
     log.info("running stress workload")
     svr_hosts = CassandraCluster.get_hosts(private=True)
@@ -50,9 +51,6 @@ def experiment(name, target, period, offset, minutes):
         remove("%s/measurements.txt" % measurements_dir)
     except:
         pass
-
-    run_sinusoid(target, period, offset)
-
     #empty the contents of the coordinator.log
     try:
         open('files/logs/Coordinator.log', 'w+').close()
@@ -68,55 +66,61 @@ def experiment(name, target, period, offset, minutes):
     except:
         log.error("Could not create experiment directory")
         exit(-1)
-
-    # actually run the tiramola automatic provisioning algorithm
+    success = False
     try:
-        log.info("Running the Coordinator")
-        secs = 60 * minutes
-        import Coordinator
-        Coordinator.run(secs)
-        pass
-    except:
-        print traceback.format_exc()
-        traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+        run_sinusoid(target, period, offset)
 
-    #kill the workload
-    log.info(" killing workload")
-    ClientsCluster.kill_nodes()
-
-    #move the measurements file
-    move("files/measurements/measurements.txt", dir_path)
-
-    info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
-           (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
-    global env_vars
-    info_long += "\ngain = " + env_vars['gain']
-    info_long += "\ndecision_interval = " + str(env_vars['decision_interval'])
-    info_long += "\ndecision_threshold = " + str(int(float(env_vars['decision_threshold'])*100)) + "%"
-    try:
-        global o_ev
-        info_long += "\n" + dumps(o_ev, indent=3)
-    except:
-        pass
-
-    #write information to file
-    with open (dir_path+"/info", 'w+') as f:
-        f.write(info_long)
-
-    # move the Coordinator log
-    try:
-        copy("files/logs/Coordinator.log", dir_path)
-    except:
-        pass
-
-    #draw the result graphs
-    from lib.draw_experiment import draw_exp
-    try:
-        draw_exp(dir_path+"/measurements.txt")
-    except:
+        # actually run the tiramola automatic provisioning algorithm
+        try:
+            log.info("Running the Coordinator")
+            secs = 60 * minutes
+            import Coordinator
+            Coordinator.run(secs)
+            success = True
+        except:
+            print traceback.format_exc()
             traceback.print_exc(file=open(dir_path+"/errors", "w+"))
 
-    log.info("EXPERIMENT DONE: Result measurements in: "+dir_path)
+        #kill the workload
+        log.info(" killing workload")
+        ClientsCluster.kill_nodes()
+
+        #move the measurements file
+        move("files/measurements/measurements.txt", dir_path)
+
+        info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
+               (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
+        global env_vars
+        info_long += "\ngain = " + env_vars['gain']
+        info_long += "\ndecision_interval = " + str(env_vars['decision_interval'])
+        info_long += "\ndecision_threshold = " + str(int(float(env_vars['decision_threshold'])*100)) + "%"
+        try:
+            global o_ev
+            info_long += "\n" + dumps(o_ev, indent=3)
+        except:
+            pass
+
+        #write information to file
+        with open (dir_path+"/info", 'w+') as f:
+            f.write(info_long)
+
+        # move the Coordinator log
+        try:
+            copy("files/logs/Coordinator.log", dir_path)
+        except:
+            pass
+
+        #draw the result graphs
+        from lib.draw_experiment import draw_exp
+        try:
+            draw_exp(dir_path+"/measurements.txt")
+        except:
+                traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+
+        log.info("EXPERIMENT DONE: Result measurements in: "+dir_path)
+    except:
+        traceback.print_exc(file=open(dir_path+"/errors", "w+"))
+    return success
 
 
 def simulate():
@@ -182,7 +186,10 @@ def run_experiments(experiment_file):
                 CassandraCluster.set_cluster_size(env_vars["min_cluster_size"])
 
             #run the experiment
-            experiment(name, target, period, offset, minutes)
+            tries = 3
+            while not experiment(name, target, period, offset, minutes) and tries > 0:
+                log.info("Experiment failed, Retrying")
+                tries -=1
 
 
 if __name__ == '__main__':

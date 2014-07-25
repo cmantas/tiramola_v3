@@ -308,11 +308,13 @@ class RLDecisionMaker:
                     for key in metric.keys():
                         if key.startswith('ycsb_TARGET'):
                             allmetrics['inlambda'] += float(metric[key])
-                        if key.startswith('ycsb_THROUGHPUT'):
+                        elif key.startswith('ycsb_THROUGHPUT'):
                             allmetrics['throughput'] += float(metric[key])
-                        if key.startswith('ycsb_READ') or key.startswith('ycsb_UPDATE') or key.startswith(
+                        elif key.startswith('ycsb_READ') or key.startswith('ycsb_UPDATE') or key.startswith(
                                 'ycsb_RMW') or key.startswith('ycsb_INSERT'):
                             allmetrics['latency'] += float(metric[key])
+                        elif key.startswith('cpu_user'):
+                            allmetrics['cpu'] += float(metric[key])
                             #self.my_logger.debug("Latency : "+ str(host[key]) +" collected from client: "+ str(key)
                             #                     +" latency so far: "+ str(allmetrics['latency']))
                             if metric[key] > 0:

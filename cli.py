@@ -202,7 +202,7 @@ def train():
 
 def auto_pilot():
     log.info("Running Tiramola Auto Provisioning super algorithm")
-    global minutes
+    global minutes, env_vars
     try:
         minutes = int(args['time'])
     except KeyError as e:
@@ -215,7 +215,7 @@ def auto_pilot():
 
 def monitor():
     log.info("simply monitoring")
-    global  env_vars
+    global env_vars
     env_vars["gain"] = '0'
     auto_pilot()
 

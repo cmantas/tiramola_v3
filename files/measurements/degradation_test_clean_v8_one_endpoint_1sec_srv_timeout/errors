@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/root/bin/tiramola/Experiment.py", line 77, in experiment
+    Coordinator.run(secs)
+  File "/root/bin/tiramola/Coordinator.py", line 104, in run
+    sleep(metrics_interval)
+KeyboardInterrupt

@@ -11,7 +11,7 @@ echo "
 period=$period
 target=$target
 offset=$offset
-recordcount=1000
+recordcount=10000
 workload=com.yahoo.ycsb.workloads.CoreWorkload
 sinusoidal=true
 readallfields=true

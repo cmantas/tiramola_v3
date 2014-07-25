@@ -9,5 +9,6 @@ start=%s
 		-threads 100 -s \
 		-p hostsFile=/opt/hosts \
 		-p recordcount=$count -p insertcount=$step -p insertstart=$start \
+		-p opTimeout=30000\
 		&> /root/ycsb_load.log
 

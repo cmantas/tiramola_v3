@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/bin/tiramola/cli.py", line 268, in experiment
+    auto_pilot()
+  File "/root/bin/tiramola/cli.py", line 218, in auto_pilot
+    Coordinator.run(secs)
+  File "/root/bin/tiramola/Coordinator.py", line 101, in run
+    check_for_error()
+  File "/root/bin/tiramola/Coordinator.py", line 73, in check_for_error
+    running_process.terminate()
+AttributeError: 'Thread' object has no attribute 'terminate'

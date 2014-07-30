@@ -11,7 +11,7 @@ from lib.tiramola_logging import get_logger
 
 
 class RLDecisionMaker:
-    def __init__(self, monitoring_endpoint, cluster_size=0):
+    def __init__(self, cluster):
 
         #Create logger
         LOG_FILENAME = 'files/logs/Coordinator.log'
@@ -19,9 +19,9 @@ class RLDecisionMaker:
         self.log.info("Using 'gain' : " + env_vars['gain'] +" with threshold of "+str( env_vars["decision_threshold"]*100) + "% and interval: " + str(env_vars['decision_interval']))
         self.log.info("Cluster Size from %d to %d nodes" % (env_vars['min_cluster_size'], env_vars['max_cluster_size']))
 
-        self.monitoring_endpoint = monitoring_endpoint
         self.debug = False
-        self.currentState = cluster_size
+        self.currentState = cluster.node_count()
+        self.cluster = cluster
         self.nextState = self.currentState
         self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         self.pending_action = None
@@ -270,7 +270,7 @@ class RLDecisionMaker:
     #a log-related variable
     pending_action_logged = False
 
-    def take_decision(self, rcvallmetrics):
+    def take_decision(self, client_metrics, server_metrics):
         '''
              this method reads allmetrics object created by Monitoring.py and decides whether a change of the number of participating
              virtual nodes is due.
@@ -280,30 +280,16 @@ class RLDecisionMaker:
 
         #        self.my_logger.debug("TAKEDECISION rcvallmetrics: " + str(rcvallmetrics))
         # read metrics
-        allmetrics = None
-        allmetrics = rcvallmetrics.copy()
-
-
-        # avoid type errors at start up
-        if not allmetrics.has_key('inlambda'):
-            allmetrics['inlambda'] = 0
-
-        if not allmetrics.has_key('throughput'):
-            allmetrics['throughput'] = 0
-
-        if not allmetrics.has_key('latency'):
-            allmetrics['latency'] = 0
-
-        if not allmetrics.has_key('cpu'):
-            allmetrics['cpu'] = 0
+        allmetrics = {'inlambda': 0, 'throughput': 0, 'latency': 0, 'cpu': 0}
 
         if not self.debug:
             ## Aggreggation of YCSB client metrics
             clients = 0
+            servers = 0
             # We used to collect server cpu too, do we need it?
             #self.log.debug("TAKEDECISION state: %d, pending action: %s. Collecting metrics" % (self.currentState, str(self.pending_action)))
-            for host in allmetrics.keys():
-                metric = allmetrics[host]
+            for host in client_metrics.keys():
+                metric = client_metrics[host]
                 if isinstance(metric, dict):
                     for key in metric.keys():
                         if key.startswith('ycsb_TARGET'):
@@ -313,18 +299,28 @@ class RLDecisionMaker:
                         elif key.startswith('ycsb_READ') or key.startswith('ycsb_UPDATE') or key.startswith(
                                 'ycsb_RMW') or key.startswith('ycsb_INSERT'):
                             allmetrics['latency'] += float(metric[key])
-                        elif key.startswith('cpu_user'):
+                    clients += 1
+
+            for host in server_metrics.keys():
+                metric = server_metrics[host]
+                if isinstance(metric, dict):
+                    #check if host in active cluster hosts
+                    if not host in self.cluster.get_hosts().keys():
+                        continue
+                    print host
+                    for key in metric.keys():
+                        if key.startswith('cpu_user'):
                             allmetrics['cpu'] += float(metric[key])
                             #self.my_logger.debug("Latency : "+ str(host[key]) +" collected from client: "+ str(key)
                             #                     +" latency so far: "+ str(allmetrics['latency']))
-                            if metric[key] > 0:
-                                clients += 1
+                    if metric[key] > 0:
+                        servers += 1
+
             try:
                 allmetrics['latency'] = allmetrics['latency'] / clients
-                #self.my_logger.debug("Final latency for this measurement: "+ str(allmetrics['latency']) +" by "
-                # + str(clients)+ " clients!")
             except:
                 allmetrics['latency'] = 0
+            allmetrics['cpu'] = allmetrics['cpu']/servers
 
             #self.my_logger.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
 

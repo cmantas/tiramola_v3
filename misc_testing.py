@@ -1,25 +1,22 @@
 __author__ = 'cmantas'
+from time import sleep
 
-from ConfigParser import ConfigParser
-
-
-def load_conf_file(filename):
-    config = ConfigParser()
-    config.read(filename)
-    # print Config.sections()
-
-    input_params = {}
-
-    for section in config.sections():
-        input_params.update(dict(config.items(section)))
-    return input_params
+from os import listdir, mkdir
+from os.path import isfile, join, exists
+from shutil import move
 
 
 
 
 
-if __name__ == '__main__':
+def my_print(c):
+    print "myprint"
 
-    d = load_conf_file("config_test.ini")
-    for key, value in d.items():
-        print key, value
+dir_path = "experiments"
+print list_files(dir_path)
+
+print watch(dir_path, my_print)
+print "done"
+
+
+

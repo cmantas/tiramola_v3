@@ -1,19 +1,67 @@
 __author__ = 'cmantas'
 import traceback
 from lib.tiramola_logging import get_logger
-from os import remove, mkdir
+from os import remove, mkdir, listdir
 from shutil import move, copy
 from time import strftime
-from os.path import isdir
+from os.path import isdir, isfile, join, exists
 from random import random
-from json import load, dumps
+from json import load, dumps, loads
 from lib.persistance_module import env_vars, reload_env_vars
+from time import sleep
 import ClientsCluster, CassandraCluster
 
 ## global logger
 log = get_logger("EXPERIMENT", 'INFO')
 o_ev = {}
 measurements_dir = "files/measurements"
+
+
+def list_files(dir_path):
+    """
+    lists all files (not dirs) in a given directory
+    :param dir_path:
+    :return:
+    """
+    return [f for f in listdir(dir_path) if isfile(join(dir_path, f))]
+
+
+def wait_get_one(dir_path):
+    """
+    returns the content
+    :param dir_path:
+    :return:
+    """
+    files = list_files(dir_path)
+    print_once = True
+    while len(files)==0:
+        if print_once:
+            print "Waiting for files..."
+            print_once = False
+        sleep(1)
+        files = list_files(dir_path)
+    fname = dir_path + "/" + files.pop()
+    return fname
+
+
+def watch(dir_path, callback):
+    """
+    watches a directory and when there are files available in it, it loads their contents to memory, moves them
+    and then calls the callback function giving the file contents as an argument
+    :param dir_path:
+    :param callback:
+    :return:
+    """
+    while True:
+        fname = wait_get_one(dir_path)
+        f = open(fname, 'r')
+        contents = f.read()
+        f.close
+        done_dir = dir_path+"/done"
+        if not exists(done_dir):
+            mkdir(done_dir)
+        move(fname, done_dir)
+        callback(contents)
 
 
 def run_sinusoid(target, period, offset):
@@ -26,7 +74,6 @@ def run_sinusoid(target, period, offset):
         args['servers'] = svr_hosts
         args['offset'] = offset
         ClientsCluster.run(args)
-
 
 
 def run_stress():
@@ -140,20 +187,50 @@ def simulate():
     draw_exp("files/measurements/simulation/measurements.txt")
 
 
+def clean():
+    success = False
+    while not success:
+        try:
+            #clean-start the cluster by default or if clean is True
+            CassandraCluster.kill_nodes()
+            used = env_vars["min_cluster_size"]
+            CassandraCluster.bootstrap_cluster(used)
+            #load_data
+            svr_hosts = CassandraCluster.get_hosts()
+            args = {'type': 'load', 'servers': svr_hosts, 'records': env_vars['records']}
+            ClientsCluster.run(args)
+            success = True
+        except:
+            log.error("Failed to cllean, restarting")
+            sleep(120)
+
+
 def run_experiments(experiment_file):
+    """
+    loads the experiments from a file to a list and runs them in batch
+    :param experiment_file:
+    :return:
+    """
+        #load the file with all the experiments
+    exp_list = load(open(experiment_file))
+    run_batch_experiments(exp_list)
+
+
+def run_experiments_from_string(string_exp):
+    exp_list = loads(string_exp)
+    run_batch_experiments(exp_list)
+
+
+def run_batch_experiments(exp_list):
     """
     runs a batch of experiments as specified to the experiment file
     :param experiment_file:
     :return:
     """
-
-    #load the file with all the experiments
-    try:
-        exp_list = load(open(experiment_file))
-    except:
-        log.error("Malformed JSON experiments file")
-
     #run each one of the experiments
+
+    log.info("running batch experiments")
+
     for exp in exp_list:
         # overwrite the given env_vars
         from lib.persistance_module import env_vars
@@ -172,24 +249,20 @@ def run_experiments(experiment_file):
             minutes = int(exp['time'])
             name = exp['name']
 
-            if (not ('clean' in exp)) or bool(exp['clean']):
-                #clean-start the cluster by default or if clean is True
-                CassandraCluster.kill_nodes()
-                used = env_vars["min_cluster_size"]
-                CassandraCluster.bootstrap_cluster(used)
-                #load_data
-                svr_hosts = CassandraCluster.get_hosts()
-                args = {'type': 'load', 'servers': svr_hosts, 'records': env_vars['records']}
-                ClientsCluster.run(args)
-            else:
-                #make sure the cluster is at its min size
-                CassandraCluster.set_cluster_size(env_vars["min_cluster_size"])
-
             #run the experiment
-            tries = 3
-            while not experiment(name, target, period, offset, minutes) and tries > 0:
-                log.info("Experiment failed, Retrying")
-                tries -=1
+            tries = 5
+            success = False
+            while not success and tries > 0:
+                if (not ('clean' in exp)) or bool(exp['clean']):
+                    clean()
+                else:
+                    #make sure the cluster is at its min size
+                    CassandraCluster.set_cluster_size(env_vars["min_cluster_size"])
+                success =  experiment(name, target, period, offset, minutes)
+                if not success:
+                    log.info("Experiment failed, sleeping 10mins and Retrying")
+                    sleep(600)
+                    tries -=1
 
 
 if __name__ == '__main__':

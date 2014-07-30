@@ -50,6 +50,7 @@ def resume_cluster():
     """
     Re-loads the cluster representation based on the VMs pre-existing on the IaaS and the 'save_file'
     """
+    log.info("Loading info from the IaaS")
     if not isfile(save_file):
         log.info("No existing created cluster")
         saved_nodes = []

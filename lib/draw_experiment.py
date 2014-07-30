@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 import itertools, sys
 from persistance_module import env_vars
 #import matplotlib
@@ -34,9 +35,10 @@ def my_avg(l, a=0.1):
         prev = v
     return rv
 
+
 def my_draw(x, y, x_label, y_label, graph_name, ax2_x=None, ax2_label=None):
-    fig5 = pl.figure(5, figsize=(width,height), dpi=dpi)
-    ax1 = fig5.add_subplot(111)
+    fig, ax1 = pl.subplots(figsize=(width,height))
+    ax1 = fig.add_subplot(111)
     ax1.plot(x, y, 'black')
     ax1.set_xlabel(x_label)
     ax1.set_ylabel(y_label, color='black')
@@ -52,25 +54,20 @@ def my_draw(x, y, x_label, y_label, graph_name, ax2_x=None, ax2_label=None):
     pl.savefig(fig_name + "_"+graph_name)
     pl.clf()
     pl.cla()
+    print "here"
     return
 
-
-def draw_exp(meas_file):
+def load_data(meas_file):
     states = []
     l = []
     thr = []
     lat = []
     cpu = []
     ticks = []
-    global fig_name
-    fig_name = meas_file.replace('.txt', '')
-    fig_name = fig_name.replace('measurements-', '')
-
     meas = open(meas_file, 'r')
     #meas = open('/home/christina/tiramola/real_experiments/training-sets/90G-debugging/measurements-90G-states-10-14-clients-16-threads-200-target-10000.txt', 'r')
     meas.next() # Skip the first line with the headers of the columns
     mins = 0.0
-
     for line in meas:
         if not line.startswith('###') and not line.startswith('\n'):
             m = line.split('\t\t')
@@ -87,65 +84,45 @@ def draw_exp(meas_file):
             mins += float(env_vars['metric_fetch_interval']) / 60
 
     meas.close()
+    return states, l, thr, cpu, lat, ticks
 
-    fig = pl.figure(1, figsize=(width,height), dpi=dpi)
-    ax1 = fig.add_subplot(111)
-    #print str(len(ticks))
-    #print str(len(l))
-    ax1.plot(ticks, l, 'black', ticks, thr, 'g-')
+
+def draw_exp(meas_file):
+    global fig_name
+    fig_name = meas_file.replace('.txt', '')
+    fig_name = fig_name.replace('measurements-', '')
+    states, l, thr, cpu, lat, ticks = load_data(meas_file)
+    fig, ax1 = pl.subplots(figsize=(width,height))
+    #plot the 2 values
+    a, = ax1.plot(ticks, l, 'black')
+    b, = ax1.plot(ticks, thr, 'g')
+
     ax1.set_xlabel('Time (min)')
     #ax1.set_xticks(np.arange(48))
     # Make the y-axis label and tick labels match the line color.
+    pl.minorticks_on()
     ax1.set_ylabel('Load (reqs/sec)', color='black')
-    #ax1.set_ylim((0, 100000))
-    ax1.grid(True)
+    ax1.set_ylim(bottom=2000)
+    ax1.grid(True, which="major")
+    ax1.grid(True, which="minor", color='#C0C0C0')
+    #ax1.tick_params(axis='x',which='minor',bottom='on')
 
+    #clone the diagram and plot ontop
     ax2 = ax1.twinx()
-    ax2.plot(ticks, states, 'r--')
-    ax2.set_ylabel('Cluster Size', color='black')
-    ax2.set_ylim((0, 26))
-    #for tl in ax2.get_yticklabels():
-    #	tl.set_color('r')
-    #pl.grid(True)
+    c, = ax2.plot(ticks, states, 'r--', linewidth=2)
+    ax2.set_ylabel('# of nodes', color='black', position=(0, 0.6))
+    ax2.set_ylim((5, 20))
+    ax2.get_yaxis().set_tick_params(which='both', direction='in')
+
+    #set the legend
+    pl.legend([a, b,c], ["target","throughput","cluster size"], loc=4)
     pl.title('Lambda vs. Time')
-    pl.savefig(fig_name)
+    pl.savefig(fig_name, bbox_inches='tight')
 
     pl.clf()
     pl.cla()
-    # run running average on lambda measurements
-    n = 3
-    run_avg_gen = moving_average(l, n)
-    thr_avg_gen = moving_average(thr, n)
-    l_run_avg = []
-    for r in run_avg_gen:
-        l_run_avg.append(float(r))
-        ticks_ra = ticks[1:(len(ticks)-1)] #np.arange(i-8, i-2, 1)
-    thr_run_avg =[]
-    for u in thr_avg_gen:
-        thr_run_avg.append(float(u))
 
-    fig2 = pl.figure(2, figsize=(width,height), dpi=dpi)
-    ax1 = fig2.add_subplot(111)
-    #print str(len(ticks_ra))
-    #print str(len(l_run_avg))
-    ax1.plot(ticks_ra, l_run_avg, 'black', ticks_ra, thr_run_avg, 'g-')
-    ax1.set_xlabel('Time (min)')
-    #ax1.set_xticks(np.arange(48))
-    # Make the y-axis label and tick labels match the line color.
-    ax1.set_ylabel('Load (reqs/sec)', color='black')
-    #ax1.set_ylim((0, 120000))
-    ax1.grid(True)
 
-    ax2 = ax1.twinx()
-    ax2.plot(ticks, states, 'r--')
-    ax2.set_ylabel('Cluster Size', color='black')
-    ax2.set_ylim((0, 26))
-
-    pl.title('Running average (n=3) Lambda vs. Time')
-    pl.savefig(fig_name +'-run-avg-3')
-
-    pl.clf()
-    pl.cla()
     # run running average on lambda measurements
     n = 5
     run_avg_gen = moving_average(l, n)

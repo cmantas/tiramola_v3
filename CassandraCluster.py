@@ -294,7 +294,7 @@ def get_monitoring_endpoint():
     """
     returns the IP of the node that has the monitoring data we want
     """
-    seeds[0].get_public_addr()
+    return  seeds[0].get_public_addr()
 
 
 def repair_cluster():

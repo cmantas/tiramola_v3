@@ -17,8 +17,8 @@ my_logger.debug("--------- NEW RUN  -----------------")
 decision = None
 running_process=None
 #get the endpoint for the monitoring system
-monitoring_endpoint = Clients.get_monitoring_endpoint()
-monVms = MonitorVms(monitoring_endpoint)
+monitor_clients = MonitorVms(Clients.get_monitoring_endpoint())
+monitor_servers = MonitorVms(Servers.get_monitoring_endpoint())
 
 error = None
 
@@ -80,10 +80,9 @@ def run(timeout=None):
     Runs cluster with automatic decision taking
     @param timeout: the time in seconds this run should last
     """
-    my_logger.debug("run: Time starts now, the experiment will take %d sec" % (timeout))
+    my_logger.debug("run: Time starts now, the experiment will take %s sec" % (str(timeout)))
     # convert relative timeout to absolute time
     if not timeout is None: timeout = time() + timeout
-    my_logger.debug("run: start time: %d - end time: %d" % (time(), timeout))
 
     #set global error to None
     global error
@@ -91,7 +90,7 @@ def run(timeout=None):
 
     #init the decision module
     global decision_module
-    decision_module = DM(monitoring_endpoint, Servers.node_count())
+    decision_module = DM(Servers)
 
     #the time interval between metrics refresh
     metrics_interval = env_vars["metric_fetch_interval"]
@@ -103,11 +102,12 @@ def run(timeout=None):
 
         sleep(metrics_interval)
         # refresh the metrics
-        all_metrics = monVms.refreshMetrics()
+        client_metrics = monitor_clients.refreshMetrics()
+        server_metrics = monitor_servers.refreshMetrics()
 
         #take a decision based on the new metrics
         global decision
-        decision = decision_module.take_decision(all_metrics)
+        decision = decision_module.take_decision(client_metrics, server_metrics)
 
         # asynchronously implement that decision
         if(decision["action"]=="PASS"):
@@ -158,7 +158,7 @@ def train():
 
     # init the decision module
     global decision_module
-    decision_module = DM(monitoring_endpoint, Servers.node_count())
+    decision_module = DM(Servers)
     #the time interval between metrics refresh
     metrics_interval = env_vars["metric_fetch_interval"]
 
@@ -170,7 +170,7 @@ def train():
         Clients.run(params)
 
         #refresh once
-        all_metrics = monVms.refreshMetrics()
+        all_metrics = monitor_clients.refreshMetrics()
         #This should only decide to add a node after a period is passed
         global decision
         decision = decision_module.take_decision(all_metrics)
@@ -181,7 +181,7 @@ def train():
         #fetch metrics and takes decisions
             sleep(metrics_interval)
             # refresh the metrics
-            all_metrics = monVms.refreshMetrics()
+            all_metrics = monitor_clients.refreshMetrics()
 
             #This should only decide to add a node after a period is passed
             decision = decision_module.take_decision(all_metrics)

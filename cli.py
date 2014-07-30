@@ -43,6 +43,7 @@ tiramola add_clients count=2
 tiramola train
 tiramola auto_pilot time=60 #time in minutes
 tiramola set_cluster_size count=5
+tiramola watch
 """
 
 
@@ -214,10 +215,12 @@ def auto_pilot():
 
 
 def monitor():
+    from lib.persistance_module import env_vars
     log.info("simply monitoring")
     global env_vars
     env_vars["gain"] = '0'
-    auto_pilot()
+    import Coordinator
+    Coordinator.run()
 
 
 def simulate():
@@ -261,6 +264,11 @@ def set_cluster_size():
         return
     import CassandraCluster
     CassandraCluster.set_cluster_size(count)
+
+
+def watch():
+    import Experiment
+    Experiment.watch("experiments", Experiment.run_experiments_from_string)
 
 
 

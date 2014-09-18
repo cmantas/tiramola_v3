@@ -42,16 +42,18 @@ def implement_decision():
     try:
         if action == "ADD":
             decision_module.pending_action = action
-            my_logger.info("Will add %d nodes" % count)
+            my_logger.debug("Will add %d nodes" % count)
             Servers.add_nodes(count)
             # artificially delay the decision in order to discard transient measurements
             my_logger.info("Sleeping! (artificial delay)")
             sleep(env_vars['extra_decision_delay_per_node']*count)
         elif action == "REMOVE":
             decision_module.pending_action = action
-            my_logger.info("Will remove %d nodes" % count)
+            my_logger.debug("Will remove %d nodes" % count)
             Servers.remove_nodes(count)
             #not supposed to be here for pass decsion
+        else:
+            return
 
         #update the hosts files in clients
         Clients.update_hostfiles(Servers.get_hosts())
@@ -120,7 +122,7 @@ def run(timeout=None):
 
     # DONE
     #join the running_process
-    running_process.join()
+    if not running_process is None: running_process.join()
     my_logger.info(" run is finished")
 
 
@@ -129,7 +131,7 @@ def train():
     Runs a training phase in order to collect a training set of metrics for the given cluster
     """
     #change the gain function for training purposes
-    env_vars['gain'] = 'num_nodes'
+    env_vars['gain'] = '0'
 
     # load the training vars into the regular enviroment vars
     t_vars = env_vars["training_vars"]
@@ -145,13 +147,18 @@ def train():
     try:remove(env_vars["measurements_file"])
     except: pass
 
-    # Sanity-Check the nodecount
-    if Servers.node_count() != t_vars['min_cluster_size']:
-        my_logger.error("TRAINING: Start training with the Minimum cluster size, %d (now:%d)" %(t_vars['min_cluster_size'], Servers.node_count()))
-        exit()
+    # # Sanity-Check the nodecount
+    # if Servers.node_count() != t_vars['min_cluster_size']:
+    #     my_logger.error("TRAINING: Start training with the Minimum cluster size, %d (now:%d)" %(t_vars['min_cluster_size'], Servers.node_count()))
+    #     exit()
 
-    # get the workload parameters
-    svr_hosts = Servers.get_hosts(private=True)
+    Clients.kill_nodes()
+    Servers.kill_nodes()
+    Servers.bootstrap_cluster(t_vars['min_cluster_size'])
+    svr_hosts = Servers.get_hosts(private=env_vars["private_network"])
+
+    Clients.run({'type': 'load', 'servers': Servers.get_hosts(), 'records': t_vars['records']})
+
     #create the parameters dictionary for the training phase
     params = {'type': 'sinusoid', 'servers': svr_hosts, 'target': t_vars['target_load'],
               'offset': t_vars['offset_load'], 'period': t_vars['period']}
@@ -164,16 +171,13 @@ def train():
 
     # run 1 period of workload for each of the the states between min and max cluster size
     for i in range(env_vars['max_cluster_size'] - t_vars['min_cluster_size'] + 1):
-        print "iteration "+str(i)
+        my_logger.info("iteration "+str(i))
 
         #run the workload with the specified params to the clients
         Clients.run(params)
 
-        #refresh once
-        all_metrics = monitor_clients.refreshMetrics()
         #This should only decide to add a node after a period is passed
         global decision
-        decision = decision_module.take_decision(all_metrics)
 
         #run for 1 period
         timeout = time() + env_vars['period']
@@ -181,13 +185,17 @@ def train():
         #fetch metrics and takes decisions
             sleep(metrics_interval)
             # refresh the metrics
-            all_metrics = monitor_clients.refreshMetrics()
+            client_metrics = monitor_clients.refreshMetrics()
+            server_metrics = monitor_servers.refreshMetrics()
 
-            #This should only decide to add a node after a period is passed
-            decision = decision_module.take_decision(all_metrics)
+            #only refresh metrics
+            decision_module.take_decision(client_metrics, server_metrics)
 
-            # synchronously implement that decision
-            implement_decision()
+        #manually add a node
+        decision = {"action": "ADD", 'count':1}
+        # synchronously implement that decision
+        implement_decision()
+
 
 
         #stop the clients after one period has passed

@@ -1,13 +1,13 @@
 {
    "nodes": [
-        "cassandra_node_01",
-      "cassandra_node_02",
-      "cassandra_node_03",
-      "cassandra_node_04",
-      "cassandra_node_05",
-      "cassandra_node_06",
+      "cassandra_node_01", 
+      "cassandra_node_02", 
+      "cassandra_node_03", 
+      "cassandra_node_04", 
+      "cassandra_node_05", 
+      "cassandra_node_06", 
       "cassandra_node_07"
-   ],
+   ], 
    "seeds": [
       "cassandra_seed_0"
    ], 

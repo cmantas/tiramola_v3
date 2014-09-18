@@ -185,7 +185,8 @@ def update_hostfiles(servers):
     log.info("updating hostfiles")
     # generate ycsb-specific hosts file text
     host_text = ""
-    del servers["cassandra_seednode"]
+
+    if "cassandra_seednode" in servers.keys(): del servers["cassandra_seednode"]
 
     #generate the "hosts" text for YCSB
     for key, value in servers.iteritems(): host_text += value+"\n"

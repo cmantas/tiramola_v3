@@ -16,6 +16,8 @@ db_file = "files/persistance.db"
 env_vars = {}
 
 
+
+
 def reload_env_vars():
     global env_vars
     env_vars.update(json.loads(open(ENV_VARS_FILE, 'r').read()))
@@ -40,19 +42,6 @@ def get_credentials(user):
     token = env_vars[user+"_token"]
     return url, token
 
-
-def store_openstack_name(vm_id, name):
-    """
-    adds the name to the dictionary and writes it to the output file
-    :param vm_id:
-    :param name:
-    :return:
-    """
-    openstack_names[vm_id] = name
-    with open(OPENSTACK_NAMES_FILE, 'w') as outfile:
-        json.dump(openstack_names, outfile, indent=3)
-
-
 def get_script_text(cluster, node_type, script_type):
     scripts = json.loads(open(SCRIPTS_FILE, 'r').read())
     try:
@@ -62,3 +51,7 @@ def get_script_text(cluster, node_type, script_type):
     except KeyError:
         return ""
 
+
+def save_openstack_names():
+    with open(OPENSTACK_NAMES_FILE, 'w') as outfile:
+        json.dump(openstack_names, outfile, indent=3)

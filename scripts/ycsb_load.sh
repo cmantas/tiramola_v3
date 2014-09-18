@@ -3,7 +3,7 @@
 count=%s
 step=%s
 start=%s
-
+killall java
 	/etc/YCSB/bin/ycsb load cassandra-cql \
 		-P /etc/YCSB/workloads/workloada -p port=9042 \
 		-threads 100 -s \

@@ -1,6 +1,6 @@
 __author__ = 'tiramola group'
 
-import os, datetime, operator, thread, math, random, itertools, time
+import os, datetime, operator, math, random, itertools, time
 import numpy as np
 from lib.fuzz import fgraph, fset
 from scipy.cluster.vq import kmeans2
@@ -193,13 +193,13 @@ class RLDecisionMaker:
                 ctd['inlambda'] = centroids[int(max_meas_cluster)][0]
                 ctd['throughput'] = centroids[int(max_meas_cluster)][1]
                 ctd['latency'] = centroids[int(max_meas_cluster)][2]
-                #ctd['cpu'] = centroids[int(max_meas_cluster)][3]
+                ctd['cpu'] = centroids[int(max_meas_cluster)][3]
             else:
                 #self.log.debug("DOKMEANS one of the clusters was empty and so label is None :|. Returning zeros")
                 ctd['inlambda'] = 0.0
                 ctd['throughput'] = 0.0
                 ctd['latency'] = 0.0
-                #ctd['cpu'] = 0.0
+                ctd['cpu'] = 0.0
                 #return None
         else:
             self.log.debug("DOKMEANS self.memory[state]['arrayMeas'] is None :|")
@@ -266,19 +266,7 @@ class RLDecisionMaker:
 
         return predicted_l
 
-
-    #a log-related variable
-    pending_action_logged = False
-
-    def take_decision(self, client_metrics, server_metrics):
-        '''
-             this method reads allmetrics object created by Monitoring.py and decides whether a change of the number of participating
-             virtual nodes is due.
-            '''
-        ## Take decision based on metrics
-        #action = "none"
-
-        #        self.my_logger.debug("TAKEDECISION rcvallmetrics: " + str(rcvallmetrics))
+    def handle_metrics(self, client_metrics, server_metrics):
         # read metrics
         allmetrics = {'inlambda': 0, 'throughput': 0, 'latency': 0, 'cpu': 0}
 
@@ -307,20 +295,31 @@ class RLDecisionMaker:
                     #check if host in active cluster hosts
                     if not host in self.cluster.get_hosts().keys():
                         continue
-                    print host
+                    servers += 1
                     for key in metric.keys():
-                        if key.startswith('cpu_user'):
+                        if key.startswith('cpu_idle'):
                             allmetrics['cpu'] += float(metric[key])
-                            #self.my_logger.debug("Latency : "+ str(host[key]) +" collected from client: "+ str(key)
-                            #                     +" latency so far: "+ str(allmetrics['latency']))
-                    if metric[key] > 0:
-                        servers += 1
-
             try:
                 allmetrics['latency'] = allmetrics['latency'] / clients
             except:
                 allmetrics['latency'] = 0
-            allmetrics['cpu'] = allmetrics['cpu']/servers
+            try:
+                allmetrics['cpu'] = (allmetrics['cpu'] / servers) # average node cpu usage
+            except:
+                allmetrics['cpu'] = 0
+            return allmetrics
+
+
+    #a log-related variable
+    pending_action_logged = False
+
+    def take_decision(self, client_metrics, server_metrics):
+        '''
+             this method reads allmetrics object created by Monitoring.py and decides whether a change of the number of participating
+             virtual nodes is due.
+            '''
+        #first parse all metrics
+        allmetrics = self.handle_metrics(client_metrics, server_metrics)
 
             #self.my_logger.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
 
@@ -424,7 +423,7 @@ class RLDecisionMaker:
             elif self.measurementsPolicy.startswith('centroid'):
                 met = self.doKmeans(str(i), from_inlambda, to_inlambda)
                 #format met output
-                out_met = {k:int(v) for k,v in met.iteritems()}
+                out_met = {k: int(v) for k,v in met.iteritems()}
                 self.log.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(out_met))
 
 
@@ -433,6 +432,7 @@ class RLDecisionMaker:
                     allmetrics['inlambda'] = met['inlambda']
                     allmetrics['throughput'] = met['throughput']
                     allmetrics['latency'] = met['latency']
+                    allmetrics['cpu'] = met['cpu']
                     #self.my_logger.debug("TAKEDECISION adding visited state "+ str(i) +" with gain "+ str(self.memory[str(i)]['r']))
                     #else:
                     # No clue for this state use current measurements...
@@ -507,14 +507,13 @@ class RLDecisionMaker:
                 #                    V[s] = self.memory[str(s)]['r']
                 V[s] = self.memory[str(s)]['r']
 
-        #format Vs output
-        out = "TAKEDECISION Vs=["
-        for i in V.keys(): out += "%d:%d, " % (i, V[i])
-        out += "]"
-        self.log.debug(out)
 
-        # Find the max V
-        self.nextState = max(V.iteritems(), key=operator.itemgetter(1))[0]
+        self.log.debug("TAKEDECISION Vs="+str(V))
+        # Find the max V (the min state with the max value)
+        max_gain = max(V.values())
+        max_set = [key for key in V if V[key] == max_gain]
+        self.log.debug("max set: "+str(max_set))
+        self.nextState = min(max_set)
         self.log.debug("max(V): %d (GAIN=%d)" % (self.nextState, V[self.nextState]))
 
         #self.my_logger.debug("TAKEDECISION next state: "+ str(self.nextState))
@@ -532,31 +531,34 @@ class RLDecisionMaker:
         #            fp.close()
 
         if self.nextState != self.currentState:
-            self.log.debug(
-                "Decided to change state to_next: " + str(self.nextState) + " from_curr: " + str(self.currentState))
+            self.log.debug("Decided to change state to_next: " + str(self.nextState) + " from_curr: " + str(self.currentState))
             # You've chosen to change state, that means that nextState has a greater reward, therefore d is always > 0
-            d = self.memory[str(self.nextState)]['r'] - self.memory[str(self.currentState)]['r']
-            if (self.memory[str(self.currentState)]['r'] > 0):
-                if (float(d) / self.memory[str(self.currentState)]['r'] < env_vars['decision_threshold']):
-                    #false alarm, stay where you are
-                    self.nextState = self.currentState
-                    # skip decision
-                    self.decision["action"] = "PASS"
-                    self.decision["count"] = 0
-                    self.log.debug("ups changed my mind...staying at state: " + str(self.currentState) +
-                                   " cause the gain difference is: " + str(abs(d)) +
-                                   " which is less than %d%% of the current reward, it's actually %f%%" % (int(100*env_vars['decision_threshold']) ,float(abs(d)*100) / self.memory[str(self.currentState)]['r']))
-            # If the reward is the same with the state you're in, don't move
-            elif (d == 0):
+            current_reward = self.memory[str(self.currentState)]['r']
+            d = self.memory[str(self.nextState)]['r'] - current_reward
+            self.log.debug( "Difference is " + str(d) + " abs thres="+str(env_vars['decision_abs_threshold'])+" gte:"+str(float(d) < env_vars['decision_abs_threshold']))
+            if (current_reward != 0 and (abs(float(d) / current_reward) < env_vars['decision_threshold']))\
+                    or float(d) < env_vars['decision_abs_threshold']:
                 #false alarm, stay where you are
                 self.nextState = self.currentState
                 # skip decision
                 self.decision["action"] = "PASS"
                 self.decision["count"] = 0
                 self.log.debug("ups changed my mind...staying at state: " + str(self.currentState) +
-                                     " cause the gain difference is: " + str(abs(d)) +
-                                     " which is less than 10% of the current reward "
-                                     + str(self.memory[str(self.currentState)]['r']))
+                               " cause the gain difference is: " + str(abs(d)) +
+                               " which is less than %d%% of the current reward, it's actually %f%%" % (int(100*env_vars['decision_threshold']) ,abs(float(d)*100) / (float(current_reward)+0.001)))
+            else:
+                self.log.debug("Difference "+ str(d) + " is greater than threshold ("+str(env_vars['decision_threshold'])+"). Keeping decision")
+            # If the reward is the same with the state you're in, don't move
+            # elif (d == 0):
+            #     #false alarm, stay where you are
+            #     self.nextState = self.currentState
+            #     # skip decision
+            #     self.decision["action"] = "PASS"
+            #     self.decision["count"] = 0
+            #     self.log.debug("ups changed my mind...staying at state: " + str(self.currentState) +
+            #                          " cause the gain difference is: " + str(abs(d)) +
+            #                          " which is less than 10% of the current reward "
+            #                          + str(self.memory[str(self.currentState)]['r']))
 
         if self.nextState > self.currentState:
             self.decision["action"] = "ADD"

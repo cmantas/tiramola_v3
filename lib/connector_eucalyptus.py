@@ -60,32 +60,36 @@ def describe_instances(instance_ids=None, state=None):
 def create_vm(name, flavor_id, image_id, IPv4, log_path):
         responce = euca_connection.run_instances(image_id=image_id, instance_type=flavor_id, additional_info=name,
                                                  key_name=ec2_key_name)
-        print responce
+        assert IPv4 !=True, "Attaching floating IP not implemented yet"
+        assert log_path == None, "Logging not implemented yet"
         instances = []
         ## add the newly run instances to the database
         created_instance = responce.instances.pop()
         vm_id = created_instance.id
-        store_openstack_name(vm_id, name)
+        openstack_names[vm_id] = name
+        save_openstack_names()
         return vm_id
 
 
 def get_all_vm_ids():
-    ids = []
-    for key, value in openstack_names.iteritems():
-        ids.append(key)
+    ids = describe_instances().keys()
+
+    new_names = {}
+
+    for i in ids:
+        if not i in openstack_names: continue
+        new_names[i] = openstack_names[i]
+    openstack_names.clear()
+    openstack_names.update(new_names)
+    save_openstack_names()
     return ids
 
 
 def get_vm_details(vm_id):
-    print "describe"
-    test_dict = describe_instances(instance_ids=[vm_id])
-    dict = test_dict.get()
+    test_dict = describe_instances(instance_ids=[vm_id])[vm_id]
     name = openstack_names.get(vm_id, 'None')
-    print name
-    print name
-    vm_id = dict['id']
-    flavor_id = dict['instance_type']
-    image_id = dict['image_id']
+    flavor_id = test_dict['instance_type']
+    image_id = test_dict['image_id']
     return {'name': name, 'id': vm_id, 'flavor_id': flavor_id, 'image_id': image_id}
 
 
@@ -94,6 +98,7 @@ def get_vm_status(vm_id):
     if len(di) == 0:
         return "NONE"
     dict = di[vm_id]
+
     ec2_state = dict["state"]
     if ec2_state in statemap:
         return statemap[ec2_state]
@@ -118,8 +123,9 @@ def get_addreses(vm_id):
     rv = []
     addr = dict()
     #for the public IPv6
-    addr = info["public_dns_name"].strip()
-    rv.append({'version': 6, 'ip': addr, 'type': 'fixed'})
+    if info["public_dns_name"] !="":
+        addr = info["public_dns_name"].strip()
+        rv.append({'version': 6, 'ip': addr, 'type': 'fixed'})
     #for the public IPv4
     addr = info["private_dns_name"]
     rv.append({'version': 4, 'ip': addr, 'type': 'fixed'})

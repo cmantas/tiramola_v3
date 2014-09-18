@@ -1,22 +1,11 @@
 __author__ = 'cmantas'
-from time import sleep
 
-from os import listdir, mkdir
-from os.path import isfile, join, exists
-from shutil import move
+from lib.persistance_module import env_vars
 
+env_vars['iaas'] = "openstack"
 
-
+from VM import VM, get_all_vms
 
 
-def my_print(c):
-    print "myprint"
-
-dir_path = "experiments"
-print list_files(dir_path)
-
-print watch(dir_path, my_print)
-print "done"
-
-
-
+for vm in get_all_vms(check_active=True):
+    print str(vm)

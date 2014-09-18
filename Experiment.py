@@ -187,7 +187,7 @@ def simulate():
     draw_exp("files/measurements/simulation/measurements.txt")
 
 
-def clean():
+def clean_start():
     success = False
     while not success:
         try:
@@ -201,7 +201,7 @@ def clean():
             ClientsCluster.run(args)
             success = True
         except:
-            log.error("Failed to cllean, restarting")
+            log.error("Failed to clean, restarting")
             sleep(120)
 
 
@@ -254,7 +254,7 @@ def run_batch_experiments(exp_list):
             success = False
             while not success and tries > 0:
                 if (not ('clean' in exp)) or bool(exp['clean']):
-                    clean()
+                    clean_start()
                 else:
                     #make sure the cluster is at its min size
                     CassandraCluster.set_cluster_size(env_vars["min_cluster_size"])

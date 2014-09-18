@@ -54,7 +54,6 @@ def my_draw(x, y, x_label, y_label, graph_name, ax2_x=None, ax2_label=None):
     pl.savefig(fig_name + "_"+graph_name)
     pl.clf()
     pl.cla()
-    print "here"
     return
 
 def load_data(meas_file):
@@ -76,7 +75,7 @@ def load_data(meas_file):
             l.append(float(m[1]))
             thr.append(float(m[2]))
             lat.append(float(m[3]))
-            cpu.append(float(m[4]))
+            cpu.append(100.0-float(m[4]))
 #            datetime.strptime('2012-11-14 14:32:30', '%Y-%m-%d %H:%M:%S')
             #t = time.strptime(m[5].rstrip(), "%Y-%m-%d %H:%M:%S")
             ticks.append(mins)
@@ -156,17 +155,16 @@ def draw_exp(meas_file):
 
     fig4 = pl.figure(4, figsize=(width,height), dpi=dpi)
     ax1 = fig4.add_subplot(111)
-    ax1.plot(ticks, cpu, 'black')#, t, my_inlambda, 'g-')
+    a, = ax1.plot(ticks, cpu, 'r')#, t, my_inlambda, 'g-')
     ax1.set_xlabel('Time (min)')
-    ax1.set_ylabel('CPU Usage (%)', color='black')
+    ax1.set_ylabel('usage %')
     #ax1.set_ylim((0, 50))
     ax1.grid(True)
 
     ax2 = ax1.twinx()
-    ax2.plot(ticks, states, 'r--')
-    ax2.set_ylabel('Cluster Size', color='black')
-    ax2.set_ylim((0, 26))
-
+    b, =ax2.plot(ticks, thr, 'g')
+    ax2.set_ylabel('reqs/sec')
+    pl.legend([a, b], ["CPU", "Throughput"], loc=4, borderaxespad=0)
     pl.title('CPU Usage vs. Time')
     pl.savefig(fig_name +'-cpu')
 
@@ -192,6 +190,7 @@ def draw_exp(meas_file):
     lat_avg = my_avg(lat, a=0.2)
     thr_avg = my_avg(thr, a=0.2)
     my_draw(ticks, lat_avg, "Time (sec)", "latency EWMA (msec)", 'latency_ewma', thr_avg, "throughput")
+
 
     return
 

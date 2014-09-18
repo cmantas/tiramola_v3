@@ -83,18 +83,23 @@ class MonitorVms:
         #self.my_logger.debug("Refreshing metrics from %s:%s" % (self.ganglia_host, self.ganglia_port))
         for res in socket.getaddrinfo(self.ganglia_host, self.ganglia_port, socket.AF_UNSPEC, socket.SOCK_STREAM):
             af, socktype, proto, canonname, sa = res
-            try:
-                self.soc = socket.socket(af, socktype, proto)
-            except socket.error as msg:
-                s = None
-                continue
-            try:
-                self.soc.connect(sa)
-            except socket.error as msg:
-                self.soc.close()
-                self.soc = None
-                continue
-            break
+            self.soc = None
+            attempts = 0
+            while self.soc is None and attempts < 3:
+                try:
+                    self.soc = socket.socket(af, socktype, proto)
+                except socket.error as msg:
+                    s = None
+                    sleep(1)
+                    continue
+                try:
+                    self.soc.connect(sa)
+                except socket.error as msg:
+                    self.soc.close()
+                    self.soc = None
+                    sleep(1)
+                    continue
+                break
         if self.soc is None:
             print 'could not open socket %s:%s' % (str(self.ganglia_host), str(self.ganglia_port))
             sys.exit(1)

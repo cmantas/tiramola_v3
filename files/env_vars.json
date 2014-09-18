@@ -4,7 +4,7 @@
     "iaas": "okeanos",
     "active_cluster_name": "cassandra",
     "auth_url" : "https://accounts.okeanos.grnet.gr/identity/v2.0",
-    "cmantas_token": "OSYPWU4hGPBbzFzJ-pVb35ubuV3aKNTdDT0TA6GUUOg",
+    "cmantas_token": "OkcCH9v3BMA0YGkiSQddyrTIHmbtZbtunGk76FjSKUs",
     "cassandra_base_image": "430c24b4-5c75-4d38-88a9-eb95cebe27f8",
     "ubuntu_bare_image": "t545d36df-53da-46bd-86ed-759ac3eb1995",
     "cassandra_network_id": 67768,
@@ -13,9 +13,9 @@
     "default_image": "dsfsdfsdfsd",
     "cassandra_decommission_action": "KEEP",
     "clients_decommission_action": "DESTROY",
-    "EC2_URL": "http://147.102.4.172:8773/services/Cloud",
-    "cmantas_EC2_ACCESS_KEY": "8e102f7c66384511be49fc55d6879345",
-    "cmantas_EC2_SECRET_KEY": "78be9f96b4ce480b9e9a186a2579f247",
+    "EC2_URL": "http://termi7:8773/services/Cloud",
+    "cmantas_EC2_ACCESS_KEY": "19c1321e180541bf96b8ec75972961f7",
+    "cmantas_EC2_SECRET_KEY": "bc4a154455544b45aa5352cd71900a27",
     "openstack_key_pair_name": "just_a_key",
     "ganglia_endpoint": "scripts/ganglia_endpoint.sh",
     "min_cluster_size": 8,
@@ -31,6 +31,7 @@
     "gain": "(throughput - inlambda)*50 - (num_nodes - current_nodes)*100 - (latency -10) * 100",
     "update_metrics": 1,
     "decision_threshold": 0.05,
+    "decision_abs_threshold": 1,
     "metric_fetch_interval": 5,
     "decision_interval": 180,
     "extra_decision_delay_per_node": 60,
@@ -41,11 +42,11 @@
     "training_vars": {
         "target_load":8000,
         "offset_load": 6000,
-        "period": 3600,
+        "period": 1800,
         "decision_interval": 3600,
-        "max_cluster_size": 20,
-        "min_cluster_size": 13,
-        "records": 10000000
+        "max_cluster_size": 18,
+        "min_cluster_size": 9,
+        "records": 5000000
          }
 
 }

@@ -1,0 +1,199 @@
+[
+
+        {
+     "name": "train_1",
+     "time": "60",
+     "clean": 1,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 8,
+        "update_hostfiles":1
+        }
+      },
+
+      {
+     "name": "train_2",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 9,
+        "update_hostfiles":1
+        }
+      },
+
+        {
+     "name": "train_3",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 10,
+        "update_hostfiles":1
+        }
+      },
+
+            {
+     "name": "train_4",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 11,
+        "update_hostfiles":1
+        }
+      },
+       {
+     "name": "train_5",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 12,
+        "update_hostfiles":1
+        }
+      },
+    
+            {
+     "name": "train_6",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 13,
+        "update_hostfiles":1
+        }
+      },
+    
+            {
+     "name": "train_7",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 14,
+        "update_hostfiles":1
+        }
+      },
+    
+            {
+     "name": "train_8",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 15,
+        "update_hostfiles":1
+        }
+      },
+    
+            {
+     "name": "train_9",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 16,
+        "update_hostfiles":1
+        }
+      },
+    
+            {
+     "name": "train_10",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 17,
+        "update_hostfiles":1
+        }
+      },
+    
+            {
+     "name": "train_11",
+     "time": "60",
+     "clean": 0,
+     "workload":{
+         "target": "9000",
+         "offset":"7000",
+         "period":"60"
+         },
+     "env_vars":{
+        "gain":"0",
+        "update_metrics": 1,
+        "decision_interval": 180,
+        "min_cluster_size": 18,
+        "update_hostfiles":1
+        }
+      }
+]

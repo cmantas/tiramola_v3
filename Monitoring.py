@@ -86,6 +86,7 @@ class MonitorVms:
             self.soc = None
             attempts = 0
             while self.soc is None and attempts < 3:
+                attempts += 1
                 try:
                     self.soc = socket.socket(af, socktype, proto)
                 except socket.error as msg:
@@ -97,15 +98,20 @@ class MonitorVms:
                 except socket.error as msg:
                     self.soc.close()
                     self.soc = None
-                    sleep(1)
+
+                    sleep(10)
+                    self.my_logger.error("Failed to connect to ganglia endpoint: " + str(self.ganglia_host) + " "+str(msg) + " attempt " + str(attempts) )
                     continue
                 break
         if self.soc is None:
-            print 'could not open socket %s:%s' % (str(self.ganglia_host), str(self.ganglia_port))
+            raise Exception('could not open socket %s:%s (%s)' % (str(self.ganglia_host), str(self.ganglia_port), str(msg)))
             sys.exit(1)
         self.allmetrics = None
         f = self.soc.makefile("r")
-        self.allmetrics = self.parser.parse(f)
+        try:
+            self.allmetrics = self.parser.parse(f)
+        except:
+            self.my_logger.error("Failed to parse xml from ganglia")
         f.close()
         f = None
         self.soc.close()
@@ -122,75 +128,18 @@ def usage():
 -c|--critical= [-s|--server=] [-p|--port=] """
     sys.exit(3)
 
+
+
+
 if __name__ == "__main__":
 ##############################################################
-#    ganglia_host = 'clusterhead'
-#    ganglia_port = 8649
-#    host = 'clusterhead'
-#    metric = 'swap_free'
-#    warning = None
-#    critical = None
-
-
-#    try:
-#        options, args = getopt.getopt(sys.argv[1:],
-#          "h:m:w:c:s:p:",
-#          ["host=", "metric=", "warning=", "critical=", "server=", "port="],
-#          )
-#    except getopt.GetoptError, err:
-#        print "check_gmond:", str(err)
-#        usage()
-#        sys.exit(3)
-#
-#    for o, a in options:
-#        if o in ("-h", "--host"):
-#            host = a
-#        elif o in ("-m", "--metric"):
-#            metric = a
-#        elif o in ("-w", "--warning"):
-#            warning = float(a)
-#        elif o in ("-c", "--critical"):
-#            critical = float(a)
-#        elif o in ("-p", "--port"):
-#            ganglia_port = int(a)
-#        elif o in ("-s", "--server"):
-#            ganglia_host = a
-#
-#    if critical == None or warning == None or metric == None or host == None:
-#        usage()
-#
+    ganglia_host = '83.212.118.57'
+    ganglia_port = 8649
 
     #monVms = MonitorVms(cluster_manager.get_hosts())
-    monVms = MonitorVms( "83.212.121.246")
+    monVms = MonitorVms(ganglia_host, ganglia_port)
 
 
-    sleep(5)
     allmetrics=monVms.refreshMetrics()
     print "allmetrics length ", len(allmetrics)
-
-
-#    try:
-#        print "ganglia host " + ganglia_host
-#        print 'host ' + host
-#        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#        s.connect((ganglia_host,ganglia_port))
-##        file = s.makefile("r")
-##        print file.read()
-#        parser = GParser(host, metric)
-##        print "outside function" , s.makefile("r")
-#        value = parser.parse(s.makefile("r"))
-#
-#        s.close()
-#    except Exception, err:
-#        print "CHECKGANGLIA UNKNOWN: Error while getting value \"%s\"" % (err)
-#        sys.exit(3)
-#
-#    if value >= critical:
-#        print "CHECKGANGLIA CRITICAL: %s is %.2f" % (metric, value)
-#        sys.exit(2)
-#    elif value >= warning:
-#        print "CHECKGANGLIA WARNING: %s is %.2f" % (metric, value)
-#        sys.exit(1)
-#    else:
-#        print "CHECKGANGLIA OK: %s is %.2f" % (metric, value)
-#        sys.exit(0)
+    print allmetrics.keys()

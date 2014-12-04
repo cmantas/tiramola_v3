@@ -5,6 +5,7 @@ import commands
 from boto.ec2.connection import EC2Connection
 import lib.persistance_module
 from lib.persistance_module import *
+from scp_utils import run_ssh_command
 
 
 ##retreive the EC2 credentials from the persistance module's env_vars
@@ -31,6 +32,10 @@ usefull_attributes = ["id", "image_id", "public_dns_name", "private_dns_name",
 statemap = {"running": "ACTIVE",    "shutoff": "STOPPED"}
 
 
+#the gateway for the openstack installation
+gateway = '147.102.4.178'
+
+
 def describe_instances(instance_ids=None, state=None):
     """
     helper function that acts as a wrapper for the "get_all_instances command"
@@ -42,8 +47,6 @@ def describe_instances(instance_ids=None, state=None):
     for reservation in reservations:
         for instance in reservation.instances:
             details = dict()
-            # for a in dir(instance):
-            #     print a
             for attr in usefull_attributes:
                 #get the member value from the instance instance
                 val = getattr(instance, attr, "")
@@ -125,9 +128,14 @@ def get_addreses(vm_id):
     #for the public IPv6
     if info["public_dns_name"] !="":
         addr = info["public_dns_name"].strip()
-        rv.append({'version': 6, 'ip': addr, 'type': 'fixed'})
+        rv.append({'version': 4 , 'ip': addr, 'type': 'fixed'})
     #for the public IPv4
     addr = info["private_dns_name"]
     rv.append({'version': 4, 'ip': addr, 'type': 'fixed'})
+
+    command = "ssh %s -o StrictHostKeyChecking=no 'ifconfig | grep Global' 2>/dev/null" % (addr)
+    ssh_rv =  run_ssh_command(gateway, "ubuntu", command, indent=0, prefix="")
+    pub_ipv6 = ssh_rv.split()[2].split("/")[0]
+    rv.append({'version': 6, 'ip': pub_ipv6, 'type': 'public'})
     return rv
 

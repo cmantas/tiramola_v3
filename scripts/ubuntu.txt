@@ -1,0 +1,7 @@
+#enable root login (from user 'ubuntu')
+sudo sed -i "s/PermitRootLogin without-password/PermitRootLogin yes/g"  /etc/ssh/sshd_config
+
+#get ip from intermediate gateway
+ssh gateway "ssh ubuntu@192.168.5.130 -i just_a_key 'ifconfig | grep Global | awk \'{print $3}\' | sed \'s/\/64//g\' "
+
+ssh ubuntu@192.168.5.130 -i just_a_key "ifconfig | grep Global | awk '{print $3}' | sed 's/\/64//g' "

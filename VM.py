@@ -227,7 +227,7 @@ class VM (object):
             while not self.created:  sleep(3)
         self.log.debug("Waiting for SSH daemon (%s)" % self.get_public_addr())
         #time to stop trying
-        end_time = datetime.now()+timedelta(seconds=ssh_giveup_timeout)
+        end_time = datetime.now()+timedelta(seconds=env_vars['ssh_giveup_timeout'])
         self.log.debug("end time:"+str(end_time))
         timer = Timer()
         timer.start()

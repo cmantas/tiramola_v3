@@ -13,11 +13,6 @@ from time import time
 import sys, traceback
 
 ssh_timeout = 10
-ssh_giveup_timeout = env_vars['ssh_giveup_timeout']
-priv_key_path = 'keys/just_a_key'
-private_key = paramiko.RSAKey.from_private_key_file(priv_key_path)
-
-
 
 def reindent(s, numSpaces, prefix=''):
     s = string.split(s, '\n')
@@ -34,6 +29,8 @@ def run_ssh_command(host, user, command, indent=1, prefix="$: ", logger=None):
     :param command:
     :return:
     """
+    ssh_giveup_timeout = env_vars['ssh_giveup_timeout']
+    private_key = paramiko.RSAKey.from_private_key_file(env_vars["priv_key_path"])
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     if not logger is None:
@@ -42,11 +39,12 @@ def run_ssh_command(host, user, command, indent=1, prefix="$: ", logger=None):
     try:
         ssh.connect(host, username=user, timeout=ssh_timeout, pkey=private_key, allow_agent=False, look_for_keys=False)
     except:
-        logger.error("Could not connect to "+ str(host))
+        if not logger is None:
+            logger.error("Could not connect to "+ str(host))
         traceback.print_exc()
     if not logger is None:
         logger.debug("connected in %d sec. now Running SSH command" % timer.stop())
-    timer.start()
+        timer.start()
     ### EXECUTE THE COMMAND  ###
     stdin, stdout, stderr = ssh.exec_command(command)
     ret = ''
@@ -71,6 +69,8 @@ def put_file_scp (host, user, files, remote_path='.', recursive=False):
     :param recursive:
     :return:
     """
+    ssh_giveup_timeout = env_vars['ssh_giveup_timeout']
+    private_key = paramiko.RSAKey.from_private_key_file(env_vars["priv_key_path"])
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(host, username=user, timeout=ssh_giveup_timeout, pkey=private_key)
@@ -80,6 +80,7 @@ def put_file_scp (host, user, files, remote_path='.', recursive=False):
 
 
 def test_ssh(host, user, logger=None):
+    ssh_giveup_timeout = env_vars['ssh_giveup_timeout']
     end_time = datetime.now()+timedelta(seconds=ssh_giveup_timeout)
     try:
         rv = run_ssh_command(host, user, 'echo success', logger=logger)
@@ -93,20 +94,25 @@ def test_ssh(host, user, logger=None):
 
 class Timer():
     """
-    Helper class that gives the ablility to measure time between events
+    Helper class that gives the ability to measure time between events
     """
     def __init__(self):
         self.started = False
         self.start_time = 0
 
     def start(self):
-        assert self.started is False, " Timer already started"
+        if  self.started is True:
+            raise Exception("timer already started")
+
+
         self.started = True
         self.start_time = int(round(time() * 1000))
 
     def stop(self):
         end_time = int(round(time() * 1000))
-        assert self.started is True, " Timer had not been started"
+        if self.started is False:
+            print " Timer had not been started"
+            return 0.0
         start_time = self.start_time
         self.start_time = 0
         self.started = False

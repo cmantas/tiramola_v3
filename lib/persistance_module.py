@@ -10,12 +10,11 @@ from datetime import datetime
 ENV_VARS_FILE = 'files/env_vars.json'
 OPENSTACK_NAMES_FILE = 'files/openstack_names.json'
 SCRIPTS_FILE = 'files/scripts.json'
+PRED_VARS_FILE = 'files/pred_vars.json'
 
 db_file = "files/persistance.db"
 
 env_vars = {}
-
-
 
 
 def reload_env_vars():
@@ -29,7 +28,8 @@ env_vars = json.loads(open(ENV_VARS_FILE, 'r').read())
 #load the openstack names from file
 openstack_names = json.loads(open(OPENSTACK_NAMES_FILE, 'r').read())
 
-
+#load the prediction vars from file
+pred_vars = json.loads(open(PRED_VARS_FILE, 'r').read())
 
 
 def get_credentials(user):
@@ -41,6 +41,7 @@ def get_credentials(user):
     url = env_vars["auth_url"]
     token = env_vars[user+"_token"]
     return url, token
+
 
 def get_script_text(cluster, node_type, script_type):
     scripts = json.loads(open(SCRIPTS_FILE, 'r').read())

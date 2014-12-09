@@ -86,6 +86,24 @@ def load_data(meas_file):
     return states, l, thr, cpu, lat, ticks
 
 
+def load_predictions(pred_file):
+    pred_l = []
+    ticks = []
+    preds = open(pred_file, 'r')
+    preds.next()
+    mins = 0.0
+    for line in preds:
+        if not line.startswith('###') and not line.startswith('\n'):
+            m = line.split('\t\t')
+            pred_l.append(float(m[1]))
+            ticks.append(float(m[0]))
+            #ticks.append(mins)
+            mins += float(env_vars['metric_fetch_interval']) / 60
+            #print 'A ' + str(float(m[1])) + 'B ' + str(mins)
+    preds.close()
+    return pred_l, ticks
+
+
 def draw_exp(meas_file):
     global fig_name
     fig_name = meas_file.replace('.txt', '')
@@ -114,7 +132,7 @@ def draw_exp(meas_file):
     ax2.get_yaxis().set_tick_params(which='both', direction='in')
 
     #set the legend
-    pl.legend([a, b,c], ["target","throughput","cluster size"], loc=4)
+    pl.legend([a, b,c], ["target", "throughput", "cluster size"], loc=4)
     pl.title('Lambda vs. Time')
     pl.savefig(fig_name, bbox_inches='tight')
 
@@ -162,11 +180,11 @@ def draw_exp(meas_file):
     ax1.grid(True)
 
     ax2 = ax1.twinx()
-    b, =ax2.plot(ticks, thr, 'g')
+    b, = ax2.plot(ticks, thr, 'g')
     ax2.set_ylabel('reqs/sec')
     pl.legend([a, b], ["CPU", "Throughput"], loc=4, borderaxespad=0)
     pl.title('CPU Usage vs. Time')
-    pl.savefig(fig_name +'-cpu')
+    pl.savefig(fig_name + '-cpu')
 
     pl.clf()
     pl.cla()
@@ -191,6 +209,34 @@ def draw_exp(meas_file):
     thr_avg = my_avg(thr, a=0.2)
     my_draw(ticks, lat_avg, "Time (sec)", "latency EWMA (msec)", 'latency_ewma', thr_avg, "throughput")
 
+
+    # load prediction graph
+    pfile = meas_file.replace('measurements.txt', 'predictions.txt')
+    fig6 = pl.figure(6, figsize=(width, height), dpi=dpi)
+    ax1 = fig6.add_subplot(111)
+
+    #plot the 2 values
+    a, = ax1.plot(ticks, l, 'black')
+    preds, ticks = load_predictions(pfile)
+    b, = ax1.plot(ticks, preds, 'r')
+
+    ax1.set_xlabel('Time (min)')
+    #ax1.set_xticks(np.arange(48))
+    # Make the y-axis label and tick labels match the line color.
+    pl.minorticks_on()
+    ax1.set_ylabel('Load (reqs/sec)', color='black')
+    ax1.set_ylim(bottom=-2000)
+    ax1.grid(True, which="major")
+    ax1.grid(True, which="minor", color='#C0C0C0')
+    #ax1.tick_params(axis='x',which='minor',bottom='on')
+
+    #set the legend
+    pl.legend([a, b], ["Actual Load", "Predicted Load"], loc=4)
+    pl.title('Actual vs. Predicted Load')
+    pl.savefig(fig_name + '-predicted', bbox_inches='tight')
+
+    pl.clf()
+    pl.cla()
 
     return
 

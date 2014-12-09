@@ -1,6 +1,7 @@
 {
     "private_network": 0,
     "update_hostfiles":1,
+    "use_prediction":1,
     "iaas": "okeanos",
     "active_cluster_name": "cassandra",
     "auth_url" : "https://accounts.okeanos.grnet.gr/identity/v2.0",

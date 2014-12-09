@@ -8,6 +8,7 @@ from lib.persistance_module import env_vars
 from scipy.stats import linregress
 from collections import deque
 from lib.tiramola_logging import get_logger
+from Predictor import Predictor
 
 
 class RLDecisionMaker:
@@ -19,8 +20,11 @@ class RLDecisionMaker:
         self.log.info("Using 'gain' : " + env_vars['gain'] +" with threshold of "+str( env_vars["decision_threshold"]*100) + "% and interval: " + str(env_vars['decision_interval']))
         self.log.info("Cluster Size from %d to %d nodes" % (env_vars['min_cluster_size'], env_vars['max_cluster_size']))
 
-        self.debug = False
-        self.currentState = cluster.node_count()
+        self.debug = True
+        if self.debug:
+            self.currentState = 8
+        else:
+            self.currentState = cluster.node_count()
         self.cluster = cluster
         self.nextState = self.currentState
         self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
@@ -30,7 +34,8 @@ class RLDecisionMaker:
         # The policy for getting throughput and latency when computing the reward func.
         # average, centroid
         self.measurementsPolicy = 'centroid'
-        self.prediction = False
+        self.prediction = env_vars['use_prediction']
+        self.predictor = Predictor()
 
         # used only in simulation!!
         self.countdown = 0
@@ -387,12 +392,13 @@ class RLDecisionMaker:
         to_inlambda = allmetrics['inlambda'] + 500 #+ 3000
 
         if self.prediction:
-            predicted_l = self.predict_load()
-            dif = abs(allmetrics['inlambda'] - predicted_l)
+            predicted_l = self.predictor.poly_regression(degree=2, latest=40)
+            # predicted_l = self.predict_load()
+            # dif = abs(allmetrics['inlambda'] - predicted_l)
             self.log.debug(
-                "Predicted: " + str(predicted_l) + " lambda :" + str(allmetrics['inlambda']) + " New diff: " + str(dif))
-            from_inlambda = predicted_l - 3000
-            to_inlambda = predicted_l + 3000
+                "Predicted: " + str(predicted_l) + " lambda :" + str(allmetrics['inlambda']))
+            # from_inlambda = predicted_l - 3000
+            # to_inlambda = predicted_l + 3000
 
         self.log.debug("TAKEDECISION state %d lambda range: %d - %d" % (self.currentState, from_inlambda, to_inlambda))
         # too low to care, the initial num of nodes can answer 1000 req/sec,
@@ -637,7 +643,7 @@ class RLDecisionMaker:
         self.log.debug("START SIMULATION!!")
         self.debug = True
         load = []
-        for k in range(9, 21):
+        for k in range(9, 19):
             for j in self.memory[str(k)]['arrayMeas']:
                 load.append(j[0])
 
@@ -658,5 +664,5 @@ class RLDecisionMaker:
 
 
 if __name__ == '__main__':
-    fsm = RLDecisionMaker("localhost", 8)
+    fsm = RLDecisionMaker("localhost")
     fsm.simulate_training_set()

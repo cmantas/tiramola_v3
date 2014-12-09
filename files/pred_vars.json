@@ -1,0 +1,7 @@
+{
+    "predictions_file": "files/measurements/predictions.txt",
+    "use_sampling": 1,
+    "sampling": 12,
+    "use_latest_meas": 5,
+    "projection_time": 5,
+}

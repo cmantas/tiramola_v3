@@ -392,13 +392,12 @@ class RLDecisionMaker:
         to_inlambda = allmetrics['inlambda'] + 500 #+ 3000
 
         if self.prediction:
-            predicted_l = self.predictor.poly_regression(degree=2, latest=40)
-            # predicted_l = self.predict_load()
+            predicted_l = self.predictor.poly_regression()
             # dif = abs(allmetrics['inlambda'] - predicted_l)
             self.log.debug(
                 "Predicted: " + str(predicted_l) + " lambda :" + str(allmetrics['inlambda']))
-            # from_inlambda = predicted_l - 3000
-            # to_inlambda = predicted_l + 3000
+            from_inlambda = predicted_l - 500
+            to_inlambda = predicted_l + 500
 
         self.log.debug("TAKEDECISION state %d lambda range: %d - %d" % (self.currentState, from_inlambda, to_inlambda))
         # too low to care, the initial num of nodes can answer 1000 req/sec,
@@ -407,7 +406,6 @@ class RLDecisionMaker:
             from_inlambda = 0.0
             self.log.debug("TAKEDECISION state %d current lambda %d changed lambda range to: %d - %d"
                            % (self.currentState, allmetrics['inlambda'], from_inlambda, to_inlambda))
-
 
         # The subgraph we are interested in. It contains only the allowed transitions from the current state.
         from_node = max(int(env_vars["min_cluster_size"]), (self.currentState - env_vars["rem_nodes"]))
@@ -431,8 +429,7 @@ class RLDecisionMaker:
                 met = self.doKmeans(str(i), from_inlambda, to_inlambda)
                 #format met output
                 out_met = {k: int(v) for k,v in met.iteritems()}
-                self.log.debug("TAKEDECISION state: "+ str(i) +" met: "+ str(out_met))
-
+                self.log.debug("TAKEDECISION state: " + str(i) + " met: " + str(out_met))
 
                 if met != None and len(met) > 0:
                     # Been in this state before, use the measurements

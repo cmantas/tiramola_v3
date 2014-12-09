@@ -16,13 +16,14 @@ class Predictor:
         self.measurements_file = env_vars['measurements_file']
         self.predictions_file = pred_vars['predictions_file']
         self.latest = pred_vars['use_latest_meas']
+        self.degree = pred_vars['regression_degree']
 
     '''
     Runs a polynomial regression on the latest measurements (in mins).
         :param degree, the degree of the polynomial you want to fit the data (use 1 for linear regression)
         :param latest, the number of mins you want to use for the regression
     '''
-    def poly_regression(self, degree=1):
+    def poly_regression(self):
         # mipws na ta diabazeis apo ti mnimi?
         # we log measurements every 5 sec, which means we have 12 measurements per minute
         stdin, stdout = os.popen2("tail -n " + (12 * self.latest) + " " + self.measurements_file)
@@ -57,7 +58,7 @@ class Predictor:
 
         print ('# of mins considered %d' % mins)
         # fit lambdas in a polynomial
-        coeff = np.polyfit(ticks, lambdas, deg=degree)  # coeff[0] = slope, coeff[1] = intercept
+        coeff = np.polyfit(ticks, lambdas, deg=self.degree)  # coeff[0] = slope, coeff[1] = intercept
         # predict lambda in projection_time mins from now
         predicted_l = np.polyval(coeff, (mins + self.projection_time))
         prediction_file.write(str(mins + self.projection_time) + '\t\t' + str(predicted_l) + '\n')

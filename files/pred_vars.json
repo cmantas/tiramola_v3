@@ -4,5 +4,5 @@
     "sampling": 12,
     "use_latest_meas": 5,
     "projection_time": 5,
-    "regression_degree": 2,
+    "regression_degree": 2
 }

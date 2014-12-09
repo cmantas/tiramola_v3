@@ -30,7 +30,7 @@ class Predictor:
     def poly_regression(self):
         # mipws na ta diabazeis apo ti mnimi?
         # we log measurements every 5 sec, which means we have 12 measurements per minute
-        stdin, stdout = os.popen2("tail -n " + str(12 * self.latest) + " " + self.measurements_file)
+        stdin, stdout = os.popen2("tail -n " + str(12 * self.latest + 1) + " " + self.measurements_file)
         stdin.close()
         lines = stdout.readlines()
         stdout.close()

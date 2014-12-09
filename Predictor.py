@@ -26,13 +26,13 @@ class Predictor:
     def poly_regression(self):
         # mipws na ta diabazeis apo ti mnimi?
         # we log measurements every 5 sec, which means we have 12 measurements per minute
-        stdin, stdout = os.popen2("tail -n " + (12 * self.latest) + " " + self.measurements_file)
+        stdin, stdout = os.popen2("tail -n " + str(12 * self.latest) + " " + self.measurements_file)
         stdin.close()
         lines = stdout.readlines()
         stdout.close()
         prediction_file = open(self.predictions_file, 'w')
-        if os.stat(prediction_file).st_size == 0:
-            prediction_file.write('Tick\t\tPredicted Lambda\n')
+        #if os.stat(prediction_file).st_size == 0:
+        #    prediction_file.write('Tick\t\tPredicted Lambda\n')
         # store past lambda's
         lambdas = []
         # set ticks, 1 tick per 5 sec...?

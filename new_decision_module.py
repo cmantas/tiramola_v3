@@ -20,7 +20,7 @@ class RLDecisionMaker:
         self.log.info("Using 'gain' : " + env_vars['gain'] +" with threshold of "+str( env_vars["decision_threshold"]*100) + "% and interval: " + str(env_vars['decision_interval']))
         self.log.info("Cluster Size from %d to %d nodes" % (env_vars['min_cluster_size'], env_vars['max_cluster_size']))
 
-        self.debug = True
+        self.debug = False
         if self.debug:
             self.currentState = 8
         else:
@@ -312,7 +312,10 @@ class RLDecisionMaker:
                 allmetrics['cpu'] = (allmetrics['cpu'] / servers) # average node cpu usage
             except:
                 allmetrics['cpu'] = 0
-            return allmetrics
+        else:
+            self.log.info("Running in DEBUG mode, no metrics retrieved!")
+
+        return allmetrics
 
 
     #a log-related variable
@@ -320,14 +323,15 @@ class RLDecisionMaker:
 
     def take_decision(self, client_metrics, server_metrics):
         '''
-             this method reads allmetrics object created by Monitoring.py and decides whether a change of the number of participating
+             this method reads allmetrics object created by Monitoring.py and decides whether a change
+             of the number of participating
              virtual nodes is due.
-            '''
+        '''
         if client_metrics is None or server_metrics is None: return
         #first parse all metrics
         allmetrics = self.handle_metrics(client_metrics, server_metrics)
 
-            #self.my_logger.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
+            #self.log.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
 
             # Publish measurements to ganglia
             # try:

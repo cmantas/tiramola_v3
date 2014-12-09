@@ -4,7 +4,7 @@ import numpy as np
 import itertools, os
 from collections import deque
 from lib.persistance_module import env_vars, pred_vars
-
+from lib.tiramola_logging import get_logger
 
 class Predictor:
     def __init__(self):
@@ -17,6 +17,10 @@ class Predictor:
         self.predictions_file = pred_vars['predictions_file']
         self.latest = pred_vars['use_latest_meas']
         self.degree = pred_vars['regression_degree']
+
+        #Create logger
+        LOG_FILENAME = 'files/logs/Coordinator.log'
+        self.log = get_logger('Predictor', 'INFO', logfile=LOG_FILENAME)
 
     '''
     Runs a polynomial regression on the latest measurements (in mins).
@@ -56,7 +60,11 @@ class Predictor:
                 # do you need this check?
             mins += float(env_vars['metric_fetch_interval']) / 60
 
-        print ('# of mins considered %d' % mins)
+        if len(lambdas) < self.latest:
+            self.log.info('# of mins considered %d, which is less than the %d measurements we need for a prediction' %
+                          (mins, self.latest))
+            return -1
+
         # fit lambdas in a polynomial
         coeff = np.polyfit(ticks, lambdas, deg=self.degree)  # coeff[0] = slope, coeff[1] = intercept
         # predict lambda in projection_time mins from now

@@ -397,11 +397,12 @@ class RLDecisionMaker:
 
         if self.prediction:
             predicted_l = self.predictor.poly_regression()
-            # dif = abs(allmetrics['inlambda'] - predicted_l)
-            self.log.debug(
-                "Predicted: " + str(predicted_l) + " lambda :" + str(allmetrics['inlambda']))
-            from_inlambda = predicted_l - 500
-            to_inlambda = predicted_l + 500
+            if predicted_l > 0:
+                # there are enough data to make a prediction, if not use the actual lambda
+                self.log.debug(
+                    "Predicted: " + str(predicted_l) + " lambda :" + str(allmetrics['inlambda']))
+                from_inlambda = predicted_l - 500
+                to_inlambda = predicted_l + 500
 
         self.log.debug("TAKEDECISION state %d lambda range: %d - %d" % (self.currentState, from_inlambda, to_inlambda))
         # too low to care, the initial num of nodes can answer 1000 req/sec,

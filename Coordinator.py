@@ -90,11 +90,11 @@ def run(timeout=None):
     global error
     error = None
 
-    #init the decision module
+    # init the decision module
     global decision_module
     decision_module = DM(Servers)
 
-    #the time interval between metrics refresh
+    # the time interval between metrics refresh
     metrics_interval = env_vars["metric_fetch_interval"]
 
     # main loop that fetches metric and takes decisions
@@ -112,7 +112,7 @@ def run(timeout=None):
         decision = decision_module.take_decision(client_metrics, server_metrics)
 
         # asynchronously implement that decision
-        if(decision["action"]=="PASS"):
+        if decision is None or decision["action"] == "PASS":
             continue
         global running_process
         if not running_process is None:
@@ -121,7 +121,7 @@ def run(timeout=None):
         running_process.start()
 
     # DONE
-    #join the running_process
+    # join the running_process
     if not running_process is None: running_process.join()
     my_logger.info(" run is finished")
 

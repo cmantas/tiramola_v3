@@ -69,7 +69,7 @@ class Predictor:
         # fit lambdas in a polynomial
         coeff = np.polyfit(ticks, lambdas, deg=self.degree)  # coeff[0] = slope, coeff[1] = intercept
         # predict lambda in projection_time mins from now
-        predicted_l = np.polyval(coeff, (self.mins + self.projection_time))
+        predicted_l = np.polyval(coeff, (mins + self.projection_time))
         # compute the current minute in the experiment
         self.curr_min += float(env_vars['decision_interval']) / 60
         prediction_file.write(str(self.curr_min) + '\t\t' +

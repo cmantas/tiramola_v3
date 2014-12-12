@@ -9,14 +9,16 @@ from lib.tiramola_logging import get_logger
 class Predictor:
     def __init__(self):
         # 10 mins later (12 ticks per minute)
-        #self.projection_time = 12 * 10
         self.projection_time = pred_vars['projection_time']
         self.use_sampling = pred_vars['use_sampling']
         self.sampling = pred_vars['sampling']
         self.measurements_file = env_vars['measurements_file']
         self.predictions_file = pred_vars['predictions_file']
+        # measurements of latest minutes will be used in regression
         self.latest = pred_vars['use_latest_meas']
         self.degree = pred_vars['regression_degree']
+        # store the current minute
+        self.curr_min = self.latest
 
         #Create logger
         LOG_FILENAME = 'files/logs/Coordinator.log'
@@ -34,8 +36,8 @@ class Predictor:
         stdin.close()
         lines = stdout.readlines()
         stdout.close()
-        prediction_file = open(self.predictions_file, 'w')
-        #if os.stat(prediction_file).st_size == 0:
+        prediction_file = open(self.predictions_file, 'a')
+        # if os.stat(prediction_file).st_size == 0:
         #    prediction_file.write('Tick\t\tPredicted Lambda\n')
         # store past lambda's
         lambdas = []
@@ -57,19 +59,24 @@ class Predictor:
 
                 lambdas.append(float(m[1]))
                 ticks.append(mins)
-                # do you need this check?
             mins += float(env_vars['metric_fetch_interval']) / 60
 
-        if len(lambdas) < self.latest:
+        if len(lambdas) < self.latest - 1:
             self.log.info('# of mins considered %d, which is less than the %d measurements we need for a prediction' %
-                          (mins, self.latest))
+                          (len(lambdas), self.latest))
             return -1
 
         # fit lambdas in a polynomial
         coeff = np.polyfit(ticks, lambdas, deg=self.degree)  # coeff[0] = slope, coeff[1] = intercept
         # predict lambda in projection_time mins from now
-        predicted_l = np.polyval(coeff, (mins + self.projection_time))
-        prediction_file.write(str(mins + self.projection_time) + '\t\t' + str(predicted_l) + '\n')
+        predicted_l = np.polyval(coeff, (self.mins + self.projection_time))
+        # compute the current minute in the experiment
+        self.curr_min += float(env_vars['decision_interval']) / 60
+        prediction_file.write(str(self.curr_min) + '\t\t' +
+                              str(self.curr_min + self.projection_time) + '\t\t' +
+                              str(predicted_l) + '\n')
+
+        prediction_file.close()
 
         return predicted_l
 

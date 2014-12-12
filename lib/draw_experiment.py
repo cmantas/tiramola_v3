@@ -80,6 +80,7 @@ def load_data(meas_file):
             #t = time.strptime(m[5].rstrip(), "%Y-%m-%d %H:%M:%S")
             ticks.append(mins)
 #            mins = mins + 0.5
+            print 'Actual: Time ' + str(mins) + ' load ' + str(float(m[1]))
             mins += float(env_vars['metric_fetch_interval']) / 60
 
     meas.close()
@@ -91,15 +92,15 @@ def load_predictions(pred_file):
     ticks = []
     preds = open(pred_file, 'r')
     preds.next()
-    mins = 0.0
+    #mins = 0.0
     for line in preds:
         if not line.startswith('###') and not line.startswith('\n'):
             m = line.split('\t\t')
-            pred_l.append(float(m[1]))
-            ticks.append(float(m[0]))
+            pred_l.append(float(m[2]))
+            ticks.append(float(m[1]))
             #ticks.append(mins)
-            mins += float(env_vars['metric_fetch_interval']) / 60
-            #print 'A ' + str(float(m[1])) + 'B ' + str(mins)
+            #mins += float(env_vars['metric_fetch_interval']) / 60
+            print 'Prediction: Time ' + str(float(m[1])) + ' load ' + str(float(m[2]))
     preds.close()
     return pred_l, ticks
 

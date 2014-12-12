@@ -128,12 +128,14 @@ def experiment(name, target, period, offset, minutes):
             print traceback.format_exc()
             traceback.print_exc(file=open(dir_path+"/errors", "w+"))
 
-        #kill the workload
+        # kill the workload
         log.info(" killing workload")
         ClientsCluster.kill_nodes()
 
-        #move the measurements file
+        # move the measurements file
         move("files/measurements/measurements.txt", dir_path)
+        # move the predictions file
+        move("files/measurements/predictions.txt", dir_path)
 
         info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
                (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))

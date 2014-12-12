@@ -318,7 +318,7 @@ class RLDecisionMaker:
         return allmetrics
 
 
-    #a log-related variable
+    # a log-related variable
     pending_action_logged = False
 
     def take_decision(self, client_metrics, server_metrics):
@@ -327,8 +327,11 @@ class RLDecisionMaker:
              of the number of participating
              virtual nodes is due.
         '''
+
+        # update prediction current minute counter
+        self.predictor.tick_tock()
         if client_metrics is None or server_metrics is None: return
-        #first parse all metrics
+        # first parse all metrics
         allmetrics = self.handle_metrics(client_metrics, server_metrics)
 
             #self.log.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
@@ -349,7 +352,7 @@ class RLDecisionMaker:
 
         pending_action = not (self.pending_action is None) # true if there is no pending action
 
-        #1. Save the current metrics to file and in memory only if there is no pending action.
+        # 1. Save the current metrics to file and in memory only if there is no pending action.
         self.add_measurement([str(self.currentState), allmetrics['inlambda'], allmetrics['throughput'],
                               allmetrics['latency'], allmetrics['cpu'],
                               datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")],
@@ -364,12 +367,12 @@ class RLDecisionMaker:
             if self.debug:
                 if self.countdown == 0:
                     self.log.debug("Running a simulation, set state from " + str(self.currentState) + " to " +
-                                        str(self.nextState))
+                                    str(self.nextState))
                     self.currentState = self.nextState
                     self.pending_action = None
                 else:
                     self.countdown -= 1
-                    self.log.debug("Reducing countdown to "+ str(self.countdown))
+                    self.log.debug("Reducing countdown to " + str(self.countdown))
 
             # skip decision
             self.decision["action"] = "PASS"
@@ -383,7 +386,8 @@ class RLDecisionMaker:
             self.waitForIt = env_vars['decision_interval'] / env_vars['metric_fetch_interval']
         else:
             if self.waitForIt == env_vars['decision_interval'] / env_vars['metric_fetch_interval']:
-                self.log.debug("New decision in " + str(float(self.waitForIt*env_vars['metric_fetch_interval'])/60) + " mins, see you later!")
+                self.log.debug("New decision in " + str(float(self.waitForIt*env_vars['metric_fetch_interval'])/60) +
+                               " mins, see you later!")
             self.waitForIt -= 1
             self.decision["action"] = "PASS"
             self.decision["count"] = 0

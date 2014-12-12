@@ -70,8 +70,6 @@ class Predictor:
         coeff = np.polyfit(ticks, lambdas, deg=self.degree)  # coeff[0] = slope, coeff[1] = intercept
         # predict lambda in projection_time mins from now
         predicted_l = np.polyval(coeff, (mins + self.projection_time))
-        # compute the current minute in the experiment
-        self.curr_min += float(env_vars['decision_interval']) / 60
         prediction_file.write(str(self.curr_min) + '\t\t' +
                               str(self.curr_min + self.projection_time) + '\t\t' +
                               str(predicted_l) + '\n')
@@ -79,6 +77,11 @@ class Predictor:
         prediction_file.close()
 
         return predicted_l
+
+    def tick_tock(self):
+        # compute the current minute in the experiment
+        # self.curr_min += float(env_vars['decision_interval']) / 60
+        self.curr_min += float(env_vars['metric_fetch_interval']) / 60
 
     def smoothing(self):
         return True

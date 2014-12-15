@@ -91,7 +91,7 @@ def load_predictions(pred_file):
     pred_l = []
     ticks = []
     preds = open(pred_file, 'r')
-    preds.next()
+    #preds.next()
     #mins = 0.0
     for line in preds:
         if not line.startswith('###') and not line.startswith('\n'):

@@ -18,7 +18,7 @@ class Predictor:
         self.latest = pred_vars['use_latest_meas']
         self.degree = pred_vars['regression_degree']
         # store the current minute
-        self.curr_min = self.latest
+        self.curr_min = 0.0
 
         #Create logger
         LOG_FILENAME = 'files/logs/Coordinator.log'
@@ -82,6 +82,7 @@ class Predictor:
         # compute the current minute in the experiment
         # self.curr_min += float(env_vars['decision_interval']) / 60
         self.curr_min += float(env_vars['metric_fetch_interval']) / 60
+        #self.log.debug('Current minute in Predictor %.2f' % self.curr_min)
 
     def smoothing(self):
         return True

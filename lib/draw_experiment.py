@@ -5,6 +5,7 @@ from persistance_module import env_vars
 #matplotlib.use('Agg')
 import matplotlib.pyplot as pl
 from collections import deque
+import os.path
 
 ############ figure size (in inches@80bpi) #################
 width = 12
@@ -205,39 +206,40 @@ def draw_exp(meas_file):
     pl.clf()
     pl.cla()
 
-    #cmantas
+    # cmantas
     lat_avg = my_avg(lat, a=0.2)
     thr_avg = my_avg(thr, a=0.2)
     my_draw(ticks, lat_avg, "Time (sec)", "latency EWMA (msec)", 'latency_ewma', thr_avg, "throughput")
 
-
     # load prediction graph
     pfile = meas_file.replace('measurements.txt', 'predictions.txt')
-    fig6 = pl.figure(6, figsize=(width, height), dpi=dpi)
-    ax1 = fig6.add_subplot(111)
+    # if pfile exists
+    if os.path.isfile(pfile):
+        fig6 = pl.figure(6, figsize=(width, height), dpi=dpi)
+        ax1 = fig6.add_subplot(111)
 
-    #plot the 2 values
-    a, = ax1.plot(ticks, l, 'black')
-    preds, ticks = load_predictions(pfile)
-    b, = ax1.plot(ticks, preds, 'r')
+        #plot the 2 values
+        a, = ax1.plot(ticks, l, 'black')
+        preds, ticks = load_predictions(pfile)
+        b, = ax1.plot(ticks, preds, 'r')
 
-    ax1.set_xlabel('Time (min)')
-    #ax1.set_xticks(np.arange(48))
-    # Make the y-axis label and tick labels match the line color.
-    pl.minorticks_on()
-    ax1.set_ylabel('Load (reqs/sec)', color='black')
-    ax1.set_ylim(bottom=-2000)
-    ax1.grid(True, which="major")
-    ax1.grid(True, which="minor", color='#C0C0C0')
-    #ax1.tick_params(axis='x',which='minor',bottom='on')
+        ax1.set_xlabel('Time (min)')
+        #ax1.set_xticks(np.arange(48))
+        # Make the y-axis label and tick labels match the line color.
+        pl.minorticks_on()
+        ax1.set_ylabel('Load (reqs/sec)', color='black')
+        ax1.set_ylim(bottom=-2000)
+        ax1.grid(True, which="major")
+        ax1.grid(True, which="minor", color='#C0C0C0')
+        #ax1.tick_params(axis='x',which='minor',bottom='on')
 
-    #set the legend
-    pl.legend([a, b], ["Actual Load", "Predicted Load"], loc=4)
-    pl.title('Actual vs. Predicted Load')
-    pl.savefig(fig_name + '-predicted', bbox_inches='tight')
+        #set the legend
+        pl.legend([a, b], ["Actual Load", "Predicted Load"], loc=4)
+        pl.title('Actual vs. Predicted Load')
+        pl.savefig(fig_name + '-predicted', bbox_inches='tight')
 
-    pl.clf()
-    pl.cla()
+        pl.clf()
+        pl.cla()
 
     return
 

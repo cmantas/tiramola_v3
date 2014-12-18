@@ -135,7 +135,7 @@ def experiment(name, target, period, offset, minutes):
         # move the measurements file
         move("files/measurements/measurements.txt", dir_path)
         # move the predictions file
-        move("files/measurements/predictions.txt", dir_path)
+        if isfile("files/measurements/predictions.txt"): move("files/measurements/predictions.txt", dir_path)
 
         info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
                (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))

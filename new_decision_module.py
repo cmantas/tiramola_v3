@@ -452,25 +452,25 @@ class RLDecisionMaker:
                     #self.my_logger.debug("TAKEDECISION unknown state "+ str(i) +" with gain "+ str(self.memory[str(i)]['r']))
 
                 self.memory[str(i)]['r'] = eval(env_vars["gain"], allmetrics)
-                if self.currentState != i:
+                # if self.currentState != i:
                     # self.my_logger.debug(
                     #     "TAKEDECISION adding state " + str(i) + " with gain " + str(self.memory[str(i)]['r']))
-                    states.add(fset.FuzzyElement(str(i), self.memory[str(i)]['r']))
+                states.add(fset.FuzzyElement(str(i), self.memory[str(i)]['r']))
             # For the current state, use current measurement
-            if self.currentState == i:
-                if not self.debug:
-                    cur_gain = eval(env_vars["gain"], allmetrics)
-                    # for debugging purposes I compare the current reward with the one computed using the training set
-                    self.log.debug("TAKEDECISION state %d current reward: %d training set reward: %d"
-                                    % (self.currentState, cur_gain, self.memory[str(i)]['r']))
-                    self.memory[str(i)]['r'] = cur_gain
-                    #self.log.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
-                else:
-                    cur_gain = (self.memory[str(i)]['r'])
-                    self.log.debug("TAKEDECISION state %d current state training set reward: %d"
-                                   % (self.currentState, cur_gain))
-
-                states.add(fset.FuzzyElement(str(i), cur_gain))
+            # if self.currentState == i:
+            #     if not self.debug:
+            #         cur_gain = eval(env_vars["gain"], allmetrics)
+            #         # for debugging purposes I compare the current reward with the one computed using the training set
+            #         self.log.debug("TAKEDECISION state %d current reward: %d training set reward: %d"
+            #                         % (self.currentState, cur_gain, self.memory[str(i)]['r']))
+            #         self.memory[str(i)]['r'] = cur_gain
+            #         #self.log.debug("TAKEDECISION adding current state " + str(i) + " with gain " + str(cur_gain))
+            #     else:
+            #         cur_gain = (self.memory[str(i)]['r'])
+            #         self.log.debug("TAKEDECISION state %d current state training set reward: %d"
+            #                        % (self.currentState, cur_gain))
+            #
+            #     states.add(fset.FuzzyElement(str(i), cur_gain))
 
         # Create the transition graph
         v = []

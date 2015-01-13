@@ -4,7 +4,7 @@ from lib.tiramola_logging import get_logger
 from os import remove, mkdir, listdir
 from shutil import move, copy
 from time import strftime
-from os.path import isdir, isfile, join, exists
+from os.path import isdir, isfile, join, exists, basename
 from random import random
 from json import load, dumps, loads
 from lib.persistance_module import env_vars, reload_env_vars
@@ -61,7 +61,7 @@ def watch(dir_path, callback):
         if not exists(done_dir):
             mkdir(done_dir)
         try:
-            remove(done_dir+"/"+fname)
+            remove(done_dir+"/"+basename(fname))
         except:
             pass
         move(fname, done_dir)

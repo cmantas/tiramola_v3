@@ -60,6 +60,10 @@ def watch(dir_path, callback):
         done_dir = dir_path+"/done"
         if not exists(done_dir):
             mkdir(done_dir)
+        try:
+            remove(done_dir+"/"+fname)
+        except:
+            pass
         move(fname, done_dir)
         callback(contents)
 

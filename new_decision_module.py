@@ -271,6 +271,30 @@ class RLDecisionMaker:
 
         return predicted_l
 
+    def publish_to_local_ganglia(self, allmetrics):
+        """
+        Publishes monitoring data to local ganglia agent
+        :param allmetrics:
+        :return:
+        """
+        self.log.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
+
+        #Publish measurements to ganglia
+        try:
+            os.system("gmetric -n ycsb_inlambda -v " + str(
+                allmetrics['inlambda']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
+                self.monitoring_endpoint) + ":[DEBUG] hostname")
+            os.system("gmetric -n ycsb_throughput -v " + str(
+                allmetrics['throughput']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
+                self.monitoring_endpoint) + ":[DEBUG] hostname")
+            os.system(
+                "gmetric -n ycsb_latency -v " + str(allmetrics['latency']) + " -d 15 -t float -u ms -S " + str(
+                    self.monitoring_endpoint) + ":[DEBUG] hostname")
+        except:
+            pass
+
+
+
     def handle_metrics(self, client_metrics, server_metrics):
         # read metrics
         allmetrics = {'inlambda': 0, 'throughput': 0, 'latency': 0, 'cpu': 0}
@@ -333,22 +357,7 @@ class RLDecisionMaker:
         if client_metrics is None or server_metrics is None: return
         # first parse all metrics
         allmetrics = self.handle_metrics(client_metrics, server_metrics)
-
-            #self.log.debug( "TAKEDECISION allmetrics: " + str(allmetrics))
-
-            # Publish measurements to ganglia
-            # try:
-            #     os.system("gmetric -n ycsb_inlambda -v " + str(
-            #         allmetrics['inlambda']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
-            #         self.monitoring_endpoint) + ":[DEBUG] hostname")
-            #     os.system("gmetric -n ycsb_throughput -v " + str(
-            #         allmetrics['throughput']) + " -d 15 -t float -u 'reqs/sec' -S " + str(
-            #         self.monitoring_endpoint) + ":[DEBUG] hostname")
-            #     os.system(
-            #         "gmetric -n ycsb_latency -v " + str(allmetrics['latency']) + " -d 15 -t float -u ms -S " + str(
-            #             self.monitoring_endpoint) + ":[DEBUG] hostname")
-            # except:
-            #     pass
+        #self.publish_to_local_ganglia(allmetrics)
 
         pending_action = not (self.pending_action is None) # true if there is no pending action
 
@@ -456,6 +465,7 @@ class RLDecisionMaker:
                     # self.my_logger.debug(
                     #     "TAKEDECISION adding state " + str(i) + " with gain " + str(self.memory[str(i)]['r']))
                 states.add(fset.FuzzyElement(str(i), self.memory[str(i)]['r']))
+
             # For the current state, use current measurement
             # if self.currentState == i:
             #     if not self.debug:
@@ -522,6 +532,7 @@ class RLDecisionMaker:
 
 
         self.log.debug("TAKEDECISION Vs="+str(V))
+
         # Find the max V (the min state with the max value)
         max_gain = max(V.values())
         max_set = [key for key in V if V[key] == max_gain]

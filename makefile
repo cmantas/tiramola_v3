@@ -5,7 +5,7 @@ sync:
 	rsync -avz --delete ./* root@torchestrator:~/bin/tiramola
 
 pull_measurements:
-	rsync -avz --delete torchestrator:/root/bin/tiramola/files/measurements/* files/measurements/	
+	rsync -avz --delete torchestrator:/root/tiramola_v3/files/measurements/* files/measurements/	
 clean:
 	tiramola kill_nodes
 	tiramola kill_workload 

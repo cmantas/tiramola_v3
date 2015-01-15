@@ -1,6 +1,7 @@
 #!/bin/bash
 
 MAX_WAIT=300  #5 min
+READ_TIMEOUT=100 #ms
 
 echo "started bootstrap" > bootsrap.log
 
@@ -53,7 +54,7 @@ echo "started bootstrap" > bootsrap.log
 	    sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
 	    sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
         #make sure no requests are dropped by using a big timeout
-        sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: 500/g" /etc/cassandra/cassandra.yaml
+        sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: $READ_TIMEOUT/g" /etc/cassandra/cassandra.yaml
         sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 30000/g" /etc/cassandra/cassandra.yaml
         #increase the number of tokens
         sed -i "s/num_tokens:.*/num_tokens: 256/g" /etc/cassandra/cassandra.yaml

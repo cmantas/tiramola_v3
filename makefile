@@ -2,7 +2,7 @@ default:
 	tiramola auto_pilot minutes=1001
 	#doing nothing
 sync:
-	rsync -avz --delete ./* root@torchestrator:~/bin/tiramola
+	git commit -am "sync"; git push; ssh torchestrator "cd tiramola_v3; git pull"
 
 pull_measurements:
 	rsync -avz --delete torchestrator:/root/tiramola_v3/files/measurements/* files/measurements/	

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MAX_WAIT=300  #5 min
+MAX_WAIT=100  #5 min
 READ_TIMEOUT=1000 #ms
 
 echo "started bootstrap" > bootsrap.log

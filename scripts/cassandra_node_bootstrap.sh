@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAX_WAIT=100  #5 min
-READ_TIMEOUT=1000 #ms
+READ_TIMEOUT=500 #ms
 
 echo "started bootstrap" > bootsrap.log
 
@@ -52,6 +52,8 @@ echo "started bootstrap" > bootsrap.log
     #make sure no requests are dropped by using a big timeout
     sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: $READ_TIMEOUT/g" /etc/cassandra/cassandra.yaml
     sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 30000/g" /etc/cassandra/cassandra.yaml
+    #outbound stream traffic
+    sed -i.bak "s/.*stream_throughput_outbound_megabits_per_sec:.*/stream_throughput_outbound_megabits_per_sec: 600/g" /etc/cassandra/cassandra.yaml
     #increase the num of tokens
     sed -i "s/num_tokens:.*/num_tokens: 256/g" /etc/cassandra/cassandra.yaml
     echo "CTOOL: Done configuring"

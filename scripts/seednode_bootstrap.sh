@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAX_WAIT=100  #5 min
-READ_TIMEOUT=1000 #ms
+READ_TIMEOUT=500 #ms
 
 echo "started bootstrap" > bootsrap.log
 
@@ -39,11 +39,11 @@ echo "started bootstrap" > bootsrap.log
  
     
 # configure cassandra for seed
-        #change the gmond.conf file
-        echo "Changing the gmond.conf file"
-        sed -i.bak "s/deaf = yes/deaf = no/g" /etc/ganglia/gmond.conf
-        echo "my address is $my_priv_addr"
-        echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+			#change the gmond.conf file
+			echo "Changing the gmond.conf file"
+			sed -i.bak "s/deaf = yes/deaf = no/g" /etc/ganglia/gmond.conf
+			echo "my address is $my_priv_addr"
+			echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
 	    #change the listen address of this node
 	    sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
 	    #change the rpc_address of this node to 0.0.0.0
@@ -53,15 +53,17 @@ echo "started bootstrap" > bootsrap.log
 	    #add the jmx server whatever to cassandra-env.sh
 	    sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
 	    sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
-        #make sure no requests are dropped by using a big timeout
-        sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: $READ_TIMEOUT/g" /etc/cassandra/cassandra.yaml
-        sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 30000/g" /etc/cassandra/cassandra.yaml
-        #increase the number of tokens
-        sed -i "s/num_tokens:.*/num_tokens: 256/g" /etc/cassandra/cassandra.yaml
-        echo "(Re)starting Ganglia, gmetad, apache"
-        service ganglia-monitor restart >/dev/null 2>/dev/null
-        service gmetad restart >/dev/null 2>/dev/null
-        service apache2 restart >/dev/null 2>/dev/null
+			#make sure no requests are dropped by using a big timeout
+			sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: $READ_TIMEOUT/g" /etc/cassandra/cassandra.yaml
+			sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 30000/g" /etc/cassandra/cassandra.yaml
+			#outbound stream traffic
+			sed -i.bak "s/.*stream_throughput_outbound_megabits_per_sec:.*/stream_throughput_outbound_megabits_per_sec: 600/g" /etc/cassandra/cassandra.yaml
+			#increase the number of tokens
+			sed -i "s/num_tokens:.*/num_tokens: 256/g" /etc/cassandra/cassandra.yaml
+			echo "(Re)starting Ganglia, gmetad, apache"
+			service ganglia-monitor restart >/dev/null 2>/dev/null
+			service gmetad restart >/dev/null 2>/dev/null
+			service apache2 restart >/dev/null 2>/dev/null
 
 
 # start cassandra

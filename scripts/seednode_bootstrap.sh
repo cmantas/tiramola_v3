@@ -41,13 +41,13 @@ echo "started bootstrap" > bootsrap.log
 # configure cassandra for seed
 			#change the gmond.conf file
 			echo "Changing the gmond.conf file"
-			sed -i.bak "s/deaf = yes/deaf = no/g" /etc/ganglia/gmond.conf
+			sed -i "s/deaf = yes/deaf = no/g" /etc/ganglia/gmond.conf
 			echo "my address is $my_priv_addr"
 			echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
 	    #change the listen address of this node
 	    sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
 	    #change the rpc_address of this node to 0.0.0.0
-	    sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+      #sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml #removed for cassandra 2.1
 	    #change the seeds to "cassandra_seednode"
 	    sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
 	    #add the jmx server whatever to cassandra-env.sh

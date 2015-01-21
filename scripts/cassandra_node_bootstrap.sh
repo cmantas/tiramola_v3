@@ -43,26 +43,26 @@ echo "started bootstrap" > bootsrap.log
     #change the listen address of this node
     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
     #change the rpc_address of this node to 0.0.0.0
-    sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+    #sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml #removed for cassandra 2.1
     #change the seeds to "cassandra_seednode"
-    sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+    sed -i "s/seeds: .*/seeds: \"cassandra_seednode\"/g"
     #add the jmx server whatever to cassandra-env.sh
     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
     #make sure no requests are dropped by using a big timeout
-    sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: $READ_TIMEOUT/g" /etc/cassandra/cassandra.yaml
-    sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 30000/g" /etc/cassandra/cassandra.yaml
+    sed -i "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: $READ_TIMEOUT/g" /etc/cassandra/cassandra.yaml
+    sed -i "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 30000/g" /etc/cassandra/cassandra.yaml
     #outbound stream traffic
-    sed -i.bak "s/.*stream_throughput_outbound_megabits_per_sec:.*/stream_throughput_outbound_megabits_per_sec: 600/g" /etc/cassandra/cassandra.yaml
+    sed -i "s/.*stream_throughput_outbound_megabits_per_sec:.*/stream_throughput_outbound_megabits_per_sec: 600/g" /etc/cassandra/cassandra.yaml
     #no compression
-		sed -i.bak "s/.*internode_compression:.*/internode_compression: none/g" /etc/cassandra/cassandra.yaml
+		sed -i "s/.*internode_compression:.*/internode_compression: none/g" /etc/cassandra/cassandra.yaml
 
 		# TODO maybe not applicable for cassandra 2.1
 		#cache on flush
-		sed -i.bak "s/.*populate_io_cache_on_flush:.*/populate_io_cache_on_flush: true/g" /etc/cassandra/cassandra.yaml
+		sed -i "s/.*populate_io_cache_on_flush:.*/populate_io_cache_on_flush: true/g" /etc/cassandra/cassandra.yaml
 
 		#row cache
-		sed -i.bak "s/.*row_cache_size_in_mb:.*/row_cache_size_in_mb: 256/g" /etc/cassandra/cassandra.yaml
+		sed -i "s/.*row_cache_size_in_mb:.*/row_cache_size_in_mb: 256/g" /etc/cassandra/cassandra.yaml
 
 
     #increase the num of tokens
@@ -74,6 +74,7 @@ echo "started bootstrap" > bootsrap.log
 	chmod -R o+rw /var/lib/cassandra
 	echo "Starting casandra service, ganglia-monitor"
 	service cassandra start
+#(re)start ganglia-monitor
 	service ganglia-monitor restart
 
 #wait until ready and try to create keyspace

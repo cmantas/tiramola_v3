@@ -46,10 +46,13 @@ echo "started bootstrap" > bootsrap.log
 			echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
 	    #change the listen address of this node
 	    sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
-	    #change the rpc_address of this node
-      sed -i "s/rpc_address: .*/rpc_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml
+	    #change the rpc_address of this node to 0.0.0.0 (all interfaces)
+      sed -i "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml
 	    #change the seeds to "cassandra_seednode"
-	    sed "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+	    sed -i "s/seeds: .*/seeds: \"cassandra_seednode\"/g"  /etc/cassandra/cassandra.yaml
+	    #change the rpc address that other nodes can reach you to
+	    sed -i "s/.*broadcast_rpc_address: .*/broadcast_rpc_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml
+
 	    #add the jmx server whatever to cassandra-env.sh
 	    sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
 	    sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh

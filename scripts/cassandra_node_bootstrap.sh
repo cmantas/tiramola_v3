@@ -43,7 +43,7 @@ echo "started bootstrap" > bootsrap.log
     #change the listen address of this node
     sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
     #change the rpc_address of this node to 0.0.0.0
-    #sed "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml #removed for cassandra 2.1
+    sed -i "s/rpc_address: .*/rpc_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml
     #change the seeds to "cassandra_seednode"
     sed -i "s/seeds: .*/seeds: \"cassandra_seednode\"/g"
     #add the jmx server whatever to cassandra-env.sh

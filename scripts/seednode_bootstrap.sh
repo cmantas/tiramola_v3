@@ -45,7 +45,7 @@ echo "started bootstrap" > bootsrap.log
 			echo "my address is $my_priv_addr"
 			echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
 	    #change the listen address of this node
-	    sed "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml> tmp && mv tmp /etc/cassandra/cassandra.yaml
+	    sed -i "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml
 	    #change the rpc_address of this node to 0.0.0.0 (all interfaces)
       sed -i "s/rpc_address: .*/rpc_address: 0.0.0.0/g"  /etc/cassandra/cassandra.yaml
 	    #change the seeds to "cassandra_seednode"

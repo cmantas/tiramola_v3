@@ -50,6 +50,10 @@ echo "started bootstrap" > bootsrap.log
     #change the rpc address that other nodes can reach you to
 		sed -i "s/.*broadcast_rpc_address: .*/broadcast_rpc_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml
 
+		##################### cassandra env ##############################
+		#disable consistent range movement
+		sed -i "/Dconsistent.rangemovement/d" /etc/cassandra/cassandra-env.sh
+		echo 'JVM_OPTS="$JVM_OPTS -Dconsistent.rangemovement=false' >> /etc/cassandra/cassandra-env.sh
     #add the jmx server whatever to cassandra-env.sh
     sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh

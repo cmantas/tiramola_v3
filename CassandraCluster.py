@@ -194,6 +194,14 @@ def add_one_node(stash_index):
     log.info("Node %s is live " % new_guy.name)
 
 
+def wait_node(proc):
+    proc.join(env_vars['add_node_timeout'])
+    #check if it has not finished yet fail if so
+    if proc.is_alive():
+        log.error("Timeout occurred for adding a node, exiting")
+        proc.terminate()
+        raise Exception("Node ADD was timed out for one node")
+
 def add_nodes(count=1):
     """
     Adds a node to the cassandra cluster. Refreshes the hosts in all nodes
@@ -208,17 +216,15 @@ def add_nodes(count=1):
         p = Process(target=add_one_node, args=(i,))
         procs.append(p)
         p.start()
+        if (env_vars["serial_add"]):
+            # if adding in serial, wait each proc
+            wait_node(p)
 
-    #wait for all the procs to finish
-    log.debug("Waiting for all the procs to finish adding")
-    for p in procs:
-        p.join(env_vars['add_node_timeout'])
-
-        #check if it has not finished yet fail if so
-        if p.is_alive():
-            log.error("Timeout occurred for adding a node, exiting")
-            p.terminate()
-            raise Exception("Node ADD was timed out for one node")
+    if(not env_vars["serial_add"]):
+        #wait for all the procs to finish if adding in parallel
+        log.debug("Waiting for all the procs to finish adding")
+        for p in procs:
+            wait_node(p)
 
     #housekeeping for the stash and nodes list
     nodes += stash[:count]

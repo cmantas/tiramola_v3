@@ -43,7 +43,7 @@ echo "started bootstrap" > bootsrap.log
 			echo "Changing the gmond.conf file"
 			sed -i "s/deaf = yes/deaf = no/g" /etc/ganglia/gmond.conf
 			echo "my address is $my_priv_addr"
-			echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+			echo "configuring cassandra.yaml for my address:$my_priv_addr" > ctool.log
 	    #change the listen address of this node
 	    sed -i "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml
 	    #change the rpc_address of this node to 0.0.0.0 (all interfaces)
@@ -85,7 +85,7 @@ echo "started bootstrap" > bootsrap.log
 # start cassandra
 	chmod -R o+rw /var/lib/cassandra
 	echo "Starting casandra service, ganglia-monitor"
-	service cassandra start
+	service cassandra start >>ctool.log
 	service ganglia-monitor restart
 
 #wait until ready and try to create keyspace

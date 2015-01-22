@@ -40,7 +40,7 @@ echo "started bootstrap" > bootsrap.log
 
 # configure cassandra
 		################### ADDRESSES ###################
-    echo "configuring cassandra.yaml for my address:$my_priv_addr" >> ctool.log
+    echo "configuring cassandra.yaml for my address:$my_priv_addr" >ctool.log
     #change the listen address of this node
     sed -i "s/listen_address: .*/listen_address: $my_priv_addr/g"  /etc/cassandra/cassandra.yaml
     #change the rpc_address (for clients) of this node to 0.0.0.0 (all)
@@ -81,7 +81,7 @@ echo "started bootstrap" > bootsrap.log
 # start cassandra
 	chmod -R o+rw /var/lib/cassandra
 	echo "Starting casandra service, ganglia-monitor"
-	service cassandra start
+	service cassandra start >>ctool.log
 #(re)start ganglia-monitor
 	service ganglia-monitor restart
 

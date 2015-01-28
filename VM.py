@@ -58,7 +58,6 @@ class VM (object):
         if create:
             self.create(wait)
 
-
     def load_addresses(self):
         """
         loads the IP interfaces from the IaaS

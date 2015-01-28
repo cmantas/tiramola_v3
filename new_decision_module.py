@@ -179,9 +179,10 @@ class RLDecisionMaker:
                 #            if sliced_data == None:
                 self.log.debug("No known lamdba values close to current lambda measurement. Returning zeros!")
             else:
-                self.log.debug("DOKMEANS length of sliced_data to be fed to kmeans: " + str(len(sliced_data))
-                               +  " (out of %d total)" % count_state_measurements)
-                centroids, label = kmeans2(sliced_data, k, minit='points')
+                # self.log.debug("DOKMEANS length of sliced_data to be fed to kmeans: " + str(len(sliced_data))
+                #                +  " (out of %d total)" % count_state_measurements)
+                # centroids, label = kmeans2(sliced_data, k, minit='points')
+                pass
 
             # initialize dictionary
             num_of_meas = {}
@@ -212,17 +213,17 @@ class RLDecisionMaker:
         return ctd
 
 
-    def moving_average(self, iterable, n=3):
-        # moving_average([40, 30, 50, 46, 39, 44]) --> 40.0 42.0 45.0 43.0
-        # http://en.wikipedia.org/wiki/Moving_average
-        it = iter(iterable)
-        d = deque(itertools.islice(it, n - 1))
-        d.appendleft(0)
-        s = sum(d)
-        for elem in it:
-            s += elem - d.popleft()
-            d.append(elem)
-            yield s / float(n)
+def moving_average(self, iterable, n=3):
+    # moving_average([40, 30, 50, 46, 39, 44]) --> 40.0 42.0 45.0 43.0
+    # http://en.wikipedia.org/wiki/Moving_average
+    it = iter(iterable)
+    d = deque(itertools.islice(it, n - 1))
+    d.appendleft(0)
+    s = sum(d)
+    for elem in it:
+        s += elem - d.popleft()
+        d.append(elem)
+        yield s / float(n)
 
     def predict_load(self):
         # Linear Regression gia na doume to slope

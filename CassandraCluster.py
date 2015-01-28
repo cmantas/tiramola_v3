@@ -191,7 +191,7 @@ def add_one_node(stash_index):
     new_guy.wait_ready()
     new_guy.inject_hostnames(get_hosts(private=env_vars["private_network"], include_stash=True), delete=cluster_name)
     new_guy.bootstrap()
-    log.info("Node %s is live " % new_guy.name)
+    log.debug("Node %s is live " % new_guy.name)
 
 
 def wait_node(proc):
@@ -201,6 +201,7 @@ def wait_node(proc):
         log.error("Timeout occurred for adding a node, exiting")
         proc.terminate()
         raise Exception("Node ADD was timed out for one node")
+
 
 def add_nodes(count=1):
     """
@@ -218,6 +219,7 @@ def add_nodes(count=1):
         p.start()
         if (env_vars["serial_add"]):
             # if adding in serial, wait each proc
+            log.info("waiting for node #"+str(i))
             wait_node(p)
 
     if(not env_vars["serial_add"]):

@@ -108,6 +108,11 @@ def experiment(name, target, period, offset, minutes):
     except:
         pass
 
+    # kill the workload (in case there were leftover clients running)
+    log.info(" killing workload")
+    ClientsCluster.kill_nodes()
+
+
     # create a directory for the experiment results
     dir_path = measurements_dir+"/"+name
     if isdir(dir_path):

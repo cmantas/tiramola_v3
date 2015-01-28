@@ -56,9 +56,9 @@ echo "started bootstrap" > bootsrap.log
 			sed -i.bak "s/read_request_timeout_in_ms:.*/read_request_timeout_in_ms: $READ_TIMEOUT/g" /etc/cassandra/cassandra.yaml
 			sed -i.bak "s/write_request_timeout_in_ms:.*/write_request_timeout_in_ms: 30000/g" /etc/cassandra/cassandra.yaml
 			#outbound stream traffic
-			sed -i.bak "s/.*stream_throughput_outbound_megabits_per_sec:.*/stream_throughput_outbound_megabits_per_sec: 200/g" /etc/cassandra/cassandra.yaml
+			sed -i.bak "s/.*stream_throughput_outbound_megabits_per_sec:.*/stream_throughput_outbound_megabits_per_sec: 10000/g" /etc/cassandra/cassandra.yaml
 			#no compression
-			sed -i.bak "s/.*internode_compression:.*/internode_compression: none/g" /etc/cassandra/cassandra.yaml
+			sed -i.bak "s/.*internode_compression:.*/internode_compression: all/g" /etc/cassandra/cassandra.yaml
 			# TODO maybe not applicable for cassandra 2.1
 			#cache on flush
 			sed -i.bak "s/.*populate_io_cache_on_flush:.*/#populate_io_cache_on_flush: true/g" /etc/cassandra/cassandra.yaml

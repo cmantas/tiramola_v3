@@ -181,7 +181,7 @@ class RLDecisionMaker:
             else:
                 # self.log.debug("DOKMEANS length of sliced_data to be fed to kmeans: " + str(len(sliced_data))
                 #                +  " (out of %d total)" % count_state_measurements)
-                # centroids, label = kmeans2(sliced_data, k, minit='points')
+                centroids, label = kmeans2(sliced_data, k, minit='points')
                 pass
 
             # initialize dictionary

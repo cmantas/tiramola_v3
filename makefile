@@ -7,7 +7,7 @@ sync:
 pull_measurements:
 	rsync -avz --delete torchestrator:/root/tiramola_v3/files/measurements/* files/measurements/	
 push_measurements:
-	rsync -avz --delete files/measurements* torchestrator:/root/tiramola_v3/files/measurements 	
+	rsync -avz --delete files/measurements/* torchestrator:/root/tiramola_v3/files/measurements 	
 clean:
 	tiramola kill_nodes
 	tiramola kill_workload 

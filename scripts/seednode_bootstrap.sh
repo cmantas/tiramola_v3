@@ -1,7 +1,7 @@
 #!/bin/bash
 
 MAX_WAIT=100  #5 min
-READ_TIMEOUT=2000 #ms
+READ_TIMEOUT=500 #ms
 
 echo "started bootstrap" > bootsrap.log
 
@@ -70,7 +70,7 @@ echo "started bootstrap" > bootsrap.log
 
 			##################### cassandra env ##############################
 			#disable consistent range movement
-			sed -i "/Dconsistent.rangemovement/d" /etc/cassandra/cassandra-env.sh
+			sed -i "/consistent.rangemovement/d" /etc/cassandra/cassandra-env.sh
 			echo 'JVM_OPTS="$JVM_OPTS -Dcassandra.consistent.rangemovement=false"' >> /etc/cassandra/cassandra-env.sh
 	    #add the jmx server whatever to cassandra-env.sh
 	    sed -i.bak "s/.*-Djava.rmi.server.hostname=.*/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh

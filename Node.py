@@ -97,7 +97,7 @@ class Node (VM):
         """
         Runs the required scripts to kill the application being run in the cluster
         """
-        self.log.info( "running kill script")
+        self.log.debug ( "running kill script")
         command = get_script_text(self.cluster_name, self.type, "kill")
         self.run_command(command, silent=True)
 

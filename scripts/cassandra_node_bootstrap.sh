@@ -61,6 +61,11 @@ echo "started bootstrap" > bootsrap.log
 		sed -i "s/.*populate_io_cache_on_flush:.*/populate_io_cache_on_flush: true/g" /etc/cassandra/cassandra.yaml
 		#row cache
 		sed -i "s/.*row_cache_size_in_mb:.*/row_cache_size_in_mb: 256/g" /etc/cassandra/cassandra.yaml
+		#compaction cap
+		sed -i.bak "s/.*compaction_throughput_mb_per_sec:.*/compaction_throughput_mb_per_sec: 0/g" /etc/cassandra/cassandra.yaml
+		#increase the num of tokens
+    sed -i "s/num_tokens:.*/num_tokens: 256/g" /etc/cassandra/cassandra.yaml
+
 
 
 		##################### cassandra env ##############################
@@ -72,11 +77,8 @@ echo "started bootstrap" > bootsrap.log
     sed -i.bak "s/*JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=*\"/JVM_OPTS=\"\$JVM_OPTS -Djava.rmi.server.hostname=$my_priv_addr\"/g"  /etc/cassandra/cassandra-env.sh
 
 
-
-
-    #increase the num of tokens
-    sed -i "s/num_tokens:.*/num_tokens: 256/g" /etc/cassandra/cassandra.yaml
     echo "CTOOL: Done configuring"
+
 
 
 # start cassandra

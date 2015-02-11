@@ -64,6 +64,8 @@ echo "started bootstrap" > bootsrap.log
 			sed -i.bak "s/.*populate_io_cache_on_flush:.*/populate_io_cache_on_flush: true/g" /etc/cassandra/cassandra.yaml
 			#row cache
 			sed -i.bak "s/.*row_cache_size_in_mb:.*/row_cache_size_in_mb: 256/g" /etc/cassandra/cassandra.yaml
+			#compaction cap
+			sed -i.bak "s/.*compaction_throughput_mb_per_sec:.*/compaction_throughput_mb_per_sec: 0/g" /etc/cassandra/cassandra.yaml
 			#increase the number of tokens
 			sed -i "s/num_tokens:.*/num_tokens: 256/g" /etc/cassandra/cassandra.yaml
 

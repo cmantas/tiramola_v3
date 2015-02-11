@@ -8,10 +8,9 @@ from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
 from threading import Thread
+from Cluster_Tools import *
 
 orchestrator = None     # the VM to which the others report to
-
-all_nodes = []            # the clients of the cluster
 
 # the name of the cluster is used as a prefix for the VM names
 cluster_name = "clients"
@@ -196,8 +195,7 @@ def update_hostfiles(servers):
     #host_text = servers["cassandra_node_01"]
 
     command = "echo '%s' > /opt/hosts;" % host_text
-    for c in all_nodes:
-        c.run_command(command, silent=False)
+    run_script(command, all_nodes, serial=False)
 
 
 def run(params):
@@ -287,6 +285,8 @@ def get_monitoring_endpoint():
     returns the IP of the node that has the monitoring data we want
     """
     return all_nodes[0].get_public_addr()
+
+
 
 
 

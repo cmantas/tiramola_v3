@@ -8,7 +8,7 @@ from socket import error as socketError
 sys.path.append('lib/scp.py')
 from lib.scp import SCPClient
 from datetime import datetime, timedelta
-from lib.persistance_module import env_vars
+from lib.persistance_module import env_vars, home
 from time import time
 import sys, traceback
 
@@ -30,7 +30,7 @@ def run_ssh_command(host, user, command, indent=1, prefix="$: ", logger=None):
     :return:
     """
     ssh_giveup_timeout = env_vars['ssh_giveup_timeout']
-    private_key = paramiko.RSAKey.from_private_key_file(env_vars["priv_key_path"])
+    private_key = paramiko.RSAKey.from_private_key_file(home+env_vars["priv_key_path"])
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     if not logger is None:

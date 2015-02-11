@@ -7,6 +7,7 @@ from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
 from multiprocessing import Process
+from Cluster_Tools import *
 
 orchestrator = None     # the VM to which the others report to
 
@@ -306,14 +307,8 @@ def get_monitoring_endpoint():
 
 
 def repair_cluster():
-    procs = []
-    for n in seeds+nodes:
-        log.info("Running repair on: " + n.name)
-        t=Process(target=n.run_command, args=("nodetool repair ycsb",))
-        procs.append(t)
-        t.start()
-    for t in procs:
-        t.join()
+    command = "nodetool repair ycsb"
+    run_script(command, seeds+nodes, serial=False)
 
 
 def set_cluster_size(count):
@@ -325,6 +320,11 @@ def set_cluster_size(count):
         diff = -diff
         log.info("Will add %d nodes to match cluster size: %d" %(diff, count))
         add_nodes(diff)
+
+
+def compaction():
+    command = "nodetool compact ycsb"
+    run_script(command, seeds+nodes, serial=False)
 
 #=============================== MAIN ==========================
 

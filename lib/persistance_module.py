@@ -6,11 +6,13 @@ __author__ = 'cmantas'
 import sqlite3 as lite
 import sys, json
 from datetime import datetime
+from os import path
 
-ENV_VARS_FILE = 'files/env_vars.json'
-OPENSTACK_NAMES_FILE = 'files/openstack_names.json'
-SCRIPTS_FILE = 'files/scripts.json'
-PRED_VARS_FILE = 'files/pred_vars.json'
+home = path.dirname(path.realpath(__file__))+"/../"
+ENV_VARS_FILE = home+'files/env_vars.json'
+OPENSTACK_NAMES_FILE = home +'files/openstack_names.json'
+SCRIPTS_FILE = home+'files/scripts.json'
+PRED_VARS_FILE = home+'files/pred_vars.json'
 
 db_file = "files/persistance.db"
 

@@ -7,7 +7,7 @@ import ntpath
 import thread
 
 from lib.scp_utils import *
-from lib.persistance_module import env_vars
+from lib.persistance_module import env_vars, home
 from lib.tiramola_logging import get_logger
 
 
@@ -19,7 +19,7 @@ if infrastructure == 'openstack':
     from lib import connector_eucalyptus as iaas
 
 
-LOGS_DIR = "files/VM_logs"
+LOGS_DIR = home+"files/VM_logs"
 ATTEMPT_INTERVAL = 2
 
 

@@ -6,7 +6,7 @@
     "iaas": "okeanos",
     "active_cluster_name": "cassandra",
     "auth_url" : "https://accounts.okeanos.grnet.gr/identity/v2.0",
-    "cmantas_token": "WTuWohmqoBRY7i0Lm1BaBWE6zrfwtAmlzDjsDgVDoa8",
+    "cmantas_token": "_SWfRg3lf5UTZ6b4-xMfeMg0NnQy11GFOLjlKMf7-60",
     "cassandra_base_image": "430c24b4-5c75-4d38-88a9-eb95cebe27f8",
     "ubuntu_bare_image": "t545d36df-53da-46bd-86ed-759ac3eb1995",
     "priv_key_path": "keys/just_a_key",

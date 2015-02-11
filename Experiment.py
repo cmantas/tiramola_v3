@@ -87,7 +87,7 @@ def run_stress():
     ClientsCluster.run(params)
 
 
-def experiment(name, target, period, offset, minutes):
+def experiment(name, target, period, offset, periods_count):
     """
     runs a full experiment and outputs the the results to directory inside the measurements dir
     :param name:
@@ -128,10 +128,12 @@ def experiment(name, target, period, offset, minutes):
 
         # actually run the tiramola automatic provisioning algorithm
         try:
-            log.info("Running the Coordinator")
-            secs = 60 * minutes
             import Coordinator
-            Coordinator.run(secs)
+            for i in range(periods_count):
+                log.info("Running the Coordinator for period " + str(i))
+                Coordinator.run(60 * period)
+                log.info("Running compaction")
+                CassandraCluster.compaction()
             success = True
         except:
             print traceback.format_exc()
@@ -146,8 +148,8 @@ def experiment(name, target, period, offset, minutes):
         # move the predictions file
         if isfile("files/measurements/predictions.txt"): move("files/measurements/predictions.txt", dir_path)
 
-        info_long = "target = %d\noffset = %d\nperiod = %dmin\nduration = %dmin\ndate = %s" %\
-               (target, offset, period/60, minutes, strftime('%b%d-%H:%M'))
+        info_long = "target = %d\noffset = %d\nperiod = %dmin\nperiods = %dmin\ndate = %s" %\
+               (target, offset, period/60, periods_count, strftime('%b%d-%H:%M'))
         global env_vars
         info_long += "\ngain = " + env_vars['gain']
         info_long += "\ndecision_interval = " + str(env_vars['decision_interval'])
@@ -257,7 +259,7 @@ def run_batch_experiments(exp_list):
             target = int(exp['workload']["target"])
             period = 60*int(exp['workload']["period"])
             offset = int(exp['workload']["offset"])
-            minutes = int(exp['time'])
+            periods_count = int(exp["periods_count"])
             name = exp['name']
 
             #run the experiment
@@ -269,7 +271,7 @@ def run_batch_experiments(exp_list):
                 else:
                     #make sure the cluster is at its min size
                     CassandraCluster.set_cluster_size(env_vars["min_cluster_size"])
-                success =  experiment(name, target, period, offset, minutes)
+                success =  experiment(name, target, period, offset, periods_count)
                 if not success:
                     log.info("Experiment failed, sleeping 10mins and Retrying")
                     sleep(600)

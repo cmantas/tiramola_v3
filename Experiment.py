@@ -124,24 +124,27 @@ def experiment(name, target, period, offset, periods_count):
         exit(-1)
     success = False
     try:
-        run_sinusoid(target, period, offset)
 
         # actually run the tiramola automatic provisioning algorithm
         try:
             import Coordinator
             for i in range(periods_count):
-                log.info("Running the Coordinator for period " + str(i))
-                Coordinator.run(60 * period)
                 log.info("Running compaction")
                 CassandraCluster.compaction()
+                run_sinusoid(target, period, offset)
+                log.info("Running the Coordinator for period " + str(i))
+                Coordinator.run(60 * period)
+                log.info(" killing workload")
+                ClientsCluster.kill_nodes()
+
             success = True
         except:
             print traceback.format_exc()
             traceback.print_exc(file=open(dir_path+"/errors", "w+"))
 
-        # kill the workload
-        log.info(" killing workload")
-        ClientsCluster.kill_nodes()
+        if not success:
+            log.info(" killing workload")
+            ClientsCluster.kill_nodes()
 
         # move the measurements file
         move("files/measurements/measurements.txt", dir_path)

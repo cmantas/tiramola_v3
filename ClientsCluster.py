@@ -12,6 +12,8 @@ from Cluster_Tools import *
 
 orchestrator = None     # the VM to which the others report to
 
+all_nodes = []
+
 # the name of the cluster is used as a prefix for the VM names
 cluster_name = "clients"
 node_type = "client"
@@ -285,6 +287,8 @@ def get_monitoring_endpoint():
     returns the IP of the node that has the monitoring data we want
     """
     return all_nodes[0].get_public_addr()
+
+
 
 
 

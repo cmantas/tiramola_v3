@@ -109,19 +109,16 @@ def experiment(name, target, period, offset, periods_count):
         pass
 
     # kill the workload (in case there were leftover clients running)
-    log.info(" killing workload")
+    log.info("killing workload")
     ClientsCluster.kill_nodes()
 
 
     # create a directory for the experiment results
     dir_path = measurements_dir+"/"+name
-    if isdir(dir_path):
-        dir_path += "_"+str(int(random()*1000))
-    try:
-        mkdir(dir_path)
-    except:
-        log.error("Could not create experiment directory")
-        exit(-1)
+    if isdir(dir_path): dir_path += "_"+str(int(random()*1000))
+    try:mkdir(dir_path)
+    except:log.error("Could not create experiment directory");exit(-1)
+
     success = False
     try:
 
@@ -130,6 +127,7 @@ def experiment(name, target, period, offset, periods_count):
             import Coordinator
             for i in range(periods_count):
                 log.info("Running compaction")
+                print "hellooo COMPACTION"
                 CassandraCluster.compaction()
                 run_sinusoid(target, period, offset)
                 log.info("Running the Coordinator for period " + str(i))

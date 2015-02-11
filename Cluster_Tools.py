@@ -6,7 +6,7 @@ from lib.persistance_module import get_script_text, home
 
 
 # the logger for this file
-log = get_logger('client', 'INFO', logfile=home+'files/logs/Coordinator.log')
+log = get_logger('CLUSTER', 'INFO', logfile=home+'files/logs/Coordinator.log')
 
 
 def wait_proc(proc, node, timeout):
@@ -22,6 +22,8 @@ def wait_proc(proc, node, timeout):
         log.error("Timeout occurred for process")
         proc.terminate()
         raise Exception("Script timed out for "+node.name)
+    else:
+        log.info(node.name+" DONE")
 
 
 def run_script(script_content, nodes, serial=True, timeout=600):

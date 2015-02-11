@@ -62,7 +62,7 @@ class Predictor:
             mins += float(env_vars['metric_fetch_interval']) / 60
 
         if len(lambdas) < self.latest - 1:
-            self.log.info('# of mins considered %d, which is less than the %d measurements we need for a prediction' %
+            self.log.debug('# of mins considered %d, which is less than the %d measurements we need for a prediction' %
                           (len(lambdas), self.latest))
             return -1
 

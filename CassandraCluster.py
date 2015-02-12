@@ -7,7 +7,7 @@ from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
 from multiprocessing import Process
-from lib.Cluster_Tools import Cluster
+from lib.Cluster import Cluster
 
 orchestrator = None     # the VM to which the others report to
 

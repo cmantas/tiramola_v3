@@ -8,7 +8,7 @@ from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
 from threading import Thread
-from lib.Cluster_Tools import *
+from lib.Cluster import *
 
 
 class Clients(Cluster):

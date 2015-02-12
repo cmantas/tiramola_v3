@@ -152,7 +152,6 @@ class Clients(Cluster):
             self.save_cluster()
         self.inject_hosts_files()
 
-
     def run(self, params):
 
         self.bootstrap_cluster()
@@ -172,7 +171,7 @@ class Clients(Cluster):
             global env_vars
             target = int(params['target']) / len(self.all_nodes)
             offset = int(params['offset']) / len(self.all_nodes)
-            period = int(params['period'])
+            period = 60*int(params['period'])
             threads = int(env_vars['client_threads'])
             for c in self.all_nodes:
                 load_command = get_script_text(self.cluster_name, self.node_type, "run_sin") % (target, offset, period, threads)
@@ -188,7 +187,7 @@ class Clients(Cluster):
                 #load_command = get_script_text(self.cluster_name, self.node_type, "load") % (str(record_count), str(step), str(start))
                 load_command = get_script_text(self.cluster_name, self.node_type, "load").format(record_count, step, start)
                 #load_command += get_script_text(cluster_name, "", "load") % (str(record_count), str(step), str(start))
-                self.log.info("running load phase on %s for %d records" % (c.name, record_count))
+                self.log.info("running load phase on %s for %d of %d records" % (c.name, step, record_count))
                 t = Thread(target=c.run_command, args=(load_command,) )
                 threads.append(t)
                 t.start()

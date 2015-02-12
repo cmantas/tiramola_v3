@@ -75,7 +75,7 @@ class Node (VM):
         timer = Timer.get_timer()
         rv = self.run_command(command)
         self.log.debug("command returned:\n"+str(rv))
-        self.log.info("is now bootstrapped (took %d sec)" % timer.stop())
+        self.log.info("now bootstrapped (took %d sec)" % timer.stop())
         self.bootstrapped = True
 
     def decommission(self):

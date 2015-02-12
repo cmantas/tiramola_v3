@@ -12,6 +12,7 @@ from time import sleep
 from sys import exc_info
 from ClientsCluster import my_Clients as ClientsCluster
 import CassandraCluster
+from VM import Timer
 
 ## global logger
 log = get_logger("EXPERIMENT", 'INFO', logfile=home+'files/logs/Coordinator.log')
@@ -128,7 +129,9 @@ def experiment(name, target, period, offset, periods_count):
             import Coordinator
             for i in range(periods_count):
                 log.info("Running compaction")
+                timer = Timer.get_timer()
                 CassandraCluster.compaction()
+                log.info("Done compacting ({1}sec".format(timer.stop()))
                 run_sinusoid(target, period, offset)
                 log.info("Running the Coordinator for period " + str(i))
                 Coordinator.run(60 * period)

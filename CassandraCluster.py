@@ -1,6 +1,6 @@
 __author__ = 'cmantas'
 from Node import Node
-from VM import get_all_vms
+from VM import Timer
 from json import loads, dumps
 from os import remove
 from os.path import isfile
@@ -8,6 +8,7 @@ from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
 from multiprocessing import Process
 from lib.Cluster import Cluster
+
 
 orchestrator = None     # the VM to which the others report to
 
@@ -323,7 +324,10 @@ def set_cluster_size(count):
 
 def compaction():
     command = "nodetool compact ycsb"
+    log.info("Running compaction")
+    timer = Timer.get_timer()
     Cluster.run_script(command, seeds+nodes, serial=False)
+    log.info("Done compacting ({0}sec".format(timer.stop()))
 
 #=============================== MAIN ==========================
 

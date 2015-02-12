@@ -128,10 +128,7 @@ def experiment(name, target, period, offset, periods_count):
         try:
             import Coordinator
             for i in range(periods_count):
-                log.info("Running compaction")
-                timer = Timer.get_timer()
                 CassandraCluster.compaction()
-                log.info("Done compacting ({0}sec".format(timer.stop()))
                 run_sinusoid(target, period, offset)
                 log.info("Running the Coordinator for period " + str(i))
                 Coordinator.run(60 * period)

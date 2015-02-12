@@ -74,7 +74,7 @@ class Node (VM):
         command += get_script_text(self.cluster_name, self.type, "bootstrap")
         timer = Timer.get_timer()
         rv = self.run_command(command)
-        self.log.debug("command returned:\n"+rv)
+        self.log.debug("command returned:\n"+str(rv))
         self.log.info("is now bootstrapped (took %d sec)" % timer.stop())
         self.bootstrapped = True
 

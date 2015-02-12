@@ -47,12 +47,9 @@ def get_credentials(user):
 
 def get_script_text(cluster, node_type, script_type):
     scripts = json.loads(open(SCRIPTS_FILE, 'r').read())
-    try:
-        filename = scripts[cluster+"_"+node_type+"_"+script_type]
-        file = open(filename, 'r')
-        return file.read()+"\n"
-    except KeyError:
-        return ""
+    filename = home+scripts[cluster+"_"+node_type+"_"+script_type]
+    file = open(filename, 'r')
+    return file.read()+"\n"
 
 
 def save_openstack_names():

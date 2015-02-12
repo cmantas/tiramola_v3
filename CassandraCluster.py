@@ -7,7 +7,7 @@ from os.path import isfile
 from lib.persistance_module import get_script_text, env_vars
 from lib.tiramola_logging import get_logger
 from multiprocessing import Process
-from Cluster_Tools import *
+from lib.Cluster_Tools import Cluster
 
 orchestrator = None     # the VM to which the others report to
 
@@ -25,7 +25,7 @@ save_file = "files/saved_%s_cluster.json" % cluster_name
 Node.flavor = env_vars["default_flavor"]
 Node.image = env_vars["cassandra_base_image"]
 
-log = get_logger('CLUSTER', 'DEBUG', logfile='files/logs/Coordinator.log')
+log = get_logger('CASSANDRA', 'DEBUG', logfile='files/logs/Coordinator.log')
 
 
 def create_cluster(worker_count=0):
@@ -46,7 +46,7 @@ def create_cluster(worker_count=0):
     #save the cluster to file
     save_cluster()
     #wait until everybody is ready
-    wait_everybody()
+    Cluster.wait_nodes(seeds+nodes)
     find_orchestrator()
     inject_hosts_files()
     log.info('Every node is ready for SSH')
@@ -184,7 +184,7 @@ def add_one_node(stash_index):
     """
     if not len(stash) == 0:
             new_guy = stash[stash_index]
-            log.info("Using %s from my stash" % new_guy.name)
+            log.debug("Using %s from my stash" % new_guy.name)
     else:
             raise Exception("Adding a node out of stash is not implemented yet")
             #new_guy = Node(cluster_name, 'node', str(len(nodes)+1), create=True)
@@ -308,7 +308,7 @@ def get_monitoring_endpoint():
 
 def repair_cluster():
     command = "nodetool repair ycsb"
-    run_script(command, seeds+nodes, serial=False)
+    Cluster.run_script(command, seeds+nodes, serial=False)
 
 
 def set_cluster_size(count):
@@ -324,7 +324,7 @@ def set_cluster_size(count):
 
 def compaction():
     command = "nodetool compact ycsb"
-    run_script(command, seeds+nodes, serial=False)
+    Cluster.run_script(command, seeds+nodes, serial=False)
 
 #=============================== MAIN ==========================
 

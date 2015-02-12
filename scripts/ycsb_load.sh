@@ -1,8 +1,8 @@
 #!/bin/sh
 ### RUN THIS FROM PYTHON ONLY, SPECIFYING THE FOLLOWING PARAMS
-count=%s
-step=%s
-start=%s
+count={0}
+step={1}
+start={2}
 killall java
 	/etc/YCSB/bin/ycsb load cassandra-cql \
 		-P /etc/YCSB/workloads/workloada -p port=9042 \

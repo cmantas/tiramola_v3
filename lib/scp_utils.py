@@ -38,25 +38,27 @@ def run_ssh_command(host, user, command, indent=1, prefix="$: ", logger=None):
     timer = Timer.get_timer()
     try:
         ssh.connect(host, username=user, timeout=ssh_timeout, pkey=private_key, allow_agent=False, look_for_keys=False)
+        if not logger is None:
+            logger.debug("connected in %d sec. now Running SSH command" % timer.stop())
+            timer.start()
+         ### EXECUTE THE COMMAND  ###
+        stdin, stdout, stderr = ssh.exec_command(command)
+        ret = ''
+        for line in stdout:
+            ret += line
+        for line in stderr:
+            ret += line
+        # close the ssh connection
+        ssh.close()
+        if not logger is None:
+            logger.debug("SSH command took %d sec" % timer.stop())
+        return reindent(ret, indent, prefix=prefix)
     except:
         if not logger is None:
             logger.error("Could not connect to "+ str(host))
         traceback.print_exc()
-    if not logger is None:
-        logger.debug("connected in %d sec. now Running SSH command" % timer.stop())
-        timer.start()
-    ### EXECUTE THE COMMAND  ###
-    stdin, stdout, stderr = ssh.exec_command(command)
-    ret = ''
-    for line in stdout:
-        ret += line
-    for line in stderr:
-        ret += line
-    # close the ssh connection
-    ssh.close()
-    if not logger is None:
-        logger.debug("SSH command took %d sec" % timer.stop())
-    return reindent(ret, indent, prefix=prefix)
+
+
 
 
 def put_file_scp (host, user, files, remote_path='.', recursive=False):

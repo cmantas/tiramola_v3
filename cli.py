@@ -68,21 +68,23 @@ def run_sinusoid():
         args["period"] = period
         offset = int(args["offset"])
         log.info("running sinusoid for target=%d, offset=%d, period=%d sec" % (target, offset, period))
-        import ClientsCluster, CassandraCluster
+        import CassandraCluster
+        from ClientsCluster import my_Clients
         svr_hosts = CassandraCluster.get_hosts(private=False)
         args['type'] = 'sinusoid'
         args['servers'] = svr_hosts
-        ClientsCluster.run(args)
+        my_Clients.run(args)
     except KeyError as e:
         log.info("run_sinusoid requires argument %s" % e.args[0])
 
 
 def run_stress():
     log.info("running stress workload" )
-    import ClientsCluster, CassandraCluster
+    import CassandraCluster
+    from ClientsCluster import my_Clients
     svr_hosts = CassandraCluster.get_hosts(private=False)
     params = {'type':'stress', 'servers': svr_hosts}
-    ClientsCluster.run(params)
+    my_Clients.run(params)
 
 
 def create_cluster():
@@ -99,8 +101,8 @@ def create_clients():
     try:
         nodes = int(args["nodes"])
         log.info("creating %d client nodes " % nodes)
-        import ClientsCluster
-        ClientsCluster.create_cluster(nodes)
+        from ClientsCluster import my_Clients
+        my_Clients.create_cluster(nodes)
     except KeyError as e:
         log.info("create_clients requires argument %s" % e.args[0])
 
@@ -111,8 +113,8 @@ def add_clients():
     else:
         count = 1;
     log.info("adding %d clients" % count)
-    import ClientsCluster
-    ClientsCluster.add_nodes(count)
+    from ClientsCluster import my_Clients
+    my_Clients.add_nodes(count)
 
 
 def remove_clients():
@@ -121,14 +123,14 @@ def remove_clients():
     else:
         count = 1;
     log.info("removing %d clients" % count)
-    import ClientsCluster
-    ClientsCluster.remove_nodes(count)
+    from ClientsCluster import my_Clients
+    my_Clients.remove_nodes(count)
 
 
 def kill_workload():
     log.info("killing workload")
-    import ClientsCluster
-    ClientsCluster.kill_nodes()
+    from ClientsCluster import my_Clients
+    my_Clients.kill_nodes()
 
 
 def kill_nodes():
@@ -153,8 +155,8 @@ def destroy_servers():
 
 
 def destroy_clients():
-    import ClientsCluster
-    ClientsCluster.destroy_all()
+    from ClientsCluster import my_Clients
+    my_Clients.destroy_all()
 
 
 def hosts():

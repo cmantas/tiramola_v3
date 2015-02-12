@@ -1,8 +1,8 @@
 __author__ = 'cmantas'
 from time import sleep
 import CassandraCluster as Servers
-import ClientsCluster as Clients
-from lib.persistance_module import env_vars
+from ClientsCluster import my_Clients as Clients
+from lib.persistance_module import env_vars, home
 from Monitoring import MonitorVms
 from new_decision_module import RLDecisionMaker as DM
 from lib.tiramola_logging import get_logger
@@ -11,7 +11,7 @@ from os import remove
 from threading import Thread
 
 #######  STATIC VARS  ###############
-my_logger = get_logger('COORDINATOR', 'INFO', logfile='files/logs/Coordinator.log')
+my_logger = get_logger('COORDINATOR', 'INFO', logfile=home+'files/logs/Coordinator.log')
 my_logger.debug("--------- NEW RUN  -----------------")
 #the (pending) decision at the present moment
 decision = None

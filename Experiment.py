@@ -7,12 +7,14 @@ from time import strftime
 from os.path import isdir, isfile, join, exists, basename
 from random import random
 from json import load, dumps, loads
-from lib.persistance_module import env_vars, reload_env_vars
+from lib.persistance_module import env_vars, reload_env_vars, home
 from time import sleep
-import ClientsCluster, CassandraCluster
+from sys import exc_info
+from ClientsCluster import my_Clients as ClientsCluster
+import CassandraCluster
 
 ## global logger
-log = get_logger("EXPERIMENT", 'INFO')
+log = get_logger("EXPERIMENT", 'INFO', logfile=home+'files/logs/Coordinator.log')
 o_ev = {}
 measurements_dir = "files/measurements"
 
@@ -69,7 +71,6 @@ def watch(dir_path, callback):
 
 
 def run_sinusoid(target, period, offset):
-        import ClientsCluster, CassandraCluster
         svr_hosts = CassandraCluster.get_hosts(private=False)
         args = dict()
         args["target"] = target
@@ -127,12 +128,11 @@ def experiment(name, target, period, offset, periods_count):
             import Coordinator
             for i in range(periods_count):
                 log.info("Running compaction")
-                print "hellooo COMPACTION"
                 CassandraCluster.compaction()
                 run_sinusoid(target, period, offset)
                 log.info("Running the Coordinator for period " + str(i))
                 Coordinator.run(60 * period)
-                log.info(" killing workload")
+                log.info("killing workload")
                 ClientsCluster.kill_nodes()
 
             success = True
@@ -215,6 +215,8 @@ def clean_start():
             ClientsCluster.run(args)
             success = True
         except:
+            print "Unexpected error on clean:" + str(exc_info()[0])
+            print traceback.format_exc()
             log.error("Failed to clean, restarting")
             sleep(120)
 
@@ -258,7 +260,7 @@ def run_batch_experiments(exp_list):
             simulate()
         else:
             target = int(exp['workload']["target"])
-            period = 60*int(exp['workload']["period"])
+            period = int(exp['workload']["period"])
             offset = int(exp['workload']["offset"])
             periods_count = int(exp["periods_count"])
             name = exp['name']

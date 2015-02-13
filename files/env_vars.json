@@ -37,7 +37,7 @@
     "decision_abs_threshold": 1,
     "metric_fetch_interval": 5,
     "decision_interval": 180,
-    "extra_decision_delay_per_node": 90,
+    "extra_decision_delay_per_node": 70,
     "measurements_file": "files/measurements/measurements.txt",
     "training_file": "files/measurements/training_set.txt",
     "records": 3000000,

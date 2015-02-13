@@ -46,7 +46,7 @@ def implement_decision():
             Servers.add_nodes(count)
             # artificially delay the decision in order to discard transient measurements
             my_logger.info("Sleeping! (artificial delay)")
-            sleep(env_vars['extra_decision_delay_per_node']*count)
+            sleep(45 +env_vars['extra_decision_delay_per_node']*count)
         elif action == "REMOVE":
             decision_module.pending_action = action
             my_logger.debug("Will remove %d nodes" % count)

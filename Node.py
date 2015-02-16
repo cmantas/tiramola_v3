@@ -54,7 +54,7 @@ class Node (VM):
         """
         self.name = vm.name
         if not vm.created:
-            self.log.error("this VM is not created, so you cann't create a node from it")
+            self.log.error("this VM is not created, so you can't create a node from it")
             return
         self.log = vm.log
         super(Node, self).__init__(self.name, self.flavor, self.image, IPv4=vm.IPv4)

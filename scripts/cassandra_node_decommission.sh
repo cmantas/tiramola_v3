@@ -7,5 +7,7 @@ echo "CTOOL: Killing CassandraDaemon ($CAS_PID)"
 kill $CAS_PID &>/dev/null
 
 
+#kill alive reporting
+kill -9 $(cat gmetric_pid)
 #report not alive
 gmetric -n alive -v 0 -t int32 -u nodes -d 10000

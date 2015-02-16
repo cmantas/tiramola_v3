@@ -5,7 +5,7 @@ sync:
 	git commit -am "sync"; git push; ssh torchestrator "cd tiramola_v3; git pull"
 
 pull_measurements:
-	rsync -avz --delete torchestrator:/root/tiramola_v3/files/measurements/* files/measurements/	
+	rsync -avz torchestrator:/root/tiramola_v3/files/measurements/* files/measurements/	
 push_measurements:
 	rsync -avz --delete files/measurements/* torchestrator:/root/tiramola_v3/files/measurements 	
 clean:

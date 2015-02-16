@@ -96,8 +96,8 @@ echo "started bootstrap" > bootsrap.log
 
 echo "ended bootstrap" >> bootsrap.log
 
-#report alive in gmetric
-while true; do
- gmetric -n alive -v 1 -t int32 -u nodes -d 10000
-done &
-echo $! > gmetric_pid
+##report alive in gmetric
+#while true; do
+# gmetric -n alive -v 1 -t int32 -u nodes -d 10000
+#done &
+#echo $! > gmetric_pid

@@ -105,3 +105,4 @@ while true; do
  gmetric -n alive -v 1 -t int32 -u nodes -d 10000
 done &
 echo $! > gmetric_pid
+echo "DONE with all" >>ctool.log

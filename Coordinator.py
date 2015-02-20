@@ -180,7 +180,7 @@ def train():
         global decision
 
         #run for 1 period
-        timeout = time() + env_vars['period']
+        timeout = time() + 60*env_vars['period']
         while time() <= timeout:
         #fetch metrics and takes decisions
             sleep(metrics_interval)

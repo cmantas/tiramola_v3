@@ -45,7 +45,7 @@
     "training_vars": {
         "target_load":8000,
         "offset_load": 6000,
-        "period": 1800,
+        "period": 30,
         "decision_interval": 3600,
         "max_cluster_size": 18,
         "min_cluster_size": 9,

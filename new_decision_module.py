@@ -402,20 +402,19 @@ class RLDecisionMaker:
             self.decision["count"] = 0
             return self.decision
 
-        # Select values close to the current throughtput, define tha lambda range we're interested in -+ 5%
-        #from_inlambda = 0.95 * allmetrics['inlambda']
-        #to_inlambda = 1.05 * allmetrics['inlambda']
-        from_inlambda = allmetrics['inlambda'] - 500 #- 3000
-        to_inlambda = allmetrics['inlambda'] + 500 #+ 3000
-
+        
+	# Select values close to the current throughtput, define tha lambda range we're interested in -+ 5%
+        slice_range=75
+	from_inlambda = allmetrics['inlambda'] - slice_range
+        to_inlambda = allmetrics['inlambda'] + slice_range
         if self.prediction:
             predicted_l = self.predictor.poly_regression()
             if predicted_l > 0:
                 # there are enough data to make a prediction, if not use the actual lambda
                 self.log.debug(
                     "Predicted: " + str(predicted_l) + " lambda :" + str(allmetrics['inlambda']))
-                from_inlambda = predicted_l - 500
-                to_inlambda = predicted_l + 500
+                from_inlambda = predicted_l - slice_range
+                to_inlambda = predicted_l + slice_range
 
         self.log.debug("TAKEDECISION state %d lambda range: %d - %d" % (self.currentState, from_inlambda, to_inlambda))
         # too low to care, the initial num of nodes can answer 1000 req/sec,
